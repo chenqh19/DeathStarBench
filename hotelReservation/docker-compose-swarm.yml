@@ -60,7 +60,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == uhhsn0shnocq0lndap8x5tqre
+          - node.id == hwhnns8clwyqtyc5dgaaobfg3
 
   geo:
     environment:
