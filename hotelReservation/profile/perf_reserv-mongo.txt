@@ -1,0 +1,964 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 163225144
+#
+# Overhead  Command          Shared Object       Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                        
+# ........  ...............  ..................  ..............................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+     2.45%  conn7            mongod              [.] operator new[]
+            |
+            ---operator new[]
+               |          
+                --0.66%--mongo::OperationContext::OperationContext
+                          mongo::ServiceContext::makeOperationContext
+                          mongo::Client::makeOperationContext
+                          mongo::ServiceStateMachine::_processMessage
+                          mongo::ServiceStateMachine::_runNextInGuard
+                          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+                          mongo::transport::ServiceExecutorSynchronous::schedule
+                          mongo::ServiceStateMachine::_scheduleNextWithGuard
+                          mongo::ServiceStateMachine::_sourceCallback
+                          mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+                          mongo::ServiceStateMachine::_sourceMessage
+                          mongo::ServiceStateMachine::_runNextInGuard
+                          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+                          std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+                          std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+                          mongo::(anonymous namespace)::runFunc
+                          start_thread
+
+     1.56%  conn7            mongod              [.] __config_next
+            |
+            ---__config_next
+               __config_getraw.constprop.1
+               __wt_config_get.part.0
+               __wt_config_gets
+               __txn_config_operation_timeout
+               |          
+               |--0.94%--__wt_txn_config
+               |          __session_begin_transaction
+               |          mongo::WiredTigerBeginTxnBlock::WiredTigerBeginTxnBlock
+               |          mongo::WiredTigerRecoveryUnit::_txnOpen
+               |          mongo::WiredTigerRecoveryUnit::getSession
+               |          mongo::WiredTigerCursor::WiredTigerCursor
+               |          mongo::WiredTigerRecordStore::_insertRecords
+               |          mongo::WiredTigerRecordStore::insertRecords
+               |          mongo::CollectionImpl::_insertDocuments
+               |          mongo::CollectionImpl::insertDocuments
+               |          mongo::(anonymous namespace)::insertDocuments
+               |          mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#4}::operator()
+               |          mongo::performInserts
+               |          mongo::(anonymous namespace)::CmdInsert::Invocation::runImpl
+               |          mongo::(anonymous namespace)::WriteCommand::InvocationBase::run
+               |          mongo::CommandHelpers::runCommandInvocation
+               |          mongo::(anonymous namespace)::runCommandImpl
+               |          mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               |          mongo::ServiceEntryPointCommon::handleRequest
+               |          mongo::ServiceEntryPointMongod::handleRequest
+               |          mongo::ServiceStateMachine::_processMessage
+               |          mongo::ServiceStateMachine::_runNextInGuard
+               |          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               |          mongo::transport::ServiceExecutorSynchronous::schedule
+               |          mongo::ServiceStateMachine::_scheduleNextWithGuard
+               |          mongo::ServiceStateMachine::_sourceCallback
+               |          mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               |          mongo::ServiceStateMachine::_sourceMessage
+               |          mongo::ServiceStateMachine::_runNextInGuard
+               |          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               |          std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               |          std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               |          mongo::(anonymous namespace)::runFunc
+               |          start_thread
+               |          
+                --0.62%--__wt_txn_commit
+                          __session_commit_transaction
+                          mongo::WiredTigerRecoveryUnit::_txnClose
+                          mongo::WiredTigerRecoveryUnit::_commit
+                          mongo::WiredTigerRecoveryUnit::doCommitUnitOfWork
+                          mongo::WriteUnitOfWork::commit
+                          mongo::(anonymous namespace)::insertDocuments
+                          mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#4}::operator()
+                          mongo::performInserts
+                          mongo::(anonymous namespace)::CmdInsert::Invocation::runImpl
+                          mongo::(anonymous namespace)::WriteCommand::InvocationBase::run
+                          mongo::CommandHelpers::runCommandInvocation
+                          mongo::(anonymous namespace)::runCommandImpl
+                          mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+                          mongo::ServiceEntryPointCommon::handleRequest
+                          mongo::ServiceEntryPointMongod::handleRequest
+                          mongo::ServiceStateMachine::_processMessage
+                          mongo::ServiceStateMachine::_runNextInGuard
+                          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+                          mongo::transport::ServiceExecutorSynchronous::schedule
+                          mongo::ServiceStateMachine::_scheduleNextWithGuard
+                          mongo::ServiceStateMachine::_sourceCallback
+                          mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+                          mongo::ServiceStateMachine::_sourceMessage
+                          mongo::ServiceStateMachine::_runNextInGuard
+                          std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+                          std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+                          std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+                          mongo::(anonymous namespace)::runFunc
+                          start_thread
+
+     1.08%  ftdc             libc-2.27.so        [.] vfprintf
+            |
+            ---vfprintf
+               __vsnprintf_chk
+
+     0.91%  conn7            mongod              [.] mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+            |
+            ---mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.91%  conn7            mongod              [.] tc_deletearray_aligned_nothrow
+            |
+            ---tc_deletearray_aligned_nothrow
+
+     0.89%  conn7            mongod              [.] mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::IteratorImpl<mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>, mongo::LockRequest, std::_Deque_iterator<mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry, mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry&, mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry*> >::IteratorImpl
+            |          
+             --0.56%--mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::IteratorImpl<mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>, mongo::LockRequest, std::_Deque_iterator<mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry, mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry&, mongo::FastMapNoAlloc<mongo::ResourceId, mongo::LockRequest>::PreallocEntry*> >::IteratorImpl
+
+     0.81%  mongod           [kernel.kallsyms]   [k] visit_groups_merge
+            |
+            ---visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               futex_wait_queue_me
+               futex_wait
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+
+     0.78%  ftdc             mongod              [.] std::__find_if<char const*, __gnu_cxx::__ops::_Iter_pred<mongo::procparser::parseProcStat(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, long, mongo::BSONObjBuilder*)::{lambda(char)#2}> >
+            |
+            ---std::__find_if<char const*, __gnu_cxx::__ops::_Iter_pred<mongo::procparser::parseProcStat(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, long, mongo::BSONObjBuilder*)::{lambda(char)#2}> >
+               mongo::procparser::parseProcVMStat
+               mongo::procparser::parseProcVMStatFile
+               mongo::(anonymous namespace)::LinuxSystemMetricsCollector::collect
+               mongo::FTDCCollectorCollection::collect
+               mongo::FTDCController::doLoop
+               std::thread::_State_impl<std::thread::_Invoker<std::tuple<mongo::stdx::thread::thread<mongo::FTDCController::start()::{lambda()#2}, , 0>(mongo::FTDCController::start()::{lambda()#2})::{lambda()#1}> > >::_M_run
+               execute_native_thread_routine
+
+     0.75%  conn7            mongod              [.] mongo::globalCommandRegistry
+            |
+            ---mongo::globalCommandRegistry
+               mongo::CommandHelpers::findCommand
+               mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.75%  conn7            libc-2.27.so        [.] 0x000000000018e50b
+     0.73%  ftdc             mongod              [.] mongo::BSONObjBuilder::append<int, void>
+            |
+            ---mongo::BSONObjBuilder::append<int, void>
+               mongo::WiredTigerUtil::exportTableToBSON
+               mongo::WiredTigerServerStatusSection::generateSection
+               mongo::ServerStatusSection::appendSection
+               mongo::CmdServerStatus::run
+               mongo::BasicCommandWithReplyBuilderInterface::Invocation::run
+               mongo::CommandHelpers::runCommandDirectly
+               mongo::FTDCServerStatusCommandCollector::collect
+               mongo::FTDCCollectorCollection::collect
+               mongo::FTDCController::doLoop
+               std::thread::_State_impl<std::thread::_Invoker<std::tuple<mongo::stdx::thread::thread<mongo::FTDCController::start()::{lambda()#2}, , 0>(mongo::FTDCController::start()::{lambda()#2})::{lambda()#1}> > >::_M_run
+               execute_native_thread_routine
+
+     0.71%  conn7            mongod              [.] mongo::OpMsgRequest::fromDBAndBody
+            |
+            ---mongo::OpMsgRequest::fromDBAndBody
+               mongo::rpc::upconvertRequest
+               mongo::rpc::opMsgRequestFromLegacyRequest
+               mongo::rpc::opMsgRequestFromAnyProtocol
+               mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.70%  conn7            mongod              [.] tc_realloc
+            |
+            ---tc_realloc
+
+     0.70%  conn7            [kernel.kallsyms]   [k] rcu_all_qs
+            |
+            ---rcu_all_qs
+
+     0.70%  conn7            [kernel.kallsyms]   [k] __netif_receive_skb_core
+            |
+            ---__netif_receive_skb_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ____sys_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               __x64_sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.69%  conn7            mongod              [.] mongo::FailPoint::shouldFail<decltype(nullptr)>
+            |
+            ---mongo::FailPoint::shouldFail<decltype(nullptr)>
+
+     0.68%  conn7            mongod              [.] mongo::CollectionImpl::insertDocuments
+            |
+            ---mongo::CollectionImpl::insertDocuments
+               mongo::(anonymous namespace)::insertDocuments
+               mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#4}::operator()
+               mongo::performInserts
+               mongo::(anonymous namespace)::CmdInsert::Invocation::runImpl
+               mongo::(anonymous namespace)::WriteCommand::InvocationBase::run
+               mongo::CommandHelpers::runCommandInvocation
+               mongo::(anonymous namespace)::runCommandImpl
+               mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.65%  conn7            mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<mongo::repl::OpTime>
+            |
+            ---mongo::OperationContext::~OperationContext
+               mongo::OperationContext::~OperationContext
+               mongo::ServiceContext::OperationContextDeleter::operator()
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.65%  mongod           [kernel.kallsyms]   [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __sched_yield
+               start_thread
+
+     0.64%  conn7            mongod              [.] mongo::BSONObj::getField
+            |
+            ---mongo::BSONObj::getField
+
+     0.63%  conn7            mongod              [.] __wt_struct_pack
+            |
+            ---__wt_struct_pack
+
+     0.62%  conn7            mongod              [.] mongo::BSONElement::computeSize
+            |
+            ---mongo::BSONElement::computeSize
+
+     0.59%  ftdc             mongod              [.] mongo::MetricTree::appendTo
+     0.59%  conn7            mongod              [.] __wt_row_modify
+            |
+            ---__wt_row_modify
+               __wt_btcur_insert
+               __curfile_insert
+               mongo::WiredTigerIndexUnique::_insertTimestampUnsafe
+               mongo::WiredTigerIndexUnique::_insert
+               mongo::WiredTigerIndex::insert
+               mongo::AbstractIndexAccessMethod::insertKeys
+               mongo::AbstractIndexAccessMethod::insertKeysAndUpdateMultikeyPaths
+               mongo::IndexCatalogImpl::_indexKeys
+               mongo::IndexCatalogImpl::_indexFilteredRecords
+               mongo::IndexCatalogImpl::_indexRecords
+               mongo::IndexCatalogImpl::indexRecords
+               mongo::CollectionImpl::_insertDocuments
+               mongo::CollectionImpl::insertDocuments
+               mongo::(anonymous namespace)::insertDocuments
+               mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#4}::operator()
+               mongo::performInserts
+               mongo::(anonymous namespace)::CmdInsert::Invocation::runImpl
+               mongo::(anonymous namespace)::WriteCommand::InvocationBase::run
+               mongo::CommandHelpers::runCommandInvocation
+               mongo::(anonymous namespace)::runCommandImpl
+               mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.58%  conn7            mongod              [.] mongo::(anonymous namespace)::assertCanWrite_inlock
+            |
+            ---mongo::(anonymous namespace)::assertCanWrite_inlock
+               mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#3}::operator()
+               mongo::performInserts
+               mongo::(anonymous namespace)::CmdInsert::Invocation::runImpl
+               mongo::(anonymous namespace)::WriteCommand::InvocationBase::run
+               mongo::CommandHelpers::runCommandInvocation
+               mongo::(anonymous namespace)::runCommandImpl
+               mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+               mongo::ServiceEntryPointCommon::handleRequest
+               mongo::ServiceEntryPointMongod::handleRequest
+               mongo::ServiceStateMachine::_processMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               mongo::transport::ServiceExecutorSynchronous::schedule
+               mongo::ServiceStateMachine::_scheduleNextWithGuard
+               mongo::ServiceStateMachine::_sourceCallback
+               mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+               mongo::ServiceStateMachine::_sourceMessage
+               mongo::ServiceStateMachine::_runNextInGuard
+               std::_Function_handler<void (), mongo::ServiceStateMachine::_scheduleNextWithGuard(mongo::ServiceStateMachine::ThreadGuard, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName, mongo::ServiceStateMachine::Ownership)::{lambda()#1}>::_M_invoke
+               std::_Function_handler<void (), mongo::transport::ServiceExecutorSynchronous::schedule(std::function<void ()>, mongo::transport::ServiceExecutor::ScheduleFlags, mongo::transport::ServiceExecutorTaskName)::{lambda()#2}>::_M_invoke
+               std::_Function_handler<void (), mongo::launchServiceWorkerThread(std::function<void ()>)::{lambda()#3}>::_M_invoke
+               mongo::(anonymous namespace)::runFunc
+               start_thread
+
+     0.57%  conn7            [kernel.kallsyms]   [k] tcp_write_xmit
+            |
+            ---tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ____sys_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               __x64_sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.56%  ftdc             mongod              [.] TCMallocImplementation::GetNumericProperty
+            |
+            ---TCMallocImplementation::GetNumericProperty
+               mongo::(anonymous namespace)::TCMallocServerStatusSection::appendNumericPropertyIfAvailable
+               mongo::(anonymous namespace)::TCMallocServerStatusSection::generateSection
+               mongo::ServerStatusSection::appendSection
+               mongo::CmdServerStatus::run
+               mongo::BasicCommandWithReplyBuilderInterface::Invocation::run
+               mongo::CommandHelpers::runCommandDirectly
+               mongo::FTDCServerStatusCommandCollector::collect
+               mongo::FTDCCollectorCollection::collect
+               mongo::FTDCController::doLoop
+               std::thread::_State_impl<std::thread::_Invoker<std::tuple<mongo::stdx::thread::thread<mongo::FTDCController::start()::{lambda()#2}, , 0>(mongo::FTDCController::start()::{lambda()#2})::{lambda()#1}> > >::_M_run
+               execute_native_thread_routine
+
+     0.56%  conn7            [kernel.kallsyms]   [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+
+     0.56%  conn7            [kernel.kallsyms]   [k] ip_local_out
+            |
+            ---ip_local_out
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ____sys_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               __x64_sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.55%  mongod           [kernel.kallsyms]   [k] ctx_sched_out
+            |
+            ---ctx_sched_out
+               task_ctx_sched_out
+               __perf_event_task_sched_out
+               __sched_text_start
+               schedule
+               futex_wait_queue_me
+               futex_wait
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+
+     0.53%  mongod           [kernel.kallsyms]   [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+
+     0.51%  conn7            [kernel.kallsyms]   [k] process_backlog
+            |
+            ---process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               ____sys_sendmsg
+               ___sys_sendmsg
+               __sys_sendmsg
+               __x64_sys_sendmsg
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_sendmsg
+               0
+
+     0.51%  conn7            libpthread-2.27.so  [.] sem_timedwait
+            |
+            ---sem_timedwait
+               0x2aad4b00
+
+     0.50%  conn7            mongod              [.] mongo::StatusWith<mongo::Message>::~StatusWith
+            |
+            ---mongo::StatusWith<mongo::Message>::~StatusWith
+
+     0.49%  ftdc             mongod              [.] std::locale::_S_initialize
+     0.48%  ftdc             [kernel.kallsyms]   [k] kmem_cache_alloc
+     0.47%  conn7            [kernel.kallsyms]   [k] psi_task_change
+     0.45%  Backgro.kSource  [kernel.kallsyms]   [k] do_syscall_64
+     0.45%  JournalFlusher   [kernel.kallsyms]   [k] psi_task_change
+     0.45%  JournalFlusher   libc-2.27.so        [.] _IO_default_xsputn
+     0.44%  conn7            [kernel.kallsyms]   [k] tcp_recvmsg
+     0.44%  conn7            mongod              [.] mongo::LatchAnalyzer::onAcquire
+     0.42%  conn7            [kernel.kallsyms]   [k] enqueue_task_fair
+     0.42%  mongod           [kernel.kallsyms]   [k] __find_get_block
+     0.42%  conn7            [kernel.kallsyms]   [k] copyin
+     0.41%  conn7            mongod              [.] __wt_realloc_aligned
+     0.41%  conn7            mongod              [.] mongo::ServiceStateMachine::ThreadGuard::release
+     0.40%  JournalFlusher   [kernel.kallsyms]   [k] do_syscall_64
+     0.40%  ftdc             [kernel.kallsyms]   [k] show_stat
+     0.40%  conn7            [kernel.kallsyms]   [k] visit_groups_merge
+     0.40%  conn7            mongod              [.] mongo::LockerImpl::unlockGlobal
+     0.40%  conn7            [kernel.kallsyms]   [k] __nf_ct_refresh_acct
+     0.39%  conn7            [vdso]              [.] 0x00000000000006c8
+     0.39%  conn7            libc-2.27.so        [.] 0x000000000018e530
+     0.39%  conn7            mongod              [.] mongo::LockStats<long>::reset
+     0.39%  JournalFlusher   mongod              [.] mongo::JournalFlusher::run
+     0.39%  ftdc             [kernel.kallsyms]   [k] kmem_cache_free
+     0.39%  conn7            mongod              [.] __wt_struct_size
+     0.39%  conn7            mongod              [.] memcpy@plt
+     0.39%  conn7            mongod              [.] mongo::BSONElement::trueValue
+     0.38%  ftdc             mongod              [.] mongo::(anonymous namespace)::TCMallocServerStatusSection::appendNumericPropertyIfAvailable
+     0.38%  conn7            [kernel.kallsyms]   [k] tcp_wfree
+     0.38%  conn7            mongod              [.] config_check
+     0.38%  conn7            mongod              [.] mongo::Lock::GlobalLock::GlobalLock
+     0.38%  mongod           [kernel.kallsyms]   [k] update_cfs_group
+     0.38%  conn7            mongod              [.] mongo::Client::getCurrent
+     0.38%  conn7            mongod              [.] mongo::WiredTigerSession::getCachedCursor
+     0.38%  JournalFlusher   [kernel.kallsyms]   [k] __test_set_page_writeback
+     0.37%  JournalFlusher   [kernel.kallsyms]   [k] elv_rqhash_find
+     0.37%  conn7            [kernel.kallsyms]   [k] __slab_free
+     0.37%  Backgro.kSource  [kernel.kallsyms]   [k] __x64_sys_futex
+     0.37%  JournalFlusher   mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<mongo::MultikeyPathTracker>
+     0.36%  conn7            mongod              [.] mongo::OperationContext::releaseOperationKey
+     0.36%  mongod           libpthread-2.27.so  [.] pthread_cond_timedwait@@GLIBC_2.3.2
+     0.36%  conn7            mongod              [.] mongo::QueryRequest::parseMaxTimeMS
+     0.36%  conn7            [kernel.kallsyms]   [k] nft_bitwise_eval
+     0.35%  JournalFlusher   [kernel.kallsyms]   [k] mpage_process_page_bufs
+     0.35%  JournalFlusher   mongod              [.] mongo::WiredTigerSessionCache::waitUntilDurable
+     0.35%  conn7            [kernel.kallsyms]   [k] native_sched_clock
+     0.35%  ftdc             [kernel.kallsyms]   [k] thread_group_cputime
+     0.35%  conn7            mongod              [.] asio::detail::socket_ops::send
+     0.35%  conn7            mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::find
+     0.34%  conn7            [kernel.kallsyms]   [k] validate_xmit_skb
+     0.34%  conn7            [kernel.kallsyms]   [k] br_nf_forward_ip
+     0.34%  conn7            libc-2.27.so        [.] 0x000000000018eb10
+     0.34%  conn7            mongod              [.] __wt_stash_discard
+     0.34%  conn7            mongod              [.] std::__detail::_List_node_base::_M_hook
+     0.34%  conn7            mongod              [.] mongo::DbMessage::getns
+     0.34%  conn7            mongod              [.] mongo::CommandHelpers::appendCommandWCStatus
+     0.34%  conn7            [kernel.kallsyms]   [k] __calc_delta
+     0.34%  conn7            mongod              [.] absl::hash_internal::AbslHashValue<absl::hash_internal::CityHashState>
+     0.34%  conn7            mongod              [.] mongo::BSONObj::getOwned
+     0.34%  conn7            mongod              [.] mongo::WiredTigerRecoveryUnit::_abort
+     0.34%  conn7            mongod              [.] __session_open_cursor
+     0.34%  conn7            [vdso]              [.] 0x000000000000068e
+     0.34%  JournalFlusher   [kernel.kallsyms]   [k] __x64_sys_futex
+     0.34%  conn7            libc-2.27.so        [.] 0x000000000018aae4
+     0.33%  conn7            [kernel.kallsyms]   [k] bictcp_acked
+     0.33%  conn7            [kernel.kallsyms]   [k] __cgroup_bpf_run_filter_skb
+     0.33%  conn7            [kernel.kallsyms]   [k] ktime_get
+     0.33%  conn7            mongod              [.] mongo::ServiceEntryPointCommon::handleRequest
+     0.33%  conn7            [kernel.kallsyms]   [k] deactivate_task
+     0.33%  conn7            [kernel.kallsyms]   [k] __wake_up_common_lock
+     0.33%  conn7            mongod              [.] __realloc_func
+     0.33%  conn7            mongod              [.] mongo::transport::TransportLayerASIO::makeBaton
+     0.33%  conn7            [kernel.kallsyms]   [k] copy_user_enhanced_fast_string
+     0.33%  conn7            mongod              [.] mongo::WriteConcernOptions::parse
+     0.33%  conn7            mongod              [.] std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >::reserve
+     0.33%  conn7            [kernel.kallsyms]   [k] skb_clone_tx_timestamp
+     0.33%  conn7            mongod              [.] clock_gettime@plt
+     0.33%  conn7            [kernel.kallsyms]   [k] select_idle_sibling.part.0
+     0.32%  conn7            mongod              [.] __wt_txn_commit
+     0.32%  conn7            mongod              [.] mongo::OperationContext::checkForInterruptNoAssert
+     0.32%  conn7            [kernel.kallsyms]   [k] tcp_clean_rtx_queue
+     0.32%  conn7            mongod              [.] mongo::TicketHolder::waitForTicketUntil
+     0.32%  conn7            libc-2.27.so        [.] 0x000000000018acf4
+     0.32%  conn7            mongod              [.] __wt_btcur_insert
+     0.32%  ftdc             libc-2.27.so        [.] 0x000000000018ea5f
+     0.32%  conn7            libc-2.27.so        [.] 0x000000000018ac90
+     0.32%  ftdc             mongod              [.] std::_Rb_tree_increment
+     0.32%  ftdc             [kernel.kallsyms]   [k] find_next_bit
+     0.32%  JournalFlusher   [kernel.kallsyms]   [k] ext4_sync_file
+     0.32%  Backgro.kSource  libpthread-2.27.so  [.] pthread_cond_wait@@GLIBC_2.3.2
+     0.31%  conn7            mongod              [.] __wt_readlock
+     0.31%  conn7            mongod              [.] mongo::LockRequestList::push_back
+     0.31%  conn7            mongod              [.] mongo::logv2::LogComponentSettings::shouldLog
+     0.31%  conn7            [kernel.kallsyms]   [k] skb_entail
+     0.31%  conn7            mongod              [.] mongo::LockerImpl::unlock
+     0.31%  conn7            libpthread-2.27.so  [.] __pthread_disable_asynccancel
+     0.31%  conn7            mongod              [.] mongo::WriteConcernOptions::extractWCFromCommand
+     0.31%  conn7            mongod              [.] mongo::getErrorLabels
+     0.31%  conn7            [kernel.kallsyms]   [k] tcp_chrono_start
+     0.31%  conn7            [kernel.kallsyms]   [k] ipv4_conntrack_defrag
+     0.31%  conn7            [kernel.kallsyms]   [k] nft_counter_eval
+     0.31%  conn7            libpthread-2.27.so  [.] __libc_sendmsg
+     0.30%  conn7            [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.30%  conn7            [kernel.kallsyms]   [k] veth_xmit
+     0.30%  conn7            mongod              [.] mongo::ServiceStateMachine::_scheduleNextWithGuard
+     0.30%  ftdc             [kernel.kallsyms]   [k] seq_put_decimal_ull_width
+     0.30%  ftdc             [kernel.kallsyms]   [k] format_decode
+     0.30%  ftdc             mongod              [.] mongo::BSONElement::computeSize
+     0.30%  conn7            [kernel.kallsyms]   [k] ns_to_timespec64
+     0.30%  conn7            mongod              [.] mongo::rpc::TrackingMetadata::initWithOperName
+     0.30%  conn7            [kernel.kallsyms]   [k] tcp_ack_update_rtt.isra.0
+     0.30%  conn7            mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<mongo::(anonymous namespace)::OperationTimeTrackerHolder>
+     0.29%  conn7            [kernel.kallsyms]   [k] __nf_conntrack_find_get
+     0.29%  conn7            [kernel.kallsyms]   [k] nf_hook_slow
+     0.29%  conn7            mongod              [.] __wt_page_in_func
+     0.29%  ftdc             mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare
+     0.29%  mongod           [vdso]              [.] __vdso_clock_gettime
+     0.29%  Backgro.kSource  [kernel.kallsyms]   [k] visit_groups_merge
+     0.29%  conn7            mongod              [.] __wt_row_search
+     0.29%  Backgro.kSource  libpthread-2.27.so  [.] __pthread_mutex_unlock
+     0.29%  conn7            mongod              [.] mongo::MirrorMaestro::tryMirrorRequest
+     0.29%  ftdc             libc-2.27.so        [.] 0x000000000018ea37
+     0.29%  ftdc             [kernel.kallsyms]   [k] entry_SYSCALL_64_after_hwframe
+     0.29%  conn7            mongod              [.] mongo::userAllowedCreateNS
+     0.29%  ftdc             [kernel.kallsyms]   [k] seq_putc
+     0.29%  ftdc             mongod              [.] mongo::FTDCBSONUtil::(anonymous namespace)::extractMetricsFromDocument
+     0.29%  conn7            [kernel.kallsyms]   [k] nf_conntrack_tcp_packet
+     0.29%  conn7            mongod              [.] mongo::OpObserverImpl::onInserts
+     0.29%  conn7            [kernel.kallsyms]   [k] __wake_up_common
+     0.29%  conn7            [vdso]              [.] __vdso_clock_gettime
+     0.29%  conn7            mongod              [.] mongo::performInserts
+     0.28%  conn7            mongod              [.] tcmalloc::CentralFreeList::FetchFromOneSpans
+     0.28%  Timesta.Monitor  [kernel.kallsyms]   [k] rcu_note_context_switch
+     0.28%  conn7            libc-2.27.so        [.] 0x000000000018eaee
+     0.28%  conn7            mongod              [.] snappy::ByteArraySource::~ByteArraySource
+     0.28%  JournalFlusher   [kernel.kallsyms]   [k] lru_add_drain_cpu
+     0.28%  conn7            [kernel.kallsyms]   [k] ipt_do_table
+     0.28%  conn7            mongod              [.] mongo::rpc::readRequestMetadata
+     0.28%  JournalFlusher   [kernel.kallsyms]   [k] generic_make_request_checks
+     0.28%  Backgro.kSource  [kernel.kallsyms]   [k] __update_idle_core
+     0.28%  conn7            mongod              [.] mongo::(anonymous namespace)::DiagnosticListener::onUnlock
+     0.27%  conn7            [kernel.kallsyms]   [k] aa_sk_perm
+     0.27%  conn7            [kernel.kallsyms]   [k] br_nf_pre_routing
+     0.27%  conn7            [kernel.kallsyms]   [k] fput_many
+     0.27%  conn7            mongod              [.] mongo::(anonymous namespace)::setPrepareConflictBehaviorForReadConcernImpl
+     0.27%  Backgro.kSource  libpthread-2.27.so  [.] __pthread_mutex_lock
+     0.27%  Backgro.kSource  [kernel.kallsyms]   [k] update_curr
+     0.27%  conn7            libc-2.27.so        [.] 0x000000000018ea6c
+     0.27%  conn7            [kernel.kallsyms]   [k] tcp_current_mss
+     0.27%  conn7            mongod              [.] mongo::BSONObjBuilderValueStream::endField
+     0.27%  conn7            [kernel.kallsyms]   [k] tcp_check_space
+     0.27%  conn7            mongod              [.] mongo::BSONObj::removeField
+     0.26%  JournalFlusher   [kernel.kallsyms]   [k] __wake_up_common
+     0.26%  JournalFlusher   mongod              [.] __wt_log_flush
+     0.26%  mongod           libpthread-2.27.so  [.] __clock_gettime@plt
+     0.26%  conn7            libpthread-2.27.so  [.] __pthread_mutex_trylock
+     0.26%  conn7            mongod              [.] mongo::transport::TransportLayerASIO::ASIOSession::ensureSync
+     0.26%  conn7            mongod              [.] mongo::LockManager::Partition::find
+     0.26%  ftdc             mongod              [.] mongo::LockerImpl::isLocked
+     0.26%  conn7            mongod              [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.26%  conn7            mongod              [.] mongo::(anonymous namespace)::getClientOperationTime
+     0.26%  conn7            mongod              [.] mongo::NamespaceString::NamespaceString
+     0.26%  conn7            mongod              [.] mongo::future_details::call<mongo::ServiceStateMachine::_sinkMessage(mongo::ServiceStateMachine::ThreadGuard, mongo::Message)::{lambda(mongo::Status)#2}&>
+     0.26%  conn7            [kernel.kallsyms]   [k] update_rq_clock
+     0.26%  Backgro.kSource  [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.25%  JournalFlusher   mongod              [.] mongo::CurOp::~CurOp
+     0.25%  conn7            mongod              [.] mongo::BSONObjBuilder::append<int, void>
+     0.25%  conn7            [kernel.kallsyms]   [k] check_preempt_curr
+     0.25%  conn7            mongod              [.] mongo::(anonymous namespace)::DiagnosticListener::onQuickLock
+     0.25%  conn7            mongod              [.] mongo::ServiceContext::makeOperationContext
+     0.25%  conn7            [kernel.kallsyms]   [k] calc_wheel_index
+     0.25%  conn7            mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::PrepareConflictTracker>
+     0.25%  conn7            mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::rpc::ConfigServerMetadata>
+     0.25%  conn7            mongod              [.] mongo::LockManager::lock
+     0.25%  conn7            [kernel.kallsyms]   [k] ip_local_deliver
+     0.25%  conn7            mongod              [.] mongo::ServiceContext::_delistOperation
+     0.25%  JournalFlusher   libc-2.27.so        [.] vfprintf
+     0.25%  JournalFlusher   mongod              [.] __wt_log_force_sync
+     0.25%  JournalFlusher   [kernel.kallsyms]   [k] schedule
+     0.25%  JournalFlusher   [kernel.kallsyms]   [k] blk_mq_flush_plug_list
+     0.25%  JournalFlusher   [kernel.kallsyms]   [k] ext4_write_end
+     0.25%  JournalFlusher   [kernel.kallsyms]   [k] futex_wake
+     0.25%  Backgro.kSource  [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+     0.25%  mongod           [kernel.kallsyms]   [k] syscall_return_via_sysret
+     0.24%  conn7            mongod              [.] mongo::CollectionImpl::_insertDocuments
+     0.24%  conn7            mongod              [.] mongo::TicketHolder::release
+     0.24%  mongod           [kernel.kallsyms]   [k] ext4_writepage_trans_blocks
+     0.24%  conn7            mongod              [.] mongo::ErrorExtraInfo::parserFor
+     0.24%  conn7            mongod              [.] mongo::write_ops::Insert::parseProtected
+     0.24%  Backgro.kSource  [kernel.kallsyms]   [k] sched_clock
+     0.24%  conn7            [kernel.kallsyms]   [k] sockfd_lookup_light
+     0.24%  conn7            mongod              [.] mongo::IDLParserErrorContext::parseNSCollectionRequired
+     0.24%  mongod           [kernel.kallsyms]   [k] pick_next_task_idle
+     0.23%  mongod           [kernel.kallsyms]   [k] __cgroup_account_cputime
+     0.23%  Backgro.kSource  mongod              [.] mongo::BasicLockableAdapter::{lambda(void*)#3}::_FUN
+     0.23%  JournalFlusher   [kernel.kallsyms]   [k] xas_start
+     0.23%  Timesta.Monitor  mongod              [.] mongo::transport::TransportLayerASIO::makeBaton
+     0.23%  JournalFlusher   [kernel.kallsyms]   [k] xas_clear_mark
+     0.22%  conn7            mongod              [.] std::_Rb_tree<mongo::StringData, mongo::StringData, std::_Identity<mongo::StringData>, std::less<mongo::StringData>, std::allocator<mongo::StringData> >::_M_insert_unique<mongo::StringData const&>
+     0.22%  Backgro.kSource  [kernel.kallsyms]   [k] timerqueue_add
+     0.22%  conn7            mongod              [.] std::vector<mongo::(anonymous namespace)::ValidationObjectFrame, std::allocator<mongo::(anonymous namespace)::ValidationObjectFrame> >::emplace_back<mongo::(anonymous namespace)::ValidationObjectFrame>
+     0.21%  JournalFlusher   [kernel.kallsyms]   [k] timerqueue_add
+     0.21%  conn7            [kernel.kallsyms]   [k] ip_rcv_finish_core.isra.0
+     0.20%  JournalFlusher   mongod              [.] __log_fs_write
+     0.20%  JournalFlusher   mongod              [.] __wt_buf_catfmt
+     0.20%  JournalFlusher   [kernel.kallsyms]   [k] iov_iter_fault_in_readable
+     0.20%  JournalFlusher   mongod              [.] __log_slot_switch_internal
+     0.20%  ftdc             mongod              [.] mongo::transport::TransportLayerASIO::makeBaton
+     0.20%  decreas.ressure  mongod              [.] __config_next
+     0.20%  mongod           [kernel.kallsyms]   [k] available_idle_cpu
+     0.20%  Backgro.kSource  mongod              [.] std::thread::_State_impl<std::thread::_Invoker<std::tuple<mongo::stdx::thread::thread<mongo::BackgroundThreadClockSource::_startTimerThread()::{lambda()#1}, , 0>(mongo::BackgroundThreadClockSource::_startTimerThread()::{lambda()#1})::{lambda()#1}> > >::_M_run
+     0.20%  JournalFlusher   mongod              [.] __wt_log_force_write
+     0.19%  FlowCon.fresher  mongod              [.] mongo::BasicLockableAdapter::{lambda(void*)#4}::_FUN
+     0.19%  Backgro.kSource  mongod              [.] std::uncaught_exception
+     0.19%  mongod           [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.19%  conn7            mongod              [.] mongo::BSONObjIterator::next
+     0.18%  conn7            mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::OperationShardingState>
+     0.18%  mongod           mongod              [.] __wt_cond_wait_signal
+     0.18%  Backgro.kSource  [kernel.kallsyms]   [k] rb_next
+     0.18%  mongod           [kernel.kallsyms]   [k] rebalance_domains
+     0.18%  ftdc             mongod              [.] operator new[]
+     0.17%  JournalFlusher   [kernel.kallsyms]   [k] generic_write_checks
+     0.17%  mongod           [kernel.kallsyms]   [k] find_get_entry
+     0.17%  ftdc             mongod              [.] tc_malloc
+     0.16%  mongod           [kernel.kallsyms]   [k] xas_load
+     0.16%  mongod           libpthread-2.27.so  [.] __pthread_disable_asynccancel
+     0.16%  clientcursormon  mongod              [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.16%  Backgro.kSource  [kernel.kallsyms]   [k] check_cfs_rq_runtime
+     0.15%  JournalFlusher   mongod              [.] mongo::(anonymous namespace)::onDestroy<mongo::OperationContext, __gnu_cxx::__normal_iterator<mongo::ServiceContext::ClientObserverHolder const*, std::vector<mongo::ServiceContext::ClientObserverHolder, std::allocator<mongo::ServiceContext::ClientObserverHolder> > > >
+     0.15%  mongod           mongod              [.] pthread_mutex_trylock@plt
+     0.15%  mongod           [kernel.kallsyms]   [k] update_min_vruntime
+     0.15%  mongod           [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.15%  FlowCon.fresher  mongod              [.] mongo::reportGlobalLockingStats
+     0.15%  mongod           [kernel.kallsyms]   [k] get_timespec64
+     0.15%  mongod           libpthread-2.27.so  [.] __pthread_mutex_cond_lock
+     0.14%  JournalFlusher   mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<boost::optional<bool> >
+     0.14%  ftdc             mongod              [.] pthread_self@plt
+     0.14%  mongod           [kernel.kallsyms]   [k] perf_swevent_add
+     0.13%  JournalFlusher   mongod              [.] std::uncaught_exception
+     0.13%  mongod           [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+     0.13%  mongod           [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.11%  conn7            mongod              [.] recvmsg@plt
+     0.11%  Backgro.kSource  [kernel.kallsyms]   [k] syscall_return_via_sysret
+     0.10%  mongod           mongod              [.] __thread_run
+     0.10%  conn7            [kernel.kallsyms]   [k] account_system_index_time
+     0.09%  mongod           [kernel.kallsyms]   [k] plist_add
+     0.09%  JournalFlusher   mongod              [.] __posix_sync
+     0.09%  mongod           [kernel.kallsyms]   [k] drop_futex_key_refs.isra.0
+     0.09%  JournalFlusher   [kernel.kallsyms]   [k] enqueue_task_fair
+     0.09%  conn7            [kernel.kallsyms]   [k] __fget_light
+     0.09%  Backgro.kSource  mongod              [.] std::condition_variable::wait
+     0.09%  Backgro.kSource  [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.09%  Backgro.kSource  mongod              [.] clock_gettime@plt
+     0.09%  ftdc             libpthread-2.27.so  [.] __condvar_cancel_waiting
+     0.08%  mongod           mongod              [.] __log_file_server
+     0.08%  WTIdleS.Sweeper  libpthread-2.27.so  [.] __pthread_mutex_unlock
+     0.08%  conn7            [kernel.kallsyms]   [k] entry_SYSCALL_64
+     0.08%  mongod           [kernel.kallsyms]   [k] __update_load_avg_se
+     0.08%  FlowCon.fresher  [kernel.kallsyms]   [k] do_syscall_64
+     0.08%  Backgro.kSource  libpthread-2.27.so  [.] __pthread_disable_asynccancel
+     0.08%  JournalFlusher   [kernel.kallsyms]   [k] ctx_sched_in
+     0.08%  conn7            [kernel.kallsyms]   [k] tcp_cleanup_rbuf
+     0.08%  Backgro.kSource  libc-2.27.so        [.] __clock_gettime
+     0.08%  mongod           [kernel.kallsyms]   [k] enqueue_task_fair
+     0.07%  mongod           mongod              [.] __wt_cursor_cache_get
+     0.07%  JournalFlusher   [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.07%  ftdc             [kernel.kallsyms]   [k] visit_groups_merge
+     0.07%  clientcursormon  [kernel.kallsyms]   [k] do_nanosleep
+     0.07%  mongod           [kernel.kallsyms]   [k] set_task_cpu
+     0.07%  Backgro.kSource  [kernel.kallsyms]   [k] find_next_bit
+     0.07%  mongod           [kernel.kallsyms]   [k] select_idle_sibling.part.0
+     0.07%  Backgro.kSource  [kernel.kallsyms]   [k] end_repeat_nmi
+     0.06%  conn7            [kernel.kallsyms]   [k] copy_user_generic_unrolled
+     0.06%  DeadlineMonitor  [kernel.kallsyms]   [k] psi_task_change
+     0.06%  DeadlineMonitor  [kernel.kallsyms]   [k] futex_wait
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] select_task_rq_fair
+     0.06%  conn7            [kernel.kallsyms]   [k] sk_wait_data
+     0.06%  mongod           [kernel.kallsyms]   [k] _raw_spin_lock
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] rb_next
+     0.06%  Timesta.Monitor  [kernel.kallsyms]   [k] do_syscall_64
+     0.06%  DeadlineMonitor  [kernel.kallsyms]   [k] futex_wait_queue_me
+     0.05%  mongod           [kernel.kallsyms]   [k] futex_wait_queue_me
+     0.05%  Backgro.kSource  [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.05%  conn7            [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.05%  Backgro.kSource  [kernel.kallsyms]   [k] perf_swevent_add
+     0.05%  JournalFlusher   [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.05%  ftdc             [kernel.kallsyms]   [k] perf_swevent_add
+     0.05%  JournalFlusher   [kernel.kallsyms]   [k] task_tick_fair
+     0.05%  conn7            [kernel.kallsyms]   [k] perf_swevent_add
+     0.04%  ftdc             [kernel.kallsyms]   [k] event_sched_in.isra.0
+     0.04%  JournalFlusher   [kernel.kallsyms]   [k] visit_groups_merge
+     0.04%  mongod           [kernel.kallsyms]   [k] native_write_msr
+     0.04%  JournalFlusher   [kernel.kallsyms]   [k] flexible_sched_in
+     0.04%  conn7            [kernel.kallsyms]   [k] finish_task_switch
+     0.04%  Timesta.Monitor  [kernel.kallsyms]   [k] visit_groups_merge
+     0.04%  JournalFlusher   [kernel.kallsyms]   [k] nmi_restore
+     0.04%  clientcursormon  [kernel.kallsyms]   [k] visit_groups_merge
+     0.04%  decreas.ressure  [kernel.kallsyms]   [k] visit_groups_merge
+     0.03%  mongod           [kernel.kallsyms]   [k] perf_pmu_disable.part.0
+     0.03%  FlowCon.fresher  [kernel.kallsyms]   [k] visit_groups_merge
+     0.03%  mongod           [kernel.kallsyms]   [k] flexible_sched_in
+     0.03%  ftdc             [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.03%  Backgro.kSource  [kernel.kallsyms]   [k] native_write_msr
+     0.03%  conn7            [kernel.kallsyms]   [k] perf_pmu_disable.part.0
+     0.03%  Backgro.kSource  [kernel.kallsyms]   [k] acpi_os_read_memory
+     0.03%  FlowCon.fresher  [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.03%  conn7            [kernel.kallsyms]   [k] nmi_restore
+     0.03%  conn7            [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.03%  mongod           [kernel.kallsyms]   [k] nmi_restore
+     0.03%  conn7            [kernel.kallsyms]   [k] apei_check_gar
+     0.02%  mongod           [kernel.kallsyms]   [k] end_repeat_nmi
+     0.02%  JournalFlusher   [kernel.kallsyms]   [k] acpi_os_read_memory
+     0.02%  JournalFlusher   [kernel.kallsyms]   [k] native_write_msr
+     0.02%  JournalFlusher   [kernel.kallsyms]   [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.02%  conn7            [kernel.kallsyms]   [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.02%  conn7            [kernel.kallsyms]   [k] nmi_handle
+     0.02%  conn7            [kernel.kallsyms]   [k] nmi_cpu_backtrace_handler
+     0.02%  mongod           [kernel.kallsyms]   [k] fill_pmd
+     0.02%  conn7            [kernel.kallsyms]   [k] perf_event_sched_in
+     0.02%  mongod           [kernel.kallsyms]   [k] __native_set_fixmap
+     0.02%  mongod           [kernel.kallsyms]   [k] acpi_os_read_memory
+     0.01%  mongod           [kernel.kallsyms]   [k] memcpy_fromio
+     0.01%  mongod           [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.01%  FlowCon.fresher  [kernel.kallsyms]   [k] nmi_restore
+     0.01%  mongod           [kernel.kallsyms]   [k] perf_event_sched_in
+     0.01%  conn7            [kernel.kallsyms]   [k] end_repeat_nmi
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] printk_nmi_exit
+     0.01%  mongod           [kernel.kallsyms]   [k] do_nmi
+     0.01%  conn7            [kernel.kallsyms]   [k] acpi_os_read_memory
+     0.01%  DeadlineMonitor  [kernel.kallsyms]   [k] do_nmi
+     0.01%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.01%  conn7            [kernel.kallsyms]   [k] set_pte_vaddr
+     0.01%  JournalFlusher   [kernel.kallsyms]   [k] __ghes_peek_estatus.isra.0
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] fill_pmd
+     0.01%  DeadlineMonitor  [kernel.kallsyms]   [k] fill_pmd
+     0.01%  clientcursormon  [kernel.kallsyms]   [k] ghes_copy_tofrom_phys
+     0.01%  conn7            [kernel.kallsyms]   [k] native_write_msr
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] set_pte_vaddr
+     0.01%  mongod           [kernel.kallsyms]   [k] ghes_copy_tofrom_phys
+     0.01%  JournalFlusher   [kernel.kallsyms]   [k] native_sched_clock
+     0.01%  JournalFlusher   [kernel.kallsyms]   [k] set_pte_vaddr
+     0.01%  DeadlineMonitor  [kernel.kallsyms]   [k] set_pte_vaddr
+     0.01%  Timesta.Monitor  [kernel.kallsyms]   [k] memcpy_fromio
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] ghes_copy_tofrom_phys
+     0.01%  conn7            [kernel.kallsyms]   [k] ghes_notify_nmi
+     0.01%  clientcursormon  [kernel.kallsyms]   [k] memcpy_fromio
+     0.01%  conn7            [kernel.kallsyms]   [k] memcpy_fromio
+     0.01%  ftdc             [kernel.kallsyms]   [k] fill_pmd
+     0.01%  conn7            [kernel.kallsyms]   [k] native_apic_msr_write
+     0.01%  conn7            [kernel.kallsyms]   [k] __set_pte_vaddr
+     0.01%  FlowCon.fresher  [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.01%  ftdc             [kernel.kallsyms]   [k] ghes_copy_tofrom_phys
+     0.01%  mongod           [kernel.kallsyms]   [k] native_apic_msr_write
+     0.01%  Timesta.Monitor  [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.01%  decreas.ressure  [kernel.kallsyms]   [k] native_flush_tlb_one_user
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] __native_set_fixmap
+     0.00%  ftdc             [kernel.kallsyms]   [k] perf_event_nmi_handler
+     0.00%  mongod           [kernel.kallsyms]   [k] native_sched_clock
+     0.00%  conn7            [kernel.kallsyms]   [k] fill_pmd
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] nmi_handle
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] acpi_os_read_memory
+     0.00%  mongod           [kernel.kallsyms]   [k] perf_event_nmi_handler
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  mongod           [kernel.kallsyms]   [k] nmi_handle
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] _raw_spin_lock
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] apei_check_gar
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  mongod           [kernel.kallsyms]   [k] ghes_notify_nmi
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] native_sched_clock
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] ghes_notify_nmi
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] nmi_cpu_backtrace_handler
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] perf_event_nmi_handler
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] nmi_cpu_backtrace_handler
+     0.00%  mongod           [kernel.kallsyms]   [k] perf_sample_event_took
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] nmi_handle
+     0.00%  ftdc             [kernel.kallsyms]   [k] native_sched_clock
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] perf_event_nmi_handler
+     0.00%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  conn7            [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] perf_event_nmi_handler
+     0.00%  ftdc             [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  mongod           [kernel.kallsyms]   [k] __intel_pmu_enable_all.constprop.0
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  ftdc             [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  conn7            [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  conn7            [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  mongod           [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  mongod           [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  ftdc             [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  ftdc             [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] intel_pmu_handle_irq
+     0.00%  mongod           [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  conn7            [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] __x86_indirect_thunk_rax
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  mongod           [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  ftdc             [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] native_apic_msr_write
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  conn7            [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  ftdc             [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] intel_pmu_enable_all
+     0.00%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] intel_bts_enable_local
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  ftdc             [kernel.kallsyms]   [k] __intel_pmu_enable_all.constprop.0
+     0.00%  ftdc             [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.00%  ftdc             [kernel.kallsyms]   [k] intel_pmu_enable_all
+     0.00%  ftdc             [kernel.kallsyms]   [k] x86_pmu_enable
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
