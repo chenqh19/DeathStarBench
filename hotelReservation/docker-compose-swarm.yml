@@ -22,9 +22,12 @@ services:
     depends_on:
       - consul
     deploy:
-      replicas: 3
+      replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == hwhnns8clwyqtyc5dgaaobfg3
 
   profile:
     environment:
@@ -51,6 +54,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == uhhsn0shnocq0lndap8x5tqre
 
   geo:
     environment:
@@ -91,6 +97,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == uhhsn0shnocq0lndap8x5tqre
 
   user:
     environment:
@@ -118,6 +127,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == uhhsn0shnocq0lndap8x5tqre
 
   jaeger:
     image: jaegertracing/all-in-one:latest

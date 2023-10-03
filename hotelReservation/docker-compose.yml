@@ -2,6 +2,7 @@ version: "2"
 services:
   consul:
     image: hashicorp/consul:latest
+    privileged: true
     ports:
       - "8300:8300"
       - "8400:8400"
@@ -17,6 +18,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_frontend_single_node
+    privileged: true
     entrypoint: frontend
     container_name: 'hotel_reserv_frontend'
     ports:
@@ -34,6 +36,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_profile_single_node
+    privileged: true
     entrypoint: profile
     container_name: 'hotel_reserv_profile'
     depends_on:
@@ -45,6 +48,7 @@ services:
   search:
     build: .
     image: hotel_reserv_search_single_node
+    privileged: true
     entrypoint: search
     container_name: 'hotel_reserv_search'
     depends_on:
@@ -66,6 +70,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_geo_single_node
+    privileged: true
     entrypoint: geo
     container_name: 'hotel_reserv_geo'
     depends_on:
@@ -82,6 +87,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_rate_single_node
+    privileged: true
     entrypoint: rate
     container_name: 'hotel_reserv_rate'
     depends_on:
@@ -98,6 +104,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_recommend_single_node
+    privileged: true
     entrypoint: recommendation
     container_name: 'hotel_reserv_recommendation'
     depends_on:
@@ -113,6 +120,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_user_single_node
+    privileged: true
     entrypoint: user
     container_name: 'hotel_reserv_user'
     depends_on:
@@ -129,6 +137,7 @@ services:
       - LOG_LEVEL
     build: .
     image: hotel_reserv_rsv_single_node
+    privileged: true
     entrypoint: reservation
     container_name: 'hotel_reserv_reservation'
     depends_on:
@@ -139,6 +148,7 @@ services:
 
   jaeger:
     image: jaegertracing/all-in-one:latest
+    privileged: true
     container_name: 'hotel_reserv_jaeger'
     ports:
       - "14269"
@@ -153,6 +163,7 @@ services:
 
   memcached-rate:
     image: memcached
+    privileged: true
     # hostname: user-memcached
     container_name: 'hotel_reserv_rate_mmc'
     restart: always
@@ -165,6 +176,7 @@ services:
 
   memcached-profile:
     image: memcached
+    privileged: true
     # hostname: user-memcached
     container_name: 'hotel_reserv_profile_mmc'
     restart: always
@@ -177,6 +189,7 @@ services:
 
   memcached-reserve:
     image: memcached
+    privileged: true
     # hostname: user-memcached
     container_name: 'hotel_reserv_reservation_mmc'
     restart: always
@@ -189,6 +202,7 @@ services:
 
   mongodb-geo:
     image: mongo:4.4.6
+    privileged: true
     container_name: 'hotel_reserv_geo_mongo'
     # hostname: geo-db
     restart: always
@@ -197,6 +211,7 @@ services:
 
   mongodb-profile:
     image: mongo:4.4.6
+    privileged: true
     container_name: 'hotel_reserv_profile_mongo'
     hostname: profile-db
     restart: always
@@ -205,6 +220,7 @@ services:
 
   mongodb-rate:
     image: mongo:4.4.6
+    privileged: true
     container_name: 'hotel_reserv_rate_mongo'
     hostname: rate-db
     restart: always
@@ -213,6 +229,7 @@ services:
 
   mongodb-recommendation:
     image: mongo:4.4.6
+    privileged: true
     hostname: recommendation-db
     container_name: 'hotel_reserv_recommendation_mongo'
     restart: always
@@ -221,6 +238,7 @@ services:
     
   mongodb-reservation:
     image: mongo:4.4.6
+    privileged: true
     container_name: 'hotel_reserv_reservation_mongo'
     hostname: reservation-db
     restart: always
@@ -229,6 +247,7 @@ services:
 
   mongodb-user:
     image: mongo:4.4.6
+    privileged: true
     container_name: 'hotel_reserv_user_mongo'
     hostname: user-db
     restart: always
