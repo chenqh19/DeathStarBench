@@ -1,0 +1,665 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 187188653
+#
+# Overhead  Command  Shared Object      Symbol                                        
+# ........  .......  .................  ..............................................
+#
+     3.15%  user     [kernel.kallsyms]  [k] psi_task_change
+            |
+            ---psi_task_change
+               |          
+               |--2.40%--activate_task
+               |          ttwu_do_activate
+               |          try_to_wake_up
+               |          |          
+               |          |--1.24%--default_wake_function
+               |          |          autoremove_wake_function
+               |          |          __wake_up_common
+               |          |          __wake_up_common_lock
+               |          |          __wake_up
+               |          |          ep_poll_callback
+               |          |          __wake_up_common
+               |          |          __wake_up_common_lock
+               |          |          __wake_up_sync_key
+               |          |          |          
+               |          |           --0.94%--sock_def_readable
+               |          |                     tcp_data_ready
+               |          |                     tcp_rcv_established
+               |          |                     tcp_v4_do_rcv
+               |          |                     tcp_v4_rcv
+               |          |                     ip_protocol_deliver_rcu
+               |          |                     ip_local_deliver_finish
+               |          |                     ip_local_deliver
+               |          |                     ip_rcv_finish
+               |          |                     ip_rcv
+               |          |                     __netif_receive_skb_one_core
+               |          |                     __netif_receive_skb
+               |          |                     process_backlog
+               |          |                     net_rx_action
+               |          |                     __softirqentry_text_start
+               |          |                     |          
+               |          |                      --0.54%--irq_exit
+               |          |                                do_IRQ
+               |          |                                ret_from_intr
+               |          |          
+               |           --0.69%--wake_up_process
+               |                     hrtimer_wakeup
+               |                     __hrtimer_run_queues
+               |                     hrtimer_interrupt
+               |                     smp_apic_timer_interrupt
+               |                     apic_timer_interrupt
+               |          
+                --0.75%--deactivate_task
+                          __sched_text_start
+                          schedule
+
+     2.40%  user     [kernel.kallsyms]  [k] s_pci_dev_list+0x800000010272
+            |          
+             --2.07%--s_pci_dev_list
+                       |          
+                        --1.71%--__seccomp_filter
+                                  __secure_computing
+                                  syscall_trace_enter
+                                  do_syscall_64
+                                  entry_SYSCALL_64_after_hwframe
+                                  |          
+                                  |--0.94%--0x4664e0
+                                  |          |          
+                                  |           --0.62%--0x43c605
+                                  |                     0x43dc19
+                                  |                     0x43e16d
+                                  |                     0x4622c3
+                                  |          
+                                   --0.51%--0x4662c3
+
+     2.31%  user     [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               |          
+               |--0.78%--0x465d3d
+               |          0x442551
+               |          0x43a1d3
+               |          0x43a119
+               |          0x462245
+               |          0x7fdad2e17e70
+               |          
+                --0.65%--0x4b14db
+
+     1.56%  user     [kernel.kallsyms]  [k] visit_groups_merge
+            |
+            ---visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               |          
+               |--0.78%--futex_wait_queue_me
+               |          futex_wait
+               |          do_futex
+               |          __x64_sys_futex
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          0x4662c3
+               |          |          
+               |           --0.52%--0x40cee5
+               |                     0x40d034
+               |                     0x44267b
+               |                     0x43a1d3
+               |                     0x43a119
+               |                     0x462245
+               |                     0x7fdad2e17e70
+               |          
+                --0.54%--do_nanosleep
+                          hrtimer_nanosleep
+                          __x64_sys_nanosleep
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          0x465d3d
+                          0x442551
+                          0x43a1d3
+                          0x43a119
+                          0x462245
+                          0x7fdad2e17e70
+
+     1.53%  user     [kernel.kallsyms]  [k] update_load_avg
+            |          
+             --1.29%--update_load_avg
+                       enqueue_entity
+                       enqueue_task_fair
+                       activate_task
+                       ttwu_do_activate
+                       try_to_wake_up
+                       |          
+                        --0.94%--wake_up_q
+                                  futex_wake
+                                  do_futex
+                                  __x64_sys_futex
+                                  do_syscall_64
+                                  entry_SYSCALL_64_after_hwframe
+                                  0x4662c3
+                                  0x40cca9
+
+     1.09%  user     [kernel.kallsyms]  [k] __perf_event_task_sched_in
+            |          
+             --1.08%--__perf_event_task_sched_in
+                       finish_task_switch
+                       __sched_text_start
+                       schedule
+                       |          
+                        --0.60%--schedule_hrtimeout_range_clock
+                                  schedule_hrtimeout_range
+                                  ep_poll
+                                  do_epoll_wait
+                                  __x64_sys_epoll_pwait
+                                  do_syscall_64
+                                  entry_SYSCALL_64_after_hwframe
+                                  0x4664e0
+                                  0x43ca13
+                                  0x43dc19
+                                  0x43e16d
+                                  0x4622c3
+                                  |          
+                                   --0.60%--0x446a92
+
+     0.90%  user     [kernel.kallsyms]  [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+
+     0.85%  user     [kernel.kallsyms]  [k] update_cfs_group
+            |
+            ---update_cfs_group
+
+     0.80%  user     [kernel.kallsyms]  [k] __secure_computing
+     0.79%  user     [kernel.kallsyms]  [k] __tcp_transmit_skb
+     0.79%  user     user               [.] 0x00000000000041e0
+            |
+            ---0x4041e3
+               0x7be00f
+               0x7eee5f
+               0x810a74
+               0x810505
+               0x8104b8
+               0x464501
+
+     0.77%  user     [kernel.kallsyms]  [k] reweight_entity
+            |
+            ---reweight_entity
+               update_cfs_group
+               |          
+                --0.53%--dequeue_entity
+                          dequeue_task_fair
+                          deactivate_task
+                          __sched_text_start
+                          schedule
+
+     0.73%  user     user               [.] 0x00000000000662c3
+            |
+            ---0x4662c7
+
+     0.72%  user     user               [.] 0x00000000000524e3
+            |
+            ---0x4524e5
+               |          
+                --0.52%--0x45180a
+
+     0.66%  user     [kernel.kallsyms]  [k] try_to_wake_up
+            |
+            ---try_to_wake_up
+
+     0.61%  user     [kernel.kallsyms]  [k] _raw_spin_lock
+            |          
+             --0.60%--_raw_spin_lock
+                       |          
+                        --0.56%--do_IRQ
+                                  ret_from_intr
+
+     0.60%  user     [kernel.kallsyms]  [k] common_file_perm
+            |
+            ---common_file_perm
+               apparmor_file_permission
+               security_file_permission
+               rw_verify_area
+
+     0.59%  user     [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+            |
+            ---_raw_spin_lock_irqsave
+
+     0.57%  user     [kernel.kallsyms]  [k] br_handle_frame_finish
+            |
+            ---br_handle_frame_finish
+               br_nf_hook_thresh
+               br_nf_pre_routing_finish
+               br_nf_pre_routing
+               br_handle_frame
+               __netif_receive_skb_core
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet6_sendmsg
+               sock_sendmsg
+               sock_write_iter
+               new_sync_write
+               __vfs_write
+               vfs_write
+               ksys_write
+               __x64_sys_write
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x4b14db
+               0x4cab2e
+               0x4fbfa9
+               0x50b625
+               0x51d1ee
+               0x5966a2
+               0x7f3ceb
+               0x7f9a79
+               0x7f8e7f
+               0x7edc6c
+               0x464501
+
+     0.56%  user     user               [.] 0x000000000000e934
+            |
+            ---0x40e937
+
+     0.54%  user     [kernel.kallsyms]  [k] cpuacct_charge
+            |
+            ---cpuacct_charge
+               update_curr
+               dequeue_entity
+               dequeue_task_fair
+               deactivate_task
+               __sched_text_start
+               schedule
+
+     0.54%  user     user               [.] 0x00000000000162de
+            |
+            ---0x4162e2
+               0x40e59e
+               0x40e947
+
+     0.54%  user     [kernel.kallsyms]  [k] native_sched_clock
+     0.54%  user     user               [.] 0x0000000000056a53
+            |
+            ---0x456a59
+
+     0.53%  user     [kernel.kallsyms]  [k] attach_entity_load_avg
+            |
+            ---attach_entity_load_avg
+               update_load_avg
+               enqueue_entity
+               enqueue_task_fair
+               activate_task
+               ttwu_do_activate
+               try_to_wake_up
+
+     0.53%  user     [kernel.kallsyms]  [k] napi_complete_done
+            |
+            ---napi_complete_done
+               net_rx_action
+               __softirqentry_text_start
+
+     0.52%  user     [kernel.kallsyms]  [k] _cond_resched
+     0.52%  user     [kernel.kallsyms]  [k] __update_load_avg_se
+            |
+            ---__update_load_avg_se
+
+     0.51%  user     [kernel.kallsyms]  [k] __cgroup_account_cputime
+            |
+            ---__cgroup_account_cputime
+               update_curr
+
+     0.49%  user     user               [.] 0x00000000003f8dfe
+     0.47%  user     [kernel.kallsyms]  [k] native_irq_return_iret
+     0.47%  user     user               [.] 0x00000000000517e1
+     0.47%  user     user               [.] 0x000000000011ce87
+     0.47%  user     user               [.] 0x000000000005670e
+     0.47%  user     [kernel.kallsyms]  [k] flexible_sched_in
+     0.46%  user     [kernel.kallsyms]  [k] skb_release_head_state
+     0.45%  user     [kernel.kallsyms]  [k] __mnt_want_write
+     0.44%  user     user               [.] 0x000000000003105a
+     0.44%  user     user               [.] 0x0000000000038ca0
+     0.44%  user     user               [.] 0x00000000000df543
+     0.43%  user     [kernel.kallsyms]  [k] interrupt_entry
+     0.43%  user     user               [.] 0x000000000001837e
+     0.43%  user     [kernel.kallsyms]  [k] tcp_sendmsg_locked
+     0.43%  user     user               [.] 0x00000000000100de
+     0.41%  user     [kernel.kallsyms]  [k] __build_skb
+     0.41%  user     [kernel.kallsyms]  [k] __napi_schedule
+     0.41%  user     user               [.] 0x000000000000cc0b
+     0.41%  user     [kernel.kallsyms]  [k] raw_local_deliver
+     0.40%  user     [kernel.kallsyms]  [k] __slab_free
+     0.39%  user     [kernel.kallsyms]  [k] __seccomp_filter
+     0.39%  user     [vdso]             [.] 0x0000000000000722
+     0.39%  user     user               [.] 0x000000000000ca17
+     0.39%  user     user               [.] 0x00000000000524db
+     0.39%  user     [kernel.kallsyms]  [k] br_forward
+     0.39%  user     user               [.] 0x00000000003ef6e8
+     0.39%  user     user               [.] 0x0000000000134460
+     0.38%  user     user               [.] 0x00000000000bce60
+     0.38%  user     user               [.] 0x0000000000061686
+     0.38%  user     [kernel.kallsyms]  [k] rw_verify_area
+     0.38%  user     [kernel.kallsyms]  [k] put_prev_entity
+     0.36%  user     [kernel.kallsyms]  [k] __x64_sys_nanosleep
+     0.36%  user     [kernel.kallsyms]  [k] __hrtimer_init
+     0.35%  user     [kernel.kallsyms]  [k] __update_load_avg_cfs_rq
+     0.35%  user     user               [.] 0x00000000000463b9
+     0.35%  user     user               [.] 0x000000000034daf5
+     0.35%  user     [kernel.kallsyms]  [k] mlx5e_poll_tx_cq
+     0.35%  user     user               [.] 0x000000000000e133
+     0.35%  user     user               [.] 0x000000000000e735
+     0.35%  user     user               [.] 0x000000000003d024
+     0.35%  user     user               [.] 0x00000000000b42ed
+     0.34%  user     user               [.] 0x0000000000043980
+     0.34%  user     [kernel.kallsyms]  [k] do_user_addr_fault
+     0.34%  user     [kernel.kallsyms]  [k] propagate_protected_usage
+     0.34%  user     user               [.] 0x00000000000d7fca
+     0.34%  user     user               [.] 0x0000000000030c9f
+     0.34%  user     [kernel.kallsyms]  [k] ip_vs_in.part.0
+     0.34%  user     user               [.] 0x0000000000043f80
+     0.33%  user     user               [.] 0x0000000000065722
+     0.33%  user     [kernel.kallsyms]  [k] set_task_cpu
+     0.33%  user     [kernel.kallsyms]  [k] check_stack_object
+     0.33%  user     user               [.] 0x000000000000fa32
+     0.33%  user     [kernel.kallsyms]  [k] syscall_trace_enter
+     0.33%  user     user               [.] 0x00000000000cac04
+     0.33%  user     user               [.] 0x000000000003de20
+     0.33%  user     user               [.] 0x00000000003bfbc9
+     0.33%  user     user               [.] 0x0000000000051537
+     0.33%  user     [kernel.kallsyms]  [k] handle_edge_irq
+     0.33%  user     [kernel.kallsyms]  [k] update_min_vruntime
+     0.32%  user     user               [.] 0x000000000005e812
+     0.32%  user     [kernel.kallsyms]  [k] __x86_indirect_thunk_rax
+     0.32%  user     user               [.] 0x000000000000fa5f
+     0.32%  user     user               [.] 0x0000000000018c63
+     0.31%  user     [kernel.kallsyms]  [k] swapgs_restore_regs_and_return_to_usermode
+     0.31%  user     user               [.] 0x000000000000e680
+     0.31%  user     [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.31%  user     [kernel.kallsyms]  [k] process_backlog
+     0.31%  user     user               [.] 0x000000000000fb49
+     0.31%  user     user               [.] 0x000000000005fca4
+     0.31%  user     [kernel.kallsyms]  [k] native_write_msr
+     0.31%  user     user               [.] 0x00000000000dabc0
+     0.31%  user     [kernel.kallsyms]  [k] netdev_core_pick_tx
+     0.31%  user     [vdso]             [.] __vdso_clock_gettime
+     0.31%  user     user               [.] 0x000000000008ed62
+     0.31%  user     user               [.] 0x0000000000092bc0
+     0.31%  user     [kernel.kallsyms]  [k] netif_rx
+     0.31%  user     [kernel.kallsyms]  [k] ovl_permission
+     0.31%  user     [kernel.kallsyms]  [k] tcp_event_new_data_sent
+     0.31%  user     user               [.] 0x0000000000051823
+     0.30%  user     [kernel.kallsyms]  [k] validate_xmit_xfrm
+     0.30%  user     [kernel.kallsyms]  [k] copy_user_enhanced_fast_string
+     0.30%  user     user               [.] 0x00000000000c87b2
+     0.30%  user     user               [.] 0x0000000000016b73
+     0.30%  user     user               [.] 0x0000000000016a78
+     0.30%  user     [kernel.kallsyms]  [k] tcp_write_xmit
+     0.30%  user     user               [.] 0x0000000000350819
+     0.29%  user     [kernel.kallsyms]  [k] mlx5_eq_comp_int
+     0.29%  user     user               [.] 0x000000000003d151
+     0.29%  user     [kernel.kallsyms]  [k] br_allowed_ingress
+     0.29%  user     user               [.] 0x000000000000e46d
+     0.29%  user     [kernel.kallsyms]  [k] pick_next_task_fair
+     0.29%  user     user               [.] 0x000000000003b512
+     0.29%  user     user               [.] 0x0000000000065766
+     0.29%  user     user               [.] 0x00000000003ba132
+     0.28%  user     [kernel.kallsyms]  [k] account_entity_enqueue
+     0.28%  user     user               [.] 0x000000000000e3e8
+     0.28%  user     [kernel.kallsyms]  [k] select_task_rq_fair
+     0.28%  user     user               [.] 0x000000000000f55c
+     0.28%  user     user               [.] 0x00000000000439a9
+     0.28%  user     user               [.] 0x0000000000065e55
+     0.28%  user     [kernel.kallsyms]  [k] __dev_queue_xmit
+     0.28%  user     user               [.] 0x0000000000052501
+     0.28%  user     [kernel.kallsyms]  [k] dequeue_task_fair
+     0.28%  user     [kernel.kallsyms]  [k] ovl_getattr
+     0.28%  user     user               [.] 0x000000000003d2c9
+     0.28%  user     user               [.] 0x00000000000664e4
+     0.28%  user     [kernel.kallsyms]  [k] cpumask_next_wrap
+     0.28%  user     [kernel.kallsyms]  [k] tcp_in_window
+     0.28%  user     user               [.] 0x0000000000002da0
+     0.28%  user     [kernel.kallsyms]  [k] __netif_receive_skb_core
+     0.27%  user     [kernel.kallsyms]  [k] rb_next
+     0.27%  user     [kernel.kallsyms]  [k] update_curr
+     0.27%  user     user               [.] 0x000000000000e38e
+     0.27%  user     user               [.] 0x0000000000014fe0
+     0.27%  user     user               [.] 0x0000000000051577
+     0.27%  user     [kernel.kallsyms]  [k] kmem_cache_free
+     0.26%  user     user               [.] 0x00000000003efcca
+     0.26%  user     user               [.] 0x000000000000df58
+     0.26%  user     user               [.] 0x00000000001342fd
+     0.26%  user     user               [.] 0x00000000003be380
+     0.26%  user     user               [.] 0x00000000000cab1f
+     0.26%  user     user               [.] 0x00000000001206ff
+     0.26%  user     [kernel.kallsyms]  [k] read_tsc
+     0.26%  user     [kernel.kallsyms]  [k] __calc_delta
+     0.26%  user     user               [.] 0x0000000000013f60
+     0.26%  user     user               [.] 0x0000000000016342
+     0.25%  user     [kernel.kallsyms]  [k] tcp_newly_delivered
+     0.25%  user     user               [.] 0x0000000000084840
+     0.25%  user     user               [.] 0x00000000003bab69
+     0.25%  user     user               [.] 0x0000000000003071
+     0.25%  user     user               [.] 0x000000000004034d
+     0.25%  user     user               [.] 0x000000000006550b
+     0.25%  user     user               [.] 0x00000000000426e4
+     0.25%  user     [kernel.kallsyms]  [k] __ksize
+     0.24%  user     [kernel.kallsyms]  [k] x86_pmu_enable
+     0.24%  user     user               [.] 0x00000000004119e0
+     0.24%  user     user               [.] 0x0000000000441b83
+     0.24%  user     [kernel.kallsyms]  [k] ep_send_events_proc
+     0.24%  user     user               [.] 0x000000000015ab00
+     0.24%  user     user               [.] 0x0000000000051b25
+     0.24%  user     [kernel.kallsyms]  [k] update_rq_clock
+     0.24%  user     user               [.] 0x0000000000056deb
+     0.24%  user     [kernel.kallsyms]  [k] fpregs_assert_state_consistent
+     0.24%  user     [kernel.kallsyms]  [k] ip_finish_output2
+     0.24%  user     user               [.] 0x000000000013d8c0
+     0.24%  user     user               [.] 0x000000000040d7b7
+     0.24%  user     [kernel.kallsyms]  [k] __copy_skb_header
+     0.24%  user     user               [.] 0x0000000000146ccd
+     0.23%  user     [kernel.kallsyms]  [k] perf_pmu_nop_void
+     0.23%  user     [kernel.kallsyms]  [k] perf_event_update_userpage
+     0.23%  user     [kernel.kallsyms]  [k] deactivate_task
+     0.23%  user     [kernel.kallsyms]  [k] tcp_recvmsg
+     0.23%  user     user               [.] 0x00000000000467b1
+     0.23%  user     user               [.] 0x000000000006c9f2
+     0.23%  user     [kernel.kallsyms]  [k] __ip_queue_xmit
+     0.23%  user     [kernel.kallsyms]  [k] select_estimate_accuracy
+     0.23%  user     user               [.] 0x00000000000d7374
+     0.23%  user     [kernel.kallsyms]  [k] skb_release_data
+     0.23%  user     user               [.] 0x000000000003d0b6
+     0.23%  user     user               [.] 0x00000000003bab5a
+     0.22%  user     user               [.] 0x00000000003bdf6e
+     0.22%  user     [kernel.kallsyms]  [k] __nf_conntrack_find_get
+     0.22%  user     [kernel.kallsyms]  [k] __update_idle_core
+     0.22%  user     [kernel.kallsyms]  [k] vxlan_gro_receive
+     0.22%  user     user               [.] 0x00000000000d2265
+     0.22%  user     user               [.] 0x000000000003d16d
+     0.22%  user     user               [.] 0x00000000000d7dc4
+     0.22%  user     [kernel.kallsyms]  [k] rb_first
+     0.22%  user     user               [.] 0x00000000003eee64
+     0.22%  user     [kernel.kallsyms]  [k] __wake_up_common
+     0.22%  user     user               [.] 0x0000000000013860
+     0.22%  user     user               [.] 0x000000000003cfd1
+     0.22%  user     [kernel.kallsyms]  [k] aa_dfa_match
+     0.22%  user     [vdso]             [.] 0x00000000000006c8
+     0.22%  user     user               [.] 0x0000000000094ebe
+     0.21%  user     user               [.] 0x00000000001342e3
+     0.21%  user     user               [.] 0x00000000003bab8f
+     0.21%  user     user               [.] 0x000000000006e6c6
+     0.21%  user     user               [.] 0x00000000000517e6
+     0.21%  user     user               [.] 0x00000000000dd597
+     0.21%  user     user               [.] 0x00000000000b22c1
+     0.21%  user     [kernel.kallsyms]  [k] tcp_v4_send_check
+     0.21%  user     user               [.] 0x000000000006575c
+     0.21%  user     user               [.] 0x0000000000041e39
+     0.21%  user     user               [.] 0x000000000000df40
+     0.21%  user     [kernel.kallsyms]  [k] __local_bh_enable_ip
+     0.21%  user     user               [.] 0x00000000003ba500
+     0.21%  user     user               [.] 0x0000000000140c7d
+     0.21%  user     user               [.] 0x000000000016147f
+     0.21%  user     [kernel.kallsyms]  [k] futex_wait
+     0.21%  user     user               [.] 0x000000000042baee
+     0.21%  user     user               [.] 0x00000000000b78ed
+     0.21%  user     user               [.] 0x00000000003bdfa2
+     0.21%  user     user               [.] 0x000000000001016d
+     0.21%  user     user               [.] 0x00000000003f0bc0
+     0.21%  user     user               [.] 0x000000000043b900
+     0.21%  user     user               [.] 0x000000000000b5c0
+     0.21%  user     user               [.] 0x000000000005a980
+     0.20%  user     [kernel.kallsyms]  [k] wake_up_q
+     0.20%  user     user               [.] 0x0000000000047731
+     0.20%  user     user               [.] 0x000000000012ed2d
+     0.20%  user     user               [.] 0x00000000003b7bc0
+     0.20%  user     user               [.] 0x0000000000016b5c
+     0.20%  user     [kernel.kallsyms]  [k] tcp_rate_skb_delivered
+     0.20%  user     [kernel.kallsyms]  [k] mlx5e_page_release_dynamic
+     0.20%  user     user               [.] 0x0000000000043f85
+     0.20%  user     user               [.] 0x00000000000516ea
+     0.20%  user     [kernel.kallsyms]  [k] __check_object_size
+     0.19%  user     user               [.] 0x000000000003b92d
+     0.19%  user     user               [.] 0x00000000000515a8
+     0.19%  user     [kernel.kallsyms]  [k] irq_enter
+     0.19%  user     user               [.] 0x000000000005249c
+     0.19%  user     user               [.] 0x000000000004d74d
+     0.19%  user     user               [.] 0x00000000000b1bfb
+     0.19%  user     user               [.] 0x00000000003c2989
+     0.19%  user     [kernel.kallsyms]  [k] ip_frag_queue
+     0.19%  user     [kernel.kallsyms]  [k] ipv4_dst_check
+     0.19%  user     [kernel.kallsyms]  [k] nf_conntrack_tcp_packet
+     0.19%  user     [kernel.kallsyms]  [k] rmqueue
+     0.19%  user     [kernel.kallsyms]  [k] new_sync_write
+     0.19%  user     user               [.] 0x00000000000e5760
+     0.19%  user     user               [.] 0x000000000014d959
+     0.19%  user     [kernel.kallsyms]  [k] ip_vs_out.part.0
+     0.19%  user     user               [.] 0x0000000000194f60
+     0.19%  user     [kernel.kallsyms]  [k] br_nf_pre_routing
+     0.19%  user     user               [.] 0x00000000003d83e0
+     0.19%  user     user               [.] 0x000000000000e2ef
+     0.19%  user     user               [.] 0x000000000003d099
+     0.19%  user     [kernel.kallsyms]  [k] activate_task
+     0.19%  user     user               [.] 0x0000000000120b40
+     0.19%  user     [kernel.kallsyms]  [k] br_handle_frame
+     0.19%  user     user               [.] 0x000000000005252d
+     0.19%  user     user               [.] 0x0000000000031020
+     0.18%  user     user               [.] 0x00000000000394db
+     0.18%  user     user               [.] 0x000000000000356e
+     0.18%  user     [kernel.kallsyms]  [k] newidle_balance
+     0.18%  user     user               [.] 0x0000000000030f76
+     0.18%  user     user               [.] 0x0000000000046060
+     0.18%  user     user               [.] 0x000000000000f909
+     0.18%  user     [kernel.kallsyms]  [k] __dev_forward_skb
+     0.18%  user     [kernel.kallsyms]  [k] ip_protocol_deliver_rcu
+     0.18%  user     user               [.] 0x0000000000006bbb
+     0.18%  user     user               [.] 0x00000000000518b7
+     0.18%  user     user               [.] 0x000000000003d169
+     0.17%  user     user               [.] 0x000000000000cca9
+     0.17%  user     user               [.] 0x000000000012067d
+     0.17%  user     user               [.] 0x000000000003c57a
+     0.17%  user     user               [.] 0x0000000000041de0
+     0.17%  user     user               [.] 0x000000000003d052
+     0.17%  user     user               [.] 0x000000000004c85e
+     0.17%  user     user               [.] 0x000000000013e2a5
+     0.17%  user     [kernel.kallsyms]  [k] note_interrupt
+     0.17%  user     user               [.] 0x00000000000bc900
+     0.16%  user     user               [.] 0x0000000000042551
+     0.16%  user     user               [.] 0x000000000004267b
+     0.16%  user     user               [.] 0x0000000000046195
+     0.15%  user     [kernel.kallsyms]  [k] br_fdb_update
+     0.15%  user     [kernel.kallsyms]  [k] switch_fpu_return
+     0.15%  user     [kernel.kallsyms]  [k] perf_event_update_time
+     0.14%  user     [kernel.kallsyms]  [k] sock_poll
+     0.14%  user     [kernel.kallsyms]  [k] syscall_return_via_sysret
+     0.14%  user     user               [.] 0x0000000000042984
+     0.14%  user     [kernel.kallsyms]  [k] schedule
+     0.13%  user     [kernel.kallsyms]  [k] end_repeat_nmi
+     0.13%  user     user               [.] 0x000000000000d034
+     0.12%  user     [kernel.kallsyms]  [k] dequeue_entity
+     0.12%  user     [kernel.kallsyms]  [k] finish_task_switch
+     0.12%  user     [kernel.kallsyms]  [k] nmi_restore
+     0.11%  user     [kernel.kallsyms]  [k] update_cfs_rq_h_load
+     0.11%  user     [kernel.kallsyms]  [k] ctx_sched_in
+     0.11%  user     [kernel.kallsyms]  [k] pick_next_task_idle
+     0.10%  user     [vdso]             [.] 0x0000000000000695
+     0.10%  user     user               [.] 0x000000000003c56c
+     0.10%  user     user               [.] 0x0000000000195175
+     0.10%  user     [kernel.kallsyms]  [k] available_idle_cpu
+     0.09%  user     [kernel.kallsyms]  [k] record_times
+     0.09%  user     [vdso]             [.] 0x00000000000006a6
+     0.09%  user     [kernel.kallsyms]  [k] build_skb
+     0.09%  user     user               [.] 0x0000000000065d42
+     0.08%  user     [kernel.kallsyms]  [k] acpi_os_read_memory
+     0.08%  user     [kernel.kallsyms]  [k] __fget
+     0.08%  user     [kernel.kallsyms]  [k] set_user_sigmask
+     0.08%  user     [kernel.kallsyms]  [k] napi_gro_receive
+     0.07%  user     user               [.] 0x0000000000039440
+     0.07%  user     [kernel.kallsyms]  [k] enqueue_entity
+     0.07%  user     user               [.] 0x000000000003ec00
+     0.07%  user     [kernel.kallsyms]  [k] enqueue_task_fair
+     0.07%  user     user               [.] 0x000000000003cf96
+     0.07%  user     user               [.] 0x00000000000301cd
+     0.07%  user     [kernel.kallsyms]  [k] select_idle_sibling.part.0
+     0.06%  user     [kernel.kallsyms]  [k] task_tick_fair
+     0.06%  user     [kernel.kallsyms]  [k] find_first_bit
+     0.06%  user     user               [.] 0x000000000003d069
+     0.05%  user     user               [.] 0x0000000000065ea4
+     0.05%  user     user               [.] 0x0000000000065d3d
+     0.04%  user     [kernel.kallsyms]  [k] wake_up_process
+     0.04%  user     [kernel.kallsyms]  [k] ep_scan_ready_list.constprop.0
+     0.04%  user     [kernel.kallsyms]  [k] timerqueue_del
+     0.04%  user     [kernel.kallsyms]  [k] hrtimer_nanosleep
+     0.03%  user     [kernel.kallsyms]  [k] native_apic_msr_write
+     0.03%  user     [kernel.kallsyms]  [k] printk_nmi_exit
+     0.03%  user     [kernel.kallsyms]  [k] perf_event_nmi_handler
+     0.03%  user     [kernel.kallsyms]  [k] intel_pmu_handle_irq
+     0.02%  user     [kernel.kallsyms]  [k] nmi_cpu_backtrace_handler
+     0.02%  user     [kernel.kallsyms]  [k] set_pte_vaddr
+     0.02%  user     [kernel.kallsyms]  [k] ghes_copy_tofrom_phys
+     0.02%  user     [kernel.kallsyms]  [k] nmi_handle
+     0.01%  user     [kernel.kallsyms]  [k] perf_pmu_enable.part.0
+     0.01%  user     [kernel.kallsyms]  [k] memcpy_fromio
+     0.01%  user     [kernel.kallsyms]  [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.01%  user     [kernel.kallsyms]  [k] apei_check_gar
+     0.01%  user     [kernel.kallsyms]  [k] rcu_nmi_exit
+     0.01%  user     [kernel.kallsyms]  [k] ghes_notify_nmi
+     0.01%  user     [kernel.kallsyms]  [k] native_write_cr2
+     0.01%  user     [kernel.kallsyms]  [k] fill_pmd
+     0.01%  user     [kernel.kallsyms]  [k] __native_set_fixmap
+     0.01%  user     [kernel.kallsyms]  [k] __set_pte_vaddr
+     0.00%  user     [kernel.kallsyms]  [k] fill_pte
+     0.00%  user     [kernel.kallsyms]  [k] sched_clock
+     0.00%  user     [kernel.kallsyms]  [k] nmi_cpu_backtrace
+     0.00%  user     [kernel.kallsyms]  [k] intel_bts_enable_local
+     0.00%  user     [kernel.kallsyms]  [k] perf_sample_event_took
+     0.00%  user     [kernel.kallsyms]  [k] intel_pmu_enable_all
+     0.00%  user     [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.0
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

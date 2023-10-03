@@ -2,6 +2,7 @@ version: "3"
 services:
   consul:
     image: hashicorp/consul:latest
+    privileged: true
     ports:
       - "8300:8300"
       - "8400:8400"
@@ -16,6 +17,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_frontend_single_node:latest
+    privileged: true
     entrypoint: frontend
     ports:
       - "5000:5000"
@@ -33,6 +35,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_profile_single_node:latest
+    privileged: true
     entrypoint: profile
     depends_on:
       - mongodb-profile
@@ -45,6 +48,7 @@ services:
 
   search:
     image: igorrudyk1/hotel_reserv_search_single_node:latest
+    privileged: true
     entrypoint: search
     depends_on:
       - consul
@@ -62,6 +66,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_geo_single_node:latest
+    privileged: true
     entrypoint: geo
     depends_on:
       - mongodb-geo
@@ -75,6 +80,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_rate_single_node:latest
+    privileged: true
     entrypoint: rate
     depends_on:
       - mongodb-rate
@@ -89,6 +95,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_recommendation_single_node:latest
+    privileged: true
     entrypoint: recommendation
     depends_on:
       - mongodb-recommendation
@@ -105,6 +112,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_user_single_node:latest
+    privileged: true
     entrypoint: user
     depends_on:
       - mongodb-user
@@ -118,6 +126,7 @@ services:
     environment:
       - TLS
     image: igorrudyk1/hotel_reserv_reserve_single_node:latest
+    privileged: true
     entrypoint: reservation
     depends_on:
       - mongodb-reservation
@@ -133,6 +142,7 @@ services:
 
   jaeger:
     image: jaegertracing/all-in-one:latest
+    privileged: true
     ports:
       - "14269"
       - "5778:5778"
@@ -149,6 +159,7 @@ services:
 
   memcached-rate:
     image: memcached
+    privileged: true
     hostname: user-memcached
     environment:
       - MEMCACHED_CACHE_SIZE=128
@@ -163,6 +174,7 @@ services:
 
   memcached-profile:
     image: memcached
+    privileged: true
     hostname: user-memcached
     environment:
       - MEMCACHED_CACHE_SIZE=128
@@ -177,6 +189,7 @@ services:
 
   memcached-reserve:
     image: memcached
+    privileged: true
     hostname: user-memcached
     environment:
       - MEMCACHED_CACHE_SIZE=128
@@ -191,6 +204,7 @@ services:
 
   mongodb-geo:
     image: mongo:4.4.6
+    privileged: true
     hostname: geo-db
     volumes:
       - geo:/data/db
@@ -201,6 +215,7 @@ services:
 
   mongodb-profile:
     image: mongo:4.4.6
+    privileged: true
     hostname: profile-db
     volumes:
       - profile:/data/db
@@ -211,6 +226,7 @@ services:
 
   mongodb-rate:
     image: mongo:4.4.6
+    privileged: true
     hostname: rate-db
     volumes:
       - rate:/data/db
@@ -221,6 +237,7 @@ services:
 
   mongodb-recommendation:
     image: mongo:4.4.6
+    privileged: true
     hostname: recommendation-db
     volumes:
       - recommendation:/data/db
@@ -231,6 +248,7 @@ services:
 
   mongodb-reservation:
     image: mongo:4.4.6
+    privileged: true
     hostname: reservation-db
     volumes:
       - reservation:/data/db
@@ -241,6 +259,7 @@ services:
 
   mongodb-user:
     image: mongo:4.4.6
+    privileged: true
     hostname: user-db
     volumes:
       - user:/data/db
