@@ -14,7 +14,7 @@ func_strings_regex=$(printf "|%s" "$@")
 func_strings_regex=${func_strings_regex:1}  # Remove the leading '|'
 
 # Filter lines containing $service_string and any of the func_strings
-grep -E "$service_string.*($func_strings_regex)" "$filename" > filtered_func.txt
+grep -i -E "$service_string.*($func_strings_regex)" "$filename" > filtered_func.txt
 
 total=$(awk -F'%' '{ total += $1 } END { print total }' filtered_func.txt)
 
