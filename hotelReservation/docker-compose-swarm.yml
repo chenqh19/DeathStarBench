@@ -29,7 +29,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == hwhnns8clwyqtyc5dgaaobfg3
+          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   profile:
     environment:
@@ -60,7 +60,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == hwhnns8clwyqtyc5dgaaobfg3
+          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   geo:
     environment:
@@ -106,7 +106,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == uhhsn0shnocq0lndap8x5tqre
+          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
 
   user:
     environment:
@@ -138,7 +138,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == uhhsn0shnocq0lndap8x5tqre
+          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   jaeger:
     image: jaegertracing/all-in-one:latest

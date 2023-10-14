@@ -25,10 +25,11 @@ spec:
       labels:
         io.kompose.service: search
     spec:
+      nodeName: master-node
       containers:
         - command:
             - search
-          image: igorrudyk1/hotelreservation:latest
+          image: chenqh23/hotelreservation:latest
           name: hotel-reserv-search
           ports:
             - containerPort: 8082

@@ -28,7 +28,7 @@ spec:
       containers:
         - command:
             - frontend
-          image: igorrudyk1/hotelreservation:latest
+          image: chenqh23/hotelreservation:latest
           name: hotel-reserv-frontend
           ports:
             - containerPort: 5000
