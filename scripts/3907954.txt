@@ -1,0 +1,1008 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 2963574815
+#
+# Overhead  Command       Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ............  .....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+     1.89%  MediaService  libc-2.23.so           [.] malloc
+            |
+            ---malloc
+
+     1.75%  MediaService  libc-2.23.so           [.] free
+            |
+            ---free
+               |          
+                --0.57%--0
+                          jaegertracing::SpanContext::~SpanContext
+                          0x48687f8b48004bea
+
+     1.61%  MediaService  [kernel.kallsyms]      [k] nft_do_chain
+            |
+            ---nft_do_chain
+               |          
+                --1.31%--nft_do_chain_ipv4
+                          nf_hook_slow
+                          br_nf_forward_ip
+                          nf_hook_slow
+                          __br_forward
+                          br_forward
+                          br_handle_frame_finish
+                          br_nf_hook_thresh
+                          br_nf_pre_routing_finish
+                          br_nf_pre_routing
+                          br_handle_frame
+                          __netif_receive_skb_core
+                          __netif_receive_skb_one_core
+                          __netif_receive_skb
+                          process_backlog
+                          net_rx_action
+                          __softirqentry_text_start
+                          do_softirq_own_stack
+                          do_softirq.part.0
+                          __local_bh_enable_ip
+                          ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     1.22%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::flush
+            |          
+            |--0.64%--apache::thrift::transport::TFramedTransport::flush
+            |          
+             --0.57%--apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::write_virt
+
+     1.12%  MediaService  [kernel.kallsyms]      [k] ipt_do_table
+            |
+            ---ipt_do_table
+               |          
+                --0.85%--iptable_mangle_hook
+                          nf_hook_slow
+
+     1.07%  MediaService  [kernel.kallsyms]      [k] visit_groups_merge
+            |
+            ---visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               |          
+                --1.01%--schedule_hrtimeout_range_clock
+                          schedule_hrtimeout_range
+                          poll_schedule_timeout.constprop.0
+                          do_sys_poll
+                          __x64_sys_poll
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          poll
+
+     1.03%  MediaService  [kernel.kallsyms]      [k] syscall_return_via_sysret
+            |          
+             --0.69%--syscall_return_via_sysret
+                       |          
+                        --0.58%--__libc_recv
+
+     0.96%  MediaService  [kernel.kallsyms]      [k] perf_swevent_add
+            |
+            ---perf_swevent_add
+               group_sched_in
+               flexible_sched_in
+               visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               |          
+                --0.94%--schedule_hrtimeout_range_clock
+                          schedule_hrtimeout_range
+                          poll_schedule_timeout.constprop.0
+                          do_sys_poll
+                          __x64_sys_poll
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          poll
+
+     0.96%  MediaService  [kernel.kallsyms]      [k] br_nf_pre_routing
+            |
+            ---br_nf_pre_routing
+               br_handle_frame
+               __netif_receive_skb_core
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.94%  MediaService  libstdc++.so.6.0.21    [.] std::istream::get
+            |
+            ---std::istream::get
+               |          
+                --0.81%--0x6ee1a00000
+
+     0.94%  MediaService  [kernel.kallsyms]      [k] nf_hook_slow
+            |          
+             --0.66%--nf_hook_slow
+
+     0.92%  MediaService  [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               |          
+                --0.53%--__libc_recv
+
+     0.90%  MediaService  [kernel.kallsyms]      [k] update_load_avg
+            |
+            ---update_load_avg
+               |          
+                --0.65%--enqueue_entity
+                          enqueue_task_fair
+                          activate_task
+                          ttwu_do_activate
+                          try_to_wake_up
+                          default_wake_function
+                          woken_wake_function
+                          __wake_up_common
+                          __wake_up_common_lock
+                          __wake_up_sync_key
+                          sock_def_readable
+                          tcp_data_ready
+
+     0.88%  MediaService  libstdc++.so.6.0.21    [.] __dynamic_cast
+            |
+            ---__dynamic_cast
+
+     0.88%  MediaService  [kernel.kallsyms]      [k] ctx_sched_out
+            |
+            ---ctx_sched_out
+               task_ctx_sched_out
+               __perf_event_task_sched_out
+               __sched_text_start
+               schedule
+               schedule_hrtimeout_range_clock
+               schedule_hrtimeout_range
+               poll_schedule_timeout.constprop.0
+               do_sys_poll
+               __x64_sys_poll
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               poll
+
+     0.85%  MediaService  [kernel.kallsyms]      [k] conntrack_mt
+            |
+            ---conntrack_mt
+               |          
+                --0.57%--ipt_do_table
+                          iptable_filter_hook
+                          nf_hook_slow
+                          br_nf_forward_ip
+                          nf_hook_slow
+                          __br_forward
+                          br_forward
+                          br_handle_frame_finish
+                          br_nf_hook_thresh
+                          br_nf_pre_routing_finish
+                          br_nf_pre_routing
+                          br_handle_frame
+                          __netif_receive_skb_core
+                          __netif_receive_skb_one_core
+                          __netif_receive_skb
+                          process_backlog
+                          net_rx_action
+                          __softirqentry_text_start
+                          do_softirq_own_stack
+                          do_softirq.part.0
+                          __local_bh_enable_ip
+                          ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     0.85%  MediaService  libjaegertracing.so.0  [.] jaegertracing::SpanContext::fromStream
+            |
+            ---jaegertracing::SpanContext::fromStream
+               0
+
+     0.83%  MediaService  [kernel.kallsyms]      [k] ipv4_dst_check
+            |
+            ---ipv4_dst_check
+               |          
+                --0.58%--__sk_dst_check
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     0.83%  MediaService  [kernel.kallsyms]      [k] __update_load_avg_cfs_rq
+            |
+            ---__update_load_avg_cfs_rq
+               update_load_avg
+
+     0.81%  MediaService  [kernel.kallsyms]      [k] __x86_indirect_thunk_rax
+     0.79%  MediaService  [kernel.kallsyms]      [k] tcp_write_xmit
+            |
+            ---tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.78%  MediaService  [kernel.kallsyms]      [k] __nf_conntrack_find_get
+            |
+            ---__nf_conntrack_find_get
+               nf_conntrack_in
+               ipv4_conntrack_in
+               nf_hook_slow
+               |          
+                --0.59%--br_nf_pre_routing
+                          br_handle_frame
+                          __netif_receive_skb_core
+                          __netif_receive_skb_one_core
+                          __netif_receive_skb
+                          process_backlog
+                          net_rx_action
+                          __softirqentry_text_start
+                          do_softirq_own_stack
+                          do_softirq.part.0
+                          __local_bh_enable_ip
+                          ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     0.77%  MediaService  MediaService           [.] social_network::MediaServiceProcessor::process_ComposeMedia
+            |          
+             --0.53%--social_network::MediaServiceProcessor::process_ComposeMedia
+
+     0.77%  MediaService  [kernel.kallsyms]      [k] __this_module+0x80000006a0c3
+            |
+            ---__this_module
+               |          
+                --0.56%--__seccomp_filter
+                          __secure_computing
+                          syscall_trace_enter
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+
+     0.75%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign
+            |
+            ---std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign
+
+     0.75%  MediaService  MediaService           [.] social_network::MediaHandler::ComposeMedia
+            |
+            ---social_network::MediaHandler::ComposeMedia
+
+     0.71%  MediaService  libstdc++.so.6.0.21    [.] std::ostream::_M_insert<unsigned long>
+            |          
+             --0.63%--std::ostream::_M_insert<unsigned long>
+                       0x6eee30
+                       std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_ostringstream
+                       0x4818508d48fb8948
+
+     0.71%  MediaService  [kernel.kallsyms]      [k] __dev_queue_xmit
+            |
+            ---__dev_queue_xmit
+               dev_queue_xmit
+               |          
+                --0.54%--ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     0.70%  MediaService  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+            |
+            ---tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.68%  MediaService  [kernel.kallsyms]      [k] _raw_spin_lock
+     0.68%  MediaService  MediaService           [.] apache::thrift::transport::readAll<apache::thrift::transport::TBufferBase>
+            |
+            ---apache::thrift::transport::readAll<apache::thrift::transport::TBufferBase>
+
+     0.68%  MediaService  libstdc++.so.6.0.21    [.] operator new
+     0.67%  MediaService  [kernel.kallsyms]      [k] psi_task_change
+            |
+            ---psi_task_change
+
+     0.66%  MediaService  [kernel.kallsyms]      [k] __inet_lookup_established
+            |
+            ---__inet_lookup_established
+               tcp_v4_early_demux
+               ip_rcv_finish_core.isra.0
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.65%  MediaService  [kernel.kallsyms]      [k] account_entity_dequeue
+            |
+            ---account_entity_dequeue
+
+     0.64%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::read
+            |
+            ---apache::thrift::transport::TSocket::read
+
+     0.64%  MediaService  [kernel.kallsyms]      [k] br_nf_post_routing
+            |
+            ---br_nf_post_routing
+               nf_hook_slow
+               br_forward_finish
+               br_nf_hook_thresh
+               br_nf_forward_finish
+               br_nf_forward_ip
+               nf_hook_slow
+               __br_forward
+               br_forward
+               br_handle_frame_finish
+               br_nf_hook_thresh
+               br_nf_pre_routing_finish
+               br_nf_pre_routing
+               br_handle_frame
+               __netif_receive_skb_core
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.63%  MediaService  [kernel.kallsyms]      [k] __tcp_transmit_skb
+            |
+            ---__tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.63%  MediaService  [kernel.kallsyms]      [k] tcp_recvmsg
+            |
+            ---tcp_recvmsg
+               inet_recvmsg
+               sock_recvmsg
+               __sys_recvfrom
+               __x64_sys_recvfrom
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_recv
+
+     0.63%  MediaService  [kernel.kallsyms]      [k] __kmalloc_node_track_caller
+            |          
+             --0.53%--__kmalloc_node_track_caller
+                       __kmalloc_reserve.isra.0
+                       __alloc_skb
+                       sk_stream_alloc_skb
+                       tcp_sendmsg_locked
+                       tcp_sendmsg
+                       inet_sendmsg
+                       sock_sendmsg
+                       __sys_sendto
+                       __x64_sys_sendto
+                       do_syscall_64
+                       entry_SYSCALL_64_after_hwframe
+                       __libc_send
+
+     0.60%  MediaService  [kernel.kallsyms]      [k] enqueue_task_fair
+            |
+            ---enqueue_task_fair
+               activate_task
+               ttwu_do_activate
+               try_to_wake_up
+               default_wake_function
+               woken_wake_function
+               __wake_up_common
+               __wake_up_common_lock
+               __wake_up_sync_key
+               sock_def_readable
+               tcp_data_ready
+               tcp_rcv_established
+               tcp_v4_do_rcv
+               tcp_v4_rcv
+               ip_protocol_deliver_rcu
+               ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.60%  MediaService  [kernel.kallsyms]      [k] __seccomp_filter
+            |
+            ---__seccomp_filter
+               __secure_computing
+               syscall_trace_enter
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+
+     0.59%  MediaService  [kernel.kallsyms]      [k] update_curr
+            |
+            ---update_curr
+
+     0.58%  MediaService  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+            |
+            ---std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+
+     0.58%  MediaService  [kernel.kallsyms]      [k] tcp_ack
+            |
+            ---tcp_ack
+               tcp_rcv_established
+               tcp_v4_do_rcv
+               tcp_v4_rcv
+               ip_protocol_deliver_rcu
+               ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.56%  MediaService  [kernel.kallsyms]      [k] nf_conntrack_tcp_packet
+            |
+            ---nf_conntrack_tcp_packet
+               nf_conntrack_in
+
+     0.56%  MediaService  MediaService           [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeFieldBegin_virt
+     0.54%  MediaService  [kernel.kallsyms]      [k] cpumask_next_wrap
+            |
+            ---cpumask_next_wrap
+
+     0.53%  MediaService  MediaService           [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readMessageBegin
+            |
+            ---apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readMessageBegin
+
+     0.53%  MediaService  [kernel.kallsyms]      [k] add_wait_queue
+            |
+            ---add_wait_queue
+
+     0.53%  MediaService  [kernel.kallsyms]      [k] __fget
+            |
+            ---__fget
+               __fget_light
+               __fdget
+               do_sys_poll
+               __x64_sys_poll
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               poll
+
+     0.52%  MediaService  [kernel.kallsyms]      [k] update_cfs_group
+            |
+            ---update_cfs_group
+               dequeue_task_fair
+               deactivate_task
+               __sched_text_start
+               schedule
+               schedule_hrtimeout_range_clock
+               schedule_hrtimeout_range
+               poll_schedule_timeout.constprop.0
+               do_sys_poll
+               __x64_sys_poll
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               poll
+
+     0.51%  MediaService  MediaService           [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}::operator()
+            |
+            ---jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}::operator()
+
+     0.51%  MediaService  libc-2.23.so           [.] 0x000000000014e123
+            |
+            ---0x7feae56e5140
+
+     0.51%  MediaService  MediaService           [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable
+            |
+            ---std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable
+
+     0.50%  MediaService  [kernel.kallsyms]      [k] set_next_entity
+     0.47%  MediaService  libjaegertracing.so.0  [.] jaegertracing::UDPTransport::append
+     0.47%  MediaService  [kernel.kallsyms]      [k] inet_sendmsg
+     0.46%  MediaService  [kernel.kallsyms]      [k] reweight_entity
+     0.45%  MediaService  MediaService           [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> >
+     0.44%  MediaService  [kernel.kallsyms]      [k] do_sys_poll
+     0.44%  MediaService  [kernel.kallsyms]      [k] tcp_wfree
+     0.44%  MediaService  libstdc++.so.6.0.21    [.] 0x0000000000101b32
+     0.43%  MediaService  [kernel.kallsyms]      [k] perf_event_update_userpage
+     0.43%  MediaService  [kernel.kallsyms]      [k] nf_nat_ipv4_out
+     0.42%  MediaService  libc-2.23.so           [.] 0x0000000000081f98
+     0.42%  MediaService  [kernel.kallsyms]      [k] ip_vs_local_reply4
+     0.41%  MediaService  [kernel.kallsyms]      [k] tcp_clean_rtx_queue
+     0.40%  MediaService  [kernel.kallsyms]      [k] br_handle_frame_finish
+     0.39%  MediaService  libc-2.23.so           [.] 0x000000000014dfa0
+     0.39%  MediaService  MediaService           [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign(std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> > const&)::{lambda(std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> const*)#1}>
+     0.38%  MediaService  [kernel.kallsyms]      [k] ctx_sched_in
+     0.38%  MediaService  MediaService           [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readListBegin_virt
+     0.38%  MediaService  [kernel.kallsyms]      [k] kmem_cache_free
+     0.38%  MediaService  MediaService           [.] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_default_append
+     0.38%  MediaService  libc-2.23.so           [.] 0x0000000000081ee6
+     0.38%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readFrame
+     0.38%  MediaService  [kernel.kallsyms]      [k] __check_object_size
+     0.37%  MediaService  [kernel.kallsyms]      [k] __bitmap_and
+     0.37%  MediaService  libstdc++.so.6.0.21    [.] 0x00000000000dc4c7
+     0.37%  MediaService  libjaegertracing.so.0  [.] std::deque<jaegertracing::Span, std::allocator<jaegertracing::Span> >::_M_push_back_aux<jaegertracing::Span const&>
+     0.37%  MediaService  libc-2.23.so           [.] 0x0000000000082573
+     0.36%  MediaService  [kernel.kallsyms]      [k] __slab_free
+     0.36%  MediaService  libc-2.23.so           [.] 0x000000000011525f
+     0.36%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.36%  MediaService  MediaService           [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.35%  MediaService  [kernel.kallsyms]      [k] select_task_rq_fair
+     0.35%  MediaService  [kernel.kallsyms]      [k] interrupt_entry
+     0.35%  MediaService  [kernel.kallsyms]      [k] __softirqentry_text_start
+     0.35%  MediaService  [kernel.kallsyms]      [k] rb_erase
+     0.35%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Tracer::startSpanInternal
+     0.35%  MediaService  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+     0.35%  MediaService  [kernel.kallsyms]      [k] __pollwait
+     0.35%  MediaService  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap@plt
+     0.34%  MediaService  [kernel.kallsyms]      [k] tcp_in_window
+     0.34%  MediaService  libstdc++.so.6.0.21    [.] std::has_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >
+     0.34%  MediaService  [kernel.kallsyms]      [k] check_cfs_rq_runtime
+     0.34%  MediaService  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::operator=
+     0.34%  MediaService  libc-2.23.so           [.] 0x000000000007e3e0
+     0.34%  MediaService  [kernel.kallsyms]      [k] select_idle_sibling.part.0
+     0.33%  MediaService  libc-2.23.so           [.] 0x0000000000080458
+     0.33%  MediaService  [kernel.kallsyms]      [k] nft_counter_eval
+     0.32%  MediaService  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+     0.32%  MediaService  [kernel.kallsyms]      [k] netif_skb_features
+     0.32%  MediaService  MediaService           [.] std::chrono::_V2::steady_clock::now@plt
+     0.32%  MediaService  [kernel.kallsyms]      [k] br_nf_pre_routing_finish
+     0.32%  MediaService  [kernel.kallsyms]      [k] switch_fpu_return
+     0.32%  MediaService  libc-2.23.so           [.] 0x000000000007e458
+     0.32%  MediaService  libpthread-2.23.so     [.] __pthread_disable_asynccancel
+     0.32%  MediaService  libstdc++.so.6.0.21    [.] std::use_facet<std::ctype<char> >
+     0.32%  MediaService  [kernel.kallsyms]      [k] bictcp_cong_avoid
+     0.32%  MediaService  MediaService           [.] std::exception::~exception@plt
+     0.31%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create
+     0.31%  MediaService  [kernel.kallsyms]      [k] ttwu_do_wakeup
+     0.31%  MediaService  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sendSpan
+     0.31%  MediaService  [kernel.kallsyms]      [k] check_preempt_wakeup
+     0.31%  MediaService  [kernel.kallsyms]      [k] prepare_exit_to_usermode
+     0.31%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::write
+     0.30%  MediaService  MediaService           [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::write_virt
+     0.30%  MediaService  [kernel.kallsyms]      [k] nf_conntrack_in
+     0.30%  MediaService  [kernel.kallsyms]      [k] __fget_light
+     0.30%  MediaService  [kernel.kallsyms]      [k] lock_timer_base
+     0.30%  MediaService  [kernel.kallsyms]      [k] ip_rcv_core.isra.0
+     0.30%  MediaService  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+     0.30%  MediaService  [kernel.kallsyms]      [k] tcp_established_options
+     0.30%  MediaService  libstdc++.so.6.0.21    [.] std::ios_base::_M_init
+     0.30%  MediaService  [kernel.kallsyms]      [k] aa_label_sk_perm.part.0
+     0.30%  MediaService  libstdc++.so.6.0.21    [.] std::ostream::sentry::sentry
+     0.29%  MediaService  libstdc++.so.6.0.21    [.] std::locale::~locale
+     0.29%  MediaService  [kernel.kallsyms]      [k] syscall_trace_enter
+     0.29%  MediaService  MediaService           [.] social_network::MediaServiceProcessor::dispatchCall
+     0.29%  MediaService  [kernel.kallsyms]      [k] skb_entail
+     0.29%  MediaService  [kernel.kallsyms]      [k] tcp_release_cb
+     0.29%  MediaService  [kernel.kallsyms]      [k] __perf_event_task_sched_out
+     0.29%  MediaService  [kernel.kallsyms]      [k] iptable_filter_hook
+     0.29%  MediaService  MediaService           [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_erase
+     0.28%  MediaService  [kernel.kallsyms]      [k] skb_csum_hwoffload_help
+     0.28%  MediaService  [kernel.kallsyms]      [k] copy_user_generic_unrolled
+     0.28%  MediaService  [kernel.kallsyms]      [k] __intel_pmu_disable_all
+     0.28%  MediaService  libc-2.23.so           [.] 0x0000000000081eee
+     0.28%  MediaService  libstdc++.so.6.0.21    [.] std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.28%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::underflow
+     0.28%  MediaService  libstdc++.so.6.0.21    [.] __cxxabiv1::__si_class_type_info::__do_dyncast
+     0.27%  MediaService  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.27%  MediaService  [kernel.kallsyms]      [k] __netif_receive_skb_one_core
+     0.27%  MediaService  MediaService           [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >
+     0.27%  MediaService  [kernel.kallsyms]      [k] skb_release_head_state
+     0.27%  MediaService  [kernel.kallsyms]      [k] _copy_to_iter
+     0.27%  MediaService  libc-2.23.so           [.] 0x0000000000081b9e
+     0.27%  MediaService  [kernel.kallsyms]      [k] net_rx_action
+     0.27%  MediaService  [kernel.kallsyms]      [k] hash_conntrack_raw
+     0.27%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Tracer::analyzeReferences@plt
+     0.27%  MediaService  libc-2.23.so           [.] 0x0000000000081d26
+     0.27%  MediaService  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::write
+     0.26%  MediaService  [kernel.kallsyms]      [k] br_handle_frame
+     0.26%  MediaService  [kernel.kallsyms]      [k] netdev_core_pick_tx
+     0.26%  MediaService  libjaegertracing.so.0  [.] std::vector<jaegertracing::LogRecord, std::allocator<jaegertracing::LogRecord> >::operator=
+     0.26%  MediaService  libstdc++.so.6.0.21    [.] memcpy@plt
+     0.26%  MediaService  libc-2.23.so           [.] 0x000000000008254f
+     0.26%  MediaService  [kernel.kallsyms]      [k] __secure_computing
+     0.26%  MediaService  libthrift.so.0.12.0    [.] memcpy@plt
+     0.26%  MediaService  [kernel.kallsyms]      [k] cpuacct_charge
+     0.26%  MediaService  [kernel.kallsyms]      [k] try_to_wake_up
+     0.26%  MediaService  [kernel.kallsyms]      [k] set_task_cpu
+     0.26%  MediaService  [kernel.kallsyms]      [k] dequeue_task_fair
+     0.26%  MediaService  [kernel.kallsyms]      [k] security_sock_rcv_skb
+     0.26%  MediaService  libpthread-2.23.so     [.] __libc_send
+     0.26%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TMemoryBuffer, apache::thrift::transport::TBufferBase>::write_virt
+     0.26%  MediaService  [kernel.kallsyms]      [k] ip_frag_queue
+     0.26%  MediaService  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::SpanRef@plt
+     0.25%  MediaService  libpthread-2.23.so     [.] pthread_mutex_lock
+     0.25%  MediaService  [kernel.kallsyms]      [k] available_idle_cpu
+     0.25%  MediaService  libc-2.23.so           [.] 0x0000000000081fd7
+     0.25%  MediaService  [kernel.kallsyms]      [k] update_rq_clock
+     0.24%  MediaService  [kernel.kallsyms]      [k] rb_next
+     0.24%  MediaService  [kernel.kallsyms]      [k] __ip_finish_output
+     0.24%  MediaService  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Tag, std::allocator<jaegertracing::thrift::Tag> >::operator=
+     0.24%  MediaService  libpthread-2.23.so     [.] __lll_unlock_wake
+     0.23%  MediaService  [kernel.kallsyms]      [k] ip_rcv_finish
+     0.23%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate@plt
+     0.23%  MediaService  [kernel.kallsyms]      [k] __kfree_skb_flush
+     0.23%  MediaService  [kernel.kallsyms]      [k] tcp_push
+     0.23%  MediaService  [kernel.kallsyms]      [k] __lock_text_start
+     0.23%  MediaService  libc-2.23.so           [.] 0x000000000014e168
+     0.23%  MediaService  libthrift.so.0.12.0    [.] apache::thrift::server::TConnectedClient::run
+     0.22%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve@plt
+     0.22%  MediaService  MediaService           [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readFieldEnd_virt
+     0.22%  MediaService  libc-2.23.so           [.] 0x000000000016f110
+     0.22%  MediaService  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::SpanRef, std::allocator<jaegertracing::thrift::SpanRef> >::operator=
+     0.22%  MediaService  libstdc++.so.6.0.21    [.] free@plt
+     0.22%  MediaService  libstdc++.so.6.0.21    [.] std::locale::id::_M_id
+     0.21%  MediaService  [kernel.kallsyms]      [k] __usecs_to_jiffies
+     0.21%  MediaService  [kernel.kallsyms]      [k] get_l4proto
+     0.21%  MediaService  [kernel.kallsyms]      [k] dequeue_entity
+     0.21%  MediaService  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >@plt
+     0.21%  MediaService  libstdc++.so.6.0.21    [.] std::ios_base::ios_base@plt
+     0.21%  MediaService  [kernel.kallsyms]      [k] ksoftirqd_running
+     0.21%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Tracer::StartSpanWithOptions
+     0.21%  MediaService  MediaService           [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::borrow_virt
+     0.20%  MediaService  [kernel.kallsyms]      [k] __netif_receive_skb_core
+     0.20%  MediaService  libpthread-2.23.so     [.] pthread_mutex_unlock
+     0.20%  MediaService  libc-2.23.so           [.] 0x000000000007fe59
+     0.20%  MediaService  MediaService           [.] social_network::Media::write
+     0.20%  MediaService  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::~SpanRef@plt
+     0.20%  MediaService  [kernel.kallsyms]      [k] __update_load_avg_se
+     0.19%  MediaService  [kernel.kallsyms]      [k] __cgroup_account_cputime
+     0.19%  MediaService  [kernel.kallsyms]      [k] ip_queue_xmit
+     0.19%  MediaService  [kernel.kallsyms]      [k] __netif_receive_skb
+     0.19%  MediaService  [kernel.kallsyms]      [k] set_next_buddy
+     0.18%  MediaService  libc-2.23.so           [.] 0x000000000007fec8
+     0.18%  MediaService  MediaService           [.] apache::thrift::TDispatchProcessor::process
+     0.18%  MediaService  [kernel.kallsyms]      [k] __virt_addr_valid
+     0.18%  MediaService  libstdc++.so.6.0.21    [.] __cxxabiv1::__vmi_class_type_info::__do_dyncast
+     0.18%  MediaService  [kernel.kallsyms]      [k] ip_vs_out
+     0.17%  MediaService  libstdc++.so.6.0.21    [.] std::istream::sentry::sentry@plt
+     0.17%  MediaService  MediaService           [.] std::vector<social_network::Media, std::allocator<social_network::Media> >::_M_emplace_back_aux<social_network::Media&>
+     0.17%  MediaService  MediaService           [.] memcpy@plt
+     0.16%  MediaService  [kernel.kallsyms]      [k] skb_ext_add
+     0.16%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Span::FinishWithOptions
+     0.16%  MediaService  [kernel.kallsyms]      [k] tcp_rate_skb_sent
+     0.16%  MediaService  [kernel.kallsyms]      [k] br_nf_forward_finish
+     0.15%  MediaService  [kernel.kallsyms]      [k] tcp_chrono_stop
+     0.15%  MediaService  [kernel.kallsyms]      [k] ktime_get
+     0.15%  MediaService  [kernel.kallsyms]      [k] futex_wake_op
+     0.15%  MediaService  [kernel.kallsyms]      [k] update_blocked_averages
+     0.15%  MediaService  libc-2.23.so           [.] 0x000000000007e41f
+     0.15%  MediaService  [kernel.kallsyms]      [k] tcp_rcv_established
+     0.15%  MediaService  libjaegertracing.so.0  [.] pthread_mutex_unlock@plt
+     0.15%  MediaService  [kernel.kallsyms]      [k] br_nf_dev_queue_xmit
+     0.15%  MediaService  [kernel.kallsyms]      [k] kfree_skbmem
+     0.15%  MediaService  libstdc++.so.6.0.21    [.] std::ios_base::ios_base
+     0.15%  MediaService  libstdc++.so.6.0.21    [.] 0x0000000000112e9e
+     0.15%  MediaService  [kernel.kallsyms]      [k] __calc_delta
+     0.14%  MediaService  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+     0.14%  MediaService  libc-2.23.so           [.] 0x0000000000082680
+     0.14%  MediaService  [kernel.kallsyms]      [k] tcp_mstamp_refresh
+     0.14%  MediaService  [kernel.kallsyms]      [k] tcp_sendmsg
+     0.14%  MediaService  [kernel.kallsyms]      [k] native_flush_tlb_one_user
+     0.14%  MediaService  [kernel.kallsyms]      [k] enqueue_to_backlog
+     0.14%  MediaService  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Log, std::allocator<jaegertracing::thrift::Log> >::operator=@plt
+     0.14%  MediaService  libstdc++.so.6.0.21    [.] std::chrono::_V2::system_clock::now
+     0.14%  MediaService  [kernel.kallsyms]      [k] intel_pstate_update_util
+     0.14%  MediaService  [kernel.kallsyms]      [k] update_cfs_rq_h_load
+     0.13%  MediaService  [kernel.kallsyms]      [k] tcp_options_write
+     0.13%  MediaService  [kernel.kallsyms]      [k] __wake_up_common_lock
+     0.13%  MediaService  [kernel.kallsyms]      [k] nf_nat_inet_fn
+     0.13%  MediaService  [kernel.kallsyms]      [k] ipv4_conntrack_defrag
+     0.13%  MediaService  [kernel.kallsyms]      [k] __ip_local_out
+     0.13%  MediaService  [kernel.kallsyms]      [k] nf_ct_get_tuple
+     0.13%  MediaService  [kernel.kallsyms]      [k] ip_vs_reply4
+     0.13%  MediaService  [kernel.kallsyms]      [k] conntrack_mt_v3
+     0.12%  MediaService  [kernel.kallsyms]      [k] ip_vs_in.part.0
+     0.12%  MediaService  [kernel.kallsyms]      [k] ip_finish_output2
+     0.12%  MediaService  [kernel.kallsyms]      [k] br_forward
+     0.12%  MediaService  [kernel.kallsyms]      [k] skb_pull
+     0.11%  MediaService  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeI32_virt
+     0.11%  MediaService  [kernel.kallsyms]      [k] get_futex_key
+     0.11%  MediaService  [kernel.kallsyms]      [k] sock_poll
+     0.11%  MediaService  [kernel.kallsyms]      [k] veth_xmit
+     0.11%  MediaService  [kernel.kallsyms]      [k] memcmp
+     0.11%  MediaService  [kernel.kallsyms]      [k] bictcp_cwnd_event
+     0.11%  MediaService  [kernel.kallsyms]      [k] tcp_delack_timer
+     0.10%  MediaService  [kernel.kallsyms]      [k] skb_page_frag_refill
+     0.09%  MediaService  [kernel.kallsyms]      [k] should_failslab
+     0.09%  MediaService  [kernel.kallsyms]      [k] br_validate_ipv4.isra.0
+     0.09%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap
+     0.09%  MediaService  libc-2.23.so           [.] 0x000000000014e12d
+     0.09%  MediaService  [kernel.kallsyms]      [k] release_sock
+     0.09%  MediaService  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >
+     0.09%  MediaService  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeI64_virt
+     0.09%  MediaService  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeListBegin_virt
+     0.09%  MediaService  libc-2.23.so           [.] 0x0000000000081dfc
+     0.08%  MediaService  [kernel.kallsyms]      [k] import_single_range
+     0.08%  MediaService  libc-2.23.so           [.] 0x000000000007e410
+     0.08%  MediaService  libc-2.23.so           [.] 0x000000000007e39a
+     0.08%  MediaService  libstdc++.so.6.0.21    [.] std::ios_base::_M_call_callbacks
+     0.08%  MediaService  [kernel.kallsyms]      [k] __skb_datagram_iter
+     0.08%  MediaService  libc-2.23.so           [.] 0x000000000007fd68
+     0.08%  MediaService  libc-2.23.so           [.] 0x0000000000081d1d
+     0.08%  MediaService  MediaService           [.] jaegertracing::SpanContext::print<std::ostream>
+     0.08%  MediaService  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>
+     0.08%  MediaService  libc-2.23.so           [.] 0x0000000000080440
+     0.07%  MediaService  libc-2.23.so           [.] 0x0000000000081ec8
+     0.07%  MediaService  libc-2.23.so           [.] 0x0000000000081e34
+     0.07%  MediaService  MediaService           [.] jaegertracing::SpanContext::~SpanContext
+     0.06%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Tracer::analyzeReferences
+     0.06%  MediaService  libjaegertracing.so.0  [.] jaegertracing::SpanContext::swap
+     0.05%  MediaService  [kernel.kallsyms]      [k] entry_SYSCALL_64
+     0.05%  MediaService  libjaegertracing.so.0  [.] std::chrono::_V2::steady_clock::now@plt
+     0.05%  MediaService  [kernel.kallsyms]      [k] nmi_restore
+     0.05%  MediaService  [kernel.kallsyms]      [k] end_repeat_nmi
+     0.04%  MediaService  [vdso]                 [.] 0x0000000000000695
+     0.04%  MediaService  [kernel.kallsyms]      [k] event_sched_in.isra.0
+     0.04%  MediaService  libstdc++.so.6.0.21    [.] std::_Rb_tree_insert_and_rebalance
+     0.04%  MediaService  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sweepQueue
+     0.04%  MediaService  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.04%  MediaService  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::__set_traceIdLow@plt
+     0.04%  MediaService  [kernel.kallsyms]      [k] native_write_msr
+     0.04%  MediaService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace
+     0.04%  MediaService  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+     0.04%  MediaService  [kernel.kallsyms]      [k] set_pte_vaddr
+     0.03%  MediaService  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.03%  MediaService  libc-2.23.so           [.] 0x000000000016e546
+     0.02%  MediaService  [kernel.kallsyms]      [k] finish_task_switch
+     0.02%  MediaService  [kernel.kallsyms]      [k] ghes_copy_tofrom_phys
+     0.02%  MediaService  [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.02%  MediaService  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.02%  MediaService  libpthread-2.23.so     [.] __libc_recv
+     0.02%  MediaService  libjaegertracing.so.0  [.] jaegertracing::Span::Span
+     0.02%  MediaService  libc-2.23.so           [.] poll
+     0.02%  MediaService  [kernel.kallsyms]      [k] nmi_cpu_backtrace_handler
+     0.02%  MediaService  [vdso]                 [.] 0x00000000000006d4
+     0.02%  MediaService  [kernel.kallsyms]      [k] poll_schedule_timeout.constprop.0
+     0.02%  MediaService  [kernel.kallsyms]      [k] native_sched_clock
+     0.01%  MediaService  [kernel.kallsyms]      [k] perf_pmu_enable.part.0
+     0.01%  MediaService  [kernel.kallsyms]      [k] do_nmi
+     0.01%  MediaService  [kernel.kallsyms]      [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.01%  MediaService  [kernel.kallsyms]      [k] fput_many
+     0.01%  MediaService  [kernel.kallsyms]      [k] flexible_sched_in
+     0.01%  MediaService  [kernel.kallsyms]      [k] unix_poll
+     0.01%  MediaService  [kernel.kallsyms]      [k] fill_pmd
+     0.01%  MediaService  [kernel.kallsyms]      [k] perf_event_update_time
+     0.01%  MediaService  [kernel.kallsyms]      [k] perf_event_nmi_handler
+     0.01%  MediaService  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.01%  MediaService  [kernel.kallsyms]      [k] apei_check_gar
+     0.01%  MediaService  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.01%  MediaService  [kernel.kallsyms]      [k] __set_pte_vaddr
+     0.01%  MediaService  [kernel.kallsyms]      [k] native_set_fixmap
+     0.00%  MediaService  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+     0.00%  MediaService  [kernel.kallsyms]      [k] sched_clock_cpu
+     0.00%  MediaService  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%  MediaService  [kernel.kallsyms]      [k] native_write_cr2
+     0.00%  MediaService  [kernel.kallsyms]      [k] memcpy_fromio
+     0.00%  MediaService  [kernel.kallsyms]      [k] __native_set_fixmap
+     0.00%  MediaService  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  MediaService  [kernel.kallsyms]      [k] sched_clock
+     0.00%  MediaService  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.0
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,842 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 2743162447
+#
+# Overhead  Command      Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ...........  .....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+     1.85%  UserService  [kernel.kallsyms]      [k] psi_task_change
+            |
+            ---psi_task_change
+               |          
+                --1.37%--deactivate_task
+                          __sched_text_start
+                          schedule
+                          |          
+                           --1.02%--schedule_hrtimeout_range_clock
+                                     schedule_hrtimeout_range
+                                     poll_schedule_timeout.constprop.0
+                                     do_sys_poll
+                                     __x64_sys_poll
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     poll
+
+     1.84%  UserService  [kernel.kallsyms]      [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               |          
+               |--1.01%--__libc_recv
+               |          
+                --0.56%--pthread_cond_timedwait@@GLIBC_2.3.2
+
+     1.69%  UserService  libjaegertracing.so.0  [.] jaegertracing::SpanContext::fromStream
+            |
+            ---jaegertracing::SpanContext::fromStream
+               0
+
+     1.60%  UserService  libstdc++.so.6.0.21    [.] __cxxabiv1::__si_class_type_info::__do_dyncast
+            |
+            ---__cxxabiv1::__si_class_type_info::__do_dyncast
+               |          
+                --1.31%--0x3
+                          |          
+                          |--0.73%--std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::~num_put
+                          |          0x8de907894810c083
+                          |          
+                           --0.58%--std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::~num_get
+                                     0xade907894810c083
+
+     1.48%  UserService  [kernel.kallsyms]      [k] veth_xmit
+            |
+            ---veth_xmit
+               dev_hard_start_xmit
+               __dev_queue_xmit
+               dev_queue_xmit
+               |          
+               |--0.87%--br_dev_queue_push_xmit
+               |          br_nf_dev_queue_xmit
+               |          br_nf_post_routing
+               |          nf_hook_slow
+               |          br_forward_finish
+               |          br_nf_hook_thresh
+               |          br_nf_forward_finish
+               |          br_nf_forward_ip
+               |          nf_hook_slow
+               |          __br_forward
+               |          br_forward
+               |          br_handle_frame_finish
+               |          br_nf_hook_thresh
+               |          br_nf_pre_routing_finish
+               |          br_nf_pre_routing
+               |          br_handle_frame
+               |          __netif_receive_skb_core
+               |          __netif_receive_skb_one_core
+               |          __netif_receive_skb
+               |          process_backlog
+               |          net_rx_action
+               |          __softirqentry_text_start
+               |          do_softirq_own_stack
+               |          do_softirq.part.0
+               |          __local_bh_enable_ip
+               |          ip_finish_output2
+               |          __ip_finish_output
+               |          ip_finish_output
+               |          ip_output
+               |          ip_local_out
+               |          __ip_queue_xmit
+               |          ip_queue_xmit
+               |          __tcp_transmit_skb
+               |          tcp_write_xmit
+               |          __tcp_push_pending_frames
+               |          tcp_push
+               |          tcp_sendmsg_locked
+               |          tcp_sendmsg
+               |          inet_sendmsg
+               |          sock_sendmsg
+               |          __sys_sendto
+               |          __x64_sys_sendto
+               |          do_syscall_64
+               |          entry_SYSCALL_64_after_hwframe
+               |          __libc_send
+               |          
+                --0.61%--ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     1.27%  UserService  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::read
+            |
+            ---apache::thrift::transport::TSocket::read
+
+     1.26%  UserService  libstdc++.so.6.0.21    [.] std::istream::sentry::sentry
+            |
+            ---std::istream::sentry::sentry
+               |          
+               |--0.65%--0x7334600000
+               |          
+                --0.61%--0
+
+     1.14%  UserService  UserService            [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+            |
+            ---std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+               |          
+                --0.60%--0xb00000000
+
+     1.13%  UserService  UserService            [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign(std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> > const&)::{lambda(std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> const*)#1}>
+            |
+            ---std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<c
+               |          
+               |--0.61%--0
+               |          
+                --0.52%--0x733460
+                          0x1
+
+     1.10%  UserService  [kernel.kallsyms]      [k] nf_hook_slow
+            |
+            ---nf_hook_slow
+
+     1.02%  UserService  [kernel.kallsyms]      [k] __fget
+            |
+            ---__fget
+               __fget_light
+               __fdget
+               |          
+                --0.74%--do_sys_poll
+                          __x64_sys_poll
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          poll
+
+     1.01%  UserService  [kernel.kallsyms]      [k] ctx_sched_in
+            |          
+             --0.77%--ctx_sched_in
+                       |          
+                        --0.61%--perf_event_sched_in
+                                  __perf_event_task_sched_in
+                                  finish_task_switch
+                                  __sched_text_start
+                                  schedule
+
+     0.97%  UserService  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+            |
+            ---kmem_cache_alloc_node
+               __alloc_skb
+               sk_stream_alloc_skb
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.93%  UserService  libjaegertracing.so.0  [.] jaegertracing::Tracer::StartSpanWithOptions
+            |
+            ---jaegertracing::Tracer::StartSpanWithOptions
+               opentracing::v2::Tracer::StartSpan
+               0xb00000000
+
+     0.87%  UserService  [kernel.kallsyms]      [k] tcp_write_xmit
+            |
+            ---tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.86%  UserService  libstdc++.so.6.0.21    [.] std::istream::get
+            |
+            ---std::istream::get
+               |          
+                --0.64%--0
+
+     0.86%  UserService  [kernel.kallsyms]      [k] update_curr
+            |
+            ---update_curr
+
+     0.84%  UserService  [kernel.kallsyms]      [k] nf_conntrack_tcp_packet
+            |          
+             --0.60%--nf_conntrack_tcp_packet
+                       nf_conntrack_in
+
+     0.84%  UserService  [kernel.kallsyms]      [k] ipt_do_table
+            |
+            ---ipt_do_table
+               |          
+                --0.57%--iptable_filter_hook
+                          nf_hook_slow
+                          br_nf_forward_ip
+                          nf_hook_slow
+                          __br_forward
+                          br_forward
+                          br_handle_frame_finish
+                          br_nf_hook_thresh
+                          br_nf_pre_routing_finish
+                          br_nf_pre_routing
+                          br_handle_frame
+                          __netif_receive_skb_core
+                          __netif_receive_skb_one_core
+                          __netif_receive_skb
+                          process_backlog
+                          net_rx_action
+                          __softirqentry_text_start
+                          do_softirq_own_stack
+                          do_softirq.part.0
+                          __local_bh_enable_ip
+                          ip_finish_output2
+                          __ip_finish_output
+                          ip_finish_output
+                          ip_output
+                          ip_local_out
+                          __ip_queue_xmit
+                          ip_queue_xmit
+                          __tcp_transmit_skb
+                          tcp_write_xmit
+                          __tcp_push_pending_frames
+                          tcp_push
+                          tcp_sendmsg_locked
+                          tcp_sendmsg
+                          inet_sendmsg
+                          sock_sendmsg
+                          __sys_sendto
+                          __x64_sys_sendto
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_send
+
+     0.84%  UserService  [kernel.kallsyms]      [k] update_load_avg
+            |
+            ---update_load_avg
+               |          
+                --0.52%--enqueue_entity
+                          enqueue_task_fair
+                          activate_task
+                          ttwu_do_activate
+                          try_to_wake_up
+
+     0.84%  UserService  [kernel.kallsyms]      [k] do_softirq.part.0
+            |
+            ---do_softirq.part.0
+
+     0.76%  UserService  [kernel.kallsyms]      [k] update_cfs_group
+            |
+            ---update_cfs_group
+               |          
+                --0.66%--dequeue_task_fair
+                          deactivate_task
+                          __sched_text_start
+                          schedule
+                          schedule_hrtimeout_range_clock
+                          schedule_hrtimeout_range
+                          poll_schedule_timeout.constprop.0
+                          do_sys_poll
+                          __x64_sys_poll
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          poll
+
+     0.73%  UserService  [kernel.kallsyms]      [k] tcp_ack
+            |
+            ---tcp_ack
+               tcp_rcv_established
+               tcp_v4_do_rcv
+               tcp_v4_rcv
+               ip_protocol_deliver_rcu
+               ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.73%  UserService  libstdc++.so.6.0.21    [.] std::ios_base::ios_base
+            |
+            ---std::ios_base::ios_base
+               0
+
+     0.72%  UserService  libstdc++.so.6.0.21    [.] __cxxabiv1::__vmi_class_type_info::__do_dyncast
+            |
+            ---__cxxabiv1::__vmi_class_type_info::__do_dyncast
+
+     0.69%  UserService  libpthread-2.23.so     [.] __libc_recv
+            |
+            ---__libc_recv
+
+     0.69%  UserService  UserService            [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_erase
+            |
+            ---std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_erase
+
+     0.67%  UserService  [kernel.kallsyms]      [k] __tcp_transmit_skb
+            |
+            ---__tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.66%  UserService  [kernel.kallsyms]      [k] ip_vs_local_reply4
+            |
+            ---ip_vs_local_reply4
+               __ip_local_out
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.64%  UserService  [kernel.kallsyms]      [k] __nf_conntrack_find_get
+            |
+            ---__nf_conntrack_find_get
+               nf_conntrack_in
+
+     0.62%  UserService  libjaegertracing.so.0  [.] std::vector<jaegertracing::LogRecord, std::allocator<jaegertracing::LogRecord> >::operator=@plt
+            |
+            ---std::vector<jaegertracing::LogRecord, std::allocator<jaegertracing::LogRecord> >::operator=
+               0xc1cba0
+               jaegertracing::Span::~Span
+               0x1668be53fd894955
+
+     0.62%  UserService  [kernel.kallsyms]      [k] visit_groups_merge
+            |
+            ---visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               |          
+                --0.58%--schedule_hrtimeout_range_clock
+                          schedule_hrtimeout_range
+                          poll_schedule_timeout.constprop.0
+                          do_sys_poll
+                          __x64_sys_poll
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          poll
+
+     0.59%  UserService  [kernel.kallsyms]      [k] __this_module+0x80000003a010
+     0.59%  UserService  [kernel.kallsyms]      [k] cpuacct_charge
+            |
+            ---cpuacct_charge
+               update_curr
+               dequeue_entity
+               dequeue_task_fair
+               deactivate_task
+               __sched_text_start
+               schedule
+               schedule_hrtimeout_range_clock
+               schedule_hrtimeout_range
+               poll_schedule_timeout.constprop.0
+               do_sys_poll
+               __x64_sys_poll
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               poll
+
+     0.58%  UserService  UserService            [.] jaegertracing::SpanContext::~SpanContext
+            |
+            ---jaegertracing::SpanContext::~SpanContext
+
+     0.58%  UserService  [kernel.kallsyms]      [k] __inet_lookup_established
+            |
+            ---__inet_lookup_established
+               tcp_v4_early_demux
+               ip_rcv_finish_core.isra.0
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.58%  UserService  [kernel.kallsyms]      [k] dequeue_task_fair
+            |
+            ---dequeue_task_fair
+
+     0.57%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace
+     0.56%  UserService  libstdc++.so.6.0.21    [.] std::ios_base::_M_init
+            |
+            ---std::ios_base::_M_init
+
+     0.56%  UserService  [kernel.kallsyms]      [k] tcp_clean_rtx_queue
+            |
+            ---tcp_clean_rtx_queue
+               tcp_ack
+               tcp_rcv_established
+               tcp_v4_do_rcv
+               tcp_v4_rcv
+               ip_protocol_deliver_rcu
+               ip_local_deliver_finish
+               ip_local_deliver
+               ip_rcv_finish
+               ip_rcv
+               __netif_receive_skb_one_core
+               __netif_receive_skb
+               process_backlog
+               net_rx_action
+               __softirqentry_text_start
+               do_softirq_own_stack
+               do_softirq.part.0
+               __local_bh_enable_ip
+               ip_finish_output2
+               __ip_finish_output
+               ip_finish_output
+               ip_output
+               ip_local_out
+               __ip_queue_xmit
+               ip_queue_xmit
+               __tcp_transmit_skb
+               tcp_write_xmit
+               __tcp_push_pending_frames
+               tcp_push
+               tcp_sendmsg_locked
+               tcp_sendmsg
+               inet_sendmsg
+               sock_sendmsg
+               __sys_sendto
+               __x64_sys_sendto
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_send
+
+     0.53%  UserService  [kernel.kallsyms]      [k] syscall_trace_enter
+            |
+            ---syscall_trace_enter
+               |          
+                --0.52%--do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+
+     0.51%  UserService  UserService            [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeMessageBegin_virt
+     0.50%  UserService  [kernel.kallsyms]      [k] sock_poll
+            |
+            ---sock_poll
+
+     0.50%  UserService  [kernel.kallsyms]      [k] ip_vs_out.part.0
+            |
+            ---ip_vs_out.part.0
+               ip_vs_out
+               ip_vs_reply4
+               nf_hook_slow
+
+     0.49%  UserService  [kernel.kallsyms]      [k] tcp_send_delayed_ack
+     0.49%  UserService  UserService            [.] social_network::UserServiceProcessor::dispatchCall
+     0.48%  UserService  [kernel.kallsyms]      [k] aa_profile_af_perm
+     0.48%  UserService  libpthread-2.23.so     [.] pthread_cond_timedwait@@GLIBC_2.3.2
+     0.48%  UserService  libpthread-2.23.so     [.] pthread_mutex_lock
+     0.47%  UserService  [kernel.kallsyms]      [k] tcp_rcv_established
+     0.46%  UserService  [kernel.kallsyms]      [k] unix_poll
+     0.46%  UserService  [kernel.kallsyms]      [k] entry_SYSCALL_64
+     0.46%  UserService  libc-2.23.so           [.] 0x0000000000080461
+     0.44%  UserService  [vdso]                 [.] __vdso_clock_gettime
+     0.44%  UserService  libc-2.23.so           [.] strlen
+     0.44%  UserService  libpthread-2.23.so     [.] pthread_mutex_trylock
+     0.43%  UserService  UserService            [.] std::__shared_ptr<apache::thrift::transport::TTransport, (__gnu_cxx::_Lock_policy)2>::__shared_ptr
+     0.42%  UserService  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+     0.42%  UserService  [kernel.kallsyms]      [k] switch_fpu_return
+     0.42%  UserService  [kernel.kallsyms]      [k] available_idle_cpu
+     0.41%  UserService  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::init
+     0.40%  UserService  libc-2.23.so           [.] free
+     0.40%  UserService  [kernel.kallsyms]      [k] tcp_v4_rcv
+     0.40%  UserService  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+     0.40%  UserService  [kernel.kallsyms]      [k] tcp_poll
+     0.40%  UserService  UserService            [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.39%  UserService  libstdc++.so.6.0.21    [.] std::__ostream_insert<char, std::char_traits<char> >
+     0.39%  UserService  [kernel.kallsyms]      [k] tcp_schedule_loss_probe
+     0.39%  UserService  [kernel.kallsyms]      [k] syscall_return_via_sysret
+     0.39%  UserService  [kernel.kallsyms]      [k] __local_bh_enable_ip
+     0.39%  UserService  libc-2.23.so           [.] 0x000000000016e530
+     0.38%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create
+     0.38%  UserService  [kernel.kallsyms]      [k] iptable_mangle_hook
+     0.38%  UserService  [kernel.kallsyms]      [k] memcmp
+     0.38%  UserService  libstdc++.so.6.0.21    [.] std::locale::~locale
+     0.38%  UserService  libstdc++.so.6.0.21    [.] std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.38%  UserService  UserService            [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readStringBody<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+     0.38%  UserService  libjaegertracing.so.0  [.] jaegertracing::Span::FinishWithOptions
+     0.37%  UserService  [kernel.kallsyms]      [k] rb_next
+     0.37%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve
+     0.37%  UserService  [kernel.kallsyms]      [k] ip_rcv_core.isra.0
+     0.36%  UserService  [kernel.kallsyms]      [k] __skb_ext_del
+     0.36%  UserService  libstdc++.so.6.0.21    [.] __dynamic_cast
+     0.36%  UserService  [kernel.kallsyms]      [k] __lock_text_start
+     0.36%  UserService  libc-2.23.so           [.] 0x000000000007fd78
+     0.36%  UserService  libstdc++.so.6.0.21    [.] clock_gettime@plt
+     0.36%  UserService  libc-2.23.so           [.] malloc
+     0.36%  UserService  libc-2.23.so           [.] 0x00000000000821ed
+     0.35%  UserService  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+     0.35%  UserService  libc-2.23.so           [.] 0x0000000000081e31
+     0.35%  UserService  [kernel.kallsyms]      [k] skb_free_head
+     0.34%  UserService  libc-2.23.so           [.] 0x000000000008201f
+     0.34%  UserService  [kernel.kallsyms]      [k] tcp_v4_early_demux
+     0.34%  UserService  UserService            [.] social_network::Creator::operator=
+     0.34%  UserService  libstdc++.so.6.0.21    [.] std::_Rb_tree_insert_and_rebalance
+     0.34%  UserService  UserService            [.] apache::thrift::TDispatchProcessor::process
+     0.34%  UserService  libc-2.23.so           [.] 0x0000000000082534
+     0.34%  UserService  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+     0.34%  UserService  [kernel.kallsyms]      [k] detach_if_pending
+     0.34%  UserService  [kernel.kallsyms]      [k] release_sock
+     0.33%  UserService  [kernel.kallsyms]      [k] aa_sk_perm
+     0.33%  UserService  libc-2.23.so           [.] 0x000000000016e534
+     0.33%  UserService  [kernel.kallsyms]      [k] __ip_queue_xmit
+     0.33%  UserService  [kernel.kallsyms]      [k] futex_wake_op
+     0.33%  UserService  [kernel.kallsyms]      [k] get_l4proto
+     0.33%  UserService  [kernel.kallsyms]      [k] tcp_tx_timestamp
+     0.33%  UserService  UserService            [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> >
+     0.33%  UserService  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate@plt
+     0.33%  UserService  [kernel.kallsyms]      [k] validate_xmit_skb
+     0.33%  UserService  [kernel.kallsyms]      [k] br_nf_hook_thresh
+     0.33%  UserService  libc-2.23.so           [.] 0x00000000000821ce
+     0.33%  UserService  libstdc++.so.6.0.21    [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn
+     0.32%  UserService  [kernel.kallsyms]      [k] skb_network_protocol
+     0.32%  UserService  [kernel.kallsyms]      [k] __fsnotify_parent
+     0.32%  UserService  [kernel.kallsyms]      [k] process_backlog
+     0.32%  UserService  UserService            [.] operator new@plt
+     0.32%  UserService  UserService            [.] social_network::Creator::~Creator
+     0.32%  UserService  [vdso]                 [.] 0x00000000000006c8
+     0.32%  UserService  UserService            [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}::operator()
+     0.32%  UserService  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readFrame
+     0.32%  UserService  [kernel.kallsyms]      [k] nf_conntrack_in
+     0.32%  UserService  libstdc++.so.6.0.21    [.] 0x00000000000a0d80
+     0.32%  UserService  [kernel.kallsyms]      [k] tcp_wfree
+     0.32%  UserService  [kernel.kallsyms]      [k] fput_many
+     0.32%  UserService  [kernel.kallsyms]      [k] aa_label_next_confined
+     0.32%  UserService  [kernel.kallsyms]      [k] tcp_current_mss
+     0.32%  UserService  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >@plt
+     0.32%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow
+     0.31%  UserService  libc-2.23.so           [.] 0x0000000000081c63
+     0.31%  UserService  UserService            [.] std::_Function_handler<opentracing::v2::expected<void, std::error_code> (opentracing::v2::string_view, opentracing::v2::string_view), jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}>::_M_invoke
+     0.31%  UserService  UserService            [.] social_network::UserService_ComposeCreatorWithUserId_args::read
+     0.31%  UserService  libjaegertracing.so.0  [.] jaegertracing::TraceID::fromStream
+     0.31%  UserService  [kernel.kallsyms]      [k] tcp_ack_update_rtt.isra.0
+     0.31%  UserService  [kernel.kallsyms]      [k] __x86_indirect_thunk_r13
+     0.31%  UserService  UserService            [.] std::_Function_base::_Base_manager<jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}>::_M_manager
+     0.31%  UserService  [kernel.kallsyms]      [k] tcp_in_window
+     0.31%  UserService  libc-2.23.so           [.] 0x0000000000081be5
+     0.30%  UserService  [kernel.kallsyms]      [k] br_allowed_ingress
+     0.30%  UserService  [kernel.kallsyms]      [k] __seccomp_filter
+     0.30%  UserService  libc-2.23.so           [.] 0x00000000000800b0
+     0.30%  UserService  [kernel.kallsyms]      [k] skb_entail
+     0.30%  UserService  [kernel.kallsyms]      [k] native_sched_clock
+     0.30%  UserService  [kernel.kallsyms]      [k] __kfree_skb_flush
+     0.30%  UserService  [kernel.kallsyms]      [k] br_nf_post_routing
+     0.30%  UserService  libstdc++.so.6.0.21    [.] std::ios_base::_M_call_callbacks
+     0.29%  UserService  libjaegertracing.so.0  [.] std::istream::get@plt
+     0.29%  UserService  UserService            [.] social_network::Creator::write
+     0.29%  UserService  libc-2.23.so           [.] 0x000000000014dfa0
+     0.29%  UserService  [kernel.kallsyms]      [k] tcp_cleanup_rbuf
+     0.29%  UserService  UserService            [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::readAll_virt
+     0.29%  UserService  UserService            [.] jaegertracing::Span::~Span
+     0.29%  UserService  libc-2.23.so           [.] 0x000000000016fb4c
+     0.29%  UserService  [kernel.kallsyms]      [k] __netif_receive_skb_one_core
+     0.28%  UserService  UserService            [.] std::exception::~exception@plt
+     0.28%  UserService  UserService            [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::inject
+     0.28%  UserService  libjaegertracing.so.0  [.] jaegertracing::SpanContext::swap
+     0.28%  UserService  libpthread-2.23.so     [.] __pthread_disable_asynccancel
+     0.28%  UserService  libc-2.23.so           [.] 0x000000000008220f
+     0.28%  UserService  UserService            [.] social_network::UserHandler::ComposeCreatorWithUserId
+     0.28%  UserService  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+     0.28%  UserService  UserService            [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable
+     0.28%  UserService  libc-2.23.so           [.] 0x000000000007e3aa
+     0.27%  UserService  [kernel.kallsyms]      [k] put_prev_task_fair
+     0.27%  UserService  [kernel.kallsyms]      [k] copy_user_enhanced_fast_string
+     0.27%  UserService  [kernel.kallsyms]      [k] ctx_sched_out
+     0.27%  UserService  [kernel.kallsyms]      [k] get_futex_key
+     0.27%  UserService  libc-2.23.so           [.] 0x000000000014e16a
+     0.27%  UserService  [kernel.kallsyms]      [k] br_handle_frame
+     0.27%  UserService  UserService            [.] apache::thrift::protocol::TProtocol::incrementOutputRecursionDepth
+     0.27%  UserService  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap@plt
+     0.26%  UserService  libc-2.23.so           [.] 0x000000000007e4d6
+     0.26%  UserService  [kernel.kallsyms]      [k] import_single_range
+     0.26%  UserService  libstdc++.so.6.0.21    [.] std::use_facet<std::ctype<char> >
+     0.26%  UserService  [kernel.kallsyms]      [k] rb_erase
+     0.26%  UserService  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::operator=
+     0.26%  UserService  [kernel.kallsyms]      [k] __update_load_avg_cfs_rq
+     0.26%  UserService  libstdc++.so.6.0.21    [.] std::locale::id::_M_id
+     0.26%  UserService  libc-2.23.so           [.] 0x000000000014e140
+     0.26%  UserService  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::clear@plt
+     0.25%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign
+     0.25%  UserService  libc-2.23.so           [.] 0x0000000000081dce
+     0.25%  UserService  [kernel.kallsyms]      [k] __ip_local_out
+     0.25%  UserService  libc-2.23.so           [.] 0x000000000007ff4d
+     0.25%  UserService  [kernel.kallsyms]      [k] iov_iter_advance
+     0.24%  UserService  [kernel.kallsyms]      [k] idr_get_free
+     0.24%  UserService  [kernel.kallsyms]      [k] tcp_rack_update_reo_wnd
+     0.24%  UserService  libthrift.so.0.12.0    [.] apache::thrift::server::TServerFramework::serve
+     0.24%  UserService  libc-2.23.so           [.] 0x0000000000081c14
+     0.24%  UserService  [kernel.kallsyms]      [k] enqueue_entity
+     0.24%  UserService  [kernel.kallsyms]      [k] rcu_all_qs
+     0.24%  UserService  [kernel.kallsyms]      [k] ipv4_dst_check
+     0.24%  UserService  [kernel.kallsyms]      [k] tcp_mstamp_refresh
+     0.24%  UserService  libstdc++.so.6.0.21    [.] 0x00000000000a0d84
+     0.23%  UserService  [kernel.kallsyms]      [k] poll_freewait
+     0.23%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate
+     0.23%  UserService  [kernel.kallsyms]      [k] raw_local_deliver
+     0.22%  UserService  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Tag, std::allocator<jaegertracing::thrift::Tag> >::~vector
+     0.22%  UserService  [kernel.kallsyms]      [k] flexible_sched_in
+     0.22%  UserService  UserService            [.] jaegertracing::SpanContext::SpanContext
+     0.21%  UserService  [kernel.kallsyms]      [k] reweight_entity
+     0.21%  UserService  libc-2.23.so           [.] 0x000000000007fdf0
+     0.21%  UserService  libjaegertracing.so.0  [.] jaegertracing::Tracer::Extract
+     0.21%  UserService  [kernel.kallsyms]      [k] update_rq_clock
+     0.21%  UserService  libc-2.23.so           [.] 0x000000000014e155
+     0.21%  UserService  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare
+     0.21%  UserService  [kernel.kallsyms]      [k] ip_vs_in
+     0.21%  UserService  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeI64_virt
+     0.20%  UserService  [kernel.kallsyms]      [k] group_sched_in
+     0.20%  UserService  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+     0.20%  UserService  libjaegertracing.so.0  [.] jaegertracing::Tracer::startSpanInternal
+     0.20%  UserService  libc-2.23.so           [.] 0x000000000008007b
+     0.20%  UserService  libjaegertracing.so.0  [.] jaegertracing::Span::Span
+     0.19%  UserService  libc-2.23.so           [.] 0x0000000000081db8
+     0.18%  UserService  [kernel.kallsyms]      [k] perf_event_alloc
+     0.18%  UserService  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::flush
+     0.17%  UserService  [kernel.kallsyms]      [k] __sched_text_start
+     0.17%  UserService  UserService            [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readString_virt
+     0.17%  UserService  libc-2.23.so           [.] 0x000000000007e4ba
+     0.17%  UserService  libc-2.23.so           [.] 0x000000000007feb3
+     0.17%  UserService  [kernel.kallsyms]      [k] br_nf_forward_ip
+     0.17%  UserService  UserService            [.] apache::thrift::transport::readAll<apache::thrift::transport::TBufferBase>
+     0.16%  UserService  UserService            [.] memcpy@plt
+     0.16%  UserService  [kernel.kallsyms]      [k] nft_do_chain
+     0.16%  UserService  [kernel.kallsyms]      [k] native_flush_tlb_one_user
+     0.16%  UserService  [kernel.kallsyms]      [k] tcp_update_pacing_rate
+     0.16%  UserService  libjaegertracing.so.0  [.] operator delete@plt
+     0.16%  UserService  [kernel.kallsyms]      [k] account_entity_enqueue
+     0.16%  UserService  libc-2.23.so           [.] 0x000000000007fd62
+     0.16%  UserService  [kernel.kallsyms]      [k] _copy_from_user
+     0.15%  UserService  [kernel.kallsyms]      [k] __update_idle_core
+     0.15%  UserService  [kernel.kallsyms]      [k] skb_release_data
+     0.15%  UserService  [kernel.kallsyms]      [k] br_fdb_update
+     0.15%  UserService  [kernel.kallsyms]      [k] tcp_v4_inbound_md5_hash
+     0.15%  UserService  [kernel.kallsyms]      [k] mod_timer
+     0.15%  UserService  [kernel.kallsyms]      [k] fdb_find_rcu
+     0.15%  UserService  UserService            [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::borrow_virt
+     0.15%  UserService  [kernel.kallsyms]      [k] tcp_chrono_stop
+     0.14%  UserService  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Tag, std::allocator<jaegertracing::thrift::Tag> >::operator=@plt
+     0.14%  UserService  [kernel.kallsyms]      [k] nft_counter_eval
+     0.14%  UserService  [kernel.kallsyms]      [k] ip_vs_forward_icmp
+     0.14%  UserService  [kernel.kallsyms]      [k] is_skb_forwardable
+     0.14%  UserService  [kernel.kallsyms]      [k] ip_rcv_finish_core.isra.0
+     0.14%  UserService  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::write_virt
+     0.13%  UserService  [kernel.kallsyms]      [k] __x86_indirect_thunk_rcx
+     0.13%  UserService  [kernel.kallsyms]      [k] br_validate_ipv4.isra.0
+     0.13%  UserService  [kernel.kallsyms]      [k] br_nf_pre_routing_finish
+     0.13%  UserService  [kernel.kallsyms]      [k] netif_skb_features
+     0.13%  UserService  [kernel.kallsyms]      [k] __dev_queue_xmit
+     0.13%  UserService  [kernel.kallsyms]      [k] netif_rx_internal
+     0.12%  UserService  [kernel.kallsyms]      [k] conntrack_mt_v3
+     0.12%  UserService  [kernel.kallsyms]      [k] check_preempt_curr
+     0.11%  UserService  [kernel.kallsyms]      [k] dev_hard_start_xmit
+     0.11%  UserService  [kernel.kallsyms]      [k] ip_output
+     0.11%  UserService  [kernel.kallsyms]      [k] nft_ct_get_eval
+     0.11%  UserService  [kernel.kallsyms]      [k] __x86_indirect_thunk_rax
+     0.11%  UserService  [kernel.kallsyms]      [k] eth_type_trans
+     0.11%  UserService  [kernel.kallsyms]      [k] fib_table_lookup
+     0.10%  UserService  [kernel.kallsyms]      [k] inet_sendmsg
+     0.10%  UserService  [kernel.kallsyms]      [k] ktime_get
+     0.10%  UserService  libc-2.23.so           [.] 0x000000000007e447
+     0.09%  UserService  UserService            [.] pthread_mutex_trylock@plt
+     0.09%  UserService  libc-2.23.so           [.] 0x000000000007e410
+     0.09%  UserService  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.08%  UserService  libstdc++.so.6.0.21    [.] std::chrono::_V2::steady_clock::now
+     0.08%  UserService  libstdc++.so.6.0.21    [.] std::locale::locale
+     0.08%  UserService  [kernel.kallsyms]      [k] __nf_ct_refresh_acct
+     0.08%  UserService  libc-2.23.so           [.] 0x0000000000081b96
+     0.06%  UserService  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.06%  UserService  UserService            [.] opentracing::v2::SpanReference::Apply
+     0.05%  UserService  [kernel.kallsyms]      [k] perf_event_update_userpage
+     0.05%  UserService  libc-2.23.so           [.] poll
+     0.04%  UserService  libc-2.23.so           [.] 0x000000000014e100
+     0.04%  UserService  [kernel.kallsyms]      [k] sock_recvmsg
+     0.04%  UserService  libstdc++.so.6.0.21    [.] std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >
+     0.04%  UserService  [kernel.kallsyms]      [k] ghes_copy_tofrom_phys
+     0.04%  UserService  [kernel.kallsyms]      [k] perf_swevent_add
+     0.03%  UserService  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sweepQueue
+     0.03%  UserService  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.03%  UserService  [kernel.kallsyms]      [k] native_write_msr
+     0.03%  UserService  UserService            [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >
+     0.02%  UserService  [kernel.kallsyms]      [k] end_repeat_nmi
+     0.02%  UserService  [kernel.kallsyms]      [k] rb_insert_color
+     0.02%  UserService  [kernel.kallsyms]      [k] fill_pmd
+     0.02%  UserService  [kernel.kallsyms]      [k] set_pte_vaddr
+     0.02%  UserService  libc-2.23.so           [.] 0x0000000000115238
+     0.02%  UserService  [kernel.kallsyms]      [k] apic_timer_interrupt
+     0.02%  UserService  [kernel.kallsyms]      [k] __sys_recvfrom
+     0.02%  UserService  [kernel.kallsyms]      [k] _raw_spin_lock
+     0.02%  UserService  [kernel.kallsyms]      [k] __native_set_fixmap
+     0.02%  UserService  [kernel.kallsyms]      [k] perf_event_update_time
+     0.01%  UserService  [kernel.kallsyms]      [k] rcu_nmi_exit
+     0.01%  UserService  [kernel.kallsyms]      [k] nmi_restore
+     0.01%  UserService  [kernel.kallsyms]      [k] finish_task_switch
+     0.01%  UserService  [kernel.kallsyms]      [k] sched_clock
+     0.01%  UserService  [kernel.kallsyms]      [k] futex_wait_queue_me
+     0.01%  UserService  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.01%  UserService  [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.01%  UserService  [kernel.kallsyms]      [k] nmi_handle
+     0.01%  UserService  [kernel.kallsyms]      [k] nmi_cpu_backtrace_handler
+     0.01%  UserService  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.01%  UserService  [kernel.kallsyms]      [k] perf_sample_event_took
+     0.01%  UserService  [kernel.kallsyms]      [k] __fget_light
+     0.01%  UserService  [kernel.kallsyms]      [k] perf_pmu_nop_void
+     0.01%  UserService  [kernel.kallsyms]      [k] native_set_fixmap
+     0.01%  UserService  [kernel.kallsyms]      [k] do_nmi
+     0.01%  UserService  [kernel.kallsyms]      [k] apei_check_gar
+     0.01%  UserService  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  UserService  [kernel.kallsyms]      [k] fill_pud
+     0.01%  UserService  [kernel.kallsyms]      [k] __set_pte_vaddr
+     0.01%  UserService  [kernel.kallsyms]      [k] __ghes_peek_estatus.isra.0
+     0.01%  UserService  [kernel.kallsyms]      [k] nmi_cpu_backtrace
+     0.00%  UserService  [kernel.kallsyms]      [k] do_sys_poll
+     0.00%  UserService  [kernel.kallsyms]      [k] poll_schedule_timeout.constprop.0
+     0.00%  UserService  [kernel.kallsyms]      [k] perf_pmu_enable.part.0
+     0.00%  UserService  [kernel.kallsyms]      [k] memcpy_fromio
+     0.00%  UserService  [kernel.kallsyms]      [k] perf_event_nmi_handler
+     0.00%  UserService  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%  UserService  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UserService  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.00%  UserService  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.0
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
