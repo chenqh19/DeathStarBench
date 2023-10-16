@@ -1,0 +1,1430 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 7K of event 'cycles'
+# Event count (approx.): 24346062165
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ...............  .....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+     2.08%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e256
+            |          
+             --2.05%--0x7ff77855b258
+                       |          
+                       |--1.21%--mongoc_cluster_run_command_monitored
+                       |          mongoc_collection_find_and_modify_with_opts
+                       |          mongoc_collection_find_and_modify
+                       |          
+                        --0.84%--mongoc_stream_buffered_destroy
+
+     1.53%  UserTimelineSer  [kernel.kallsyms]      [k] copy_user_enhanced_fast_string
+            |
+            ---copy_user_enhanced_fast_string
+               |          
+                --1.49%--_copy_to_iter
+                          simple_copy_to_iter
+                          __skb_datagram_iter
+                          skb_copy_datagram_iter
+                          tcp_recvmsg
+                          inet_recvmsg
+                          sock_recvmsg
+                          __sys_recvfrom
+                          __x64_sys_recvfrom
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          __libc_recv
+
+     1.50%  UserTimelineSer  [kernel.kallsyms]      [k] do_syscall_64
+            |          
+             --1.49%--do_syscall_64
+                       |          
+                        --1.44%--entry_SYSCALL_64_after_hwframe
+
+     1.18%  UserTimelineSer  [kernel.kallsyms]      [k] __nf_conntrack_find_get
+            |
+            ---__nf_conntrack_find_get
+               nf_conntrack_in
+               |          
+                --0.73%--ipv4_conntrack_in
+                          nf_hook_slow
+                          |          
+                           --0.69%--ip_rcv
+                                     __netif_receive_skb_one_core
+                                     __netif_receive_skb
+                                     process_backlog
+                                     net_rx_action
+                                     __softirqentry_text_start
+                                     do_softirq_own_stack
+                                     do_softirq.part.0
+                                     __local_bh_enable_ip
+                                     ip_finish_output2
+                                     __ip_finish_output
+                                     ip_finish_output
+                                     ip_output
+                                     ip_local_out
+                                     __ip_queue_xmit
+                                     ip_queue_xmit
+                                     __tcp_transmit_skb
+
+     1.12%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_handle_ismaster
+            |          
+             --0.92%--mongoc_server_description_handle_ismaster
+                       |          
+                        --0.90%--mongoc_server_description_new_copy
+                                  0
+
+     1.06%  UserTimelineSer  [kernel.kallsyms]      [k] psi_task_change
+            |
+            ---psi_task_change
+               |          
+                --0.54%--activate_task
+                          ttwu_do_activate
+                          try_to_wake_up
+
+     0.94%  UserTimelineSer  libc-2.23.so           [.] malloc
+            |          
+             --0.87%--malloc
+
+     0.83%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_next
+            |
+            ---bson_iter_next
+
+     0.68%  UserTimelineSer  [kernel.kallsyms]      [k] fib_table_lookup
+            |
+            ---fib_table_lookup
+
+     0.67%  UserTimelineSer  [kernel.kallsyms]      [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+
+     0.65%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_recvmsg
+            |          
+             --0.60%--tcp_recvmsg
+                       inet_recvmsg
+                       sock_recvmsg
+                       __sys_recvfrom
+                       __x64_sys_recvfrom
+                       do_syscall_64
+                       entry_SYSCALL_64_after_hwframe
+                       __libc_recv
+
+     0.62%  UserTimelineSer  libc-2.23.so           [.] free
+            |          
+             --0.61%--free
+
+     0.62%  UserTimelineSer  [kernel.kallsyms]      [k] veth_xmit
+            |          
+             --0.59%--veth_xmit
+                       |          
+                        --0.51%--dev_hard_start_xmit
+                                  __dev_queue_xmit
+                                  dev_queue_xmit
+
+     0.60%  UserTimelineSer  libc-2.23.so           [.] vfprintf
+            |
+            ---vfprintf
+               |          
+                --0.58%--__vsnprintf_chk
+
+     0.60%  UserTimelineSer  [kernel.kallsyms]      [k] nf_hook_slow
+            |          
+             --0.58%--nf_hook_slow
+
+     0.58%  UserTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_tcp_packet
+            |
+            ---nf_conntrack_tcp_packet
+               |          
+                --0.56%--nf_conntrack_in
+
+     0.56%  UserTimelineSer  [kernel.kallsyms]      [k] __fget
+            |
+            ---__fget
+               |          
+                --0.50%--__fget_light
+                          __fdget
+
+     0.55%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dd76
+            |
+            ---0x7ff77855ad78
+               mongoc_stream_buffered_destroy
+
+     0.54%  UserTimelineSer  libpthread-2.23.so     [.] pthread_mutex_lock
+            |
+            ---pthread_mutex_lock
+
+     0.54%  UserTimelineSer  [kernel.kallsyms]      [k] ip_finish_output2
+            |          
+             --0.53%--ip_finish_output2
+                       __ip_finish_output
+                       ip_finish_output
+                       ip_output
+
+     0.54%  UserTimelineSer  [kernel.kallsyms]      [k] ipt_do_table
+            |
+            ---ipt_do_table
+
+     0.51%  UserTimelineSer  [kernel.kallsyms]      [k] __tcp_transmit_skb
+     0.50%  UserTimelineSer  [kernel.kallsyms]      [k] __dev_queue_xmit
+            |
+            ---__dev_queue_xmit
+
+     0.48%  UserTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rax
+     0.47%  UserTimelineSer  [kernel.kallsyms]      [k] syscall_return_via_sysret
+     0.45%  UserTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_core
+     0.45%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_pre_routing
+     0.44%  UserTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_in
+     0.43%  UserTimelineSer  libbson-1.0.so.0       [.] _bson_append.constprop.23
+     0.43%  UserTimelineSer  [kernel.kallsyms]      [k] do_sys_poll
+     0.42%  UserTimelineSer  [kernel.kallsyms]      [k] update_curr
+     0.42%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_in_window
+     0.41%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+     0.41%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::fromStream
+     0.40%  UserTimelineSer  [kernel.kallsyms]      [k] update_load_avg
+     0.40%  UserTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_se
+     0.40%  UserTimelineSer  [kernel.kallsyms]      [k] br_handle_frame
+     0.39%  UserTimelineSer  [kernel.kallsyms]      [k] __this_module+0x80000001a0b9
+     0.37%  UserTimelineSer  [kernel.kallsyms]      [k] eth_type_trans
+     0.37%  UserTimelineSer  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+     0.37%  UserTimelineSer  [kernel.kallsyms]      [k] __seccomp_filter
+     0.36%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+     0.36%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_in_get
+     0.36%  UserTimelineSer  libc-2.23.so           [.] __libc_calloc
+     0.34%  UserTimelineSer  libpthread-2.23.so     [.] pthread_mutex_unlock
+     0.31%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_dst_check
+     0.30%  UserTimelineSer  [vdso]                 [.] __vdso_clock_gettime
+     0.30%  UserTimelineSer  [kernel.kallsyms]      [k] memcmp
+     0.30%  UserTimelineSer  [kernel.kallsyms]      [k] aa_profile_af_perm
+     0.29%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_rcv
+     0.29%  UserTimelineSer  [kernel.kallsyms]      [k] validate_xmit_skb
+     0.29%  UserTimelineSer  [kernel.kallsyms]      [k] update_cfs_group
+     0.29%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rcv_established
+     0.29%  UserTimelineSer  libstdc++.so.6.0.21    [.] __dynamic_cast
+     0.28%  UserTimelineSer  [kernel.kallsyms]      [k] fdb_find_rcu
+     0.28%  UserTimelineSer  [kernel.kallsyms]      [k] ip_rcv_core.isra.0
+     0.28%  UserTimelineSer  [kernel.kallsyms]      [k] iptable_mangle_hook
+     0.28%  UserTimelineSer  [kernel.kallsyms]      [k] syscall_trace_enter
+     0.28%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_out.part.0
+     0.27%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::StartSpanWithOptions
+     0.27%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_forward_ip
+     0.27%  UserTimelineSer  [kernel.kallsyms]      [k] ip_route_input_slow
+     0.26%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_in
+     0.26%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_ack
+     0.26%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_nat_xmit
+     0.26%  UserTimelineSer  libpthread-2.23.so     [.] __libc_recv
+     0.25%  UserTimelineSer  UserTimelineService    [.] sdscatfmt
+     0.25%  UserTimelineSer  [kernel.kallsyms]      [k] sock_poll
+     0.25%  UserTimelineSer  [kernel.kallsyms]      [k] nf_ct_get_tuple
+     0.25%  UserTimelineSer  [kernel.kallsyms]      [k] ip_output
+     0.25%  UserTimelineSer  [kernel.kallsyms]      [k] enqueue_to_backlog
+     0.25%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::istream::get
+     0.24%  UserTimelineSer  [kernel.kallsyms]      [k] __cgroup_bpf_run_filter_skb
+     0.24%  UserTimelineSer  [kernel.kallsyms]      [k] br_forward
+     0.24%  UserTimelineSer  [kernel.kallsyms]      [k] ktime_get_with_offset
+     0.23%  UserTimelineSer  [kernel.kallsyms]      [k] pskb_expand_head
+     0.23%  UserTimelineSer  [kernel.kallsyms]      [k] native_write_msr
+     0.23%  UserTimelineSer  [kernel.kallsyms]      [k] skb_page_frag_refill
+     0.23%  UserTimelineSer  [kernel.kallsyms]      [k] br_handle_frame_finish
+     0.23%  UserTimelineSer  UserTimelineService    [.] social_network::UserTimelineServiceProcessor::process_WriteUserTimeline
+     0.23%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::read
+     0.23%  UserTimelineSer  [kernel.kallsyms]      [k] skb_release_data
+     0.22%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_write_xmit
+     0.22%  UserTimelineSer  [kernel.kallsyms]      [k] enqueue_entity
+     0.22%  UserTimelineSer  libbson-1.0.so.0       [.] bson_destroy
+     0.22%  UserTimelineSer  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+     0.22%  UserTimelineSer  [kernel.kallsyms]      [k] cpuacct_charge
+     0.22%  UserTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.22%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821ce
+     0.22%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dfa0
+     0.22%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_inet_fn
+     0.21%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::startSpanInternal
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] dev_hard_start_xmit
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] __inet_lookup_established
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] release_sock
+     0.21%  UserTimelineSer  UserTimelineService    [.] sdscatlen
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] kmem_cache_free
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] hash_conntrack_raw
+     0.21%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080461
+     0.21%  UserTimelineSer  UserTimelineService    [.] redisGetReply
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] __check_object_size
+     0.21%  UserTimelineSer  [kernel.kallsyms]      [k] __fget_light
+     0.21%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000172a70
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_confirm
+     0.20%  UserTimelineSer  libc-2.23.so           [.] _IO_default_xsputn
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] __wake_up_common
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] __softirqentry_text_start
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] __kmalloc_node_track_caller
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] process_backlog
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] sock_def_readable
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] switch_fpu_return
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] nf_ct_seq_offset
+     0.20%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] visit_groups_merge
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_defrag
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_out_get
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_in.part.0
+     0.19%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TMemoryBuffer, apache::thrift::transport::TBufferBase>::write_virt
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] __sched_text_start
+     0.19%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_parts_assemble
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_current_mss
+     0.19%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_reply4
+     0.18%  UserTimelineSer  [kernel.kallsyms]      [k] enqueue_task_fair
+     0.18%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_new_copy
+     0.18%  UserTimelineSer  UserTimelineService    [.] social_network::UserTimelineHandler::WriteUserTimeline
+     0.18%  UserTimelineSer  [kernel.kallsyms]      [k] copy_user_generic_unrolled
+     0.18%  UserTimelineSer  libstdc++.so.6.0.21    [.] operator new
+     0.18%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_early_demux
+     0.18%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_clean_rtx_queue
+     0.18%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Span::FinishWithOptions
+     0.18%  UserTimelineSer  libbson-1.0.so.0       [.] bson_copy_to
+     0.18%  UserTimelineSer  UserTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >
+     0.18%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cluster_run_opmsg
+     0.18%  UserTimelineSer  [vdso]                 [.] 0x000000000000069e
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] available_idle_cpu
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] newidle_balance
+     0.17%  UserTimelineSer  libbson-1.0.so.0       [.] bcon_append_ctx_va
+     0.17%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeMessageBegin_virt
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] fput_many
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] ip_local_deliver
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_pre_routing_finish
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_mtu
+     0.17%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>::writeFieldBeginInternal
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] __skb_ext_put
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] ip_rcv_finish_core.isra.0
+     0.17%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::istream::sentry::sentry
+     0.17%  UserTimelineSer  [kernel.kallsyms]      [k] __dev_forward_skb
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] skb_push
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_state_transition
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] skb_scrub_packet
+     0.16%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821d0
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] __local_bh_enable_ip
+     0.16%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e39a
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] ep_poll_callback
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_cfs_rq
+     0.16%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fe59
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] __slab_free
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] native_apic_msr_eoi_write
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] select_task_rq_fair
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] try_to_wake_up
+     0.16%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_post_routing
+     0.15%  UserTimelineSer  libbson-1.0.so.0       [.] _bson_grow
+     0.15%  UserTimelineSer  [kernel.kallsyms]      [k] ktime_get
+     0.15%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_rpc_scatter
+     0.15%  UserTimelineSer  [kernel.kallsyms]      [k] __xfrm_decode_session
+     0.15%  UserTimelineSer  [kernel.kallsyms]      [k] set_task_cpu
+     0.15%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_poll
+     0.15%  UserTimelineSer  [kernel.kallsyms]      [k] finish_task_switch
+     0.14%  UserTimelineSer  libc-2.23.so           [.] strlen
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] br_validate_ipv4.isra.0
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] skb_entail
+     0.14%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008254f
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] dequeue_task_fair
+     0.14%  UserTimelineSer  UserTimelineService    [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign(std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> > const&)::{lambda(std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> const*)#1}>
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] ip_route_input_rcu
+     0.14%  UserTimelineSer  UserTimelineService    [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] update_cfs_rq_h_load
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] reweight_entity
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] read_tsc
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] __secure_computing
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] mod_timer
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] __ksize
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] __br_forward
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] select_idle_sibling.part.0
+     0.13%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::_M_range_insert<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > > >
+     0.13%  UserTimelineSer  UserTimelineService    [.] free@plt
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] kfree_skbmem
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_tx_cq
+     0.13%  UserTimelineSer  UserTimelineService    [.] social_network::UserTimelineService_WriteUserTimeline_args::read
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] native_irq_return_iret
+     0.13%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_init
+     0.13%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_stream_buffered_readv
+     0.13%  UserTimelineSer  UserTimelineService    [.] std::deque<sw::redis::Connection, std::allocator<sw::redis::Connection> >::_M_push_back_aux<sw::redis::Connection>
+     0.13%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] __do_page_fault
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+     0.13%  UserTimelineSer  UserTimelineService    [.] redisBufferRead
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] _cond_resched
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] ip_protocol_deliver_rcu
+     0.13%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_hook_thresh
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] ns_to_timespec64
+     0.12%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext
+     0.12%  UserTimelineSer  UserTimelineService    [.] sw::redis::SafeConnection::~SafeConnection
+     0.12%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readFrame
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] nf_ct_deliver_cached_events
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] kfree
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_schedule_loss_probe
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] __free_pages_ok
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] netif_skb_features
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] __virt_addr_valid
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_packet
+     0.12%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_init_find
+     0.12%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e145
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] sock_recvmsg
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] lookup
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] __ip_finish_output
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_local
+     0.12%  UserTimelineSer  libstdc++.so.6.0.21    [.] clock_gettime@plt
+     0.12%  UserTimelineSer  libpthread-2.23.so     [.] __pthread_enable_asynccancel
+     0.12%  UserTimelineSer  libjaegertracing.so.0  [.] opentracing::v2::Tracer::Global
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_comp_int
+     0.12%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cluster_run_command_monitored
+     0.12%  UserTimelineSer  [kernel.kallsyms]      [k] find_next_bit
+     0.11%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] native_sched_clock
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_cleanup_rbuf
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] aa_label_sk_perm.part.0
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] aa_sk_perm
+     0.11%  UserTimelineSer  libbson-1.0.so.0       [.] bson_init
+     0.11%  UserTimelineSer  UserTimelineService    [.] sw::redis::Redis::command<void (*)(sw::redis::Connection&, sw::redis::StringView const&, sw::redis::StringView const&, double, sw::redis::UpdateType, bool), sw::redis::StringView const&, sw::redis::StringView const&, double&, sw::redis::UpdateType&, bool&>
+     0.11%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::analyzeReferences
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rcv_space_adjust
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] activate_task
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] __sys_recvfrom
+     0.11%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821c4
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] ip_finish_output
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] mark_tg
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rate_skb_delivered
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] br_fdb_update
+     0.11%  UserTimelineSer  [kernel.kallsyms]      [k] ip_route_output_key_hash_rcu
+     0.11%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_collection_find_and_modify_with_opts
+     0.11%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821c0
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] smp_call_function_single
+     0.10%  UserTimelineSer  UserTimelineService    [.] memset@plt
+     0.10%  UserTimelineSer  [vdso]                 [.] 0x00000000000006c8
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.10%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_socket_recv
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] skb_network_protocol
+     0.10%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081db8
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] __skb_datagram_iter
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] import_single_range
+     0.10%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_find
+     0.10%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ff02
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] ip_rcv
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] perf_event_update_userpage
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_check_space
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] sock_rfree
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] interrupt_entry
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] find_exception
+     0.10%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081eb6
+     0.10%  UserTimelineSer  libbson-1.0.so.0       [.] bson_init_static
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] __kfree_skb_flush
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] nf_checksum
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] tcp4_gro_receive
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] __lock_text_start
+     0.10%  UserTimelineSer  UserTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] skb_ensure_writable
+     0.10%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_stream_socket_readv
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] x86_pmu_disable
+     0.10%  UserTimelineSer  [kernel.kallsyms]      [k] kmem_cache_alloc
+     0.09%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e4d6
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] net_rx_action
+     0.09%  UserTimelineSer  UserTimelineService    [.] sdsnewlen
+     0.09%  UserTimelineSer  UserTimelineService    [.] sw::redis::ConnectionPool::_fetch
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_local_reply4
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] bictcp_cwnd_event
+     0.09%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace
+     0.09%  UserTimelineSer  libstdc++.so.6.0.21    [.] __cxxabiv1::__si_class_type_info::__do_dyncast
+     0.09%  UserTimelineSer  UserTimelineService    [.] redisReaderGetReply
+     0.09%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::locale
+     0.09%  UserTimelineSer  libc-2.23.so           [.] 0x000000000009464b
+     0.09%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fdae
+     0.09%  UserTimelineSer  libbson-1.0.so.0       [.] bson_malloc0
+     0.09%  UserTimelineSer  UserTimelineService    [.] malloc@plt
+     0.09%  UserTimelineSer  libpthread-2.23.so     [.] __pthread_disable_asynccancel
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] poll_schedule_timeout.constprop.0
+     0.09%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_key
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_read_lock_irqsave
+     0.09%  UserTimelineSer  libpthread-2.23.so     [.] pthread_mutex_trylock
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] __perf_event_task_sched_out
+     0.09%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fdbf
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_forward_finish
+     0.09%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readFieldBegin_virt
+     0.09%  UserTimelineSer  libstdc++.so.6.0.21    [.] free@plt
+     0.09%  UserTimelineSer  UserTimelineService    [.] opentracing::v2::Span::Finish
+     0.09%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::swap
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_fill_iph_skb_off
+     0.09%  UserTimelineSer  [kernel.kallsyms]      [k] ip_forward
+     0.08%  UserTimelineSer  libc-2.23.so           [.] strchrnul
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] native_queued_spin_lock_slowpath
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] do_softirq.part.0
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] __handle_mm_fault
+     0.08%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd60
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] memset_erms
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_fn
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] __ip_vs_get_out_rt
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_ack_update_rtt.isra.0
+     0.08%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_document_begin
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] kmalloc_slab
+     0.08%  UserTimelineSer  libc-2.23.so           [.] realloc
+     0.08%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readStringBody<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] do_softirq_own_stack
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] account_entity_dequeue
+     0.08%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] rb_first
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] bictcp_acked
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] rb_next
+     0.08%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::write
+     0.08%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>
+     0.08%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::chrono::_V2::steady_clock::now
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] detach_if_pending
+     0.08%  UserTimelineSer  UserTimelineService    [.] sw::redis::ConnectionOptions::~ConnectionOptions
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] nf_confirm
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] pick_next_task_fair
+     0.08%  UserTimelineSer  UserTimelineService    [.] opentracing::v2::Tracer::StartSpan
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_fill_param_proto
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] deactivate_task
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] __usecs_to_jiffies
+     0.08%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_out_get_proto
+     0.08%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_buffer_fill
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ffda
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_futex
+     0.07%  UserTimelineSer  UserTimelineService    [.] apache::thrift::TDispatchProcessor::process
+     0.07%  UserTimelineSer  UserTimelineService    [.] jaegertracing::SpanContext::SpanContext
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] update_blocked_averages
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fec1
+     0.07%  UserTimelineSer  libbson-1.0.so.0       [.] bson_get_data
+     0.07%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_set_get@plt
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e187
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081eee
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] pick_next_task_idle
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] ttwu_do_wakeup
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] prepare_exit_to_usermode
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] __pollwait
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] update_min_vruntime
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] validate_xmit_xfrm
+     0.07%  UserTimelineSer  UserTimelineService    [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] do_csum
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Span::Span
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] br_nf_dev_queue_xmit
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::LogRecord, std::allocator<jaegertracing::LogRecord> >::operator=
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] get_futex_key
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create
+     0.07%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readMessageBegin
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::~SpanContext@plt
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::init
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_local_fn
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c14
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::init@plt
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e458
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] smp_call_function_many
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rate_gen
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e0d5
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_cq_get
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_blocked_se
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] std::chrono::_V2::steady_clock::now@plt
+     0.07%  UserTimelineSer  UserTimelineService    [.] std::_Sp_counted_ptr<apache::thrift::protocol::TProtocol*, (__gnu_cxx::_Lock_policy)2>::_M_dispose
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081dfc
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] inet_ehashfn
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_validate_incoming
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] schedule
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ostream::sentry::sentry
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd7c
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000802ae
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_send_check
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] __ip_local_out
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] xfrm_lookup_with_ifid
+     0.07%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_next@plt
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::ios_base
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd68
+     0.07%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_scanner_valid
+     0.07%  UserTimelineSer  UserTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}::operator()
+     0.07%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081e31
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::TraceID::fromStream
+     0.07%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::operator==@plt
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_build_rx_skb
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] update_rq_clock
+     0.07%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_mtu_probe
+     0.07%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ostream::_M_insert<unsigned long>
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] dequeue_entity
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __handle_irq_event_percpu
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __napi_schedule
+     0.06%  UserTimelineSer  UserTimelineService    [.] opentracing::v2::Tracer::Global@plt
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] sockfd_lookup_light
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] inet_sendmsg
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_select_server_id
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] enqueue_timer
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_poll
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081bc3
+     0.06%  UserTimelineSer  libjaegertracing.so.0  [.] std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > >, jaegertracing::Tag*>
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000507eb
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] netif_rx_internal
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] _copy_to_iter
+     0.06%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::UDPTransport::append
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_client_get_collection
+     0.06%  UserTimelineSer  libbson-1.0.so.0       [.] bson_free
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_in
+     0.06%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::write
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] inet_proto_csum_replace4
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c02
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080440
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fdd1
+     0.06%  UserTimelineSer  libbson-1.0.so.0       [.] bson_has_field
+     0.06%  UserTimelineSer  UserTimelineService    [.] redisFormatSdsCommandArgv
+     0.06%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] hrtimer_interrupt
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_in_get_proto
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_recvfrom
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_concern_destroy
+     0.06%  UserTimelineSer  libc-2.23.so           [.] __vsnprintf_chk
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] skb_ext_add
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] pthread_mutex_lock@plt
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_grow_window.isra.0
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] ktime_get_ts64
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __accumulate_pelt_segments
+     0.06%  UserTimelineSer  libbson-1.0.so.0       [.] bson_get_monotonic_time
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] check_cfs_rq_runtime
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_stream_readv
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] fib_select_path
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] ctx_sched_in
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] wake_q_add_safe
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_socket_sendv
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016e54d
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_server_session_timed_out
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __kmalloc_reserve.isra.0
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_collection_new
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __ip_queue_xmit
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rearm_rto
+     0.06%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_reset
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] br_forward_finish
+     0.06%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c76
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __count_memcg_events
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] inet_gro_receive
+     0.06%  UserTimelineSer  [kernel.kallsyms]      [k] __vxlan_find_mac
+     0.06%  UserTimelineSer  UserTimelineService    [.] sdsMakeRoomFor
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] up_read
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::Span
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __fdget
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.05%  UserTimelineSer  libpthread-2.23.so     [.] __libc_send
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_stream_read
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] aa_apply_modes_to_perms
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c90
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_event_data_recv
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_out
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080088
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Log, std::allocator<jaegertracing::thrift::Log> >::operator=
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] skb_clone
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_hashkey_param
+     0.05%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readString_virt
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_int64
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_rpc_swab_to_le@plt
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e100
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] tasklet_action
+     0.05%  UserTimelineSer  UserTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::borrow_virt
+     0.05%  UserTimelineSer  UserTimelineService    [.] redisAppendCommandArgv
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] strlen@plt
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] cpumask_next_wrap
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] do_anonymous_page
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __tcp_v4_send_check
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081bd6
+     0.05%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::~ios_base
+     0.05%  UserTimelineSer  UserTimelineService    [.] sw::redis::Redis::zadd
+     0.05%  UserTimelineSer  UserTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_erase
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __skb_clone
+     0.05%  UserTimelineSer  libstdc++.so.6.0.21    [.] __cxxabiv1::__vmi_class_type_info::__do_dyncast
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f350
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] l4proto_manip_pkt
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __do_sys_madvise
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.05%  UserTimelineSer  UserTimelineService    [.] redisGetReplyFromReader
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081dce
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_find_and_modify_opts_new
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] get_l4proto
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080039
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ip_sublist_rcv
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008223b
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_out
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __enqueue_entity
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] record_times
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_spin_unlock_bh
+     0.05%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_init
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] do_futex
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e155
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] is_skb_forwardable
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_inbound_md5_hash
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_stream_writev_full
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::report
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e3a0
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] _bson_append.constprop.25
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] remove_wait_queue
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] vxlan_vs_find_vni
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081eea
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] add_wait_queue
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::write
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_pre_routing
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ddd
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __mod_memcg_state
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_is_compressible@plt
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050980
+     0.05%  UserTimelineSer  UserTimelineService    [.] opentracing::v2::expected<std::unique_ptr<opentracing::v2::SpanContext, std::default_delete<opentracing::v2::SpanContext> >, std::error_code>::~expected
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_array_begin@plt
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_int64@plt
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] rw_copy_check_uvector
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008219c
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] __fib_validate_source
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] futex_wait
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000804eb
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ___slab_alloc
+     0.05%  UserTimelineSer  libstdc++.so.6.0.21    [.] operator delete
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] clear_buddies
+     0.05%  UserTimelineSer  [vdso]                 [.] 0x00000000000006d4
+     0.05%  UserTimelineSer  UserTimelineService    [.] opentracing::v2::SpanReference::Apply
+     0.05%  UserTimelineSer  libc-2.23.so           [.] poll
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ktime_get_seconds
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_prefs_new
+     0.05%  UserTimelineSer  UserTimelineService    [.] memcpy@plt
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dd60
+     0.05%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::reserve
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] ip_send_check
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014c0c3
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] netif_rx
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] bson_uint32_to_string
+     0.05%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::id::_M_id@plt
+     0.05%  UserTimelineSer  UserTimelineService    [.] jaegertracing::SpanContext::~SpanContext
+     0.05%  UserTimelineSer  libbson-1.0.so.0       [.] bson_strdup
+     0.05%  UserTimelineSer  [kernel.kallsyms]      [k] apparmor_task_free
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_set_get
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_write_concern_get_bson
+     0.05%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_array_append_vals
+     0.05%  UserTimelineSer  UserTimelineService    [.] redisNetWrite
+     0.05%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ffd4
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] mem_cgroup_throttle_swaprate
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000052661
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] fib_validate_source
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_write_concern_copy@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __release_sock
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_napi_poll
+     0.04%  UserTimelineSer  UserTimelineService    [.] operator new@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] select_estimate_accuracy
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] br_allowed_ingress
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] should_failslab
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_write_concern_destroy
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] flexible_sched_in
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] swapgs_restore_regs_and_return_to_usermode
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd78
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __update_idle_core
+     0.04%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeI64_virt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ip_rt_send_redirect
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] nf_bridge_update_protocol
+     0.04%  UserTimelineSer  libpthread-2.23.so     [.] __GI___libc_sendmsg
+     0.04%  UserTimelineSer  UserTimelineService    [.] redisBufferWrite
+     0.04%  UserTimelineSer  libpthread-2.23.so     [.] __errno_location
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] gro_normal_list.part.0
+     0.04%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000001151d0
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] flush_smp_call_function_queue
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_set_add
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] get_nohz_timer_target
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] mem_cgroup_from_task
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_push
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821f6
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_topology_start_background_scanner@plt
+     0.04%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::readAll<apache::thrift::transport::TSocket>
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] rb_erase
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_update_skb_after_send
+     0.04%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::basic_ostringstream
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_one_core
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] _in_sharded_txn
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_parse_options
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_handle_rx_cqe
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] clear_page_erms
+     0.04%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readMapBegin_virt
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_type@plt
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081e38
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] nbp_switchdev_frame_mark
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] comment_mt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_forward_icmp
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ip_rcv_finish
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rbx
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_scanner_get_node
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_chrono_stop
+     0.04%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_document_end
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000822ef
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ip_local_out
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000004a77b
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] check_stack_object
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __wake_up_common_lock
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e258
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_fill_cb
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ksize
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_free@plt
+     0.04%  UserTimelineSer  UserTimelineService    [.] sw::redis::cmd::zadd
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fef8
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fda6
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c9a
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082786
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051efb
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ttwu_do_activate
+     0.04%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] nf_ip_checksum
+     0.04%  UserTimelineSer  UserTimelineService    [.] jaegertracing::SpanContext::print<std::ostream>
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] fput
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] task_ctx_sched_out
+     0.04%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_document
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] vxlan_rcv
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] skb_csum_hwoffload_help
+     0.04%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000500f4
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000944f0
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e157
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] strcasecmp@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] vmacache_find
+     0.04%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::_M_emplace_back_aux<jaegertracing::Reference>
+     0.04%  UserTimelineSer  libstdc++.so.6.0.21    [.] operator delete@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] csum_partial
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] __udp4_lib_lookup
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e240
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000822ff
+     0.04%  UserTimelineSer  UserTimelineService    [.] apache::thrift::transport::TTransport::flush
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f31c
+     0.04%  UserTimelineSer  UserTimelineService    [.] operator delete@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rack_update_reo_wnd
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] refill_stock
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x00000000001462a0
+     0.04%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::operator=
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_route_me_harder
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e125
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_wfree
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_init@plt
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000145b90
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_init@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] PageHuge
+     0.04%  UserTimelineSer  UserTimelineService    [.] social_network::UserTimelineService_WriteUserTimeline_result::write
+     0.04%  UserTimelineSer  [vdso]                 [.] 0x0000000000000695
+     0.04%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e410
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] default_wake_function
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_destroy@plt
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_rx_cq
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_rpc_swab_to_le
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] setup_pre_routing
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] migrate_task_rq_fair
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] eth_gro_receive
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_client_pool_pop
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] get_page_from_freelist
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] security_socket_recvmsg
+     0.04%  UserTimelineSer  UserTimelineService    [.] std::vector<char const*, std::allocator<char const*> >::_M_emplace_back_aux<char const*>
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] handle_mm_fault
+     0.04%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_description_update_cluster_time
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_mstamp_refresh
+     0.04%  UserTimelineSer  [kernel.kallsyms]      [k] apic_ack_irq
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d5d
+     0.03%  UserTimelineSer  UserTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::consume_virt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] cpumask_next
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000509a8
+     0.03%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_as_bool
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] br_dev_queue_push_xmit
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008041a
+     0.03%  UserTimelineSer  UserTimelineService    [.] freeReplyObject
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] dst_release
+     0.03%  UserTimelineSer  UserTimelineService    [.] sw::redis::ConnectionPool::release
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016f0e5
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_update_rtt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] perf_swevent_add
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::_Rb_tree_insert_and_rebalance
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_queue_rcv
+     0.03%  UserTimelineSer  libpthread-2.23.so     [.] __pthread_mutex_unlock_usercnt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081be5
+     0.03%  UserTimelineSer  UserTimelineService    [.] redisReaderFeed
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e140
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] ctnetlink_conntrack_event
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] aa_check_perms
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007feb7
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_topology_start_background_scanner
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c58
+     0.03%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readStructBegin_virt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] zap_page_range
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000094534
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] idle_cpu
+     0.03%  UserTimelineSer  UserTimelineService    [.] sw::redis::cmd::zadd_range<std::pair<sw::redis::StringView, double> const*>
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] get_futex_value_locked
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e0d9
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e330
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__ostream_insert<char, std::char_traits<char> >
+     0.03%  UserTimelineSer  UserTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::inject
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] operator delete
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_rand_simple@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000004896f
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] inet_addr_type_dev_table
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_client_session_destroy
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] iov_iter_advance
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e07d
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] group_sched_in
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000009450c
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000004a06b
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e46b
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] netdev_core_pick_tx
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] dev_get_by_index_rcu
+     0.03%  UserTimelineSer  UserTimelineService    [.] social_network::UserTimelineServiceProcessor::dispatchCall
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] native_flush_tlb_one_user
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007febd
+     0.03%  UserTimelineSer  UserTimelineService    [.] sw::redis::ConnectionPool::_need_reconnect
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::Extract
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::locale@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] csum_partial_copy_generic
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_get_command_name
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::id::_M_id
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] memmove@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000115247
+     0.03%  UserTimelineSer  UserTimelineService    [.] sw::redis::Connection::recv
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] isupper@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_options_write
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] nf_xfrm_me_harder
+     0.03%  UserTimelineSer  UserTimelineService    [.] social_network::TextMapReader::ForeachKey
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] malloc@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e0d0
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __sys_sendmsg
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000146b40
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] brnf_get_logical_dev
+     0.03%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_next@plt
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] 0x0000000000112e60
+     0.03%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_document_begin@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __tasklet_schedule_common
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000089b30
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] l3mdev_fib_table_rcu
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_topology_update_last_used
+     0.03%  UserTimelineSer  UserTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::write_virt
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] operator new@plt
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_destroy
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000004846a
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] resched_curr
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] handle_irq_event
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_small_queue_check.isra.0
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] autoremove_wake_function
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ff44
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] handle_response
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] event_sched_in.isra.0
+     0.03%  UserTimelineSer  libpthread-2.23.so     [.] pthread_cond_signal@@GLIBC_2.3.2
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::operator=@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] free_unref_page_list
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_client_unregister_session
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __tcp_ack_snd_check
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000172a78
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] sync_mm_rss
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] ip_sabotage_in
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_concern_copy@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] futex_wait_setup
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e0d3
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000488bb
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] unmap_page_range
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_set_rm
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_sendmsg
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014bc8c
+     0.03%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::flush
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_strdup@plt
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] 0x00000000000a0da8
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000145bd4
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] check_preempt_curr
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] napi_complete_done
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000803bc
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_destroy@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] lock_sock_nested
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] 0x0000000000101b61
+     0.03%  UserTimelineSer  libc-2.23.so           [.] __madvise
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_update_rtt@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007d026
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_concern_new@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] prep_new_page
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008259f
+     0.03%  UserTimelineSer  libbson-1.0.so.0       [.] bson_vsnprintf@plt
+     0.03%  UserTimelineSer  UserTimelineService    [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::~vector
+     0.03%  UserTimelineSer  libbson-1.0.so.0       [.] bson_strdupv_printf
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] free_one_page
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] ip_route_me_harder
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] _copy_from_user
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] mark_wake_futex
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000826f6
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] schedule_timeout
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_stream_read@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_update_pacing_rate
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] futex_wake_op
+     0.03%  UserTimelineSer  UserTimelineService    [.] bson_new@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] security_sock_rcv_skb
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_features_check
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __wake_up_sync_key
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] kernel_poison_pages
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __tcp_push_pending_frames
+     0.03%  UserTimelineSer  UserTimelineService    [.] std::chrono::_V2::steady_clock::now@plt
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_client_push_server_session
+     0.03%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::write_virt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000146b49
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e14d
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ee6
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048fb7
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e123
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014ab4e
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051641
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_sendmsg
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000005098f
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate@plt
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_references
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_stream_buffered_writev
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_parts_cleanup
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] ___sys_sendmsg
+     0.03%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::server::TThreadedServer::onClientConnected
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081db3
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] skb_release_head_state
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] dql_completed
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000089b53
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016fb35
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] memcpy@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] unmap_single_vma
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __kmalloc_node
+     0.03%  UserTimelineSer  UserTimelineService    [.] social_network::TextMapWriter::Set
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e104
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_call_callbacks
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_madvise
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e532
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] __build_skb_around
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] security_task_alloc
+     0.03%  UserTimelineSer  UserTimelineService    [.] std::exception::~exception@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000507cd
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] blk_flush_plug_list
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_udp_packet
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] operator new@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e073
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051a01
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fed6
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014c0a3
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ce5
+     0.03%  UserTimelineSer  [vdso]                 [.] 0x0000000000000701
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fe3c
+     0.03%  UserTimelineSer  libjaegertracing.so.0  [.] std::basic_ios<char, std::char_traits<char> >::clear@plt
+     0.03%  UserTimelineSer  [kernel.kallsyms]      [k] place_entity
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_prefs_copy
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] _in_sharded_txn@plt
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_description_cleanup
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048aa6
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_pbump
+     0.03%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn
+     0.03%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_description_server_by_id@plt
+     0.03%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000146570
+     0.02%  UserTimelineSer  UserTimelineService    [.] redisNetRead
+     0.02%  UserTimelineSer  UserTimelineService    [.] jaegertracing::SpanContext::~SpanContext
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_parts_init
+     0.02%  UserTimelineSer  UserTimelineService    [.] createIntegerObject
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] napi_schedule_prep
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_int32@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_tls_handle_rx_skb
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081def
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::Inject
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] hrtimer_init_sleeper
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_key@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] rmqueue
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081f98
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dc10
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000826e3
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_realloc_ctx
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ksoftirqd_running
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] raw_local_deliver
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e247
+     0.02%  UserTimelineSer  UserTimelineService    [.] jaegertracing::operator==
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] dev_queue_xmit
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] rcu_all_qs
+     0.02%  UserTimelineSer  UserTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_get_insert_unique_pos
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] sk_filter_trim_cap
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] irq_exit
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_local_request4
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::SpanRef, std::allocator<jaegertracing::thrift::SpanRef> >::operator=
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_find_w_len@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __nf_ct_refresh_acct
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080001
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] timekeeping_advance
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_malloc
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] irq_chip_ack_parent
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_list_core
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000832ec
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] rcu_irq_enter
+     0.02%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::ctype<char> >@plt
+     0.02%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::locale::~locale@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] nf_csum_update
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_sendmsg
+     0.02%  UserTimelineSer  UserTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::readAll_virt
+     0.02%  UserTimelineSer  UserTimelineService    [.] std::_Sp_counted_ptr<apache::thrift::protocol::TProtocol*, (__gnu_cxx::_Lock_policy)2>::_M_destroy
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] nf_ct_invert_tuple
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_prefs_copy@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000172a74
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_cluster_create_server_stream
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_client_session_in_txn
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] udp_queue_rcv_one_skb
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] pthread_mutex_lock@plt
+     0.02%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::exception::~exception
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048bb4
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __hrtimer_run_queues
+     0.02%  UserTimelineSer  UserTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeStructBegin_virt
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] _bson_append
+     0.02%  UserTimelineSer  libpthread-2.23.so     [.] pthread_cond_timedwait@@GLIBC_2.3.2
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeStructBegin_virt
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_find@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c66
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] copyout
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] get_ctx
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d8e
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rcx
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] skb_copy_datagram_iter
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000829ce
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_collection_destroy
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000944f7
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ip_local_deliver_finish
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_vsnprintf
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dfa3
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fec8
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000813e2
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_topology_scanner_set_cluster_time
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050a20
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::~Span
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_client_unregister_session@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd83
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] tasklet_action_common.isra.0
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fe26
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] fpregs_assert_state_consistent
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821a8
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] _copy_from_iter_full
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] put_pid
+     0.02%  UserTimelineSer  UserTimelineService    [.] __redisAppendCommand
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __calc_delta
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] select_idle_sibling
+     0.02%  UserTimelineSer  UserTimelineService    [.] jaegertracing::Span::~Span
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000145c08
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080092
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007bb56
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_sock_rcv_skb
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] calc_wheel_index
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::__set_refType@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048be8
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007feb9
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_realloc@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_newly_delivered
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] alloc_pages_vma
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f36c
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::_M_emplace_back_aux<jaegertracing::Reference>@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081bdc
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] memset@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050122
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_find_and_modify_opts_new@plt
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] clock_gettime@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d21
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] xfrm_lookup
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] vxlan_gro_receive
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e10a
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_proto_data_get
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] minmax_subwin_update
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_remote_request4
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000522e4
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_client_session_in_transaction
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ef0
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] inet_getpeer
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] update_sd_lb_stats
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000115230
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_snprintf@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000005125a
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeFieldEnd_virt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] isupper
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_copy
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ee4
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014ab38
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_skb_from_cqe_linear
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_is_compressible
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] on_each_cpu_mask
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_rack_advance
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] hrtick_update
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051574
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] intel_pmu_disable_all
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000512c8
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] exit_creds
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_xdpsq_cq
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] br_pass_frame_up
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_find_and_modify_opts_set_sort@plt
+     0.02%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__detail::_List_node_base::_M_hook
+     0.02%  UserTimelineSer  UserTimelineService    [.] std::_Rb_tree_increment@plt
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_type
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050516
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_references@plt
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dac3
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050534
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f332
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007bbd0
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e18c
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] handle_irq_event_percpu
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] _raw_read_unlock_irqrestore
+     0.02%  UserTimelineSer  UserTimelineService    [.] sw::redis::Connection::send
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] inet_recvmsg
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081b9e
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __ip_vs_conn_put_timer
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048472
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016f1e4
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] std::istream::get@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __mod_lruvec_state
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] wait_woken
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014bb00
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_buffer_append_from_stream
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] build_skb
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051302
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] put_prev_entity
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] br_handle_vlan
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cluster_check_interval
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ff2c
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __alloc_skb
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __tcp_select_window
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016fb42
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fd92
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] sk_page_frag_refill
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e46f
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_malloc@plt
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_queue_pop_head
+     0.02%  UserTimelineSer  libpthread-2.23.so     [.] __pthread_once
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] mem_cgroup_uncharge
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] mem_cgroup_update_lru_size
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] propagate_protected_usage
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] timerqueue_add
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821eb
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014ab79
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e130
+     0.02%  UserTimelineSer  libpthread-2.23.so     [.] __lll_unlock_wake
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] check_preempt_wakeup
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_concat
+     0.02%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_int32@plt
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_prefs_new@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] __cgroup_account_cputime
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] unix_poll
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000490c4
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] notifier_call_chain
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] security_xfrm_decode_session
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_document_is_pipeline@plt
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_prefs_destroy
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_server_stream_cleanup
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] lru_add_drain_cpu
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] sk_stream_alloc_skb
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_client_session_new
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Span::~Span
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000005012a
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ktime_get_update_offsets_now
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f430
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000004a6c0
+     0.02%  UserTimelineSer  libc-2.23.so           [.] rand_r
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_manip_pkt
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_append_utf8@plt
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] nmi_restore
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082325
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048fb0
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] calc_timer_values
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000050a6f
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000005122c
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] ____sys_sendmsg
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008004a
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_client_pool_push
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] atomic_notifier_call_chain
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e143
+     0.02%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000008f2c0
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d97
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081c61
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] sock_put
+     0.02%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_dnat_handler
+     0.02%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sweepQueue
+     0.02%  UserTimelineSer  [vdso]                 [.] 0x0000000000000687
+     0.02%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014aa80
+     0.02%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_init_find@plt
+     0.01%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_find_w_len
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d7d
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e152
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] operator delete@plt
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::SpanRef, std::allocator<jaegertracing::thrift::SpanRef> >::reserve
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_chrono_start
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_error_has_label
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] __inet_dev_addr_type.isra.0
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_send_mss
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d2b
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048fd1
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000826c8
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000048874
+     0.01%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::write_partial
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] lock_timer_base
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081ce8
+     0.01%  UserTimelineSer  libthrift.so.0.12.0    [.] poll@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] do_user_addr_fault
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082534
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080018
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] kmem_cache_free_bulk
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d1d
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014c098
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_tx_timestamp
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e35a
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_write_concern_copy
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_update_conntrack
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeFieldBegin_virt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] arch_perf_update_userpage
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] flush_tlb_func_common.constprop.0
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>::TCompactProtocolT
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::~SpanRef
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_write_concern_is_valid@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_v4_do_rcv
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dab0
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014aad5
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_release_cb
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d74
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] cpuacct_account_field
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081e2b
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082187
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] bson_iter_bool@plt
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_write_concern_new@plt
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081d26
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] map_id_range_down
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081fda
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>::writeBinary@plt
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_flags@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] woken_wake_function
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_cmd_parts_set_write_concern
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dfb3
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] free_pages_and_swap_cache
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000802a5
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_ostringstream
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_find_and_modify_opts_set_fields
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000172b55
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] _mongoc_cluster_stream_for_server
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] skb_release_all
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000083172
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] sock_zerocopy_put
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_recvmsg
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] clockevents_program_event
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > >, jaegertracing::Tag*>@plt
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] pthread_mutex_unlock@plt
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_transaction_opts_set_read_concern
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] kfree_skb_partial
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007cfe2
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::_Deque_base<short, std::allocator<short> >::_M_initialize_map
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] sk_reset_timer
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082243
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_logs@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] end_repeat_nmi
+     0.01%  UserTimelineSer  UserTimelineService    [.] pthread_mutex_lock@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] __pagevec_lru_add_fn
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] rb_insert_color
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_put
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000800a9
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Tag, std::allocator<jaegertracing::thrift::Tag> >::reserve
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put
+     0.01%  UserTimelineSer  libbson-1.0.so.0       [.] bcon_new
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014c0c6
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ff1f
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] hrtimer_active
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] native_send_call_func_ipi
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::istream::putback
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e524
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e45c
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] 0x00000000000a0dac
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000051253
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_traceIdLow@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] release_pages
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821d4
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081eda
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] hrtimer_start_range_ns
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000500ea
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::chrono::_V2::system_clock::now
+     0.01%  UserTimelineSer  UserTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_data_ready
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_pbump@plt
+     0.01%  UserTimelineSer  libbson-1.0.so.0       [.] bson_new_from_data@plt
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_topology_select_server_id@plt
+     0.01%  UserTimelineSer  libbson-1.0.so.0       [.] bson_iter_init@plt
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] page_counter_try_charge
+     0.01%  UserTimelineSer  libbson-1.0.so.0       [.] bson_append_utf8
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000827a6
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::operator=
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::thrift::Tag, std::allocator<jaegertracing::thrift::Tag> >::~vector
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] INET_ECN_decapsulate
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable@plt
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014e1a0
+     0.01%  UserTimelineSer  libmongoc-1.0.so.0     [.] mongoc_read_concern_copy
+     0.01%  UserTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream
+     0.01%  UserTimelineSer  UserTimelineService    [.] std::_Function_handler<opentracing::v2::expected<void, std::error_code> (opentracing::v2::string_view, opentracing::v2::string_view), jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}>::_M_invoke
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007fdfb
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TProtocolFactory::~TProtocolFactory@plt
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016f191
+     0.01%  UserTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::concurrency::PthreadThread::threadMain
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] tcp_recv_timestamp
+     0.01%  UserTimelineSer  [vdso]                 [.] 0x0000000000000692
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000080458
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeListBegin_virt
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081da8
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000014dbe3
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082565
+     0.01%  UserTimelineSer  UserTimelineService    [.] sw::redis::ConnectionPool::fetch
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000082074
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000826a1
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_parentSpanId
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007ffe0
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x0000000000081be7
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] set_pte_vaddr
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sendSpan
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::SpanRef::__set_spanId@plt
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] jaegertracing::thrift::Span::__set_traceIdHigh@plt
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x000000000007e82e
+     0.01%  UserTimelineSer  [kernel.kallsyms]      [k] fill_pmd
+     0.01%  UserTimelineSer  libc-2.23.so           [.] 0x00000000000821cc
+     0.01%  UserTimelineSer  libjaegertracing.so.0  [.] opentracing::v2::Span::Finish@plt
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] nmi_handle
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] expand_files
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] perf_event_nmi_handler
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] nmi_cpu_backtrace_handler
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __udp4_lib_rcv
+     0.00%  UserTimelineSer  UserTimelineService    [.] processLineItem
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] memcpy_fromio
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] rcu_do_batch
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] ghes_copy_tofrom_phys
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __radix_tree_lookup
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] do_nmi
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] native_write_cr2
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5e_completion_event
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.00%  UserTimelineSer  libc-2.23.so           [.] 0x000000000016f1b3
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] sk_wait_data
+     0.00%  UserTimelineSer  UserTimelineService    [.] moveToNextTask.isra.0
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] timerqueue_del
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] dev_gro_receive
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] apei_check_gar
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] poll_freewait
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] skb_defer_rx_timestamp
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] native_set_fixmap
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_async_int
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] printk_nmi_exit
+     0.00%  UserTimelineSer  libc-2.23.so           [.] __ctype_init
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] syscall_return_slowpath
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] handle_edge_irq
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] perf_event_set_state.part.0
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] irq_entries_start
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] do_IRQ
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] perf_event_update_time
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] mlx5_irq_int_handler
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] perf_pmu_nop_void
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __ghes_peek_estatus.isra.0
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __set_pte_vaddr
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] apei_read
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] rcu_nmi_exit
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] irq_enter
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] perf_pmu_enable.part.0
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] schedule_tail
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] sched_clock
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __native_set_fixmap
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.0
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
