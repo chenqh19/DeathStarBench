@@ -25,6 +25,7 @@ spec:
       labels:
         io.kompose.service: frontend
     spec:
+      nodeName: master-node
       containers:
         - command:
             - frontend

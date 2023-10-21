@@ -27,9 +27,6 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      placement:
-        constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   profile:
     environment:
@@ -58,9 +55,6 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      placement:
-        constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   geo:
     environment:
@@ -104,9 +98,6 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      placement:
-        constraints:
-          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
 
   user:
     environment:
@@ -136,9 +127,6 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      placement:
-        constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
 
   jaeger:
     image: jaegertracing/all-in-one:latest

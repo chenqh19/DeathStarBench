@@ -1,0 +1,1252 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'cycles'
+# Event count (approx.): 31612894243
+#
+# Overhead  Command         Shared Object      Symbol                                                                                                          
+# ........  ..............  .................  ................................................................................................................
+#
+     3.87%  recommendation  recommendation     [.] runtime.mallocgc
+            |          
+             --3.76%--runtime.mallocgc
+                       |          
+                       |--1.81%--runtime.newobject
+                       |          |          
+                       |           --0.74%--github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+                       |                     github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler.func1
+                       |                     github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+                       |                     github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+                       |                     google.golang.org/grpc.(*Server).processUnaryRPC
+                       |                     google.golang.org/grpc.(*Server).handleStream
+                       |                     google.golang.org/grpc.(*Server).serveStreams.func1.1
+                       |                     runtime.goexit.abi0
+                       |          
+                        --0.66%--runtime.makeslice
+
+     2.42%  recommendation  recommendation     [.] runtime.step
+            |          
+             --2.23%--runtime.step
+                       |          
+                        --1.82%--runtime.pcvalue
+                                  |          
+                                  |--0.89%--runtime.funcspdelta
+                                  |          runtime.gentraceback
+                                  |          |          
+                                  |           --0.77%--runtime.copystack
+                                  |                     runtime.newstack
+                                  |                     runtime.morestack.abi0
+                                  |          
+                                   --0.79%--runtime.pcdatavalue
+                                             |          
+                                              --0.77%--runtime.getStackMap
+                                                        |          
+                                                         --0.76%--runtime.adjustframe
+                                                                   runtime.gentraceback
+                                                                   runtime.copystack
+                                                                   runtime.newstack
+                                                                   runtime.morestack.abi0
+
+     2.20%  recommendation  [kernel.kallsyms]  [k] do_syscall_64
+            |          
+             --2.17%--do_syscall_64
+                       |          
+                        --2.17%--entry_SYSCALL_64_after_hwframe
+                                  |          
+                                  |--0.71%--runtime.futex.abi0
+                                  |          
+                                   --0.62%--syscall.Syscall.abi0
+
+     1.98%  recommendation  recommendation     [.] runtime.stealWork
+            |
+            ---runtime.stealWork
+               runtime.findrunnable
+               runtime.schedule
+               |          
+                --1.73%--runtime.park_m
+                          runtime.mcall
+                          |          
+                           --1.26%--runtime.selectgo
+                                     google.golang.org/grpc/transport.loopyWriter
+                                     google.golang.org/grpc/transport.newHTTP2Server.func2
+                                     runtime.goexit.abi0
+
+     1.81%  recommendation  recommendation     [.] runtime.heapBitsSetType
+            |          
+             --1.79%--runtime.heapBitsSetType
+                       |          
+                        --1.65%--runtime.mallocgc
+                                  |          
+                                   --0.92%--runtime.newobject
+
+     1.73%  recommendation  recommendation     [.] runtime.mapiternext
+            |          
+             --1.72%--runtime.mapiternext
+                       |          
+                        --1.36%--github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+                                  github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler.func1
+                                  github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+                                  github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+                                  google.golang.org/grpc.(*Server).processUnaryRPC
+                                  google.golang.org/grpc.(*Server).handleStream
+                                  google.golang.org/grpc.(*Server).serveStreams.func1.1
+                                  runtime.goexit.abi0
+
+     1.45%  recommendation  recommendation     [.] runtime.pcvalue
+            |          
+             --1.41%--runtime.pcvalue
+                       |          
+                       |--0.66%--runtime.funcspdelta
+                       |          runtime.gentraceback
+                       |          |          
+                       |           --0.60%--runtime.copystack
+                       |                     runtime.newstack
+                       |                     runtime.morestack.abi0
+                       |          
+                        --0.65%--runtime.pcdatavalue
+                                  |          
+                                   --0.64%--runtime.getStackMap
+                                             runtime.adjustframe
+                                             runtime.gentraceback
+                                             runtime.copystack
+                                             runtime.newstack
+                                             runtime.morestack.abi0
+
+     1.45%  recommendation  [kernel.kallsyms]  [k] psi_task_change
+            |          
+             --1.43%--psi_task_change
+                       |          
+                       |--0.75%--deactivate_task
+                       |          __sched_text_start
+                       |          schedule
+                       |          
+                        --0.66%--activate_task
+                                  ttwu_do_activate
+                                  try_to_wake_up
+
+     1.32%  recommendation  recommendation     [.] math.cos
+            |
+            ---math.cos
+               |          
+                --1.21%--github.com/hailocab/go-geoindex.distance
+                          github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+                          github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler.func1
+                          github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+                          github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+                          google.golang.org/grpc.(*Server).processUnaryRPC
+                          google.golang.org/grpc.(*Server).handleStream
+                          google.golang.org/grpc.(*Server).serveStreams.func1.1
+                          runtime.goexit.abi0
+
+     1.31%  recommendation  recommendation     [.] math.pow
+            |          
+             --1.16%--math.pow
+                       |          
+                        --1.14%--github.com/hailocab/go-geoindex.distance
+                                  github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+                                  github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler.func1
+                                  github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+                                  github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+                                  google.golang.org/grpc.(*Server).processUnaryRPC
+                                  google.golang.org/grpc.(*Server).handleStream
+                                  google.golang.org/grpc.(*Server).serveStreams.func1.1
+                                  runtime.goexit.abi0
+
+     0.99%  recommendation  recommendation     [.] runtime.gentraceback
+            |
+            ---runtime.gentraceback
+               |          
+                --0.84%--runtime.copystack
+                          runtime.newstack
+                          runtime.morestack.abi0
+
+     0.94%  recommendation  recommendation     [.] runtime.scanobject
+            |
+            ---runtime.scanobject
+               |          
+                --0.90%--runtime.gcDrain
+                          runtime.gcBgMarkWorker.func2
+                          runtime.systemstack.abi0
+                          runtime.goexit.abi0
+
+     0.79%  recommendation  [kernel.kallsyms]  [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+
+     0.76%  recommendation  recommendation     [.] math.sin
+            |
+            ---math.sin
+               github.com/hailocab/go-geoindex.distance
+               github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+               github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler.func1
+               github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+               github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+               google.golang.org/grpc.(*Server).processUnaryRPC
+               google.golang.org/grpc.(*Server).handleStream
+               google.golang.org/grpc.(*Server).serveStreams.func1.1
+               runtime.goexit.abi0
+
+     0.73%  recommendation  [kernel.kallsyms]  [k] update_load_avg
+            |
+            ---update_load_avg
+
+     0.71%  recommendation  recommendation     [.] runtime.memmove
+            |          
+             --0.69%--runtime.memmove
+
+     0.70%  recommendation  recommendation     [.] runtime.adjustframe
+            |
+            ---runtime.adjustframe
+               |          
+                --0.63%--runtime.gentraceback
+                          runtime.copystack
+                          runtime.newstack
+                          runtime.morestack.abi0
+
+     0.63%  recommendation  recommendation     [.] runtime.(*itabTableType).find
+            |          
+             --0.62%--runtime.(*itabTableType).find
+
+     0.59%  recommendation  [kernel.kallsyms]  [k] visit_groups_merge
+            |          
+             --0.57%--visit_groups_merge
+                       ctx_sched_in
+                       perf_event_sched_in
+                       __perf_event_task_sched_in
+                       finish_task_switch
+                       __sched_text_start
+                       schedule
+
+     0.58%  recommendation  recommendation     [.] runtime.findrunnable
+            |
+            ---runtime.findrunnable
+               |          
+                --0.54%--runtime.schedule
+                          |          
+                           --0.51%--runtime.park_m
+                                     runtime.mcall
+
+     0.58%  recommendation  [kernel.kallsyms]  [k] syscall_return_via_sysret
+            |          
+             --0.53%--syscall_return_via_sysret
+
+     0.58%  recommendation  recommendation     [.] runtime.findfunc
+            |
+            ---runtime.findfunc
+
+     0.54%  recommendation  [kernel.kallsyms]  [k] update_curr
+            |
+            ---update_curr
+
+     0.53%  recommendation  recommendation     [.] runtime.selectgo
+     0.48%  recommendation  recommendation     [.] runtime.growslice
+     0.47%  recommendation  [kernel.kallsyms]  [k] update_cfs_group
+     0.46%  recommendation  recommendation     [.] runtime.casgstatus
+     0.46%  recommendation  recommendation     [.] runtime.newobject
+     0.46%  recommendation  recommendation     [.] runtime.adjustpointers
+     0.45%  recommendation  recommendation     [.] runtime.getStackMap
+     0.45%  recommendation  [kernel.kallsyms]  [k] nf_hook_slow
+     0.45%  recommendation  recommendation     [.] runtime.lock2
+     0.43%  recommendation  [kernel.kallsyms]  [k] ipt_do_table
+     0.42%  recommendation  [kernel.kallsyms]  [k] __update_load_avg_cfs_rq
+     0.42%  recommendation  recommendation     [.] runtime.memclrNoHeapPointers
+     0.42%  recommendation  recommendation     [.] encoding/json.(*Decoder).readValue
+     0.41%  recommendation  recommendation     [.] github.com/harlow/go-micro-services/services/recommendation.(*Server).GetRecommendations
+     0.40%  recommendation  [kernel.kallsyms]  [k] cpuacct_charge
+     0.39%  recommendation  recommendation     [.] runtime.findObject
+     0.39%  recommendation  [kernel.kallsyms]  [k] reweight_entity
+     0.39%  recommendation  recommendation     [.] time.Time.AppendFormat
+     0.39%  recommendation  [kernel.kallsyms]  [k] interrupt_entry
+     0.39%  recommendation  [kernel.kallsyms]  [k] veth_xmit
+     0.39%  recommendation  recommendation     [.] math.ldexp
+     0.38%  recommendation  recommendation     [.] runtime.netpoll
+     0.38%  recommendation  [kernel.kallsyms]  [k] native_queued_spin_lock_slowpath
+     0.37%  recommendation  recommendation     [.] github.com/hailocab/go-geoindex.distance
+     0.37%  recommendation  [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.35%  recommendation  [kernel.kallsyms]  [k] select_idle_sibling.part.0
+     0.34%  recommendation  recommendation     [.] runtime.mapaccess1_faststr
+     0.33%  recommendation  recommendation     [.] runtime.retake
+     0.32%  recommendation  recommendation     [.] math.modf
+     0.32%  recommendation  [kernel.kallsyms]  [k] __fget
+     0.30%  recommendation  [kernel.kallsyms]  [k] update_rq_clock
+     0.30%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).itemHandler
+     0.29%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).operateHeaders
+     0.29%  recommendation  [kernel.kallsyms]  [k] enqueue_entity
+     0.29%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).processUnaryRPC
+     0.29%  recommendation  [kernel.kallsyms]  [k] select_task_rq_fair
+     0.28%  recommendation  recommendation     [.] time.nextStdChunk
+     0.28%  recommendation  [kernel.kallsyms]  [k] __perf_event_task_sched_out
+     0.28%  recommendation  recommendation     [.] runtime.reentersyscall
+     0.28%  recommendation  [kernel.kallsyms]  [k] _raw_spin_lock
+     0.28%  recommendation  recommendation     [.] runtime.stackfree
+     0.28%  recommendation  [kernel.kallsyms]  [k] __tcp_transmit_skb
+     0.28%  recommendation  recommendation     [.] fmt.(*pp).doPrintf
+     0.28%  recommendation  [kernel.kallsyms]  [k] available_idle_cpu
+     0.27%  recommendation  [kernel.kallsyms]  [k] smp_call_function_many
+     0.27%  recommendation  recommendation     [.] encoding/json.stateInString
+     0.27%  recommendation  [kernel.kallsyms]  [k] tcp_in_window
+     0.27%  recommendation  recommendation     [.] runtime.unlock2
+     0.27%  recommendation  [kernel.kallsyms]  [k] native_write_msr
+     0.27%  recommendation  [kernel.kallsyms]  [k] ep_poll
+     0.26%  recommendation  recommendation     [.] path/filepath.Clean
+     0.26%  recommendation  [kernel.kallsyms]  [k] __update_load_avg_se
+     0.26%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.huffmanDecode
+     0.26%  recommendation  recommendation     [.] crypto/tls.(*Conn).readRecordOrCCS
+     0.25%  recommendation  [kernel.kallsyms]  [k] try_to_wake_up
+     0.25%  recommendation  [kernel.kallsyms]  [k] dequeue_task_fair
+     0.25%  recommendation  [kernel.kallsyms]  [k] pick_next_task_fair
+     0.24%  recommendation  [kernel.kallsyms]  [k] __calc_delta
+     0.24%  recommendation  [kernel.kallsyms]  [k] __kmalloc_node_track_caller
+     0.24%  recommendation  [kernel.kallsyms]  [k] __wake_up_common
+     0.24%  recommendation  recommendation     [.] runtime.mapaccess1
+     0.24%  recommendation  recommendation     [.] runtime.sysmon
+     0.24%  recommendation  recommendation     [.] runtime.nanotime1.abi0
+     0.23%  recommendation  [kernel.kallsyms]  [k] _cond_resched
+     0.23%  recommendation  recommendation     [.] runtime.futex.abi0
+     0.23%  recommendation  [kernel.kallsyms]  [k] nf_conntrack_tcp_packet
+     0.23%  recommendation  recommendation     [.] runtime.schedule
+     0.23%  recommendation  recommendation     [.] runtime.usleep.abi0
+     0.23%  recommendation  recommendation     [.] runtime.mapassign
+     0.23%  recommendation  [kernel.kallsyms]  [k] perf_event_update_userpage
+     0.23%  recommendation  [kernel.kallsyms]  [k] nft_do_chain
+     0.22%  recommendation  recommendation     [.] aeshashbody
+     0.22%  recommendation  recommendation     [.] runtime.checkTimers
+     0.22%  recommendation  recommendation     [.] math.atan2
+     0.22%  recommendation  [kernel.kallsyms]  [k] dequeue_entity
+     0.22%  recommendation  recommendation     [.] fmt.Sprintf
+     0.21%  recommendation  recommendation     [.] runtime.checkRunqsNoP
+     0.21%  recommendation  recommendation     [.] indexbytebody
+     0.21%  recommendation  recommendation     [.] runtime.pidleget
+     0.21%  recommendation  recommendation     [.] runtime.notesleep
+     0.21%  recommendation  recommendation     [.] runtime.chansend
+     0.20%  recommendation  [kernel.kallsyms]  [k] native_sched_clock
+     0.20%  recommendation  [kernel.kallsyms]  [k] tcp_recvmsg
+     0.20%  recommendation  [kernel.kallsyms]  [k] kmem_cache_free
+     0.20%  recommendation  recommendation     [.] time.parse
+     0.19%  recommendation  [kernel.kallsyms]  [k] br_nf_pre_routing
+     0.19%  recommendation  [kernel.kallsyms]  [k] tcp_sendmsg_locked
+     0.19%  recommendation  [kernel.kallsyms]  [k] __ip_local_out
+     0.19%  recommendation  recommendation     [.] crypto/tls.(*halfConn).encrypt
+     0.19%  recommendation  [kernel.kallsyms]  [k] copy_user_enhanced_fast_string
+     0.18%  recommendation  [kernel.kallsyms]  [k] rb_next
+     0.18%  recommendation  [kernel.kallsyms]  [k] __x86_indirect_thunk_rax
+     0.18%  recommendation  recommendation     [.] runtime.runqgrab
+     0.18%  recommendation  recommendation     [.] runtime.mapiterinit
+     0.18%  recommendation  recommendation     [.] reflect.(*rtype).Elem
+     0.18%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*textMapPropagator).Extract.func1
+     0.18%  recommendation  [kernel.kallsyms]  [k] tcp_update_skb_after_send
+     0.18%  recommendation  recommendation     [.] runtime.scanblock
+     0.18%  recommendation  recommendation     [.] syscall.Getwd
+     0.18%  recommendation  [kernel.kallsyms]  [k] timerqueue_add
+     0.18%  recommendation  [kernel.kallsyms]  [k] flexible_sched_in
+     0.17%  recommendation  recommendation     [.] github.com/rs/zerolog/internal/json.Encoder.AppendString
+     0.17%  recommendation  [kernel.kallsyms]  [k] __sched_text_start
+     0.17%  recommendation  [kernel.kallsyms]  [k] account_entity_dequeue
+     0.17%  recommendation  [kernel.kallsyms]  [k] new_sync_read
+     0.17%  recommendation  [kernel.kallsyms]  [k] x86_pmu_enable
+     0.17%  recommendation  [kernel.kallsyms]  [k] __x64_sys_nanosleep
+     0.17%  recommendation  [kernel.kallsyms]  [k] common_file_perm
+     0.17%  recommendation  [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.17%  recommendation  [kernel.kallsyms]  [k] switch_fpu_return
+     0.17%  recommendation  recommendation     [.] encoding/json.(*decodeState).rescanLiteral
+     0.16%  recommendation  [kernel.kallsyms]  [k] tcp_rcv_established
+     0.16%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).readMetaFrame.func1
+     0.16%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*decodeState).processHeaderField
+     0.16%  recommendation  recommendation     [.] sync.(*RWMutex).Lock
+     0.16%  recommendation  [kernel.kallsyms]  [k] tcp_write_xmit
+     0.16%  recommendation  [kernel.kallsyms]  [k] prepare_exit_to_usermode
+     0.16%  recommendation  [kernel.kallsyms]  [k] enqueue_task_fair
+     0.16%  recommendation  recommendation     [.] runtime.stackalloc
+     0.16%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).at
+     0.16%  recommendation  recommendation     [.] runtime.gopark
+     0.16%  recommendation  [kernel.kallsyms]  [k] check_preempt_curr
+     0.15%  recommendation  recommendation     [.] internal/poll.(*pollDesc).prepare
+     0.15%  recommendation  recommendation     [.] crypto/tls.(*Conn).handshakeContext
+     0.15%  recommendation  [kernel.kallsyms]  [k] tcp_ack
+     0.15%  recommendation  [kernel.kallsyms]  [k] setup_pre_routing
+     0.15%  recommendation  recommendation     [.] sync.(*Pool).pin
+     0.15%  recommendation  recommendation     [.] internal/poll.(*FD).Read
+     0.15%  recommendation  recommendation     [.] encoding/json.(*decodeState).unmarshal
+     0.15%  recommendation  recommendation     [.] runtime.duffzero
+     0.15%  recommendation  [kernel.kallsyms]  [k] __cgroup_bpf_run_filter_skb
+     0.14%  recommendation  [kernel.kallsyms]  [k] tcp_v4_early_demux
+     0.14%  recommendation  recommendation     [.] sync.(*Mutex).Unlock
+     0.14%  recommendation  recommendation     [.] runtime.duffcopy
+     0.14%  recommendation  recommendation     [.] sync.(*Pool).Put
+     0.14%  recommendation  [kernel.kallsyms]  [k] __nf_conntrack_find_get
+     0.14%  recommendation  [kernel.kallsyms]  [k] path_init
+     0.14%  recommendation  recommendation     [.] fmt.(*pp).printArg
+     0.14%  recommendation  recommendation     [.] io.ReadAtLeast
+     0.14%  recommendation  recommendation     [.] runtime.stopm
+     0.14%  recommendation  [kernel.kallsyms]  [k] rb_erase
+     0.14%  recommendation  recommendation     [.] bytes.(*Buffer).WriteString
+     0.14%  recommendation  [kernel.kallsyms]  [k] do_user_addr_fault
+     0.14%  recommendation  recommendation     [.] context.(*valueCtx).Done
+     0.14%  recommendation  recommendation     [.] golang.org/x/net/http2.(*MetaHeadersFrame).PseudoFields
+     0.13%  recommendation  recommendation     [.] runtime.funcMaxSPDelta
+     0.13%  recommendation  [kernel.kallsyms]  [k] validate_xmit_skb
+     0.13%  recommendation  [kernel.kallsyms]  [k] br_nf_forward_ip
+     0.13%  recommendation  recommendation     [.] math.frexp
+     0.13%  recommendation  [kernel.kallsyms]  [k] __x64_sys_futex
+     0.13%  recommendation  recommendation     [.] bufio.(*Reader).Read
+     0.13%  recommendation  recommendation     [.] runtime.assertE2I2
+     0.13%  recommendation  recommendation     [.] sync.(*Mutex).lockSlow
+     0.13%  recommendation  recommendation     [.] time.appendInt
+     0.13%  recommendation  recommendation     [.] runtime.runqput
+     0.13%  recommendation  recommendation     [.] fmt.(*fmt).fmtInteger
+     0.13%  recommendation  [vdso]             [.] __vdso_clock_gettime
+     0.13%  recommendation  [kernel.kallsyms]  [k] nf_conntrack_in
+     0.12%  recommendation  recommendation     [.] strconv.ParseUint
+     0.12%  recommendation  recommendation     [.] runtime.getitab
+     0.12%  recommendation  recommendation     [.] net.(*conn).Read
+     0.12%  recommendation  recommendation     [.] golang.org/x/net/http2.validWireHeaderFieldName
+     0.12%  recommendation  recommendation     [.] os.(*File).Write
+     0.12%  recommendation  recommendation     [.] path/filepath.Rel
+     0.12%  recommendation  recommendation     [.] runtime.greyobject
+     0.12%  recommendation  [kernel.kallsyms]  [k] get_futex_value_locked
+     0.12%  recommendation  recommendation     [.] sync/atomic.StorePointer
+     0.12%  recommendation  [kernel.kallsyms]  [k] do_nanosleep
+     0.12%  recommendation  recommendation     [.] golang.org/x/net/http2.(*MetaHeadersFrame).checkPseudos
+     0.12%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).HandleStreams
+     0.12%  recommendation  recommendation     [.] math.satan
+     0.12%  recommendation  [kernel.kallsyms]  [k] event_sched_in.isra.0
+     0.12%  recommendation  [kernel.kallsyms]  [k] update_blocked_averages
+     0.12%  recommendation  recommendation     [.] time.tzset
+     0.12%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).sendResponse
+     0.12%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).itemHandler-fm
+     0.12%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).callEmit
+     0.12%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).Write
+     0.12%  recommendation  recommendation     [.] context.(*valueCtx).Value
+     0.12%  recommendation  recommendation     [.] crypto/tls.(*atLeastReader).Read
+     0.12%  recommendation  [kernel.kallsyms]  [k] copy_user_generic_unrolled
+     0.12%  recommendation  recommendation     [.] runtime.gcDrain
+     0.12%  recommendation  recommendation     [.] math.atan
+     0.11%  recommendation  recommendation     [.] runtime.checkTimersNoP
+     0.11%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.getbase
+     0.11%  recommendation  [kernel.kallsyms]  [k] hrtimer_interrupt
+     0.11%  recommendation  [kernel.kallsyms]  [k] wakeup_preempt_entity.isra.0
+     0.11%  recommendation  recommendation     [.] github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.metadataReaderWriter.ForeachKey
+     0.11%  recommendation  [kernel.kallsyms]  [k] __check_object_size
+     0.11%  recommendation  [kernel.kallsyms]  [k] hrtimer_active
+     0.11%  recommendation  [kernel.kallsyms]  [k] smp_call_function_single
+     0.11%  recommendation  [kernel.kallsyms]  [k] tcp_ack_update_rtt.isra.0
+     0.11%  recommendation  recommendation     [.] runtime.convI2I
+     0.11%  recommendation  recommendation     [.] crypto/tls.(*halfConn).decrypt
+     0.11%  recommendation  [kernel.kallsyms]  [k] __accumulate_pelt_segments
+     0.11%  recommendation  [kernel.kallsyms]  [k] br_nf_pre_routing_finish
+     0.11%  recommendation  recommendation     [.] runtime.systemstack.abi0
+     0.11%  recommendation  [kernel.kallsyms]  [k] update_min_vruntime
+     0.11%  recommendation  recommendation     [.] runtime.publicationBarrier.abi0
+     0.11%  recommendation  [kernel.kallsyms]  [k] perf_swevent_add
+     0.11%  recommendation  recommendation     [.] sync.(*poolChain).popTail
+     0.11%  recommendation  [kernel.kallsyms]  [k] ipv4_conntrack_in
+     0.11%  recommendation  [kernel.kallsyms]  [k] __update_idle_core
+     0.11%  recommendation  [kernel.kallsyms]  [k] security_file_permission
+     0.11%  recommendation  [kernel.kallsyms]  [k] select_estimate_accuracy
+     0.11%  recommendation  recommendation     [.] encoding/json.indirect
+     0.11%  recommendation  recommendation     [.] time.now.abi0
+     0.10%  recommendation  [kernel.kallsyms]  [k] __netif_receive_skb_core
+     0.10%  recommendation  recommendation     [.] runtime.timeSleepUntil
+     0.10%  recommendation  [kernel.kallsyms]  [k] newidle_balance
+     0.10%  recommendation  [kernel.kallsyms]  [k] __netif_receive_skb_one_core
+     0.10%  recommendation  [kernel.kallsyms]  [k] ip_finish_output2
+     0.10%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.GetProperties
+     0.10%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).readMetaFrame.dwrap.8
+     0.10%  recommendation  [kernel.kallsyms]  [k] hash_conntrack_raw
+     0.10%  recommendation  [kernel.kallsyms]  [k] tcp_v4_fill_cb
+     0.10%  recommendation  [kernel.kallsyms]  [k] br_handle_frame
+     0.10%  recommendation  recommendation     [.] github.com/rs/zerolog.(*Event).msg
+     0.10%  recommendation  [kernel.kallsyms]  [k] rb_insert_color
+     0.10%  recommendation  recommendation     [.] runtime.typedmemmove
+     0.10%  recommendation  recommendation     [.] github.com/opentracing/opentracing-go/ext.(*rpcServerOption).Apply
+     0.10%  recommendation  recommendation     [.] runtime.makeslice
+     0.10%  recommendation  recommendation     [.] fmt.newPrinter
+     0.10%  recommendation  [kernel.kallsyms]  [k] ip_finish_output
+     0.10%  recommendation  recommendation     [.] runtime.mapaccess2_faststr
+     0.10%  recommendation  recommendation     [.] context.WithCancel.func1
+     0.10%  recommendation  [kernel.kallsyms]  [k] __handle_mm_fault
+     0.10%  recommendation  [kernel.kallsyms]  [k] tcp_rearm_rto
+     0.10%  recommendation  [kernel.kallsyms]  [k] bictcp_cwnd_event
+     0.10%  recommendation  recommendation     [.] runtime.(*mheap).allocSpan
+     0.10%  recommendation  recommendation     [.] net.(*netFD).Read
+     0.10%  recommendation  [kernel.kallsyms]  [k] record_times
+     0.10%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*bdpEstimator).add
+     0.10%  recommendation  recommendation     [.] runtime.netpollblock
+     0.10%  recommendation  [kernel.kallsyms]  [k] skb_ext_add
+     0.10%  recommendation  [kernel.kallsyms]  [k] security_inode_getattr
+     0.09%  recommendation  recommendation     [.] runtime.(*consistentHeapStats).acquire
+     0.09%  recommendation  [kernel.kallsyms]  [k] __skb_clone
+     0.09%  recommendation  recommendation     [.] runtime.newproc1
+     0.09%  recommendation  [kernel.kallsyms]  [k] apparmor_file_permission
+     0.09%  recommendation  recommendation     [.] time.skip
+     0.09%  recommendation  recommendation     [.] net.(*netFD).Write
+     0.09%  recommendation  recommendation     [.] internal/poll.(*fdMutex).rwunlock
+     0.09%  recommendation  [kernel.kallsyms]  [k] group_sched_in
+     0.09%  recommendation  [kernel.kallsyms]  [k] br_forward_finish
+     0.09%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).enc_slice_string
+     0.09%  recommendation  recommendation     [.] runtime.mapassign_faststr
+     0.09%  recommendation  recommendation     [.] internal/poll.(*FD).Write
+     0.09%  recommendation  [kernel.kallsyms]  [k] tcp_current_mss
+     0.09%  recommendation  [kernel.kallsyms]  [k] tcp_wfree
+     0.09%  recommendation  recommendation     [.] context.(*cancelCtx).Done
+     0.09%  recommendation  [kernel.kallsyms]  [k] fdb_find_rcu
+     0.09%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).WriteHeaders
+     0.09%  recommendation  [kernel.kallsyms]  [k] read_tsc
+     0.09%  recommendation  recommendation     [.] runtime.exitsyscallfast
+     0.09%  recommendation  recommendation     [.] internal/testlog.Getenv
+     0.09%  recommendation  [kernel.kallsyms]  [k] check_preempt_wakeup
+     0.09%  recommendation  recommendation     [.] runtime.runqget
+     0.09%  recommendation  recommendation     [.] context.(*cancelCtx).Done.dwrap.1
+     0.08%  recommendation  recommendation     [.] runtime.memequal
+     0.08%  recommendation  [kernel.kallsyms]  [k] pick_next_entity
+     0.08%  recommendation  [kernel.kallsyms]  [k] release_sock
+     0.08%  recommendation  [kernel.kallsyms]  [k] __virt_addr_valid
+     0.08%  recommendation  [kernel.kallsyms]  [k] hrtimer_start_range_ns
+     0.08%  recommendation  recommendation     [.] strings.ToLower
+     0.08%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*quotaPool).get
+     0.08%  recommendation  recommendation     [.] runtime.makechan
+     0.08%  recommendation  [kernel.kallsyms]  [k] ovl_permission
+     0.08%  recommendation  [kernel.kallsyms]  [k] perf_event_sched_in
+     0.08%  recommendation  recommendation     [.] runtime.(*sweepLocked).sweep
+     0.08%  recommendation  [kernel.kallsyms]  [k] schedule
+     0.08%  recommendation  recommendation     [.] sort.Search
+     0.08%  recommendation  [kernel.kallsyms]  [k] skb_copy_datagram_iter
+     0.08%  recommendation  [kernel.kallsyms]  [k] br_nf_post_routing
+     0.08%  recommendation  recommendation     [.] runtime.mDoFixup
+     0.08%  recommendation  [kernel.kallsyms]  [k] tcp_clean_rtx_queue
+     0.08%  recommendation  [vdso]             [.] 0x00000000000006c8
+     0.08%  recommendation  recommendation     [.] syscall.read
+     0.08%  recommendation  recommendation     [.] github.com/rs/zerolog.(*Event).write
+     0.08%  recommendation  recommendation     [.] runtime.updateTimerPMask
+     0.08%  recommendation  [kernel.kallsyms]  [k] __br_forward
+     0.08%  recommendation  [kernel.kallsyms]  [k] ip_rcv_core.isra.0
+     0.08%  recommendation  recommendation     [.] runtime.heapBits.forwardOrBoundary
+     0.08%  recommendation  recommendation     [.] sync.(*Pool).Get
+     0.08%  recommendation  recommendation     [.] runtime.newMarkBits
+     0.08%  recommendation  [kernel.kallsyms]  [k] common_perm_cond
+     0.08%  recommendation  [kernel.kallsyms]  [k] futex_wait
+     0.08%  recommendation  [kernel.kallsyms]  [k] futex_wake
+     0.08%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).Extract
+     0.08%  recommendation  [kernel.kallsyms]  [k] ctx_sched_out
+     0.08%  recommendation  [kernel.kallsyms]  [k] inet_ehashfn
+     0.08%  recommendation  [kernel.kallsyms]  [k] ktime_get_coarse_real_ts64
+     0.08%  recommendation  [kernel.kallsyms]  [k] nft_ct_get_eval
+     0.08%  recommendation  recommendation     [.] crypto/tls.(*xorNonceAEAD).explicitNonceLen
+     0.08%  recommendation  [kernel.kallsyms]  [k] activate_task
+     0.08%  recommendation  [kernel.kallsyms]  [k] mutex_lock
+     0.08%  recommendation  recommendation     [.] runtime.goexit0
+     0.08%  recommendation  [kernel.kallsyms]  [k] __fget_light
+     0.08%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).checkFrameOrder
+     0.08%  recommendation  recommendation     [.] crypto/tls.(*Conn).Write
+     0.08%  recommendation  recommendation     [.] runtime.exitsyscall
+     0.08%  recommendation  [kernel.kallsyms]  [k] __intel_pmu_disable_all
+     0.08%  recommendation  [kernel.kallsyms]  [k] arch_perf_update_userpage
+     0.08%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).startSpanInternal
+     0.07%  recommendation  [kernel.kallsyms]  [k] new_sync_write
+     0.07%  recommendation  [kernel.kallsyms]  [k] hash_futex
+     0.07%  recommendation  [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+     0.07%  recommendation  recommendation     [.] runtime.bgscavenge
+     0.07%  recommendation  recommendation     [.] crypto/aes.encryptBlockAsm.abi0
+     0.07%  recommendation  recommendation     [.] runtime.slicebytetostring
+     0.07%  recommendation  recommendation     [.] reflect.name.name
+     0.07%  recommendation  recommendation     [.] sync.(*RWMutex).Unlock
+     0.07%  recommendation  [kernel.kallsyms]  [k] skb_page_frag_refill
+     0.07%  recommendation  recommendation     [.] runtime.mapdelete
+     0.07%  recommendation  recommendation     [.] crypto/tls.(*Conn).Read
+     0.07%  recommendation  recommendation     [.] runtime.(*mspan).nextFreeIndex
+     0.07%  recommendation  recommendation     [.] reflect.Value.NumField
+     0.07%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).operateHeaders.func1
+     0.07%  recommendation  [kernel.kallsyms]  [k] check_stack_object
+     0.07%  recommendation  recommendation     [.] runtime.checkdead
+     0.07%  recommendation  recommendation     [.] context.(*cancelCtx).Value
+     0.07%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).closeStream
+     0.07%  recommendation  [kernel.kallsyms]  [k] fput_many
+     0.07%  recommendation  recommendation     [.] runtime.mergeSummaries
+     0.07%  recommendation  [kernel.kallsyms]  [k] memset_erms
+     0.07%  recommendation  [kernel.kallsyms]  [k] migrate_task_rq_fair
+     0.07%  recommendation  recommendation     [.] github.com/hailocab/go-geoindex.(*GeoPoint).Lat
+     0.07%  recommendation  recommendation     [.] runtime.entersyscall_sysmon
+     0.07%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).startSpanWithOptions
+     0.07%  recommendation  recommendation     [.] runtime.funcspdelta
+     0.07%  recommendation  recommendation     [.] encoding/json.(*Decoder).refill
+     0.07%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).unmarshalType
+     0.07%  recommendation  [kernel.kallsyms]  [k] find_next_bit
+     0.07%  recommendation  [kernel.kallsyms]  [k] error_entry
+     0.07%  recommendation  [kernel.kallsyms]  [k] ep_scan_ready_list.constprop.0
+     0.07%  recommendation  [kernel.kallsyms]  [k] nf_ct_get_tuple
+     0.07%  recommendation  recommendation     [.] reflect.Value.Field
+     0.07%  recommendation  recommendation     [.] net/url.unescape
+     0.07%  recommendation  [kernel.kallsyms]  [k] __ip_queue_xmit
+     0.07%  recommendation  recommendation     [.] runtime.runtimer
+     0.07%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*headerFieldTable).search
+     0.07%  recommendation  recommendation     [.] github.com/harlow/go-micro-services/services/recommendation/proto._Recommendation_GetRecommendations_Handler
+     0.07%  recommendation  recommendation     [.] encoding/json.(*scanner).pushParseState
+     0.07%  recommendation  recommendation     [.] sort.Sort
+     0.07%  recommendation  recommendation     [.] runtime.interhash
+     0.07%  recommendation  recommendation     [.] time.Date
+     0.06%  recommendation  [kernel.kallsyms]  [k] eth_type_trans
+     0.06%  recommendation  [kernel.kallsyms]  [k] process_backlog
+     0.06%  recommendation  [kernel.kallsyms]  [k] update_cfs_rq_h_load
+     0.06%  recommendation  [kernel.kallsyms]  [k] __sock_wfree
+     0.06%  recommendation  [kernel.kallsyms]  [k] hrtimer_update_next_event
+     0.06%  recommendation  [kernel.kallsyms]  [k] __sk_dst_check
+     0.06%  recommendation  [kernel.kallsyms]  [k] plist_add
+     0.06%  recommendation  [kernel.kallsyms]  [k] ktime_get
+     0.06%  recommendation  recommendation     [.] runtime.scanframeworker
+     0.06%  recommendation  recommendation     [.] crypto/tls.(*xorNonceAEAD).Seal
+     0.06%  recommendation  recommendation     [.] runtime.pcdatavalue
+     0.06%  recommendation  [kernel.kallsyms]  [k] strncpy_from_user
+     0.06%  recommendation  recommendation     [.] bytes.(*Buffer).WriteTo
+     0.06%  recommendation  [kernel.kallsyms]  [k] __do_sys_newfstatat
+     0.06%  recommendation  [kernel.kallsyms]  [k] tcp_options_write
+     0.06%  recommendation  recommendation     [.] runtime.gfget
+     0.06%  recommendation  [kernel.kallsyms]  [k] sched_clock_cpu
+     0.06%  recommendation  [kernel.kallsyms]  [k] ip_vs_in
+     0.06%  recommendation  [kernel.kallsyms]  [k] __legitimize_mnt
+     0.06%  recommendation  recommendation     [.] runtime.mapdelete_fast32
+     0.06%  recommendation  recommendation     [.] runtime.sigsend
+     0.06%  recommendation  [kernel.kallsyms]  [k] __local_bh_enable_ip
+     0.06%  recommendation  [kernel.kallsyms]  [k] finish_task_switch
+     0.06%  recommendation  recommendation     [.] runtime.sellock
+     0.06%  recommendation  recommendation     [.] sync.(*RWMutex).RUnlock
+     0.06%  recommendation  [kernel.kallsyms]  [k] vfs_write
+     0.06%  recommendation  recommendation     [.] bytes.(*Buffer).WriteByte
+     0.06%  recommendation  [kernel.kallsyms]  [k] mutex_spin_on_owner
+     0.06%  recommendation  recommendation     [.] context.(*cancelCtx).cancel
+     0.06%  recommendation  recommendation     [.] time.getnum
+     0.06%  recommendation  recommendation     [.] runtime.ifaceeq
+     0.06%  recommendation  [kernel.kallsyms]  [k] mem_cgroup_try_charge
+     0.06%  recommendation  [kernel.kallsyms]  [k] tcp_v4_do_rcv
+     0.06%  recommendation  recommendation     [.] github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1
+     0.06%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).Write
+     0.06%  recommendation  [kernel.kallsyms]  [k] __dev_queue_xmit
+     0.06%  recommendation  [kernel.kallsyms]  [k] ipv4_dst_check
+     0.06%  recommendation  recommendation     [.] runtime.futexsleep
+     0.06%  recommendation  recommendation     [.] github.com/rs/zerolog.consoleDefaultFormatLevel.func1
+     0.06%  recommendation  [kernel.kallsyms]  [k] vfs_getattr
+     0.06%  recommendation  [kernel.kallsyms]  [k] br_forward
+     0.06%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).handlePing.func1
+     0.06%  recommendation  recommendation     [.] runtime.mapaccess1_fast32
+     0.06%  recommendation  [kernel.kallsyms]  [k] attach_entity_load_avg
+     0.06%  recommendation  [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+     0.06%  recommendation  [kernel.kallsyms]  [k] nf_nat_inet_fn
+     0.06%  recommendation  recommendation     [.] runtime.newstack
+     0.06%  recommendation  [kernel.kallsyms]  [k] find_vma
+     0.06%  recommendation  recommendation     [.] runtime.mapaccess2
+     0.06%  recommendation  recommendation     [.] encoding/json.stateBeginValue
+     0.06%  recommendation  [kernel.kallsyms]  [k] deactivate_task
+     0.06%  recommendation  [kernel.kallsyms]  [k] kmem_cache_alloc
+     0.06%  recommendation  [kernel.kallsyms]  [k] tcp_release_cb
+     0.06%  recommendation  [kernel.kallsyms]  [k] trigger_dyntick_cpu.isra.0
+     0.06%  recommendation  [vdso]             [.] 0x000000000000069e
+     0.06%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).DecodeFixed64
+     0.06%  recommendation  [kernel.kallsyms]  [k] tcp_event_new_data_sent
+     0.06%  recommendation  [kernel.kallsyms]  [k] get_futex_key
+     0.06%  recommendation  recommendation     [.] runtime.(*mcache).prepareForSweep
+     0.06%  recommendation  recommendation     [.] reflect.packEface
+     0.06%  recommendation  [kernel.kallsyms]  [k] lockref_put_return
+     0.06%  recommendation  [kernel.kallsyms]  [k] pick_next_task_idle
+     0.06%  recommendation  recommendation     [.] syscall.write
+     0.05%  recommendation  recommendation     [.] crypto/tls.(*halfConn).explicitNonceLen
+     0.05%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).ReadFrame
+     0.05%  recommendation  recommendation     [.] time.tzsetName
+     0.05%  recommendation  recommendation     [.] reflect.Value.NumMethod
+     0.05%  recommendation  recommendation     [.] runtime.adjustdefers
+     0.05%  recommendation  recommendation     [.] runtime.(*spanSet).pop
+     0.05%  recommendation  recommendation     [.] bufio.(*Writer).Flush
+     0.05%  recommendation  [kernel.kallsyms]  [k] br_fdb_update
+     0.05%  recommendation  recommendation     [.] runtime.mPark
+     0.05%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*recvBufferReader).Read
+     0.05%  recommendation  [kernel.kallsyms]  [k] ep_send_events_proc
+     0.05%  recommendation  recommendation     [.] crypto/tls.(*Conn).Write.dwrap.12
+     0.05%  recommendation  recommendation     [.] runtime.findnull
+     0.05%  recommendation  recommendation     [.] google.golang.org/grpc.(*parser).recvMsg
+     0.05%  recommendation  recommendation     [.] runtime.(*mcache).releaseAll
+     0.05%  recommendation  recommendation     [.] github.com/rs/zerolog.newEvent
+     0.05%  recommendation  [kernel.kallsyms]  [k] tcp_rbtree_insert
+     0.05%  recommendation  recommendation     [.] runtime.runqsteal
+     0.05%  recommendation  recommendation     [.] fmt.(*fmt).fmtS
+     0.05%  recommendation  [kernel.kallsyms]  [k] nf_ct_deliver_cached_events
+     0.05%  recommendation  [kernel.kallsyms]  [k] iov_iter_advance
+     0.05%  recommendation  [kernel.kallsyms]  [k] __ksize
+     0.05%  recommendation  recommendation     [.] math/rand.(*rngSource).Int63
+     0.05%  recommendation  [kernel.kallsyms]  [k] _raw_read_lock_irqsave
+     0.05%  recommendation  recommendation     [.] encoding/json.unquoteBytes
+     0.05%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*dynamicTable).add
+     0.05%  recommendation  recommendation     [.] runtime.resolveTypeOff
+     0.05%  recommendation  [kernel.kallsyms]  [k] tcp_event_data_recv
+     0.05%  recommendation  [kernel.kallsyms]  [k] __skb_datagram_iter
+     0.05%  recommendation  recommendation     [.] runtime.heapBits.initSpan
+     0.05%  recommendation  recommendation     [.] crypto/tls.(*Conn).writeRecordLocked
+     0.05%  recommendation  [kernel.kallsyms]  [k] ep_poll_callback
+     0.05%  recommendation  [kernel.kallsyms]  [k] prepend_path.isra.0
+     0.05%  recommendation  [kernel.kallsyms]  [k] should_failslab
+     0.05%  recommendation  recommendation     [.] runtime.(*spanSet).push
+     0.05%  recommendation  recommendation     [.] crypto/aes.gcmAesDec.abi0
+     0.05%  recommendation  [kernel.kallsyms]  [k] tcp_v4_rcv
+     0.05%  recommendation  recommendation     [.] google.golang.org/grpc/transport.loopyWriter
+     0.05%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).randomID
+     0.05%  recommendation  [vdso]             [.] 0x0000000000000725
+     0.05%  recommendation  [kernel.kallsyms]  [k] account_entity_enqueue
+     0.05%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).traceInfo
+     0.05%  recommendation  [kernel.kallsyms]  [k] ctx_sched_in
+     0.05%  recommendation  [kernel.kallsyms]  [k] native_apic_msr_eoi_write
+     0.05%  recommendation  [kernel.kallsyms]  [k] __hrtimer_init
+     0.05%  recommendation  recommendation     [.] runtime.save
+     0.05%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).dec_proto3_int64
+     0.05%  recommendation  recommendation     [.] sync.runtime_procPin
+     0.05%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*textMapPropagator).Extract
+     0.05%  recommendation  [kernel.kallsyms]  [k] place_entity
+     0.05%  recommendation  recommendation     [.] reflect.(*rtype).NumMethod
+     0.05%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).handleStream
+     0.05%  recommendation  recommendation     [.] memeqbody
+     0.05%  recommendation  [kernel.kallsyms]  [k] conntrack_mt
+     0.04%  recommendation  [kernel.kallsyms]  [k] tlb_flush_mmu
+     0.04%  recommendation  [kernel.kallsyms]  [k] __raise_softirq_irqoff
+     0.04%  recommendation  recommendation     [.] golang.org/x/net/http2.(*HeadersFrame).invalidate
+     0.04%  recommendation  recommendation     [.] strings.Index
+     0.04%  recommendation  recommendation     [.] runtime.morestack.abi0
+     0.04%  recommendation  [kernel.kallsyms]  [k] nft_immediate_eval
+     0.04%  recommendation  [kernel.kallsyms]  [k] _raw_write_lock_irq
+     0.04%  recommendation  recommendation     [.] reflect.cvtBytesString
+     0.04%  recommendation  [vdso]             [.] 0x0000000000000695
+     0.04%  recommendation  [kernel.kallsyms]  [k] intel_pmu_disable_all
+     0.04%  recommendation  recommendation     [.] google.golang.org/grpc/transport.encodeGrpcMessage
+     0.04%  recommendation  [kernel.kallsyms]  [k] mem_cgroup_page_lruvec
+     0.04%  recommendation  [kernel.kallsyms]  [k] put_prev_entity
+     0.04%  recommendation  [kernel.kallsyms]  [k] ktime_get_ts64
+     0.04%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*compositeSpanObserver).OnSetTag
+     0.04%  recommendation  recommendation     [.] github.com/rs/zerolog.ConsoleWriter.Write
+     0.04%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).WriteDataPadded
+     0.04%  recommendation  recommendation     [.] crypto/tls.(*Conn).writeRecordLocked.func1
+     0.04%  recommendation  [kernel.kallsyms]  [k] calc_timer_values
+     0.04%  recommendation  [kernel.kallsyms]  [k] ovl_getattr
+     0.04%  recommendation  [kernel.kallsyms]  [k] common_perm
+     0.04%  recommendation  [kernel.kallsyms]  [k] uncharge_batch
+     0.04%  recommendation  recommendation     [.] runtime.concatstrings
+     0.04%  recommendation  recommendation     [.] crypto/tls.(*xorNonceAEAD).Open
+     0.04%  recommendation  recommendation     [.] github.com/rs/zerolog.(*ConsoleWriter).Write
+     0.04%  recommendation  recommendation     [.] golang.org/x/net/http2.parsePingFrame
+     0.04%  recommendation  recommendation     [.] internal/poll.(*fdMutex).rwlock
+     0.04%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.readVarInt
+     0.04%  recommendation  recommendation     [.] runtime.exitsyscallfast_reacquired
+     0.04%  recommendation  [kernel.kallsyms]  [k] mark_wake_futex
+     0.04%  recommendation  recommendation     [.] runtime.copystack
+     0.04%  recommendation  recommendation     [.] context.propagateCancel
+     0.04%  recommendation  [kernel.kallsyms]  [k] tcp_v4_send_check
+     0.04%  recommendation  [kernel.kallsyms]  [k] tick_program_event
+     0.04%  recommendation  recommendation     [.] runtime.(*lfstack).push
+     0.04%  recommendation  recommendation     [.] crypto/tls.(*Conn).readFromUntil
+     0.04%  recommendation  recommendation     [.] runtime.wbBufFlush1
+     0.04%  recommendation  [kernel.kallsyms]  [k] ttwu_do_wakeup
+     0.04%  recommendation  [kernel.kallsyms]  [k] __tcp_ack_snd_check
+     0.04%  recommendation  [kernel.kallsyms]  [k] release_pages
+     0.04%  recommendation  recommendation     [.] github.com/apache/thrift/lib/go/thrift.NewTProtocolException
+     0.04%  recommendation  recommendation     [.] reflect.Value.Type
+     0.04%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).DecodeRawBytes
+     0.04%  recommendation  recommendation     [.] encoding/json.stateEndTop
+     0.04%  recommendation  recommendation     [.] type..eq.golang.org/x/net/http2/hpack.pairNameValue
+     0.04%  recommendation  [kernel.kallsyms]  [k] futex_wait_setup
+     0.04%  recommendation  recommendation     [.] runtime.(*consistentHeapStats).release
+     0.04%  recommendation  [kernel.kallsyms]  [k] br_handle_frame_finish
+     0.04%  recommendation  [kernel.kallsyms]  [k] tcp_small_queue_check.isra.0
+     0.04%  recommendation  recommendation     [.] syscall.Syscall.abi0
+     0.04%  recommendation  [kernel.kallsyms]  [k] hrtimer_reprogram
+     0.04%  recommendation  recommendation     [.] context.parentCancelCtx
+     0.04%  recommendation  [kernel.kallsyms]  [k] __hrtimer_next_event_base
+     0.04%  recommendation  recommendation     [.] internal/poll.runtime_pollWait
+     0.04%  recommendation  [kernel.kallsyms]  [k] nft_bitwise_eval
+     0.04%  recommendation  [kernel.kallsyms]  [k] ovl_path_real
+     0.04%  recommendation  [kernel.kallsyms]  [k] hrtimer_wakeup
+     0.04%  recommendation  recommendation     [.] reflect.Value.Set
+     0.04%  recommendation  recommendation     [.] encoding/json.(*decodeState).object
+     0.04%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*inFlow).onData
+     0.04%  recommendation  [kernel.kallsyms]  [k] ipv4_conntrack_defrag
+     0.04%  recommendation  recommendation     [.] context.WithCancel
+     0.04%  recommendation  [kernel.kallsyms]  [k] cpumask_next_wrap
+     0.04%  recommendation  recommendation     [.] syscall.Getenv
+     0.04%  recommendation  [kernel.kallsyms]  [k] prepend_name
+     0.04%  recommendation  recommendation     [.] reflect.(*structType).FieldByName
+     0.04%  recommendation  [kernel.kallsyms]  [k] apparmor_socket_recvmsg
+     0.04%  recommendation  [kernel.kallsyms]  [k] br_dev_queue_push_xmit
+     0.03%  recommendation  [kernel.kallsyms]  [k] clear_page_erms
+     0.03%  recommendation  recommendation     [.] runtime.selectnbsend
+     0.03%  recommendation  recommendation     [.] runtime.(*spanSet).reset
+     0.03%  recommendation  [kernel.kallsyms]  [k] do_futex
+     0.03%  recommendation  [kernel.kallsyms]  [k] sched_clock
+     0.03%  recommendation  recommendation     [.] crypto/tls.(*Conn).handshakeContext.dwrap.17
+     0.03%  recommendation  [kernel.kallsyms]  [k] enqueue_to_backlog
+     0.03%  recommendation  [kernel.kallsyms]  [k] inode_permission
+     0.03%  recommendation  [kernel.kallsyms]  [k] skb_free_head
+     0.03%  recommendation  [kernel.kallsyms]  [k] intel_pstate_update_util
+     0.03%  recommendation  [kernel.kallsyms]  [k] ktime_get_with_offset
+     0.03%  recommendation  [kernel.kallsyms]  [k] nf_ct_seq_offset
+     0.03%  recommendation  [kernel.kallsyms]  [k] __lock_text_start
+     0.03%  recommendation  [kernel.kallsyms]  [k] iptable_mangle_hook
+     0.03%  recommendation  recommendation     [.] runtime.callers.func1
+     0.03%  recommendation  [kernel.kallsyms]  [k] __task_pid_nr_ns
+     0.03%  recommendation  [kernel.kallsyms]  [k] nf_nat_ipv4_fn
+     0.03%  recommendation  [kernel.kallsyms]  [k] native_flush_tlb_others
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).parseHeaderFieldRepr
+     0.03%  recommendation  [kernel.kallsyms]  [k] kmem_cache_alloc_node
+     0.03%  recommendation  [kernel.kallsyms]  [k] set_next_buddy
+     0.03%  recommendation  [kernel.kallsyms]  [k] kfree_skbmem
+     0.03%  recommendation  [kernel.kallsyms]  [k] nf_nat_packet
+     0.03%  recommendation  [kernel.kallsyms]  [k] __mod_memcg_state
+     0.03%  recommendation  recommendation     [.] crypto/tls.(*Conn).maxPayloadSizeForWrite
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).endWrite
+     0.03%  recommendation  [kernel.kallsyms]  [k] ipv4_mtu
+     0.03%  recommendation  recommendation     [.] runtime.mcall
+     0.03%  recommendation  recommendation     [.] encoding/json.(*scanner).popParseState
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/encoding/proto.codec.Unmarshal
+     0.03%  recommendation  recommendation     [.] os.Getwd
+     0.03%  recommendation  [kernel.kallsyms]  [k] memcmp
+     0.03%  recommendation  recommendation     [.] runtime.injectglist
+     0.03%  recommendation  [kernel.kallsyms]  [k] fsnotify
+     0.03%  recommendation  [kernel.kallsyms]  [k] memcg_kmem_put_cache
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).readString
+     0.03%  recommendation  recommendation     [.] syscall.fstatat
+     0.03%  recommendation  [kernel.kallsyms]  [k] find_next_and_bit
+     0.03%  recommendation  [kernel.kallsyms]  [k] current_time
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Encoder).WriteField
+     0.03%  recommendation  [kernel.kallsyms]  [k] skb_entail
+     0.03%  recommendation  [kernel.kallsyms]  [k] perf_log_itrace_start
+     0.03%  recommendation  [kernel.kallsyms]  [k] __fsnotify_parent
+     0.03%  recommendation  [kernel.kallsyms]  [k] ip_vs_local_reply4
+     0.03%  recommendation  recommendation     [.] context.removeChild
+     0.03%  recommendation  [kernel.kallsyms]  [k] nbp_switchdev_allowed_egress
+     0.03%  recommendation  recommendation     [.] runtime.doaddtimer
+     0.03%  recommendation  recommendation     [.] reflect.Value.SetMapIndex
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).readMetaFrame
+     0.03%  recommendation  [kernel.kallsyms]  [k] lock_hrtimer_base
+     0.03%  recommendation  [kernel.kallsyms]  [k] vfs_read
+     0.03%  recommendation  [vdso]             [.] 0x00000000000006a6
+     0.03%  recommendation  [kernel.kallsyms]  [k] ip_rcv_finish
+     0.03%  recommendation  recommendation     [.] sync.(*WaitGroup).Add
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*quotaPool).add
+     0.03%  recommendation  [kernel.kallsyms]  [k] ip_vs_out.part.0
+     0.03%  recommendation  recommendation     [.] crypto/aes.(*gcmAsm).Open
+     0.03%  recommendation  recommendation     [.] bytes.(*Buffer).ReadFrom
+     0.03%  recommendation  [kernel.kallsyms]  [k] __vfs_write
+     0.03%  recommendation  recommendation     [.] strconv.FormatInt
+     0.03%  recommendation  recommendation     [.] runtime.convT2I
+     0.03%  recommendation  recommendation     [.] internal/reflectlite.(*rtype).Comparable
+     0.03%  recommendation  [kernel.kallsyms]  [k] ktime_get_seconds
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*recvBufferReader).read
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).WriteStatus
+     0.03%  recommendation  recommendation     [.] runtime.bgsweep
+     0.03%  recommendation  recommendation     [.] runtime.stackpoolfree
+     0.03%  recommendation  recommendation     [.] runtime.interequal
+     0.03%  recommendation  recommendation     [.] runtime.tracebackdefers
+     0.03%  recommendation  [kernel.kallsyms]  [k] rw_verify_area
+     0.03%  recommendation  recommendation     [.] sync.(*Pool).getSlow
+     0.03%  recommendation  [kernel.kallsyms]  [k] lapic_next_deadline
+     0.03%  recommendation  recommendation     [.] time.absDate
+     0.03%  recommendation  [kernel.kallsyms]  [k] fpregs_assert_state_consistent
+     0.03%  recommendation  [kernel.kallsyms]  [k] __x86_indirect_thunk_r9
+     0.03%  recommendation  recommendation     [.] runtime.memhash32
+     0.03%  recommendation  [kernel.kallsyms]  [k] get_futex_key_refs.isra.0
+     0.03%  recommendation  recommendation     [.] crypto/tls.(*Conn).write
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*Stream).waitOnHeader
+     0.03%  recommendation  recommendation     [.] runtime.epollwait.abi0
+     0.03%  recommendation  recommendation     [.] runtime.wirep
+     0.03%  recommendation  [kernel.kallsyms]  [k] __alloc_skb
+     0.03%  recommendation  [kernel.kallsyms]  [k] cpuacct_account_field
+     0.03%  recommendation  [kernel.kallsyms]  [k] kfree
+     0.03%  recommendation  [kernel.kallsyms]  [k] sk_forced_mem_schedule
+     0.03%  recommendation  recommendation     [.] encoding/json.stateBeginStringOrEmpty
+     0.03%  recommendation  [kernel.kallsyms]  [k] handle_mm_fault
+     0.03%  recommendation  [kernel.kallsyms]  [k] _raw_read_unlock_irqrestore
+     0.03%  recommendation  [kernel.kallsyms]  [k] clear_buddies
+     0.03%  recommendation  recommendation     [.] sync/atomic.(*Value).Store
+     0.03%  recommendation  [kernel.kallsyms]  [k] raw_local_deliver
+     0.03%  recommendation  recommendation     [.] runtime.markroot
+     0.03%  recommendation  recommendation     [.] reflect.(*rtype).Kind
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).parseFieldIndexed
+     0.03%  recommendation  recommendation     [.] golang.org/x/net/http2.parseHeadersFrame
+     0.03%  recommendation  recommendation     [.] fmt.(*fmt).padString
+     0.03%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*inFlow).onRead.dwrap.6
+     0.02%  recommendation  [kernel.kallsyms]  [k] __cgroup_account_cputime
+     0.02%  recommendation  recommendation     [.] github.com/hailocab/go-geoindex.(*GeoPoint).Lon
+     0.02%  recommendation  [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     0.02%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.mergeStruct
+     0.02%  recommendation  [kernel.kallsyms]  [k] sock_def_readable
+     0.02%  recommendation  recommendation     [.] reflect.Value.assignTo
+     0.02%  recommendation  recommendation     [.] golang.org/x/net/http2.(*Framer).WritePing
+     0.02%  recommendation  recommendation     [.] runtime.gfput
+     0.02%  recommendation  [kernel.kallsyms]  [k] iptable_filter_hook
+     0.02%  recommendation  [kernel.kallsyms]  [k] mod_timer
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.(*Event).Timestamp
+     0.02%  recommendation  [kernel.kallsyms]  [k] clockevents_program_event
+     0.02%  recommendation  [kernel.kallsyms]  [k] revert_creds
+     0.02%  recommendation  recommendation     [.] sync/atomic.runtime_procPin
+     0.02%  recommendation  [kernel.kallsyms]  [k] rcu_note_context_switch
+     0.02%  recommendation  [kernel.kallsyms]  [k] skb_release_data
+     0.02%  recommendation  [kernel.kallsyms]  [k] fput
+     0.02%  recommendation  recommendation     [.] crypto/aes.gcmAesFinish.abi0
+     0.02%  recommendation  recommendation     [.] runtime.acquireSudog
+     0.02%  recommendation  recommendation     [.] reflect.(*rtype).ptrTo
+     0.02%  recommendation  recommendation     [.] runtime.freeSomeWbufs
+     0.02%  recommendation  recommendation     [.] reflect.name.tag
+     0.02%  recommendation  [kernel.kallsyms]  [k] pipe_write
+     0.02%  recommendation  recommendation     [.] encoding/json.stateEndValue
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*recvBuffer).load
+     0.02%  recommendation  [kernel.kallsyms]  [k] __do_sys_madvise
+     0.02%  recommendation  recommendation     [.] reflect.(*rtype).common
+     0.02%  recommendation  [kernel.kallsyms]  [k] set_task_cpu
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc.encode
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*controlBuffer).load
+     0.02%  recommendation  [kernel.kallsyms]  [k] tcp_established_options
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).WriteHeader
+     0.02%  recommendation  [kernel.kallsyms]  [k] kthread_blkcg
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.(*timestampHook).Run
+     0.02%  recommendation  recommendation     [.] runtime.mapassign_fast32
+     0.02%  recommendation  recommendation     [.] runtime.callers
+     0.02%  recommendation  recommendation     [.] sync/atomic.CompareAndSwapPointer
+     0.02%  recommendation  [kernel.kallsyms]  [k] __mod_lruvec_state
+     0.02%  recommendation  [kernel.kallsyms]  [k] perf_event_update_time
+     0.02%  recommendation  [kernel.kallsyms]  [k] hrtimer_nanosleep
+     0.02%  recommendation  recommendation     [.] runtime.notetsleep_internal
+     0.02%  recommendation  recommendation     [.] runtime.gcWriteBarrier
+     0.02%  recommendation  [kernel.kallsyms]  [k] drop_futex_key_refs.isra.0
+     0.02%  recommendation  recommendation     [.] runtime.releasep
+     0.02%  recommendation  [kernel.kallsyms]  [k] mutex_unlock
+     0.02%  recommendation  recommendation     [.] fmt.(*pp).fmtString
+     0.02%  recommendation  [kernel.kallsyms]  [k] policy_nodemask
+     0.02%  recommendation  recommendation     [.] github.com/harlow/go-micro-services/services/recommendation/proto.(*Request).Reset
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.ConsoleWriter.writePart
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.decodeMetadataHeader
+     0.02%  recommendation  [kernel.kallsyms]  [k] apparmor_inode_getattr
+     0.02%  recommendation  recommendation     [.] runtime.notewakeup
+     0.02%  recommendation  recommendation     [.] runtime.startm
+     0.02%  recommendation  [kernel.kallsyms]  [k] acpi_os_read_memory
+     0.02%  recommendation  [kernel.kallsyms]  [k] ip_rcv_finish_core.isra.0
+     0.02%  recommendation  [kernel.kallsyms]  [k] __copy_skb_header
+     0.02%  recommendation  recommendation     [.] runtime.closechan
+     0.02%  recommendation  [kernel.kallsyms]  [k] tcp_chrono_start
+     0.02%  recommendation  [kernel.kallsyms]  [k] net_rx_action
+     0.02%  recommendation  [kernel.kallsyms]  [k] get_timespec64
+     0.02%  recommendation  [kernel.kallsyms]  [k] hrtimer_init_sleeper
+     0.02%  recommendation  [vdso]             [.] 0x0000000000000701
+     0.02%  recommendation  [kernel.kallsyms]  [k] sock_sendmsg
+     0.02%  recommendation  [kernel.kallsyms]  [k] futex_wait_queue_me
+     0.02%  recommendation  [kernel.kallsyms]  [k] nf_confirm
+     0.02%  recommendation  [kernel.kallsyms]  [k] skb_release_head_state
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Span).FinishWithOptions
+     0.02%  recommendation  recommendation     [.] sync/atomic.CompareAndSwapUintptr
+     0.02%  recommendation  recommendation     [.] runtime.trygetfull
+     0.02%  recommendation  [kernel.kallsyms]  [k] sk_free
+     0.02%  recommendation  recommendation     [.] reflect.(*rtype).Key
+     0.02%  recommendation  recommendation     [.] crypto/aes.gcmAesData.abi0
+     0.02%  recommendation  recommendation     [.] runtime.nilinterhash
+     0.02%  recommendation  [kernel.kallsyms]  [k] tcp_rate_skb_delivered
+     0.02%  recommendation  [kernel.kallsyms]  [k] aa_file_perm
+     0.02%  recommendation  recommendation     [.] reflect.(*rtype).Implements
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.(*Event).Msgf
+     0.02%  recommendation  [kernel.kallsyms]  [k] aa_get_task_label
+     0.02%  recommendation  [kernel.kallsyms]  [k] validate_xmit_xfrm
+     0.02%  recommendation  [kernel.kallsyms]  [k] put_prev_task_fair
+     0.02%  recommendation  [kernel.kallsyms]  [k] jiffies_to_usecs
+     0.02%  recommendation  recommendation     [.] runtime.goready
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*transportReader).Read
+     0.02%  recommendation  [kernel.kallsyms]  [k] __inet_lookup_established
+     0.02%  recommendation  [kernel.kallsyms]  [k] native_irq_return_iret
+     0.02%  recommendation  recommendation     [.] internal/bytealg.CountString.abi0
+     0.02%  recommendation  recommendation     [.] reflect.makemap
+     0.02%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.mergeAny
+     0.02%  recommendation  [kernel.kallsyms]  [k] ret_from_intr
+     0.02%  recommendation  recommendation     [.] reflect.New
+     0.02%  recommendation  [kernel.kallsyms]  [k] sock_put
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*remoteReporter).Report
+     0.02%  recommendation  [kernel.kallsyms]  [k] __wake_up_common_lock
+     0.02%  recommendation  recommendation     [.] runtime.chanrecv
+     0.02%  recommendation  [kernel.kallsyms]  [k] get_nohz_timer_target
+     0.02%  recommendation  [kernel.kallsyms]  [k] ip_output
+     0.02%  recommendation  [kernel.kallsyms]  [k] __hrtimer_get_next_event
+     0.02%  recommendation  recommendation     [.] time.(*Location).get
+     0.02%  recommendation  [kernel.kallsyms]  [k] __x64_sys_getcwd
+     0.02%  recommendation  [kernel.kallsyms]  [k] timerqueue_del
+     0.02%  recommendation  recommendation     [.] runtime.convTslice
+     0.02%  recommendation  recommendation     [.] runtime.bulkBarrierPreWrite
+     0.02%  recommendation  recommendation     [.] reflect.Value.SetString
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.(*callerHook).Run
+     0.02%  recommendation  recommendation     [.] runtime.typehash
+     0.02%  recommendation  recommendation     [.] reflect.Value.Convert
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).operateHeaders.func2
+     0.02%  recommendation  recommendation     [.] runtime.netpollblockcommit
+     0.02%  recommendation  [kernel.kallsyms]  [k] x86_pmu_disable
+     0.02%  recommendation  [kernel.kallsyms]  [k] select_idle_sibling
+     0.02%  recommendation  [kernel.kallsyms]  [k] nft_do_chain_ipv4
+     0.02%  recommendation  [kernel.kallsyms]  [k] rcu_all_qs
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).handlePing
+     0.02%  recommendation  [kernel.kallsyms]  [k] retint_kernel
+     0.02%  recommendation  recommendation     [.] fmt.(*pp).free
+     0.02%  recommendation  recommendation     [.] runtime.netpollready
+     0.02%  recommendation  [kernel.kallsyms]  [k] nf_checksum
+     0.02%  recommendation  [kernel.kallsyms]  [k] tcp_stream_memory_free
+     0.02%  recommendation  [kernel.kallsyms]  [k] remove_entity_load_avg
+     0.02%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.Clone
+     0.02%  recommendation  recommendation     [.] strconv.formatBits
+     0.02%  recommendation  [kernel.kallsyms]  [k] netdev_core_pick_tx
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.ContextFromString
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go/utils.(*lockedSource).Int63
+     0.02%  recommendation  [kernel.kallsyms]  [k] mem_cgroup_throttle_swaprate
+     0.02%  recommendation  [kernel.kallsyms]  [k] prep_new_page
+     0.02%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).getStream
+     0.02%  recommendation  recommendation     [.] github.com/rs/zerolog.consoleDefaultFormatTimestamp.func1
+     0.02%  recommendation  recommendation     [.] crypto/aes.(*gcmAsm).Seal
+     0.02%  recommendation  recommendation     [.] golang.org/x/net/http2.(*DataFrame).invalidate
+     0.02%  recommendation  [kernel.kallsyms]  [k] __wake_up_sync_key
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-lib/metrics.(*nullCounter).Inc
+     0.02%  recommendation  recommendation     [.] runtime.goexit1.abi0
+     0.02%  recommendation  recommendation     [.] runtime.(*mcentral).uncacheSpan
+     0.02%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).newSpan
+     0.02%  recommendation  [kernel.kallsyms]  [k] sock_write_iter
+     0.02%  recommendation  [kernel.kallsyms]  [k] skb_pull
+     0.02%  recommendation  [kernel.kallsyms]  [k] __softirqentry_text_start
+     0.02%  recommendation  recommendation     [.] runtime.(*addrRanges).findSucc
+     0.01%  recommendation  recommendation     [.] runtime.gcmarknewobject
+     0.01%  recommendation  recommendation     [.] runtime.mapaccess2_fast32
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_local_deliver
+     0.01%  recommendation  recommendation     [.] time.(*Location).lookup
+     0.01%  recommendation  recommendation     [.] github.com/rs/zerolog.colorize
+     0.01%  recommendation  recommendation     [.] internal/poll.(*FD).Read.dwrap.10
+     0.01%  recommendation  [kernel.kallsyms]  [k] generic_permission
+     0.01%  recommendation  recommendation     [.] runtime.(*Frames).Next
+     0.01%  recommendation  recommendation     [.] runtime.efaceeq
+     0.01%  recommendation  [vdso]             [.] 0x00000000000006fd
+     0.01%  recommendation  recommendation     [.] internal/poll.(*FD).writeUnlock
+     0.01%  recommendation  recommendation     [.] reflect.Zero
+     0.01%  recommendation  [kernel.kallsyms]  [k] perf_event_task_tick
+     0.01%  recommendation  [kernel.kallsyms]  [k] __x64_sys_write
+     0.01%  recommendation  recommendation     [.] reflect.resolveTypeOff
+     0.01%  recommendation  [kernel.kallsyms]  [k] unmap_page_range
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.newFramer.func1
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2.parseDataFrame
+     0.01%  recommendation  [kernel.kallsyms]  [k] set_next_entity
+     0.01%  recommendation  [kernel.kallsyms]  [k] enqueue_hrtimer
+     0.01%  recommendation  recommendation     [.] crypto/tls.(*Conn).Read.dwrap.15
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_local_out
+     0.01%  recommendation  recommendation     [.] runtime.sigfwdgo
+     0.01%  recommendation  [kernel.kallsyms]  [k] page_counter_uncharge
+     0.01%  recommendation  [kernel.kallsyms]  [k] rmqueue
+     0.01%  recommendation  recommendation     [.] runtime.goexit.abi0
+     0.01%  recommendation  [kernel.kallsyms]  [k] ___slab_alloc
+     0.01%  recommendation  recommendation     [.] github.com/rs/zerolog.(*Logger).should
+     0.01%  recommendation  [kernel.kallsyms]  [k] tick_sched_do_timer
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_vs_reply4
+     0.01%  recommendation  recommendation     [.] runtime.execute
+     0.01%  recommendation  [kernel.kallsyms]  [k] get_l4proto
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_mstamp_refresh
+     0.01%  recommendation  [kernel.kallsyms]  [k] map_id_up
+     0.01%  recommendation  recommendation     [.] runtime.getempty
+     0.01%  recommendation  [kernel.kallsyms]  [k] __update_load_avg_blocked_se
+     0.01%  recommendation  recommendation     [.] github.com/rs/zerolog.callerHook.Run
+     0.01%  recommendation  [kernel.kallsyms]  [k] __tcp_v4_send_check
+     0.01%  recommendation  recommendation     [.] internal/poll.runtime_pollReset
+     0.01%  recommendation  recommendation     [.] runtime.futexwakeup
+     0.01%  recommendation  [kernel.kallsyms]  [k] run_posix_cpu_timers
+     0.01%  recommendation  [kernel.kallsyms]  [k] ksys_write
+     0.01%  recommendation  [kernel.kallsyms]  [k] ovl_inode_upper
+     0.01%  recommendation  [kernel.kallsyms]  [k] security_sock_rcv_skb
+     0.01%  recommendation  recommendation     [.] reflect.valueInterface
+     0.01%  recommendation  [kernel.kallsyms]  [k] irq_work_run_list
+     0.01%  recommendation  [kernel.kallsyms]  [k] blk_start_plug
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_tx_timestamp
+     0.01%  recommendation  recommendation     [.] fmt.(*pp).fmtInteger
+     0.01%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).enc_struct
+     0.01%  recommendation  [kernel.kallsyms]  [k] file_update_time
+     0.01%  recommendation  [kernel.kallsyms]  [k] kmalloc_slab
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).handleData
+     0.01%  recommendation  [kernel.kallsyms]  [k] security_socket_sendmsg
+     0.01%  recommendation  recommendation     [.] runtime.write1.abi0
+     0.01%  recommendation  [kernel.kallsyms]  [k] passthru_features_check
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).serveStreams.func1
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc.(*Server).processUnaryRPC.func3
+     0.01%  recommendation  [kernel.kallsyms]  [k] ipod_hook_fn
+     0.01%  recommendation  [kernel.kallsyms]  [k] apparmor_socket_sock_rcv_skb
+     0.01%  recommendation  recommendation     [.] runtime.Caller
+     0.01%  recommendation  recommendation     [.] runtime.makeslicecopy
+     0.01%  recommendation  [kernel.kallsyms]  [k] dev_queue_xmit
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*quotaPool).lockedAdd
+     0.01%  recommendation  recommendation     [.] internal/poll.(*FD).readUnlock
+     0.01%  recommendation  [kernel.kallsyms]  [k] finish_wait
+     0.01%  recommendation  recommendation     [.] encoding/json.(*decodeState).literalStore
+     0.01%  recommendation  [kernel.kallsyms]  [k] skb_csum_hwoffload_help
+     0.01%  recommendation  recommendation     [.] github.com/rs/zerolog.(*LevelWriterAdapter).WriteLevel
+     0.01%  recommendation  [kernel.kallsyms]  [k] set_next_task_idle
+     0.01%  recommendation  [kernel.kallsyms]  [k] sock_read_iter
+     0.01%  recommendation  [kernel.kallsyms]  [k] ktime_get_update_offsets_now
+     0.01%  recommendation  [kernel.kallsyms]  [k] task_curr
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2.FrameHeader.Header
+     0.01%  recommendation  [kernel.kallsyms]  [k] perf_pmu_nop_void
+     0.01%  recommendation  recommendation     [.] runtime.(*mheap).allocNeedsZero
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_sabotage_in
+     0.01%  recommendation  recommendation     [.] crypto/aes.gcmAesEnc.abi0
+     0.01%  recommendation  [vdso]             [.] 0x00000000000006ed
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_vs_remote_request4
+     0.01%  recommendation  [kernel.kallsyms]  [k] _raw_spin_lock_irq
+     0.01%  recommendation  [kernel.kallsyms]  [k] user_path_at_empty
+     0.01%  recommendation  recommendation     [.] type..hash.golang.org/x/net/http2/hpack.pairNameValue
+     0.01%  recommendation  [kernel.kallsyms]  [k] br_nf_dev_queue_xmit
+     0.01%  recommendation  [kernel.kallsyms]  [k] copy_page_from_iter
+     0.01%  recommendation  [kernel.kallsyms]  [k] bio_advance
+     0.01%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).Marshal
+     0.01%  recommendation  [kernel.kallsyms]  [k] __x86_indirect_thunk_rbx
+     0.01%  recommendation  recommendation     [.] reflect.convertOp
+     0.01%  recommendation  [kernel.kallsyms]  [k] sock_recvmsg
+     0.01%  recommendation  [kernel.kallsyms]  [k] __x64_sys_madvise
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2.readFrameHeader
+     0.01%  recommendation  recommendation     [.] net.(*TCPConn).Write
+     0.01%  recommendation  recommendation     [.] runtime.suspendG
+     0.01%  recommendation  [kernel.kallsyms]  [k] getname_flags
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc.checkRecvPayload
+     0.01%  recommendation  recommendation     [.] github.com/uber/jaeger-client-go.(*Tracer).StartSpan
+     0.01%  recommendation  [kernel.kallsyms]  [k] netif_skb_features
+     0.01%  recommendation  [kernel.kallsyms]  [k] kill_fasync
+     0.01%  recommendation  recommendation     [.] os.fillFileStatFromSys
+     0.01%  recommendation  [kernel.kallsyms]  [k] __dequeue_signal
+     0.01%  recommendation  [kernel.kallsyms]  [k] task_ctx_sched_out
+     0.01%  recommendation  [kernel.kallsyms]  [k] ktime_add_safe
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*http2Server).Write.func1
+     0.01%  recommendation  recommendation     [.] runtime.(*addrRanges).removeGreaterEqual
+     0.01%  recommendation  [kernel.kallsyms]  [k] ipv4_conntrack_local
+     0.01%  recommendation  recommendation     [.] time.atoi
+     0.01%  recommendation  recommendation     [.] runtime.convTstring
+     0.01%  recommendation  [kernel.kallsyms]  [k] irq_enter
+     0.01%  recommendation  [kernel.kallsyms]  [k] skb_network_protocol
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_update_pacing_rate
+     0.01%  recommendation  [kernel.kallsyms]  [k] cpumask_next
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_send_mss
+     0.01%  recommendation  [kernel.kallsyms]  [k] vfs_getattr_nosec
+     0.01%  recommendation  recommendation     [.] bufio.(*Writer).Write
+     0.01%  recommendation  recommendation     [.] runtime.memequal8
+     0.01%  recommendation  [kernel.kallsyms]  [k] __dev_forward_skb
+     0.01%  recommendation  [kernel.kallsyms]  [k] resched_curr
+     0.01%  recommendation  [kernel.kallsyms]  [k] on_each_cpu_cond_mask
+     0.01%  recommendation  [kernel.kallsyms]  [k] mntput
+     0.01%  recommendation  recommendation     [.] time.Now
+     0.01%  recommendation  recommendation     [.] runtime.resolveNameOff
+     0.01%  recommendation  recommendation     [.] reflect.typedmemmove
+     0.01%  recommendation  [kernel.kallsyms]  [k] sk_filter_trim_cap
+     0.01%  recommendation  recommendation     [.] runtime.(*pageBits).setRange
+     0.01%  recommendation  [kernel.kallsyms]  [k] sk_reset_timer
+     0.01%  recommendation  [kernel.kallsyms]  [k] memcpy_erms
+     0.01%  recommendation  recommendation     [.] sync.runtime_procUnpin
+     0.01%  recommendation  recommendation     [.] time.tzsetNum
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Encoder).searchTable
+     0.01%  recommendation  [kernel.kallsyms]  [k] __hrtimer_run_queues
+     0.01%  recommendation  [kernel.kallsyms]  [k] vfs_statx
+     0.01%  recommendation  recommendation     [.] encoding/json.(*decodeState).value
+     0.01%  recommendation  recommendation     [.] runtime.selparkcommit
+     0.01%  recommendation  [kernel.kallsyms]  [k] dev_hard_start_xmit
+     0.01%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).Unmarshal
+     0.01%  recommendation  recommendation     [.] context.(*emptyCtx).Done
+     0.01%  recommendation  recommendation     [.] github.com/opentracing/opentracing-go.(*Tag).Apply
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*Stream).Read
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_rate_skb_sent
+     0.01%  recommendation  [kernel.kallsyms]  [k] __unqueue_futex
+     0.01%  recommendation  recommendation     [.] reflect.(*rtype).uncommon
+     0.01%  recommendation  [kernel.kallsyms]  [k] br_nf_forward_finish
+     0.01%  recommendation  recommendation     [.] runtime.park_m
+     0.01%  recommendation  [kernel.kallsyms]  [k] native_send_call_func_ipi
+     0.01%  recommendation  [kernel.kallsyms]  [k] bictcp_cong_avoid
+     0.01%  recommendation  recommendation     [.] strings.Count
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*bdpEstimator).calculate
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*Decoder).readString.dwrap.1
+     0.01%  recommendation  recommendation     [.] crypto/aes.(*gcmAsm).Overhead
+     0.01%  recommendation  recommendation     [.] net.(*TCPConn).Read
+     0.01%  recommendation  [kernel.kallsyms]  [k] netif_rx_internal
+     0.01%  recommendation  [kernel.kallsyms]  [k] __slab_free
+     0.01%  recommendation  [kernel.kallsyms]  [k] flush_tlb_mm_range
+     0.01%  recommendation  [kernel.kallsyms]  [k] ip_send_check
+     0.01%  recommendation  recommendation     [.] runtime.modtimer
+     0.01%  recommendation  [kernel.kallsyms]  [k] nft_counter_eval
+     0.01%  recommendation  [kernel.kallsyms]  [k] free_pages_and_swap_cache
+     0.01%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).DecodeVarint
+     0.01%  recommendation  [kernel.kallsyms]  [k] skb_clone
+     0.01%  recommendation  recommendation     [.] google.golang.org/grpc/transport.(*controlBuffer).put
+     0.01%  recommendation  [kernel.kallsyms]  [k] set_normalized_timespec64
+     0.01%  recommendation  [kernel.kallsyms]  [k] __remove_hrtimer
+     0.01%  recommendation  [kernel.kallsyms]  [k] __sb_start_write
+     0.01%  recommendation  recommendation     [.] time.Time.locabs
+     0.01%  recommendation  [kernel.kallsyms]  [k] do_anonymous_page
+     0.01%  recommendation  recommendation     [.] github.com/golang/protobuf/proto.(*Buffer).dec_proto3_string
+     0.01%  recommendation  [kernel.kallsyms]  [k] llist_add_batch
+     0.01%  recommendation  [kernel.kallsyms]  [k] _copy_to_iter
+     0.01%  recommendation  [kernel.kallsyms]  [k] vmacache_find
+     0.01%  recommendation  [kernel.kallsyms]  [k] br_fdb_find_rcu
+     0.01%  recommendation  recommendation     [.] reflect.resolveNameOff
+     0.01%  recommendation  recommendation     [.] runtime.parkunlock_c
+     0.01%  recommendation  recommendation     [.] sort.quickSort
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*headerFieldTable).evictOldest
+     0.01%  recommendation  recommendation     [.] runtime.mput
+     0.01%  recommendation  [kernel.kallsyms]  [k] filename_lookup
+     0.01%  recommendation  recommendation     [.] golang.org/x/net/http2/hpack.(*headerFieldTable).idToIndex
+     0.01%  recommendation  [kernel.kallsyms]  [k] __ip_finish_output
+     0.01%  recommendation  [kernel.kallsyms]  [k] __enqueue_entity
+     0.01%  recommendation  recommendation     [.] github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc.OpenTracingServerInterceptor.func1.dwrap.2
+     0.01%  recommendation  [kernel.kallsyms]  [k] check_cfs_rq_runtime
+     0.01%  recommendation  recommendation     [.] fmt.(*fmt).pad
+     0.01%  recommendation  [kernel.kallsyms]  [k] __fdget_pos
+     0.01%  recommendation  [kernel.kallsyms]  [k] flush_tlb_func_remote
+     0.01%  recommendation  recommendation     [.] bytes.(*Buffer).grow
+     0.01%  recommendation  [kernel.kallsyms]  [k] schedule_hrtimeout_range_clock
+     0.01%  recommendation  [kernel.kallsyms]  [k] hrtimer_try_to_cancel
+     0.01%  recommendation  [kernel.kallsyms]  [k] sock_poll
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_data_ready
+     0.01%  recommendation  [kernel.kallsyms]  [k] __vfs_read
+     0.01%  recommendation  [kernel.kallsyms]  [k] ext4_getattr
+     0.01%  recommendation  [kernel.kallsyms]  [k] ep_item_poll.isra.0
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_chrono_stop
+     0.01%  recommendation  recommendation     [.] runtime.(*mheap).freeSpanLocked
+     0.01%  recommendation  [kernel.kallsyms]  [k] do_sigaltstack.constprop.0
+     0.01%  recommendation  recommendation     [.] runtime.sweepone
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_push
+     0.01%  recommendation  recommendation     [.] runtime.typeBitsBulkBarrier
+     0.01%  recommendation  [kernel.kallsyms]  [k] apic_timer_interrupt
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_sendmsg
+     0.01%  recommendation  [vdso]             [.] 0x0000000000000697
+     0.01%  recommendation  recommendation     [.] runtime.acquirep
+     0.01%  recommendation  [vdso]             [.] 0x0000000000000722
+     0.01%  recommendation  [kernel.kallsyms]  [k] tcp_rate_check_app_limited
+     0.01%  recommendation  recommendation     [.] runtime.shrinkstack
+     0.01%  recommendation  recommendation     [.] reflect.makeString
+     0.01%  recommendation  [kernel.kallsyms]  [k] __x86_indirect_thunk_r13
+     0.01%  recommendation  recommendation     [.] internal/poll.(*pollDesc).wait
+     0.01%  recommendation  recommendation     [.] reflect.Value.String
+     0.00%  recommendation  [kernel.kallsyms]  [k] _copy_to_user
+     0.00%  recommendation  recommendation     [.] encoding/json.(*decodeState).scanWhile
+     0.00%  recommendation  [kernel.kallsyms]  [k] tcp_rcv_space_adjust
+     0.00%  recommendation  recommendation     [.] runtime.(*pallocData).findScavengeCandidate
+     0.00%  recommendation  [kernel.kallsyms]  [k] ghes_notify_nmi
+     0.00%  recommendation  [kernel.kallsyms]  [k] tcp_poll
+     0.00%  recommendation  [kernel.kallsyms]  [k] set_pte_vaddr
+     0.00%  recommendation  [kernel.kallsyms]  [k] apei_check_gar
+     0.00%  recommendation  [kernel.kallsyms]  [k] fill_pmd
+     0.00%  recommendation  [kernel.kallsyms]  [k] memcpy_fromio
+     0.00%  recommendation  [kernel.kallsyms]  [k] __native_set_fixmap
+     0.00%  recommendation  [kernel.kallsyms]  [k] native_apic_msr_write
+     0.00%  recommendation  [kernel.kallsyms]  [k] nmi_handle
+     0.00%  recommendation  [kernel.kallsyms]  [k] do_nmi
+     0.00%  recommendation  [kernel.kallsyms]  [k] nmi_restore
+     0.00%  recommendation  [kernel.kallsyms]  [k] apei_read
+     0.00%  recommendation  [kernel.kallsyms]  [k] ghes_in_nmi_queue_one_entry.constprop.0
+     0.00%  recommendation  [kernel.kallsyms]  [k] nmi_cpu_backtrace_handler
+     0.00%  recommendation  [kernel.kallsyms]  [k] ghes_copy_tofrom_phys
+     0.00%  recommendation  [kernel.kallsyms]  [k] native_write_cr2
+     0.00%  recommendation  [kernel.kallsyms]  [k] default_do_nmi
+     0.00%  recommendation  [kernel.kallsyms]  [k] perf_event_nmi_handler
+     0.00%  recommendation  [kernel.kallsyms]  [k] intel_pmu_handle_irq
+     0.00%  recommendation  [kernel.kallsyms]  [k] intel_bts_enable_local
+     0.00%  recommendation  [kernel.kallsyms]  [k] nmi_cpu_backtrace
+     0.00%  recommendation  [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.0
+     0.00%  recommendation  [kernel.kallsyms]  [k] perf_pmu_enable.part.0
+     0.00%  recommendation  [kernel.kallsyms]  [k] intel_pmu_enable_all
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -32,6 +32,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["ComposePostService"]
     hostname: compose-post-service
     image: deathstarbench/social-network-microservices:latest
@@ -58,6 +61,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["HomeTimelineService"]
     hostname: home-timeline-service
     image: deathstarbench/social-network-microservices:latest
@@ -73,6 +79,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     hostname: media-frontend
     image: yg397/media-frontend:xenial
     ports:
@@ -114,6 +123,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["MediaService"]
     hostname: media-service
     image: deathstarbench/social-network-microservices:latest
@@ -129,6 +141,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     hostname: nginx-web-server
     image: yg397/openresty-thrift:xenial
     ports:
@@ -175,6 +190,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["PostStorageService"]
     hostname: post-storage-service
     image: deathstarbench/social-network-microservices:latest
@@ -214,6 +232,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["SocialGraphService"]
     hostname: social-graph-service
     image: deathstarbench/social-network-microservices:latest
@@ -229,6 +250,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["TextService"]
     hostname: text-service
     image: deathstarbench/social-network-microservices:latest
@@ -244,6 +268,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["UniqueIdService"]
     hostname: unique-id-service
     image: deathstarbench/social-network-microservices:latest
@@ -284,6 +311,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["UrlShortenService"]
     hostname: url-shorten-service
     image: deathstarbench/social-network-microservices:latest
@@ -311,6 +341,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["UserMentionService"]
     hostname: user-mention-service
     image: deathstarbench/social-network-microservices:latest
@@ -339,6 +372,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["UserService"]
     hostname: user-service
     image: deathstarbench/social-network-microservices:latest
@@ -377,6 +413,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
     command: ["UserTimelineService"]
     hostname: user-timeline-service
     image: deathstarbench/social-network-microservices:latest
