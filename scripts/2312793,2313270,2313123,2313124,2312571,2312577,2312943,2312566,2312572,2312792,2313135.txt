@@ -1,0 +1,197 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 96  of event 'cycles'
+# Event count (approx.): 14155309
+#
+# Overhead  Command          Shared Object          Symbol                                                  
+# ........  ...............  .....................  ........................................................
+#
+     7.13%  HomeTimelineSer  [kernel.kallsyms]      [k] __this_module+0x8000000565ad
+            |
+            ---__this_module
+               __seccomp_filter
+               __secure_computing
+               syscall_trace_enter
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+
+     6.93%  UserService      [kernel.kallsyms]      [k] enqueue_hrtimer
+            |
+            ---enqueue_hrtimer
+               hrtimer_start_range_ns
+               hrtimer_sleeper_start_expires
+               futex_wait_queue_me
+               futex_wait
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+               0x1a12408e9
+
+     6.88%  MediaService     [kernel.kallsyms]      [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+               __lll_unlock_wake
+
+     6.82%  TextService      [vdso]                 [.] __vdso_clock_gettime
+            |
+            ---__vdso_clock_gettime
+               0x527f5e0f86c76300
+
+     6.82%  PostStorageServ  [kernel.kallsyms]      [k] rb_insert_color
+            |
+            ---rb_insert_color
+               enqueue_hrtimer
+               hrtimer_start_range_ns
+               hrtimer_sleeper_start_expires
+               futex_wait_queue_me
+               futex_wait
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+               0x121ec75b0
+
+     6.77%  UserMentionServ  [kernel.kallsyms]      [k] entry_SYSCALL_64
+            |
+            ---entry_SYSCALL_64
+               __lll_unlock_wake
+
+     6.70%  ComposePostServ  libpthread-2.23.so     [.] __pthread_mutex_unlock_usercnt
+            |
+            ---__pthread_mutex_unlock_usercnt
+
+     6.66%  UrlShortenServi  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::sweepQueue
+            |
+            ---jaegertracing::reporters::RemoteReporter::sweepQueue
+
+     6.58%  UrlShortenServi  [kernel.kallsyms]      [k] hrtimer_init_sleeper
+            |
+            ---hrtimer_init_sleeper
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+               0x1f1cd21e5
+
+     6.50%  UserTimelineSer  [kernel.kallsyms]      [k] __x64_sys_futex
+            |
+            ---__x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+               0x1413f03a3
+
+     6.42%  UserService      [kernel.kallsyms]      [k] syscall_trace_enter
+            |
+            ---syscall_trace_enter
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __lll_unlock_wake
+
+     6.04%  SocialGraphServ  [kernel.kallsyms]      [k] hash_futex
+            |
+            ---hash_futex
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __lll_unlock_wake
+               0x1b1ff0a7c
+
+     5.43%  UniqueIdService  libjaegertracing.so.0  [.] jaegertracing::reporters::RemoteReporter::flush
+            |
+            ---jaegertracing::UDPTransport::flush
+
+     5.04%  UserTimelineSer  libc-2.23.so           [.] __clock_gettime
+            |
+            ---__clock_gettime
+
+     4.47%  PostStorageServ  libstdc++.so.6.0.21    [.] std::chrono::_V2::system_clock::now
+            |
+            ---std::chrono::_V2::system_clock::now
+
+     2.05%  SocialGraphServ  [kernel.kallsyms]      [k] visit_groups_merge
+            |
+            ---visit_groups_merge
+               ctx_sched_in
+               perf_event_sched_in
+               __perf_event_task_sched_in
+               finish_task_switch
+               __sched_text_start
+               schedule
+               futex_wait_queue_me
+               futex_wait
+               do_futex
+               __x64_sys_futex
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               pthread_cond_timedwait@@GLIBC_2.3.2
+
+     0.37%  UrlShortenServi  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.19%  PostStorageServ  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.19%  UserService      [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.19%  MediaService     [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.19%  TextService      [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.19%  UserMentionServ  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.18%  ComposePostServ  [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.18%  UserTimelineSer  [kernel.kallsyms]      [k] acpi_os_read_memory
+     0.18%  UserService      [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.17%  SocialGraphServ  [kernel.kallsyms]      [k] ghes_notify_nmi
+     0.15%  UniqueIdService  [kernel.kallsyms]      [k] nmi_handle
+     0.14%  UserTimelineSer  [kernel.kallsyms]      [k] nmi_handle
+     0.12%  PostStorageServ  [kernel.kallsyms]      [k] nmi_cpu_backtrace_handler
+     0.06%  SocialGraphServ  [kernel.kallsyms]      [k] native_write_msr
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  PostStorageServ  [kernel.kallsyms]      [k] native_write_msr
+     0.01%  UrlShortenServi  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  UserService      [kernel.kallsyms]      [k] native_write_msr
+     0.01%  MediaService     [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  TextService      [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  UserMentionServ  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  ComposePostServ  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.01%  UserService      [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  UrlShortenServi  [kernel.kallsyms]      [k] native_write_msr
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] native_write_msr
+     0.00%  UniqueIdService  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  PostStorageServ  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  SocialGraphServ  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%  SocialGraphServ  [kernel.kallsyms]      [k] native_apic_msr_write
+     0.00%  SocialGraphServ  [kernel.kallsyms]      [k] __x86_indirect_thunk_rax
+     0.00%  PostStorageServ  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  PostStorageServ  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  SocialGraphServ  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UrlShortenServi  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UrlShortenServi  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UserService      [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UserTimelineSer  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  ComposePostServ  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  ComposePostServ  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  MediaService     [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  MediaService     [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  SocialGraphServ  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  TextService      [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  TextService      [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UniqueIdService  [kernel.kallsyms]      [k] intel_pmu_handle_irq
+     0.00%  UniqueIdService  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UserMentionServ  [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UserMentionServ  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  UserService      [kernel.kallsyms]      [k] intel_bts_enable_local
+     0.00%  UserService      [kernel.kallsyms]      [k] intel_pmu_handle_irq
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

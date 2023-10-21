@@ -18,6 +18,10 @@ grep -i -E "$service_string.*($func_strings_regex)" "$filename" > filtered_func.
 
 total=$(awk -F'%' '{ total += $1 } END { print total }' filtered_func.txt)
 
+if [ -z "$total" ]; then
+    total=0
+fi
+
 # Print the total
 echo "$total"
 

@@ -10,7 +10,7 @@ fi
 container_ids=$(sudo docker ps -q)
 
 # Specify multiple keywords
-keywords=("keyword1" "keyword2" "keyword3")
+keywords=("Service")
 
 # Initialize a variable to store all PIDs
 all_pids=""
@@ -41,6 +41,9 @@ for container_id in $container_ids; do
     fi
 done
 
+# Output all extracted PIDs, separated by commas
+echo "All PIDs with one of the keywords: ${keywords[*]}: $all_pids"
+
 # Get the output file name, number of loops, and loop duration from parameters
 output_file="$1"
 num_loops="$2"
@@ -56,10 +59,10 @@ while [ $count -lt $num_loops ]; do
     ./profile.sh "sudo perf record  -F 499 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
 
     # Execute the custom command and store the output in the variable cmd_output
-    cmd_output_gc=$(./calculate.sh "$process_id".txt % gc scan sweep mark find grey gcDrain heapBitsSetType)
-    cmd_output_alloc=$(./calculate.sh "$process_id".txt % alloc)
-    cmd_output_network=$(./calculate.sh "$process_id".txt % tcp net xmit sock ip nf_ recv fib_ conn cond transport br_ smp_ __dev_forward_skb thrift grpc)
-    cmd_output_sched=$(./calculate.sh "$process_id".txt % steal sched psi_task_change interrupt_entry)
+    cmd_output_gc=$(./calculate.sh "$all_pids".txt % gc scan sweep mark find grey gcDrain heapBitsSetType)
+    cmd_output_alloc=$(./calculate.sh "$all_pids".txt % alloc)
+    cmd_output_network=$(./calculate.sh "$all_pids".txt % tcp net xmit sock ip nf_ recv fib_ conn cond transport br_ smp_ __dev_forward_skb thrift grpc)
+    cmd_output_sched=$(./calculate.sh "$all_pids".txt % steal sched psi_task_change interrupt_entry)
 
     # Append the loop counter and command output in comma-separated form to the output file
     echo "$count,$cmd_output_gc,$cmd_output_alloc,$cmd_output_network,$cmd_output_sched" >> "$output_file"

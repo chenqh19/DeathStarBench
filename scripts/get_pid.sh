@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# 获取所有运行中的 Docker 容器的 ID
+# Get the IDs of all running Docker containers
 container_ids=$(sudo docker ps -q)
 
-# 指定多个关键词
+# Specify multiple keywords
 keywords=("Text")
 
-# 初始化变量来存储所有的 PID
+# Initialize a variable to store all PIDs
 all_pids=""
 
-# 循环遍历每个容器 ID 并运行 sudo docker top
+# Loop through each container ID and run sudo docker top
 for container_id in $container_ids; do
     echo "Running sudo docker top for container $container_id"
     top_result=$(sudo docker top $container_id)
     
     found=false
     
-    # 使用 awk 和 grep 提取包含关键词的行，并获取 PID
+    # Use awk and grep to extract lines containing keywords and get PIDs
     for keyword in "${keywords[@]}"; do
         pid_list=$(echo "$top_result" | awk -v keyword="$keyword" '$8 ~ keyword {print $2}')
         if [ -n "$pid_list" ]; then
@@ -35,5 +35,5 @@ for container_id in $container_ids; do
     fi
 done
 
-# 输出所有提取的 PID，用逗号隔开
+# Output all extracted PIDs, separated by commas
 echo "All PIDs with one of the keywords: ${keywords[*]}: $all_pids"
