@@ -465,6 +465,7 @@ func (s *Server) useTransportAuthenticator(rawConn net.Conn) (net.Conn, credenti
 // this method returns.
 // Serve will return a non-nil error unless Stop or GracefulStop is called.
 func (s *Server) Serve(lis net.Listener) error {
+	
 	s.mu.Lock()
 	s.printf("serving")
 	s.serve = true
@@ -1089,6 +1090,7 @@ func (s *Server) processStreamingRPC(t transport.ServerTransport, stream *transp
 }
 
 func (s *Server) handleStream(t transport.ServerTransport, stream *transport.Stream, trInfo *traceInfo) {
+	
 	sm := stream.Method()
 	if sm != "" && sm[0] == '/' {
 		sm = sm[1:]

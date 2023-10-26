@@ -59,7 +59,7 @@ echo "count,gc,alloc,network,sched,lock" >> "$profile_name.txt"
 # Main loop, execute for the specified number of loops
 while [ $count -lt $num_loops ]; do
     # Execute the additional custom command before each loop and wait for it to finish
-    ./profile.sh "$profile_name-$count-" "sudo perf record  -F 499 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
+    ./profile.sh "$profile_name-$count-" "sudo perf record  -F 399 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
 
     # Execute the custom command and store the output in the variable cmd_output
     cmd_output_gc=$(./calculate.sh "$profile_name-$count-1".txt % gc scan sweep mark find grey gcDrain heapBitsSetType)

@@ -28,6 +28,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"fmt"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
@@ -333,6 +334,7 @@ type parser struct {
 // that the underlying io.Reader must not return an incompatible
 // error.
 func (p *parser) recvMsg(maxReceiveMessageSize int) (pf payloadFormat, msg []byte, err error) {
+	
 	if _, err := p.r.Read(p.header[:]); err != nil {
 		return 0, nil, err
 	}

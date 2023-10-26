@@ -252,7 +252,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
     command: ["TextService"]
     hostname: text-service
     image: deathstarbench/social-network-microservices:latest
@@ -415,7 +415,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
+          - node.id == tcu9skfuhtrcflldq13rsgf01
     command: ["UserTimelineService"]
     hostname: user-timeline-service
     image: deathstarbench/social-network-microservices:latest
