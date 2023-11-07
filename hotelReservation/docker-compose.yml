@@ -26,6 +26,7 @@ services:
     depends_on:
       - consul
     restart: always
+    cpuset: 0,1,2,3
 
   profile:
     environment:
@@ -54,6 +55,7 @@ services:
     depends_on:
       - consul
     restart: always
+    cpuset: 4,5,6,7
     environment:
       - TLS
       - GC
