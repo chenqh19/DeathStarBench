@@ -16,5 +16,17 @@ yes | sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-p
 yes | sudo apt install docker-compose
 yes | sudo apt-get install luarocks
 yes | sudo luarocks install luasocket
+sudo apt install htop
 
 sudo docker run hello-world
+
+cd ../wrk2
+make
+cd ../scripts
+
+yes | sudo apt-get install pqos
+sudo modprobe msr
+sudo pqos -s
+
+sudo apt install linux-tools-common
+yes | sudo apt install linux-tools-5.4.0-164-generic
