@@ -312,8 +312,12 @@ void UserTimelineHandler::ReadUserTimeline(
         std::vector<Post> _return_posts;
         auto post_client = post_client_wrapper->GetClient();
         try {
+          auto check_overhead_span = opentracing::Tracer::Global()->StartSpan(
+              "check_overhead_client",
+              {opentracing::ChildOf(&span->context())});
           post_client->ReadPosts(_return_posts, req_id, post_ids,
                                  writer_text_map);
+          check_overhead_span->Finish();
         } catch (...) {
           _post_client_pool->Remove(post_client_wrapper);
           LOG(error) << "Failed to read posts from post-storage-service";

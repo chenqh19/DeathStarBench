@@ -30,3 +30,7 @@ sudo pqos -s
 
 sudo apt install linux-tools-common
 yes | sudo apt install linux-tools-5.4.0-164-generic
+
+cd ../socialNetwork
+sudo docker build -t deathstarbench/social-network-microservices:latest .
+sudo docker compose up -d
