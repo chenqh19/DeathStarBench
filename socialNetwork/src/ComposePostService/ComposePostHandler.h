@@ -333,7 +333,7 @@ void ComposePostHandler::_UploadUserTimelineHelper(
   auto user_timeline_client = user_timeline_client_wrapper->GetClient();
   try {
     auto utl_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "url_check_overhead_client",
+              "utl_check_overhead_client",
               {opentracing::ChildOf(&span->context())});
     user_timeline_client->WriteUserTimeline(req_id, post_id, user_id, timestamp,
                                             writer_text_map);
