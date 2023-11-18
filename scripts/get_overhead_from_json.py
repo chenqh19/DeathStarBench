@@ -26,7 +26,7 @@ target_string = "traceID\":\""
 
 find_strings_after_a(file_path, target_string, container_set)
 
-print(container_set)
+print(len(container_set))
 
 
 def download_file(url, save_path):
@@ -37,7 +37,7 @@ def download_file(url, save_path):
             file.write(response.content)
         print(f"Download successfully to: {save_path}")
     else:
-        print(f"Downloda failed with code: {response.status_code}")
+        print(f"Download failed with code: {response.status_code}")
 
 
 file_path = 'traces_files/'
@@ -86,72 +86,70 @@ def process_file(file_path, pattern_a, pattern_b, pattern_c, pattern_d):
                 if index_d < len(lines):
                     # find the number in next d
                     number_d = extract_number_from_line(lines[index_d], pattern_d)
-
     # get duration
-    if number_b is None:
-        return None
     if number_d is None:
-        return None
+        return None, None
+    if number_b is None:
+        return None, number_d
     result = number_b - number_d
 
     return result, number_d
 
-# examples
-pattern_a = 'check_overhead_client'  
-pattern_b = 'duration'  
-pattern_c = 'post_storage_read_posts_server'  
-pattern_d = 'duration'  
 
-results = []
-pure_execution_times = []
-for i in range(len(container_set)):
-    result, d = process_file(file_path+str(i)+".txt", pattern_a, pattern_b, pattern_c, pattern_d)
-    results.append(result)
-    pure_execution_times.append(d)
 
-print("ovrehead:", results)
+def execute_one_call(file_path, pattern):
+    print("\n"+pattern[2])
+    results = []
+    pure_execution_times = []
+    for i in range(len(container_set)):
+        result, d = process_file(file_path+str(i)+".txt", pattern[0], pattern[1], pattern[2], pattern[3])
+        results.append(result)
+        pure_execution_times.append(d)
 
-def calculate_statistics(data):
-    # Filter out "None" values from the data
-    filtered_data = [value for value in data if value is not None]
+    # print("ovrehead:", results)
 
-    if not filtered_data:
-        print("No valid data in the array.")
-        return None, None, None, None, None, None
+    def calculate_statistics(data):
+        # Filter out "None" values from the data
+        filtered_data = [value for value in data if value is not None]
 
-    # Calculate mean
-    mean_value = sum(filtered_data) / len(filtered_data)
+        if not filtered_data:
+            print("No valid data in the array.")
+            return None, None, None, None, None, None
 
-    # Calculate minimum and maximum
-    min_value = min(filtered_data)
-    max_value = max(filtered_data)
+        # Calculate mean
+        mean_value = sum(filtered_data) / len(filtered_data)
 
-    # Calculate quartiles
-    sorted_data = sorted(filtered_data)
-    n = len(sorted_data)
-    q1_index = (n - 1) // 4
-    q2_index = (n - 1) // 2
-    q3_index = 3 * (n - 1) // 4
+        # Calculate minimum and maximum
+        min_value = min(filtered_data)
+        max_value = max(filtered_data)
 
-    q1 = sorted_data[q1_index]
-    q2 = sorted_data[q2_index]
-    q3 = sorted_data[q3_index]
+        # Calculate quartiles
+        sorted_data = sorted(filtered_data)
+        n = len(sorted_data)
+        q1_index = (n - 1) // 4
+        q2_index = (n - 1) // 2
+        q3_index = 3 * (n - 1) // 4
 
-    return mean_value, min_value, q1, q2, q3, max_value
+        q1 = sorted_data[q1_index]
+        q2 = sorted_data[q2_index]
+        q3 = sorted_data[q3_index]
 
-# Example usage
-data_array = [1, 2, 3, None, 4, 5, 6, None, 7, 8, 9]
-mean, minimum, q1, median, q3, maximum = calculate_statistics(results)
-mean_func, _1, _2, _3, _4, _5 = calculate_statistics(pure_execution_times)
+        return mean_value, min_value, q1, q2, q3, max_value
 
-if mean is not None and minimum is not None and q1 is not None and median is not None and q3 is not None and maximum is not None:
-    print(f"Mean_function time: {mean_func}")
-    print(f"Mean: {mean}")
-    print(f"Minimum: {minimum}")
-    print(f"Lower Quartile (Q1): {q1}")
-    print(f"Median (Q2): {median}")
-    print(f"Upper Quartile (Q3): {q3}")
-    print(f"Maximum: {maximum}")
+    mean, minimum, q1, median, q3, maximum = calculate_statistics(results)
+    mean_func, _1, _2, _3, _4, _5 = calculate_statistics(pure_execution_times)
+
+    if mean is not None and minimum is not None and q1 is not None and median is not None and q3 is not None and maximum is not None:
+        arr = [minimum, q1, median, q3, maximum]
+        print(f"Mean: {mean}")
+        print(f"Mean_function time: {mean_func}")
+        print(arr)
+        
+        # print(f"Minimum: {minimum}")
+        # print(f"Lower Quartile (Q1): {q1}")
+        # print(f"Median (Q2): {median}")
+        # print(f"Upper Quartile (Q3): {q3}")
+        # print(f"Maximum: {maximum}")
 
 
 def delete_files_in_folder(folder_path):
@@ -168,4 +166,29 @@ def delete_files_in_folder(folder_path):
     except Exception as e:
         print(f"Failed to delete files in the folder: {e}")
 
+patterns = [
+    ["text_check_overhead_client", "duration", "compose_text_server", "duration"],
+    ["mention_check_overhead_client", "duration", "compose_user_mentions_server", "duration"],
+    ["creator_check_overhead_client", "duration", "compose_creator_server", "duration"],
+    ["media_check_overhead_client", "duration", "compose_media_server", "duration"],
+    ["url_check_overhead_client", "duration", "compose_urls_server", "duration"],
+    ["id_check_overhead_client", "duration", "compose_unique_id_server", "duration"],
+    ["post_check_overhead_client", "duration", "store_post_server", "duration"],
+    ["utl_check_overhead_client", "duration", "write_user_timeline_server", "duration"],
+    ["graph_check_overhead_client", "duration", "get_followers_server", "duration"],
+    ["htl_check_overhead_client", "duration", "write_home_timeline_server", "duration"],
+]
+
+for pattern in patterns:
+    execute_one_call(file_path, pattern)
+
 delete_files_in_folder(file_path)
+
+
+# examples
+pattern_a = 'check_overhead_client'  
+ 
+pattern_c = 'post_storage_read_posts_server'  
+
+pattern_b = 'duration' 
+pattern_d = 'duration'  
