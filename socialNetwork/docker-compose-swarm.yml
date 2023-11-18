@@ -34,10 +34,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["ComposePostService"]
     hostname: compose-post-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -63,10 +63,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["HomeTimelineService"]
     hostname: home-timeline-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -81,7 +81,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     hostname: media-frontend
     image: yg397/media-frontend:xenial
     ports:
@@ -125,10 +125,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["MediaService"]
     hostname: media-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -143,7 +143,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     hostname: nginx-web-server
     image: yg397/openresty-thrift:xenial
     ports:
@@ -192,10 +192,11 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          # - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-1.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["PostStorageService"]
     hostname: post-storage-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -234,10 +235,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["SocialGraphService"]
     hostname: social-graph-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -252,10 +253,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == 0k9aef8rfwy64ok43qkcqjvoq
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["TextService"]
     hostname: text-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -270,10 +271,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["UniqueIdService"]
     hostname: unique-id-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -313,10 +314,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["UrlShortenService"]
     hostname: url-shorten-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -343,10 +344,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["UserMentionService"]
     hostname: user-mention-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -374,10 +375,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["UserService"]
     hostname: user-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
       - ./keys:/keys
@@ -415,10 +416,10 @@ services:
         condition: any
       placement:
         constraints:
-          - node.id == tcu9skfuhtrcflldq13rsgf01
+          - node.hostname == node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
     command: ["UserTimelineService"]
     hostname: user-timeline-service
-    image: deathstarbench/social-network-microservices:latest
+    image: qihang-cn
     volumes:
       - ./config:/social-network-microservices/config
 

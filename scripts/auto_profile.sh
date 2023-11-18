@@ -12,7 +12,7 @@ container_ids=$(sudo docker ps -q)
 '''
 Specify multiple keywords
 '''
-keywords=("Text")
+keywords=("UserTimeline" "PostStorage")
 # keywords=("Service")
 
 # Initialize a variable to store all PIDs
@@ -61,9 +61,9 @@ count=0
 while [ $count -lt $num_loops ]; do
     # Execute the additional custom command before each loop and wait for it to finish
 
-    # ./profile.sh "$profile_name-$count-" "sudo perf record  -F 399 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
-    # sudo perf stat -e cycles,LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches -p $all_pids -- sleep $profile_time & wait
-    sudo perf stat -e cycles -p $all_pids -- sleep $profile_time & wait
+    ./profile.sh "$profile_name-$count-" "sudo perf record  -F 99 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
+    # sudo perf stat -e cycles -p $all_pids -- sleep $profile_time & wait
+    
     # # Execute the custom command and store the output in the variable cmd_output
     # cmd_output_gc=$(./calculate.sh "$profile_name-$count-1".txt % gc scan sweep mark find grey gcDrain heapBitsSetType)
     # cmd_output_alloc=$(./calculate.sh "$profile_name-$count-1".txt % alloc)

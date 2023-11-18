@@ -94,7 +94,7 @@ def process_file(file_path, pattern_a, pattern_b, pattern_c, pattern_d):
         return None
     result = number_b - number_d
 
-    return result
+    return result, number_d
 
 # examples
 pattern_a = 'check_overhead_client'  
@@ -103,9 +103,11 @@ pattern_c = 'post_storage_read_posts_server'
 pattern_d = 'duration'  
 
 results = []
+pure_execution_times = []
 for i in range(len(container_set)):
-    result = process_file(file_path+str(i)+".txt", pattern_a, pattern_b, pattern_c, pattern_d)
+    result, d = process_file(file_path+str(i)+".txt", pattern_a, pattern_b, pattern_c, pattern_d)
     results.append(result)
+    pure_execution_times.append(d)
 
 print("ovrehead:", results)
 
@@ -140,8 +142,10 @@ def calculate_statistics(data):
 # Example usage
 data_array = [1, 2, 3, None, 4, 5, 6, None, 7, 8, 9]
 mean, minimum, q1, median, q3, maximum = calculate_statistics(results)
+mean_func, _1, _2, _3, _4, _5 = calculate_statistics(pure_execution_times)
 
 if mean is not None and minimum is not None and q1 is not None and median is not None and q3 is not None and maximum is not None:
+    print(f"Mean_function time: {mean_func}")
     print(f"Mean: {mean}")
     print(f"Minimum: {minimum}")
     print(f"Lower Quartile (Q1): {q1}")
