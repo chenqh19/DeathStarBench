@@ -37,7 +37,7 @@ def plot_multiple_box_plots(data_sets, output_file, y_threshold):
                         arrowprops=dict(facecolor='black', arrowstyle='->'))
         i += 1
 
-    plt.title('Function call at 2-node, 200k posts')
+    plt.title('Function call at 1-node, 10k posts')
     plt.savefig(output_file)
     plt.show()
 
@@ -48,19 +48,19 @@ def plot_multiple_box_plots(data_sets, output_file, y_threshold):
 # data_set4 = [231, 329, 372, 425, 8193]
 
 datasets = [
-    [183, 286, 351, 402, 555],
-    [161, 249, 294, 341, 784],
-    [170, 263, 313, 361, 790],
-    [166, 247, 296, 343, 718],
-    [167, 292, 344, 394, 637],
-    [155, 223, 278, 318, 1401],
-    [152, 251, 291, 327, 1783],
-    [144, 225, 267, 321, 1378],
-    [161, 252, 284, 334, 716],
-    [140, 241, 293, 341, 1443]
+    [152, 268, 291, 317, 1497],
+    [105, 214, 235, 253, 323],
+    [135, 233, 254, 278, 568],
+    [126, 233, 252, 272, 596],
+    [129, 248, 272, 295, 588],
+    [118, 226, 241, 259, 583],
+    [123, 231, 258, 281, 667],
+    [116, 206, 223, 249, 521],
+    [92, 203, 227, 254, 548],
+    [151, 213, 236, 264, 542]
 ]
 
-output_file = 'fig_2-10.jpg'
+output_file = 'fig_1-10.jpg'
 y_threshold = 800  # Adjust this threshold as needed
 
 plot_multiple_box_plots(datasets, output_file, y_threshold)

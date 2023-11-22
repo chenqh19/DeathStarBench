@@ -34,3 +34,11 @@ yes | sudo apt install linux-tools-5.4.0-164-generic
 cd ../socialNetwork
 sudo docker build -t deathstarbench/social-network-microservices:latest .
 cd ../scripts
+
+sudo chmod +x kuber_install.sh
+./kuber_install.sh
+
+pip install prometheus-api-client
+pip install pytz
+pip install gurobipy
+pip install gevent
