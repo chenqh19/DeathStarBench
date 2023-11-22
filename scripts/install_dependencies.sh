@@ -42,3 +42,4 @@ pip install prometheus-api-client
 pip install pytz
 pip install gurobipy
 pip install gevent
+pip install scipy
