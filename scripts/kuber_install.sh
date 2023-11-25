@@ -1,3 +1,10 @@
+if [ "$#" -lt 1 ]; then
+  echo "Usage: $0 <is_master>"
+  exit 1
+fi
+
+is_master="$1"
+
 sudo apt-get update
 # apt-transport-https may be a dummy package; if so, you can skip that package
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
@@ -11,12 +18,14 @@ kubeadm version
 
 sudo swapoff –a
 
-sudo rm /etc/containerd/config.toml
-sudo systemctl restart containerd
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-kubectl get pods --all-namespaces
-kubectl get nodes
+if [$is_master -eq 1]; then
+    sudo rm /etc/containerd/config.toml
+    sudo systemctl restart containerd
+    sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+    kubectl get pods --all-namespaces
+    kubectl get nodes
+fi
