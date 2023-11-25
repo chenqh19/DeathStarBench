@@ -18,7 +18,7 @@ kubeadm version
 
 sudo swapoff –a
 
-if [$is_master -eq 1]; then
+if [ $is_master -eq 1 ]; then
     sudo rm /etc/containerd/config.toml
     sudo systemctl restart containerd
     sudo kubeadm init --pod-network-cidr=10.244.0.0/16
