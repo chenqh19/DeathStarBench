@@ -48,7 +48,7 @@ done
 echo "All PIDs with one of the keywords: ${keywords[*]}: $all_pids"
 
 # Get the output file name, number of loops, and loop duration from parameters
-profile_name="$1"
+profile_name="perf_files/$1"
 num_loops="$2"
 loop_duration="$3"
 profile_time=$[loop_duration*5]
@@ -61,9 +61,11 @@ count=0
 while [ $count -lt $num_loops ]; do
     # Execute the additional custom command before each loop and wait for it to finish
 
-    ./profile.sh "$profile_name-$count-" "sudo perf record  -F 99 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
-    # sudo perf stat -e cycles -p $all_pids -- sleep $profile_time & wait
+    # ./profile.sh "$profile_name-$count-" "sudo perf record  -F 99 -g --call-graph fp -p" "-- sleep $profile_time" "$all_pids" & wait
+    # ./profile.sh "$profile_name-$count-" "sudo perf record  -F 99 -g --call-graph fp" "-- sleep $profile_time" "-a" & wait
     
+    sudo perf stat -e cycles,instructions,cache-references,cache-misses,LLC-misses -a -- sleep $profile_time & wait
+
     # # Execute the custom command and store the output in the variable cmd_output
     # cmd_output_gc=$(./calculate.sh "$profile_name-$count-1".txt % gc scan sweep mark find grey gcDrain heapBitsSetType)
     # cmd_output_alloc=$(./calculate.sh "$profile_name-$count-1".txt % alloc)
@@ -73,7 +75,6 @@ while [ $count -lt $num_loops ]; do
 
     # # Append the loop counter and command output in comma-separated form to the output file
     # echo "$count,$cmd_output_gc,$cmd_output_alloc,$cmd_output_network,$cmd_output_sched,$cmd_output_lock" >> "$profile_name.txt"
-
     # Increment the loop counter
     count=$((count + 1))
 

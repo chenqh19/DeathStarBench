@@ -21,7 +21,7 @@ for second_half in "$@"; do
   eval "$full_command & wait"
   
   # Execute an additional command
-  report_command="sudo perf report --no-children > perf_files/$name$i.txt"
+  report_command="sudo perf report --no-children > $name$i.txt"
   echo "Executing an additional command: $report_command"
   eval "$report_command & wait"
 
