@@ -54,6 +54,8 @@ print(core_str, llc_str)
 
 core_cmd = "sudo pqos -a " + core_str
 llc_cmd = "sudo pqos -e " + llc_str
+# CDP example: pqos -e "llc:1d=0xfff;llc:1c=0xfff00;" (add d(data) or c(code) after LLC index)
+# ref: https://github.com/intel/intel-cmt-cat/wiki/Usage-Examples
 
 core = subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 print(core.stderr)
@@ -63,20 +65,3 @@ for cmd in set_core_cmds:
     subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 
-'''
-# Example 1: Execute a simple command
-command1 = "ls -l"
-result1 = subprocess.run(command1, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-print("Standard Output for Command 1:")
-print(result1.stdout)
-print("Standard Error for Command 1:")
-print(result1.stderr)
-
-# Example 2: Execute another command
-command2 = "df -h"
-result2 = subprocess.run(command2, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-print("Standard Output for Command 2:")
-print(result2.stdout)
-print("Standard Error for Command 2:")
-print(result2.stderr)
-'''
