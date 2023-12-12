@@ -99,7 +99,4 @@ func Init() {
 	setGCPercent()
 }
 
-func changeGCPercent(percent int)	{
-	debug.SetGCPercent(percent)
-	log.Info().Msgf("Tune: setGCPercent to %d", percent)
-}
+

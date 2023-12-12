@@ -12,8 +12,8 @@ container_ids=$(sudo docker ps -q)
 '''
 Specify multiple keywords
 '''
-keywords=("frontend" "geo" "profile" "rate" "recommendation" "reservation" "search" "user")
-# keywords=("Service")
+# keywords=("frontend" "geo" "profile" "rate" "recommendation" "reservation" "search" "user")
+keywords=("frontend")
 
 # Initialize a variable to store all PIDs
 all_pids=""

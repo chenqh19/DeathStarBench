@@ -1,4 +1,5 @@
 import csv
+import os
 
 def process_csv_and_txt(csv_filename, txt_filename, target_value):
     # read csv
@@ -22,17 +23,27 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
                     try:
                         percentage = float(line.split()[0].strip('%'))
                         total_percentage += percentage
-                        print(value)
+                        # print(value)
                     except ValueError:
                         print(f"Warning: Unable to extract percentage from line: {line}")
 
     # print sum
-    print(f"Total Percentage: {total_percentage}%")
+    print(f"File: {txt_filename}, Total Percentage: {format(total_percentage, '.2f')}%")
 
 # parameters
+directory_path = '.'
+txt_filenames = "hr-"
 csv_filename = 'names_hr.csv'
-txt_filename = 'hr-gc0-2724237-0-0.txt'
 target_value = 'GC'
 
+def process_hr_files_in_directory(directory_path, target_files, csv_filename, target_value):
+    # 获取目录下所有文件名含有"hr-"的txt文件
+    hr_files = [filename for filename in os.listdir(directory_path) if filename.startswith(target_files) and filename.endswith(".txt")]
+
+    # 逐个处理文件
+    for hr_file in hr_files:
+        file_path = os.path.join(directory_path, hr_file)
+        process_csv_and_txt(csv_filename, file_path, target_value)
+
 # execute
-process_csv_and_txt(csv_filename, txt_filename, target_value)
+process_hr_files_in_directory(directory_path, txt_filenames, csv_filename, target_value)
