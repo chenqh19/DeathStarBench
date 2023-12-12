@@ -12,11 +12,12 @@ container_ids=$(sudo docker ps -q)
 '''
 Specify multiple keywords
 '''
-# keywords=("frontend" "geo" "profile" "rate" "recommendation" "reservation" "search" "user")
-keywords=("frontend")
+keywords=("frontend" "geo" "profile" "rate" "recommendation" "reservation" "search" "user")
+# keywords=("frontend")
 
 # Initialize a variable to store all PIDs
 all_pids=""
+declare -A pidNameMap
 
 # Loop through each container ID and run sudo docker top
 for container_id in $container_ids; do
@@ -29,6 +30,9 @@ for container_id in $container_ids; do
     for keyword in "${keywords[@]}"; do
         pid_list=$(echo "$top_result" | awk -v keyword="$keyword" '$8 ~ keyword {print $2}')
         if [ -n "$pid_list" ]; then
+            for pid in $pid_list; do
+                pidNameMap[$pid]=$keyword
+            done
             found=true
             echo "keyword: $keyword; pid: $pid_list"
             if [ -n "$all_pids" ]; then
@@ -68,7 +72,7 @@ while [ $count -lt $num_loops ]; do
     
     # sudo perf stat -e cycles,instructions,cache-references,cache-misses,LLC-misses -a -- sleep $profile_time & wait
     for pid in $all_pids; do
-        ./profile.sh "$profile_name-$pid-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
+        ./profile.sh "$profile_name-${pidNameMap[$pid]}-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
         # sudo perf stat -e topdown-slots-retired,topdown-slots-issued,topdown-fetch-bubbles,topdown-recovery-bubbles -p $pid -- sleep $profile_time
     done
     # Increment the loop counter
