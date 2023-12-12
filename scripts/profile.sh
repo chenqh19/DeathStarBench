@@ -13,7 +13,7 @@ third_half="$3"
 shift 3
 
 # Iterate through the second half arguments, combine and execute commands one by one
-i=1
+i=0
 for second_half in "$@"; do
   full_command="$first_half $second_half $third_half"
   echo "Executing command: $full_command"

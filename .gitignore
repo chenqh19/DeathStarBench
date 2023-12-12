@@ -10,4 +10,4 @@ wrk2/wrk
 /wrk2/deps/
 *perf.data
 *perf.data.old
-scripts/*/*.txt
+# scripts/*/*.txt

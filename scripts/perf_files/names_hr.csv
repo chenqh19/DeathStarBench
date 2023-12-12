@@ -1,0 +1,148 @@
+name,belongs to
+__fget_light,
+__memset_avx2_erms,
+aeshashbody,
+do_syscall_64,syscall
+encoding/,network
+entry_SYSCALL_64,syscall
+ep_send_events_proc,io
+github.com/docker/docker/daemon/logger.(*Copier).copySrc,
+github.com/docker/docker/daemon/logger/jsonfilelog/jsonlog.ffjsonWriteJSONBytesAsString,
+github.com/hailocab/go-geoindex.(*PointsIndex).KNearest,
+psi_task_change,kernel
+runtime.casgstatus,proc
+runtime.checkTimers,proc
+runtime.findObject,map
+runtime.findRunnable,proc
+runtime.gcDrain,GC
+runtime.gentraceback,
+runtime.greyobject,GC
+runtime.heapBitsSetType,GC
+runtime.mallocgc,GC
+runtime.mapaccess,map
+runtime.memclrNoHeapPointers,GC
+runtime.memmove,
+runtime.newobject,malloc
+runtime.pcvalue,
+runtime.scanobject,GC
+runtime.stealWork,network?
+runtime.step,
+syscall_return_via_sysret,syscall
+time.nextStdChunk,
+time.Time.AppendFormat,
+try_to_wake_up,
+update_cfs_group,
+< 0.10%,
+__vdso_clock_gettime,
+spin_lock,kernel lock
+ep_poll_callback,io
+ext4_do_update_inode,
+lj_str_new,
+mutex_lock,lock
+path/filepath.Clean,
+pipe_poll,
+runtime.findfunc,
+runtime.growslice,
+runtime.lock,lock
+runtime.scanblock,GC
+switch_fpu_return,
+timerqueue_add,
+update_curr,
+< 0.08%,
+__nf_conntrack_find_get,network
+__update_load_avg,kernel scheduler
+aeProcessEvents,
+available_idle_cpu,kernel scheduler
+bytes.(*Buffer).WriteByte,
+bytes.(*Buffer).WriteString,
+cpuacct_charge,kernel scheduler
+dequeue_task_fair,kernel scheduler
+enqueue_entity,kernel scheduler
+enqueue_task_fair,kernel scheduler
+fmt.(*pp).doPrintf,
+github.com/docker/docker/pkg/ioutils.(*BytesPipe).Write,
+http_parser_execute,
+ipt_do_table,network
+lj_BC_TGETS,
+reweight_entity,
+runtime.adjustframe,GC
+runtime.adjustpointers,GC
+runtime.chanrecv,network
+runtime.checkTimersNoP,proc
+runtime.getStackMap,map
+runtime.mapaccess,map
+runtime.mapassign,map
+runtime.mapiternext,map
+runtime.netpoll,network
+runtime.unlock,lock
+select_task_rq_fair,kernel scheduler
+sync.(*Pool).Get,
+time.appendInt,
+time.parse,
+< 0.05%,
+__calc_delta,
+__find_get_block,
+__wake_up_common,
+_raw_read_lock_irqsave,
+common_file_perm,
+copy_user_enhanced_fast_string,
+dequeue_entity,
+entry_SYSCALL_64_after_hwframe,
+fput_many,
+github.com/docker/docker/daemon/logger/jsonfilelog.(*JSONFileLogger).Log,
+github.com/docker/docker/daemon/logger/loggerutils.(*LogFile).WriteLogEntry,
+github.com/docker/docker/pkg/broadcaster.(*Unbuffered).Write,
+github.com/docker/docker/pkg/ioutils.(*BytesPipe).Read,
+github.com/rs/zerolog/internal/json.appendStringComplex,
+github.com/rs/zerolog/internal/json.Encoder.AppendString,
+golang.org/x/net/http2/hpack.AppendHuffmanString,
+google.golang.org/grpc/transport.(*http2Client).itemHandler,
+google.golang.org/grpc/transport.(*http2Client).NewStream,
+internal/poll.(*FD).Read,
+io.copyBuffer,
+ip_finish_output,
+kmem_cache,
+memeqbody,
+mutex_unlock,lib lock
+nf_conntrack_in,network
+nf_conntrack_tcp_packet,network
+nf_hook_slow,network
+path/filepath.Rel,
+pipe_read,
+record_times,
+runtime.(*itabTableType).find,
+runtime.memhash,
+runtime.pidleput,go runtime scheduler
+runtime.reentersyscall,syscall related
+runtime.runqgrab,go runtime scheduler
+runtime.selectgo,
+runtime.wbBufFlush,GC
+select_idle_sibling.part.0,
+update_cfs_rq_h_load,kernel scheduler
+xmit,network
+xas_load,
+added,
+memset_erms,
+visit_groups_merge,
+native_write_msr,
+runtime.schedule,runtime schedule
+__netif_receive_skb_core,
+br_nf_pre_routing,
+tcp,network
+task_sched,kernel schedule
+__schedule,kernel schedule
+br_handle_frame,
+read_tsc,
+update_load_avg,
+fmt,gloang formatted io
+io.readatleast,
+runtime.retake,
+math.,
+native_sched_clock,
+runtime.(*mheap).allocspan,GC
+runtime.gcwritebarrier,GC
+runtime.(*spanset).pop,GC
+runtime.slicebytetostring,
+runtime.(*sweeplocked).sweep,GC
+net/,network
+nf_,network

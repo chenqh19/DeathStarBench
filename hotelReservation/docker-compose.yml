@@ -17,7 +17,8 @@ services:
       - JAEGER_SAMPLE_RATIO
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_frontend_single_node
+    image: qihang-hr
+    # image: hotel_reserv_frontend_single_node
     privileged: true
     entrypoint: frontend
     container_name: 'hotel_reserv_frontend'
@@ -36,7 +37,8 @@ services:
       - MEMC_TIMEOUT
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_profile_single_node
+    image: qihang-hr
+    # image: hotel_reserv_profile_single_node
     privileged: true
     entrypoint: profile
     container_name: 'hotel_reserv_profile'
@@ -48,7 +50,8 @@ services:
 
   search:
     build: .
-    image: hotel_reserv_search_single_node
+    image: qihang-hr
+    # image: hotel_reserv_search_single_node
     privileged: true
     entrypoint: search
     container_name: 'hotel_reserv_search'
@@ -71,7 +74,8 @@ services:
       - JAEGER_SAMPLE_RATIO
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_geo_single_node
+    image: qihang-hr
+    # image: hotel_reserv_geo_single_node
     privileged: true
     entrypoint: geo
     container_name: 'hotel_reserv_geo'
@@ -88,7 +92,8 @@ services:
       - MEMC_TIMEOUT
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_rate_single_node
+    image: qihang-hr
+    # image: hotel_reserv_rate_single_node
     privileged: true
     entrypoint: rate
     container_name: 'hotel_reserv_rate'
@@ -105,7 +110,8 @@ services:
       - JAEGER_SAMPLE_RATIO
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_recommend_single_node
+    image: qihang-hr
+    # image: hotel_reserv_recommend_single_node
     privileged: true
     entrypoint: recommendation
     container_name: 'hotel_reserv_recommendation'
@@ -121,7 +127,8 @@ services:
       - JAEGER_SAMPLE_RATIO
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_user_single_node
+    image: qihang-hr
+    # image: hotel_reserv_user_single_node
     privileged: true
     entrypoint: user
     container_name: 'hotel_reserv_user'
@@ -138,7 +145,8 @@ services:
       - MEMC_TIMEOUT
       - LOG_LEVEL
     build: .
-    image: hotel_reserv_rsv_single_node
+    image: qihang-hr
+    # image: hotel_reserv_rsv_single_node
     privileged: true
     entrypoint: reservation
     container_name: 'hotel_reserv_reservation'

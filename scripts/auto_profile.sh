@@ -68,7 +68,8 @@ while [ $count -lt $num_loops ]; do
     
     # sudo perf stat -e cycles,instructions,cache-references,cache-misses,LLC-misses -a -- sleep $profile_time & wait
     for pid in $all_pids; do
-        sudo perf stat -e topdown-slots-retired,topdown-slots-issued,topdown-fetch-bubbles,topdown-recovery-bubbles -p $pid -- sleep 5
+        ./profile.sh "$profile_name-$pid-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
+        # sudo perf stat -e topdown-slots-retired,topdown-slots-issued,topdown-fetch-bubbles,topdown-recovery-bubbles -p $pid -- sleep $profile_time
     done
     # Increment the loop counter
     count=$((count + 1))

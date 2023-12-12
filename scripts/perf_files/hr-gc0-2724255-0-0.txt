@@ -1,0 +1,32 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 54  of event 'cycles'
+# Event count (approx.): 5131286
+#
+# Overhead  Command  Shared Object      Symbol                                                             
+# ........  .......  .................  ...................................................................
+#
+    18.48%  rate     [kernel.kallsyms]  [k] visit_groups_merge
+    18.34%  rate     rate               [.] runtime.stealWork
+    12.26%  rate     rate               [.] runtime.netpollDeadline
+    11.20%  rate     [kernel.kallsyms]  [k] schedule_hrtimeout_range
+    11.20%  rate     rate               [.] runtime.pidleput
+    11.13%  rate     rate               [.] runtime.sysmon
+     4.38%  rate     rate               [.] runtime.sellock
+     2.60%  rate     [kernel.kallsyms]  [k] ep_poll
+     2.60%  rate     [kernel.kallsyms]  [k] perf_event_update_userpage
+     2.42%  rate     [kernel.kallsyms]  [k] __mnt_drop_write
+     2.42%  rate     [kernel.kallsyms]  [k] psi_task_change
+     2.42%  rate     rate               [.] github.com/uber/jaeger-client-go.(*remoteReporter).processQueue
+     0.55%  rate     [kernel.kallsyms]  [k] raise_softirq
+     0.00%  rate     [kernel.kallsyms]  [k] _raw_spin_lock
+     0.00%  rate     [kernel.kallsyms]  [k] native_write_msr
+     0.00%  rate     [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.0
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

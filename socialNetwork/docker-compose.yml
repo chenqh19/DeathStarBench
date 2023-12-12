@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   social-graph-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: social-graph-service
     #    ports:
     #      - 10000:9090
@@ -41,7 +41,7 @@ services:
     # cpuset: 0-7
 
   compose-post-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: compose-post-service
     #    ports:
     #      - 10001:9090
@@ -55,7 +55,7 @@ services:
       - ./config:/social-network-microservices/config
 
   post-storage-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: post-storage-service
     ports:
       - 10002:9090
@@ -87,7 +87,7 @@ services:
     # cpuset: 0-7
 
   user-timeline-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: user-timeline-service
     #    ports:
     #      - 10003:9090
@@ -119,7 +119,7 @@ services:
     # cpuset: 0-7
 
   url-shorten-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: url-shorten-service
     #    ports:
     #      - 10004:9090
@@ -151,7 +151,7 @@ services:
     # cpuset: 0-7
 
   user-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: user-service
     #    ports:
     #      - 10005:9090
@@ -183,7 +183,7 @@ services:
     # cpuset: 0-7
 
   media-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: media-service
     #    ports:
     #      - 10006:9090
@@ -215,7 +215,7 @@ services:
     # cpuset: 0-7
 
   text-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: text-service
     #    ports:
     #      - 10007:9090
@@ -229,7 +229,7 @@ services:
       - ./config:/social-network-microservices/config
 
   unique-id-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: unique-id-service
     #    ports:
     #      - 10008:9090
@@ -243,7 +243,7 @@ services:
       - ./config:/social-network-microservices/config
 
   user-mention-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: user-mention-service
     #    ports:
     #      - 10009:9090
@@ -257,7 +257,7 @@ services:
       - ./config:/social-network-microservices/config
 
   home-timeline-service:
-    image: qihang-cn
+    image: qihang-sn
     hostname: home-timeline-service
     #    ports:
     #      - 10010:9090

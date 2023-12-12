@@ -33,7 +33,11 @@ sudo apt install linux-tools-common
 yes | sudo apt install linux-tools-5.4.0-164-generic
 
 cd ../socialNetwork
-sudo docker build -t qihang-cn .
+sudo docker build -t qihang-sn .
+cd ../scripts
+
+cd ../hotelReservation
+sudo docker build -t qihang-hr .
 cd ../scripts
 
 sudo chmod +x kuber_install.sh
