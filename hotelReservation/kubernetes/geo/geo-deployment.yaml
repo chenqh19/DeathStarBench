@@ -25,6 +25,7 @@ spec:
       labels:
         io.kompose.service: geo
     spec:
+      # nodeName: node-0.qihang-profile.ragger-pg0.utah.cloudlab.us
       containers:
         - command:
             - geo
