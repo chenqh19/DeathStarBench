@@ -17,10 +17,10 @@ runtime.findRunnable,proc
 runtime.gcDrain,GC
 runtime.gentraceback,
 runtime.greyobject,GC
-runtime.heapBitsSetType,GC
-runtime.mallocgc,GC
+runtime.heapBitsSetType,malloc
+runtime.mallocgc,malloc
 runtime.mapaccess,map
-runtime.memclrNoHeapPointers,GC
+runtime.memclrNoHeapPointers,malloc
 runtime.memmove,
 runtime.newobject,malloc
 runtime.pcvalue,
@@ -65,8 +65,8 @@ http_parser_execute,
 ipt_do_table,network
 lj_BC_TGETS,
 reweight_entity,
-runtime.adjustframe,GC
-runtime.adjustpointers,GC
+runtime.adjustframe,malloc
+runtime.adjustpointers,malloc
 runtime.chanrecv,network
 runtime.checkTimersNoP,proc
 runtime.getStackMap,map
@@ -139,9 +139,9 @@ io.readatleast,
 runtime.retake,
 math.,
 native_sched_clock,
-runtime.(*mheap).allocspan,GC
+runtime.(*mheap).allocspan,malloc
 runtime.gcwritebarrier,GC
-runtime.(*spanset).pop,GC
+runtime.(*spanset).pop,malloc
 runtime.slicebytetostring,
 runtime.(*sweeplocked).sweep,GC
 net/,network

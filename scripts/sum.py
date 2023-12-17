@@ -31,10 +31,10 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
     print(f"File: {txt_filename}, Total Percentage: {format(total_percentage, '.2f')}%")
 
 # parameters
-directory_path = '.'
-txt_filenames = "hr-"
+directory_path = './perf_files'
+txt_filenames = "hr-baseline"
 csv_filename = 'names_hr.csv'
-target_value = 'GC'
+target_value = 'malloc'
 
 def process_hr_files_in_directory(directory_path, target_files, csv_filename, target_value):
     # 获取目录下所有文件名含有"hr-"的txt文件
