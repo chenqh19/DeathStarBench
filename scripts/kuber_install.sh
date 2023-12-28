@@ -18,6 +18,7 @@ kubeadm version
 
 sudo swapoff –a
 
+# if served as master node
 if [ $is_master -eq 1 ]; then
     sudo rm /etc/containerd/config.toml
     sudo systemctl restart containerd
