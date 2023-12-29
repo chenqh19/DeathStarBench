@@ -25,7 +25,7 @@ spec:
       labels:
         io.kompose.service: rate
     spec:
-      # nodeName: node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
+      nodeName: node-1.qihang-winter.ragger-pg0.utah.cloudlab.us
       containers:
         - command:
             - rate

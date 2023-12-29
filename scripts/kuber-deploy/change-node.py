@@ -17,25 +17,26 @@ def replace_line(file_path, search_content, new_line):
         print(f"File not found: {file_path}")
 
 deploy = {
-    "frontend" : ["frontend", 0],
-    "geo" : ["geo", 0],
-    "search" : ["search", 0],
-    "profile" : ["profile", 0],
-    "rate" : ["rate", 0],
-    "reccomend" : ["recommendation", 0],
-    "reserve" : ["reservation", 0],
-    "user" : ["user", 0],
+    "frontend" : [["frontend"], 0],
+    "reccomend" : [["recommendation", "mongodb-recommendation"], 0],
+    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], 0],
+    "user" : [["user", "mongodb-user"], 0],
+    "search" : [["search"], 1],
+    "geo" : [["geo", "mongodb-geo"], 1],
+    "profile" : [["profile", "mongodb-profile", "memcached-profile"], 1],
+    "rate" : [["rate", "mongodb-rate", "memcached-rate"], 1]
 }
 
 
 for name in deploy.keys():
     folder_path = "/users/chenqh23/DeathStarBench/hotelReservation/kubernetes/" + name + "/"
-    file_name = deploy[name][0] + "-deployment.yaml"
     search_content = ".qihang-winter.ragger-pg0.utah.cloudlab.us"
-    new_line = "      # nodeName: node-" + str(deploy[name][1]) + ".qihang-winter.ragger-pg0.utah.cloudlab.us"
-
-    file_path = os.path.join(folder_path, file_name)
-    replace_line(file_path, search_content, new_line)
+    new_line = "      nodeName: node-" + str(deploy[name][1]) + ".qihang-winter.ragger-pg0.utah.cloudlab.us"
+    
+    for nickname in deploy[name][0]:
+        file_name = nickname + "-deployment.yaml"
+        file_path = os.path.join(folder_path, file_name)
+        replace_line(file_path, search_content, new_line)
 
 
 
