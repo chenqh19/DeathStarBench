@@ -29,4 +29,7 @@ if [ $is_master -eq 1 ]; then
     sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     kubectl get pods --all-namespaces
     kubectl get nodes
+else
+    sudo rm /etc/containerd/config.toml
+    sudo systemctl restart containerd
 fi
