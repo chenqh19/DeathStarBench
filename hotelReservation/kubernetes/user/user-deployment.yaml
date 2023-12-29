@@ -33,10 +33,10 @@ spec:
           name: hotel-reserv-user
           ports:
             - containerPort: 8086
-          resources:
-            requests:
-              cpu: 100m
-            limits:
-              cpu: 1000m
+          # resources:
+            # requests:
+            #   cpu: 100m
+            # limits:
+            #   cpu: 1000m
       restartPolicy: Always
 status: {}
