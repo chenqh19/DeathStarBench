@@ -17,23 +17,24 @@ def replace_line(file_path, search_content, new_line):
         print(f"File not found: {file_path}")
 
 deploy = {
-    "frontend" : [["frontend"], 0],
-    "reccomend" : [["recommendation", "mongodb-recommendation"], 0],
-    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], 0],
-    "user" : [["user", "mongodb-user"], 0],
-    "search" : [["search"], 1],
-    "geo" : [["geo", "mongodb-geo"], 1],
-    "profile" : [["profile", "mongodb-profile", "memcached-profile"], 1],
-    "rate" : [["rate", "mongodb-rate", "memcached-rate"], 1]
+    "frontend" : [["frontend"], [0]],
+    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 1]],
+    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 1, 1]],
+    "user" : [["user", "mongodb-user"], [0, 0]],
+    "search" : [["search"], [1]],
+    "geo" : [["geo", "mongodb-geo"], [0, 0]],
+    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [1, 1, 1]],
+    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [0, 0, 0]]
 }
 
 
 for name in deploy.keys():
     folder_path = "/users/chenqh23/DeathStarBench/hotelReservation/kubernetes/" + name + "/"
     search_content = ".qihang-winter.ragger-pg0.utah.cloudlab.us"
-    new_line = "      nodeName: node-" + str(deploy[name][1]) + ".qihang-winter.ragger-pg0.utah.cloudlab.us"
     
-    for nickname in deploy[name][0]:
+    for i in range(len(deploy[name][0])):
+        nickname = deploy[name][0][i]
+        new_line = "      nodeName: node-" + str(deploy[name][1][i]) + ".qihang-winter.ragger-pg0.utah.cloudlab.us"
         file_name = nickname + "-deployment.yaml"
         file_path = os.path.join(folder_path, file_name)
         replace_line(file_path, search_content, new_line)

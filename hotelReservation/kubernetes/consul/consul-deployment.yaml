@@ -25,6 +25,7 @@ spec:
       labels:
         io.kompose.service: consul
     spec:
+      nodeName: node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
       containers:
         - image: hashicorp/consul:latest
           name: consul

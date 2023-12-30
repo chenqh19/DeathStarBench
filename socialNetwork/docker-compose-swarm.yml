@@ -21,6 +21,9 @@ services:
     deploy:
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.hostname == node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
     depends_on:
       - jaeger-collector
 
@@ -192,7 +195,6 @@ services:
         condition: any
       placement:
         constraints:
-          # - node.hostname == node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
           - node.hostname == node-1.qihang-winter.ragger-pg0.utah.cloudlab.us
     command: ["PostStorageService"]
     hostname: post-storage-service
@@ -438,6 +440,9 @@ services:
     deploy:
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.hostname == node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -450,6 +455,9 @@ services:
     deploy:
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.hostname == node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
