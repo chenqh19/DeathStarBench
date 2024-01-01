@@ -841,6 +841,7 @@ var zerobase uintptr
 // nextFreeFast returns the next free object if one is quickly available.
 // Otherwise it returns 0.
 func nextFreeFast(s *mspan) gclinkptr {
+	nextFreeFast_cnt = nextFreeFast_cnt + 1
 	theBit := sys.Ctz64(s.allocCache) // Is there a free object in the allocCache?
 	if theBit < 64 {
 		result := s.freeindex + uintptr(theBit)
@@ -868,6 +869,7 @@ func nextFreeFast(s *mspan) gclinkptr {
 // Must run in a non-preemptible context since otherwise the owner of
 // c could change.
 func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *mspan, shouldhelpgc bool) {
+	nextFree_cnt = nextFree_cnt + 1
 	s = c.alloc[spc]
 	shouldhelpgc = false
 	freeIndex := s.nextFreeIndex()
@@ -897,11 +899,18 @@ func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *mspan, shouldhelpgc bo
 	return
 }
 
+var mallocgc_cnt = 0
+var nextFreeFast_cnt = 0
+var nextFree_cnt = 0
+
 // Allocate an object of size bytes.
 // Small objects are allocated from the per-P cache's free lists.
 // Large objects (> 32 kB) are allocated straight from the heap.
 func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
-	// println("mallocgc called")
+	mallocgc_cnt = mallocgc_cnt + 1
+	if (mallocgc_cnt % 1000) == 0 {
+		println("{mallocgc, nextFreeFast, nextFree} count: ", mallocgc_cnt, nextFreeFast_cnt, nextFree_cnt)
+	}
 
 	if gcphase == _GCmarktermination {
 		throw("mallocgc called with gcphase == _GCmarktermination")
