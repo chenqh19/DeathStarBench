@@ -848,7 +848,6 @@ func nextFreeFast(s *mspan) gclinkptr {
 		if result < s.nelems {
 			freeidx := result + 1
 			if freeidx%64 == 0 && freeidx != s.nelems {
-				fastMiss_cnt = fastMiss_cnt + 1
 				return 0
 			}
 			s.allocCache >>= uint(theBit + 1)
@@ -857,7 +856,6 @@ func nextFreeFast(s *mspan) gclinkptr {
 			return gclinkptr(result*s.elemsize + s.base())
 		}
 	}
-	fastMiss_cnt = fastMiss_cnt + 1
 	return 0
 }
 
@@ -905,17 +903,15 @@ func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *mspan, shouldhelpgc bo
 var mallocgc_cnt = 0
 var nextFreeFast_cnt = 0
 var nextFree_cnt = 0
-var fastMiss_cnt = 0
 var nextFreeMiss_cnt = 0
-var fit_cnt = 0
 
 // Allocate an object of size bytes.
 // Small objects are allocated from the per-P cache's free lists.
 // Large objects (> 32 kB) are allocated straight from the heap.
 func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 	mallocgc_cnt = mallocgc_cnt + 1
-	if (mallocgc_cnt % 1000) == 0 {
-		println("{mallocgc, nextFreeFast, nextFree, fastMiss, nextFreeMiss, fit} count: ", mallocgc_cnt, nextFreeFast_cnt, nextFree_cnt, fastMiss_cnt, nextFreeMiss_cnt, fit_cnt)
+	if (mallocgc_cnt % 10000) == 0 {
+		println("{mallocgc, nextFreeFast, nextFree, nextFreeMiss} count: ", mallocgc_cnt, nextFreeFast_cnt, nextFree_cnt, nextFreeMiss_cnt)
 	}
 
 	if gcphase == _GCmarktermination {
@@ -1054,7 +1050,6 @@ func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 				c.tinyAllocs++
 				mp.mallocing = 0
 				releasem(mp)
-				fit_cnt = fit_cnt + 1
 				return x
 			}
 			// Allocate a new maxTinySize block.
