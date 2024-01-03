@@ -842,6 +842,9 @@ var zerobase uintptr
 // Otherwise it returns 0.
 func nextFreeFast(s *mspan) gclinkptr {
 	nextFreeFast_cnt = nextFreeFast_cnt + 1
+	if (s.nelems == 0) {
+		manual_access_cnt = manual_access_cnt + 1
+	}
 	theBit := sys.Ctz64(s.allocCache) // Is there a free object in the allocCache?
 	if theBit < 64 {
 		result := s.freeindex + uintptr(theBit)
@@ -873,8 +876,14 @@ func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *mspan, shouldhelpgc bo
 	s = c.alloc[spc]
 	shouldhelpgc = false
 	freeIndex := s.nextFreeIndex()
+	// if nextFree_cnt%100 == 0 {
+	// 	println("----------------------", spc, s.npages, s.nelems, s.elemsize, freeIndex)
+	// }
 	if freeIndex == s.nelems {
 		nextFreeMiss_cnt = nextFreeMiss_cnt + 1
+		if (s.nelems == 0) {
+			manual_miss_cnt = manual_miss_cnt + 1
+		}
 		// The span is full.
 		if uintptr(s.allocCount) != s.nelems {
 			println("runtime: s.allocCount=", s.allocCount, "s.nelems=", s.nelems)
@@ -904,6 +913,9 @@ var mallocgc_cnt = 0
 var nextFreeFast_cnt = 0
 var nextFree_cnt = 0
 var nextFreeMiss_cnt = 0
+var largeObj_cnt = 0
+var manual_access_cnt = 0
+var manual_miss_cnt = 0
 
 // Allocate an object of size bytes.
 // Small objects are allocated from the per-P cache's free lists.
@@ -911,7 +923,9 @@ var nextFreeMiss_cnt = 0
 func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 	mallocgc_cnt = mallocgc_cnt + 1
 	if (mallocgc_cnt % 10000) == 0 {
-		println("{mallocgc, nextFreeFast, nextFree, nextFreeMiss} count: ", mallocgc_cnt, nextFreeFast_cnt, nextFree_cnt, nextFreeMiss_cnt)
+		println("----------------------------------------------------------------------------------------------------------")
+		println("{mallocgc, largeObj, nextFreeFast, nextFree, nextFreeMiss} count: ", mallocgc_cnt, largeObj_cnt, nextFreeFast_cnt, nextFree_cnt, nextFreeMiss_cnt)
+		println("manual allocated statistics: ", manual_access_cnt, manual_miss_cnt)
 	}
 
 	if gcphase == _GCmarktermination {
@@ -1089,6 +1103,7 @@ func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 			}
 		}
 	} else {
+		largeObj_cnt = largeObj_cnt + 1
 		shouldhelpgc = true
 		// For large allocations, keep track of zeroed state so that
 		// bulk zeroing can be happen later in a preemptible context.
