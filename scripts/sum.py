@@ -32,7 +32,7 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
 
 # parameters
 directory_path = './perf_files'
-txt_filenames = "hs-GC1k"
+txt_filenames = 'origspan-GC1k'
 csv_filename = 'names_hr.csv'
 target_value = 'malloc'
 

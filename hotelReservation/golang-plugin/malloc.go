@@ -883,7 +883,13 @@ func (c *mcache) nextFree(spc spanClass) (v gclinkptr, s *mspan, shouldhelpgc bo
 		nextFreeMiss_cnt = nextFreeMiss_cnt + 1
 		if (s.nelems == 0) {
 			manual_miss_cnt = manual_miss_cnt + 1
-		}
+		} 
+		// else {
+		// 	if spc < 160 {
+		// 		miss[spc/2] += 1
+		// 	}
+		// }
+
 		// The span is full.
 		if uintptr(s.allocCount) != s.nelems {
 			println("runtime: s.allocCount=", s.allocCount, "s.nelems=", s.nelems)
@@ -914,8 +920,13 @@ var nextFreeFast_cnt = 0
 var nextFree_cnt = 0
 var nextFreeMiss_cnt = 0
 var largeObj_cnt = 0
+
 var manual_access_cnt = 0
 var manual_miss_cnt = 0
+
+// var class = [80]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+// var miss = [80]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+
 
 // Allocate an object of size bytes.
 // Small objects are allocated from the per-P cache's free lists.
@@ -925,7 +936,10 @@ func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 	if (mallocgc_cnt % 10000) == 0 {
 		println("----------------------------------------------------------------------------------------------------------")
 		println("{mallocgc, largeObj, nextFreeFast, nextFree, nextFreeMiss} count: ", mallocgc_cnt, largeObj_cnt, nextFreeFast_cnt, nextFree_cnt, nextFreeMiss_cnt)
-		println("manual allocated statistics: ", manual_access_cnt, manual_miss_cnt)
+		// println("manual allocated statistics: ", manual_access_cnt, manual_miss_cnt)
+		// for j := 0; j < 80; j++ {
+		// 	println(j, class[j], miss[j])
+		// }
 	}
 
 	if gcphase == _GCmarktermination {
@@ -1094,6 +1108,9 @@ func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 			spc := makeSpanClass(sizeclass, noscan)
 			span = c.alloc[spc]
 			v := nextFreeFast(span)
+			// if spc < 160 {
+			// 	class[spc/2] += 1
+			// }
 			if v == 0 {
 				v, span, shouldhelpgc = c.nextFree(spc)
 			}
