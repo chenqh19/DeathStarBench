@@ -14,7 +14,7 @@ Specify multiple keywords
 '''
 # keywords=("frontend" "geo" "profile" "rate" "recommendation" "reservation" "search" "user")
 # keywords=("MediaService" "UserTimelineService" "PostStorageService" "UrlShortenService" "UserService" "SocialGraphService" "TextService" "UniqueIdService" "ComposePostService" "UserMentionService" "HomeTimelineService")
-keywords=("frontend" "profile")
+keywords=("HomeTimeline" "PostStorage")
 
 # Initialize a variable to store all PIDs
 all_pids=""
@@ -73,8 +73,8 @@ while [ $count -lt $num_loops ]; do
     
     # sudo perf stat -e cycles,instructions,cache-references,cache-misses,LLC-misses -a -- sleep $profile_time & wait
     for pid in $all_pids; do
-        ./profile.sh "$profile_name-${pidNameMap[$pid]}-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
-        # sudo perf stat -e cycles,LLC-loads,LLC-load-misses -p $pid -- sleep $profile_time
+        # ./profile.sh "$profile_name-${pidNameMap[$pid]}-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
+        sudo perf stat -e cycles,LLC-loads,LLC-load-misses -p $pid -- sleep $profile_time
         # sudo perf stat -e topdown-slots-retired,topdown-slots-issued,topdown-fetch-bubbles,topdown-recovery-bubbles -p $pid -- sleep $profile_time
     done
     # Increment the loop counter

@@ -17,6 +17,7 @@ yes | sudo apt install docker-compose
 yes | sudo apt-get install luarocks
 yes | sudo luarocks install luasocket
 sudo apt install htop
+sudo apt install intel-cmt-cat
 yes | sudo apt install pip
 
 sudo docker run hello-world
