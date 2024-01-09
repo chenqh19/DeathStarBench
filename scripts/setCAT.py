@@ -1,12 +1,12 @@
 import subprocess
 
-cdp = True
-only_cdp = True
+cdp = False
+only_cdp = False
 
 max_part = 16
 core_llc = [20, 20] # number of core & llc ways
-core_part = [3, 4, 5] 
-llc_part = [5, 2, 4]
+core_part = [10, 3, 3] 
+llc_part = [12, 4, 4]
 if cdp:
     cdp_d_part = [1, 2, 3]
     assert len(cdp_d_part) == len(llc_part)
@@ -52,7 +52,7 @@ if only_cdp:
     processes = []
     core_part = [20]
     llc_part = [20]
-    cdp_d_part = [17]
+    cdp_d_part = [12]
     cdp_c_part = [llc_part[0]-cdp_d_part[0]]
 
 
