@@ -1,14 +1,14 @@
 import subprocess
 
-cdp = False
-only_cdp = False
+cdp = True
+only_cdp = True
 
 max_part = 16
 core_llc = [20, 20] # number of core & llc ways
 core_part = [6, 1, 13] 
 llc_part = [5, 1, 14]
 if cdp:
-    cdp_d_part = [1, 2, 3]
+    cdp_d_part = [1, 1, 3]
     assert len(cdp_d_part) == len(llc_part)
     cdp_c_part = []
     for i in range(len(llc_part)):
@@ -33,7 +33,7 @@ for process in processes:
     unset_cmd = "sudo taskset -cp 0-19 " + process
     subprocess.run(unset_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-'''
+
 # if we do not use all cores, the rest of the cores should be put into the last partition
 core_rest = core_llc[0]
 for core in core_part:
@@ -53,7 +53,7 @@ if only_cdp:
     processes = []
     core_part = [20]
     llc_part = [20]
-    cdp_d_part = [12]
+    cdp_d_part = [14]
     cdp_c_part = [llc_part[0]-cdp_d_part[0]]
 
 
@@ -126,4 +126,3 @@ subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subproc
 for cmd in set_core_cmds:
     subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 subprocess.run("sudo pqos -s", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-'''
