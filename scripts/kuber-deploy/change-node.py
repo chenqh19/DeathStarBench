@@ -18,13 +18,13 @@ def replace_line(file_path, search_content, new_line):
 
 deploy = {
     "frontend" : [["frontend"], [0]],
-    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 1]],
-    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 1, 1]],
-    "user" : [["user", "mongodb-user"], [0, 0]],
+    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 0]],
+    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 0, 0]],
+    "user" : [["user", "mongodb-user"], [1, 0]],
     "search" : [["search"], [1]],
-    "geo" : [["geo", "mongodb-geo"], [0, 0]],
-    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [1, 1, 1]],
-    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [0, 0, 0]]
+    "geo" : [["geo", "mongodb-geo"], [0, 1]],
+    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [0, 1, 1]],
+    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [0, 1, 1]]
 }
 
 

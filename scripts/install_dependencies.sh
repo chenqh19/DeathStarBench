@@ -50,3 +50,12 @@ pip install pytz
 pip install gurobipy
 pip install gevent
 pip install scipy
+
+cd ../..
+git clone --recurse-submodules https://github.com/chenqh19/microservices-demo.git
+cd microservices-demo
+git checkout qihang
+cd ..
+
+# run command in sockshop:
+# $sudo docker run --net=host weaveworksdemos/load-test -h localhost -r 10000 -c 200
