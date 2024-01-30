@@ -25,7 +25,7 @@ spec:
       labels:
         io.kompose.service: memcached-rate
     spec:
-      nodeName: node-0.qihang-winter.ragger-pg0.utah.cloudlab.us
+      nodeName: node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
       containers:
         - env:
             - name: MEMCACHED_CACHE_SIZE
