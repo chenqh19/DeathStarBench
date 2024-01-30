@@ -933,7 +933,7 @@ var manual_miss_cnt = 0
 // Large objects (> 32 kB) are allocated straight from the heap.
 func mallocgc(size uintptr, typ *_type, needzero bool) unsafe.Pointer {
 	mallocgc_cnt = mallocgc_cnt + 1
-	if (mallocgc_cnt % 10000) == 0 {
+	if (mallocgc_cnt % 1000000) == 0 {
 		println("----------------------------------------------------------------------------------------------------------")
 		println("{mallocgc, largeObj, nextFreeFast, nextFree, nextFreeMiss} count: ", mallocgc_cnt, largeObj_cnt, nextFreeFast_cnt, nextFree_cnt, nextFreeMiss_cnt)
 		// println("manual allocated statistics: ", manual_access_cnt, manual_miss_cnt)
