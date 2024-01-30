@@ -30,11 +30,11 @@ deploy = {
 
 for name in deploy.keys():
     folder_path = "/users/chenqh23/DeathStarBench/hotelReservation/kubernetes/" + name + "/"
-    search_content = ".qihang-winter.ragger-pg0.utah.cloudlab.us"
+    search_content = ".qihang-winter0.ragger-pg0.utah.cloudlab.us"
     
     for i in range(len(deploy[name][0])):
         nickname = deploy[name][0][i]
-        new_line = "      nodeName: node-" + str(deploy[name][1][i]) + ".qihang-winter.ragger-pg0.utah.cloudlab.us"
+        new_line = "      nodeName: node-" + str(deploy[name][1][i]) + ".qihang-winter0.ragger-pg0.utah.cloudlab.us"
         file_name = nickname + "-deployment.yaml"
         file_path = os.path.join(folder_path, file_name)
         replace_line(file_path, search_content, new_line)
@@ -44,7 +44,7 @@ for name in deploy.keys():
 # if __name__ == "__main__":
 #     folder_path = "/users/chenqh23/DeathStarBench/hotelReservation/kubernetes/" + name  # Replace with your folder path
 #     file_name = name + "-deployment.yaml"  # Replace with your file name
-#     target_key = "node-0.qihang-winter.ragger-pg0.utah.cloudlab.us"  # Replace with the key you want to replace
+#     target_key = "node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us"  # Replace with the key you want to replace
 #     old_value = "original_value"  # Replace with the old value you want to replace
 #     new_value = "new_value"  # Replace with the new value you want to replace with
 
