@@ -1,5 +1,10 @@
 # sock shop
 sudo docker run --net=host weaveworksdemos/load-test -h localhost -r 100 -c 2
+# kubernetes
+kubectl create namespace sock-shop
+kubectl apply -f complete-demo.yaml
+kubectl patch svc front-end -p '{"spec":{"externalIPs":["192.168.0.194"]}}' -n sock-shop
+
 
 # social network
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000
@@ -10,5 +15,9 @@ sudo docker run --net=host weaveworksdemos/load-test -h localhost -r 100 -c 2
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua http://127.0.0.1:5000 -R 3000
 # kubernetes
 sudo kubeadm token create --print-join-command # on the host
+sudo docker login
+./hotelReservation/kubernetes/scripts/build-docker-images.sh
+sudo kubectl apply -Rf ./hotelReservation/kubernetes/
 kubectl patch svc frontend -p '{"spec":{"externalIPs":["192.168.0.194"]}}'
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua http://192.168.0.194:5000 -R 3000
+kubectl delete --all deployments
