@@ -1,12 +1,14 @@
 import subprocess
 
-cdp = True
-only_cdp = True
+do_part = False # whether to do partition
+cdp = False # whether to use cdp
+only_cdp = False
+
 
 max_part = 16
 core_llc = [20, 20] # number of core & llc ways
-core_part = [6, 1, 13] 
-llc_part = [5, 1, 14]
+core_part = [5, 10, 5] # fixed, don't change!
+llc_part = [14, 1, 5]
 if cdp:
     cdp_d_part = [1, 1, 3]
     assert len(cdp_d_part) == len(llc_part)
@@ -16,9 +18,11 @@ if cdp:
         assert cpart >= 0
         cdp_c_part.append(cpart)
 
-key_words = ["home-timeline", "post-storage"]
+key_words = ["user-timeline", "post-storage"]
+db = ["socialnetwork-jaeger-agent-1", "socialnetwork-user-timeline-redis-1", "socialnetwork-user-timeline-mongodb-1", "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
 
 processes = []
+dbprocs = []
 # add nginx processes
 get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-nginx-thrift-1"
 process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -27,9 +31,13 @@ for k in range(len(key_words)):
     get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-" + str(key_words[k]) + "-service-1"
     process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     processes.append(process.stdout)
+for k in range(len(db)):
+    get_db_proc_cmd = "sudo docker inspect -f {{.State.Pid}} " + str(db[k])
+    dbproc = subprocess.run(get_db_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    dbprocs.append(dbproc.stdout)
 
 # unset
-for process in processes:
+for process in processes+dbprocs:
     unset_cmd = "sudo taskset -cp 0-19 " + process
     subprocess.run(unset_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
@@ -38,13 +46,15 @@ for process in processes:
 core_rest = core_llc[0]
 for core in core_part:
     core_rest -= core
-core_part.append(core_rest)
+if core_rest != 0:
+    core_part.append(core_rest)
 
 # if we do not use all LLC ways, the rest of the ways should be put into the last partition
 llc_rest = core_llc[1]
 for llc in llc_part:
     llc_rest -= llc
-llc_part.append(llc_rest)
+if llc_rest != 0:
+    llc_part.append(llc_rest)
 if cdp:
     cdp_d_part.append(llc_rest)
     cdp_c_part.append(0)
@@ -83,7 +93,6 @@ if cdp:
     cdp_c_hex = []
     cdp_d_hex = []
     for i in range(len(llc_part)):
-        print(i)
         cdp_d_hex.append(mixed_hex[2*i])
         cdp_c_hex.append(mixed_hex[2*i+1])
 core_str = "\""
@@ -121,8 +130,15 @@ if cdp:
 else:
     subprocess.run("sudo pqos -R l3cdp-off", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     partition_cmd = llc_cmd
-subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+if do_part:
+    subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
 for cmd in set_core_cmds:
+    print(cmd)
     subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-subprocess.run("sudo pqos -s", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+for dbproc in dbprocs:
+    db_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(dbproc)
+    print(db_cmd)
+    subprocess.run(db_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
