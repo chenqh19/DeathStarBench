@@ -18,11 +18,13 @@ if cdp:
         assert cpart >= 0
         cdp_c_part.append(cpart)
 
-key_words = ["user-timeline", "post-storage"]
-db = ["socialnetwork-jaeger-agent-1", "socialnetwork-user-timeline-redis-1", "socialnetwork-user-timeline-mongodb-1", "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
+key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
+merged_ = ["socialnetwork-jaeger-agent-1", "socialnetwork-user-timeline-redis-1", 
+            "socialnetwork-user-timeline-mongomerged_-1", "socialnetwork-post-storage-memcached-1", 
+            "socialnetwork-post-storage-mongomerged_-1"]
 
 processes = []
-dbprocs = []
+merged_procs = []
 # add nginx processes
 get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-nginx-thrift-1"
 process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -31,13 +33,13 @@ for k in range(len(key_words)):
     get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-" + str(key_words[k]) + "-service-1"
     process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     processes.append(process.stdout)
-for k in range(len(db)):
-    get_db_proc_cmd = "sudo docker inspect -f {{.State.Pid}} " + str(db[k])
-    dbproc = subprocess.run(get_db_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    dbprocs.append(dbproc.stdout)
+for k in range(len(merged_)):
+    get_merged_proc_cmd = "sudo docker inspect -f {{.State.Pid}} " + str(merged_[k])
+    merged_proc = subprocess.run(get_merged_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    merged_procs.append(merged_proc.stdout)
 
 # unset
-for process in processes+dbprocs:
+for process in processes+merged_procs:
     unset_cmd = "sudo taskset -cp 0-19 " + process
     subprocess.run(unset_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
@@ -138,7 +140,7 @@ for cmd in set_core_cmds:
     print(cmd)
     subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-for dbproc in dbprocs:
-    db_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(dbproc)
-    print(db_cmd)
-    subprocess.run(db_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+for merged_proc in merged_procs:
+    merged_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(merged_proc)
+    print(merged_cmd)
+    subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)

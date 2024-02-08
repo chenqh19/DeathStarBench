@@ -16,7 +16,7 @@ Specify multiple keywords
 # keywords=("MediaService" "UserTimelineService" "PostStorageService" "UrlShortenService" "UserService" "SocialGraphService" "TextService" "UniqueIdService" "ComposePostService" "UserMentionService" "HomeTimelineService")
 # keywords=("UserTimeline" "PostStorage")
 
-keywords=("user")
+keywords=("nginx")
 
 # Initialize a variable to store all PIDs
 all_pids=""
