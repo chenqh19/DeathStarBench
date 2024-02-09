@@ -26,7 +26,7 @@ spec:
       labels:
         io.kompose.service: mongodb-reservation
     spec:
-      nodeName: node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+      nodeName: node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
       containers:
         - image: mongo:4.4.6
           name: hotel-reserv-reservation-mongo
