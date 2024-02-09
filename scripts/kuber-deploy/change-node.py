@@ -18,36 +18,42 @@ def replace_line(file_path, search_content, new_line):
 
 # all-remote 3
 deploy = {
-    "frontend" : [["frontend"], [0]],
-    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 0]],
-    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 0, 2]],
-    "user" : [["user", "mongodb-user"], [1, 0]],
+    "frontend" : [["frontend"], [3]],
+    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 3]],
+    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 3, 2]],
+    "user" : [["user", "mongodb-user"], [1, 3]],
     "search" : [["search"], [1]],
     "geo" : [["geo", "mongodb-geo"], [2, 1]],
-    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [2, 1, 0]],
-    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [2, 1, 0]]
+    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [2, 1, 3]],
+    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [2, 1, 3]],
+    "jaeger": [["jaeger"], [0]],
+    "consul": [["consul"], [0]]
 }
 # # all-remote 2
 # deploy = {
-#     "frontend" : [["frontend"], [0]],
-#     "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 0]],
-#     "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 0, 0]],
-#     "user" : [["user", "mongodb-user"], [1, 0]],
+#     "frontend" : [["frontend"], [3]],
+#     "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 3]],
+#     "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 3, 3]],
+#     "user" : [["user", "mongodb-user"], [1, 3]],
 #     "search" : [["search"], [1]],
-#     "geo" : [["geo", "mongodb-geo"], [0, 1]],
-#     "profile" : [["profile", "mongodb-profile", "memcached-profile"], [0, 1, 1]],
-#     "rate" : [["rate", "mongodb-rate", "memcached-rate"], [0, 1, 1]]
+#     "geo" : [["geo", "mongodb-geo"], [3, 1]],
+#     "profile" : [["profile", "mongodb-profile", "memcached-profile"], [3, 1, 1]],
+#     "rate" : [["rate", "mongodb-rate", "memcached-rate"], [3, 1, 1]],
+#     "jaeger": [["jaeger"], [0]],
+#     "consul": [["consul"], [0]]
 # }
 # # search-away
 # deploy = {
-#     "frontend" : [["frontend"], [0]],
-#     "reccomend" : [["recommendation", "mongodb-recommendation"], [0, 0]],
-#     "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [0, 0, 0]],
-#     "user" : [["user", "mongodb-user"], [0, 0]],
+#     "frontend" : [["frontend"], [3]],
+#     "reccomend" : [["recommendation", "mongodb-recommendation"], [3, 3]],
+#     "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [3, 3, 3]],
+#     "user" : [["user", "mongodb-user"], [3, 3]],
 #     "search" : [["search"], [1]],
 #     "geo" : [["geo", "mongodb-geo"], [1, 1]],
 #     "profile" : [["profile", "mongodb-profile", "memcached-profile"], [1, 1, 1]],
-#     "rate" : [["rate", "mongodb-rate", "memcached-rate"], [1, 1, 1]]
+#     "rate" : [["rate", "mongodb-rate", "memcached-rate"], [1, 1, 1]],
+#     "jaeger": [["jaeger"], [0]],
+#     "consul": [["consul"], [0]]
 # }
 
 
