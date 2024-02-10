@@ -16,20 +16,35 @@ def replace_line(file_path, search_content, new_line):
     except FileNotFoundError:
         print(f"File not found: {file_path}")
 
-# all-remote 3
+# 1-node
 deploy = {
-    "frontend" : [["frontend"], [3]],
-    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 3]],
-    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 3, 2]],
-    "user" : [["user", "mongodb-user"], [1, 3]],
+    "frontend" : [["frontend"], [1]],
+    "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 1]],
+    "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 1, 1]],
+    "user" : [["user", "mongodb-user"], [1, 1]],
     "search" : [["search"], [1]],
-    "geo" : [["geo", "mongodb-geo"], [2, 1]],
-    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [2, 1, 3]],
-    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [2, 1, 3]],
+    "geo" : [["geo", "mongodb-geo"], [1, 1]],
+    "profile" : [["profile", "mongodb-profile", "memcached-profile"], [1, 1, 1]],
+    "rate" : [["rate", "mongodb-rate", "memcached-rate"], [1, 1, 1]],
     "jaeger": [["jaeger"], [0]],
     "consul": [["consul"], [0]]
 }
-# # all-remote 2
+
+# all-remote 3
+# deploy = {
+#     "frontend" : [["frontend"], [3]],
+#     "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 3]],
+#     "reserve" : [["reservation", "mongodb-reservation", "memcached-reservation"], [1, 3, 2]],
+#     "user" : [["user", "mongodb-user"], [1, 3]],
+#     "search" : [["search"], [1]],
+#     "geo" : [["geo", "mongodb-geo"], [2, 1]],
+#     "profile" : [["profile", "mongodb-profile", "memcached-profile"], [2, 1, 3]],
+#     "rate" : [["rate", "mongodb-rate", "memcached-rate"], [2, 1, 3]],
+#     "jaeger": [["jaeger"], [0]],
+#     "consul": [["consul"], [0]]
+# }
+
+# all-remote 2
 # deploy = {
 #     "frontend" : [["frontend"], [3]],
 #     "reccomend" : [["recommendation", "mongodb-recommendation"], [1, 3]],
@@ -42,7 +57,8 @@ deploy = {
 #     "jaeger": [["jaeger"], [0]],
 #     "consul": [["consul"], [0]]
 # }
-# # search-away
+
+# search-away
 # deploy = {
 #     "frontend" : [["frontend"], [3]],
 #     "reccomend" : [["recommendation", "mongodb-recommendation"], [3, 3]],
