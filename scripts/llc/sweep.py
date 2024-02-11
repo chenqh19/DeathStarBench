@@ -1,12 +1,25 @@
 import subprocess
+import multiprocessing
 
 core_llc = [20, 20] # number of cores & LLC ways, respectively
 max_part = 16 # max number of LLC partitions
 do_part = False # whether to do partition
-key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
-merged_ = ["socialnetwork-jaeger-agent-1", "socialnetwork-user-timeline-redis-1", 
-            "socialnetwork-user-timeline-mongomerged_-1", "socialnetwork-post-storage-memcached-1", 
-            "socialnetwork-post-storage-mongomerged_-1"]
+workload = "htl"
+output_file = "llc_sweep-"+workload+".txt"
+
+if workload == "utl":
+    core_part = [5, 10, 5]
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 2000"
+    key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
+    merged_ = ["socialnetwork-user-timeline-redis-1", 
+                "socialnetwork-user-timeline-mongodb-1", "socialnetwork-post-storage-memcached-1", 
+                "socialnetwork-post-storage-mongodb-1"]
+elif workload == "htl":
+    core_part = [11, 1, 8]
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000"
+    key_words = ["socialnetwork-home-timeline-service-1", "socialnetwork-post-storage-service-1"]
+    merged_ = ["socialnetwork-home-timeline-redis-1", "socialnetwork-post-storage-memcached-1", 
+                "socialnetwork-post-storage-mongodb-1"]
 
 def setPart(core_part, llc_part):
     processes = []
@@ -55,7 +68,6 @@ def setPart(core_part, llc_part):
             binary_int = int(binary_str, 2)
             hex_str = hex(binary_int)
             final_hex.append(hex_str)
-        print("partition:", final_hex)
         return final_hex
 
     llc_hex = to_hex(llc_part)
@@ -86,13 +98,42 @@ def setPart(core_part, llc_part):
         subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     for cmd in set_core_cmds:
-        print(cmd)
         subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     for merged_proc in merged_procs:
         merged_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(merged_proc)
-        print(merged_cmd)
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
+def run_command(command, output_file, part):
+    with open(output_file, "a") as f:
+        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        for line in process.stdout:
+            decoded_line = line.decode().strip()
+            if "0.990625" in decoded_line:
+                f.write(str(part) + " " + decoded_line + "\n")
+        process.stdout.close()
+        process.stderr.close()
+
+def run_cmd(part):
+    process1 = multiprocessing.Process(target=run_command, args=(gen_work_cmd,output_file,part))
+    # process2 = multiprocessing.Process(target=run_command, args=(command2,))
+
+    process1.start()
+    # process2.start()
+
+    process1.join()
+    # process2.join()
+
+def refresh():
+    refresh_cmd = "sudo docker restart test_jaeger-collector.1.tkm7kphp3u4tcf4zoc47w4d0z"
+    subprocess.run(refresh_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
 # start sweeping
-for 
+for part1 in range(core_llc[1]):
+    for part2 in range(core_llc[1]-part1):
+        print(part1, part2)
+        llc_part = [part1, part2]
+        setPart(core_part, llc_part)
+        run_cmd(llc_part)
+        if (part1+part2)%2 == 1:
+            refresh()

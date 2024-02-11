@@ -20,8 +20,8 @@ if cdp:
 
 key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
 merged_ = ["socialnetwork-jaeger-agent-1", "socialnetwork-user-timeline-redis-1", 
-            "socialnetwork-user-timeline-mongomerged_-1", "socialnetwork-post-storage-memcached-1", 
-            "socialnetwork-post-storage-mongomerged_-1"]
+            "socialnetwork-user-timeline-mongodb-1", "socialnetwork-post-storage-memcached-1", 
+            "socialnetwork-post-storage-mongodb-1"]
 
 processes = []
 merged_procs = []

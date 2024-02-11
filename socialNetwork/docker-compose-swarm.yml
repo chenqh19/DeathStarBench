@@ -49,6 +49,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: home-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -98,6 +102,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: media-memcached
     image: memcached
     command:
@@ -110,6 +118,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: media-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -218,6 +230,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy: # may remove
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: social-graph-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -230,6 +246,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy: # may remove
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: social-graph-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -296,6 +316,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy: # may remove
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: url-shorten-memcached
     image: memcached
     command:
@@ -308,6 +332,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:  
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: url-shorten-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -339,6 +367,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:  
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-memcached
     image: memcached
     command:
@@ -369,6 +401,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -400,6 +436,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -412,6 +452,10 @@ services:
     depends_on:
       - jaeger-agent
       - jaeger-query
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -453,7 +497,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -468,7 +512,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
