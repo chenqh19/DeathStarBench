@@ -35,10 +35,10 @@ spec:
             - containerPort: 8500
             - containerPort: 53
               protocol: UDP
-          # resources:
+          resources:
             # requests:
             #   cpu: 100m
-            # limits:
-            #   cpu: 1000m
+            limits:
+              cpu: 1000m
       restartPolicy: Always
 status: {}

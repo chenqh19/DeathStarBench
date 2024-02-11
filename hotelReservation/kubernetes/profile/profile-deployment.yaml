@@ -33,10 +33,10 @@ spec:
           name: hotel-reserv-profile
           ports:
             - containerPort: 8081
-          # resources:
+          resources:
             # requests:
             #   cpu: 100m
-            # limits:
-            #   cpu: 1000m
+            limits:
+              cpu: 1000m
       restartPolicy: Always
 status: {}

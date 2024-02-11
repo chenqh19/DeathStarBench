@@ -11,12 +11,11 @@ if workload == "utl":
     core_part = [5, 10, 5]
     gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 2000"
     key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
-    merged_ = ["socialnetwork-user-timeline-redis-1", 
-                "socialnetwork-user-timeline-mongodb-1", "socialnetwork-post-storage-memcached-1", 
-                "socialnetwork-post-storage-mongodb-1"]
+    merged_ = ["socialnetwork-user-timeline-redis-1", "socialnetwork-user-timeline-mongodb-1", 
+                "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
 elif workload == "htl":
     core_part = [11, 1, 8]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000"
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 20000"
     key_words = ["socialnetwork-home-timeline-service-1", "socialnetwork-post-storage-service-1"]
     merged_ = ["socialnetwork-home-timeline-redis-1", "socialnetwork-post-storage-memcached-1", 
                 "socialnetwork-post-storage-mongodb-1"]
@@ -134,6 +133,6 @@ for part1 in range(core_llc[1]):
         print(part1, part2)
         llc_part = [part1, part2]
         setPart(core_part, llc_part)
-        run_cmd(llc_part)
-        if (part1+part2)%2 == 1:
-            refresh()
+        for i in range(3):
+            run_cmd(llc_part)
+        refresh()

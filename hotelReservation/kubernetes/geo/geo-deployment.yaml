@@ -33,10 +33,10 @@ spec:
           name: hotel-reserv-geo
           ports:
             - containerPort: 8083
-          # resources:
+          resources:
             # requests:
             #   cpu: 100m
-            # limits:
-            #   cpu: 1000m
+            limits:
+              cpu: 1000m
       restartPolicy: Always
 status: {}

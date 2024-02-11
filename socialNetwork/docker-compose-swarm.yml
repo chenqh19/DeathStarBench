@@ -497,7 +497,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -512,7 +512,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -524,7 +524,7 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra
 
@@ -534,7 +534,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
 
 networks:
   default:
