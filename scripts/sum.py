@@ -2,15 +2,15 @@ import csv
 import os
 
 def process_csv_and_txt(csv_filename, txt_filename, target_value):
-    # # read csv
-    # matching_values = []
-    # with open(csv_filename, 'r', newline='', encoding='utf-8') as csv_file:
-    #     csv_reader = csv.reader(csv_file)
-    #     for row in csv_reader:
-    #         if len(row) > 1 and row[1].strip() == target_value:
-    #             matching_values.append(row[0].strip().lower())
+    # read csv
+    matching_values = []
+    with open(csv_filename, 'r', newline='', encoding='utf-8') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        for row in csv_reader:
+            if len(row) > 1 and row[1].strip() == target_value:
+                matching_values.append(row[0].strip().lower())
 
-    matching_values = ["mallocgc", "heapbitssettype", "nextfreefast", "memclrnoheappointers", "newobject", "allocspan", "nextfree", "refill"]
+    # matching_values = ["mallocgc", "heapbitssettype", "nextfreefast", "memclrnoheappointers", "newobject", "allocspan", "nextfree", "refill"]
 
 
     # read txt & sum up
@@ -27,6 +27,7 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
                         percentage = float(line.split()[0].strip('%'))
                         each_percentage[value] = percentage
                         total_percentage += percentage
+                        break
                         # print(value)
                     except ValueError:
                         print(f"Warning: Unable to extract percentage from line: {line}")

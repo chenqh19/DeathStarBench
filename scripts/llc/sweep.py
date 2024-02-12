@@ -3,7 +3,7 @@ import multiprocessing
 
 core_llc = [20, 20] # number of cores & LLC ways, respectively
 max_part = 16 # max number of LLC partitions
-do_part = False # whether to do partition
+do_part = True # whether to do partition
 workload = "htl"
 output_file = "llc_sweep-"+workload+".txt"
 
@@ -15,10 +15,41 @@ if workload == "utl":
                 "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
 elif workload == "htl":
     core_part = [11, 1, 8]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 20000"
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000"
     key_words = ["socialnetwork-home-timeline-service-1", "socialnetwork-post-storage-service-1"]
     merged_ = ["socialnetwork-home-timeline-redis-1", "socialnetwork-post-storage-memcached-1", 
                 "socialnetwork-post-storage-mongodb-1"]
+
+import paramiko
+
+def execute_remote_command(hostname, username, private_key_path, command):
+    ssh_client = paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    try:
+        private_key = paramiko.RSAKey.from_private_key_file(private_key_path)
+        ssh_client.connect(hostname=hostname, username=username, pkey=private_key)
+
+        # execution
+        stdin, stdout, stderr = ssh_client.exec_command(command)
+
+        # print output
+        print("Command output:")
+        for line in stdout:
+            print(line.strip())
+        
+        if stderr.channel.recv_exit_status() != 0:
+            print("Error:", stderr.read().decode())
+    except Exception as e:
+        print("An error occurred:", e)
+    finally:
+        ssh_client.close()
+
+remote_hostname = "hp161.utah.cloudlab.us"
+remote_username = "chenqh23"
+private_key_path = "/users/chenqh23/.ssh/id_rsa"
+
+command_to_execute = "echo \"hello\""
+
 
 def setPart(core_part, llc_part):
     processes = []
@@ -103,36 +134,14 @@ def setPart(core_part, llc_part):
         merged_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(merged_proc)
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-def run_command(command, output_file, part):
-    with open(output_file, "a") as f:
-        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        for line in process.stdout:
-            decoded_line = line.decode().strip()
-            if "0.990625" in decoded_line:
-                f.write(str(part) + " " + decoded_line + "\n")
-        process.stdout.close()
-        process.stderr.close()
-
-def run_cmd(part):
-    process1 = multiprocessing.Process(target=run_command, args=(gen_work_cmd,output_file,part))
-    # process2 = multiprocessing.Process(target=run_command, args=(command2,))
-
-    process1.start()
-    # process2.start()
-
-    process1.join()
-    # process2.join()
-
-def refresh():
-    refresh_cmd = "sudo docker restart test_jaeger-collector.1.tkm7kphp3u4tcf4zoc47w4d0z"
-    subprocess.run(refresh_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
 # start sweeping
 for part1 in range(core_llc[1]):
     for part2 in range(core_llc[1]-part1):
         print(part1, part2)
-        llc_part = [part1, part2]
+        llc_part = [part1, part2, core_llc[1]-part1-part2]
         setPart(core_part, llc_part)
-        for i in range(3):
-            run_cmd(llc_part)
-        refresh()
+        with open(output_file, "a") as f:
+            f.write(str(llc_part) + "\n")
+        remote_gen_work_cmd = "python DeathStarBench/scripts/llc/gen_work.py \"" + gen_work_cmd + "\" " + output_file
+        print(remote_gen_work_cmd)
+        execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)

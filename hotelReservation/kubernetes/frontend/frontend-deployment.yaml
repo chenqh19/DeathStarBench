@@ -25,7 +25,7 @@ spec:
       labels:
         io.kompose.service: frontend
     spec:
-      nodeName: node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+      nodeName: node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
       containers:
         - command:
             - frontend
