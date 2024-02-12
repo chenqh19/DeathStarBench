@@ -15,7 +15,7 @@ if workload == "utl":
                 "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
 elif workload == "htl":
     core_part = [11, 1, 8]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000"
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2500"
     key_words = ["socialnetwork-home-timeline-service-1", "socialnetwork-post-storage-service-1"]
     merged_ = ["socialnetwork-home-timeline-redis-1", "socialnetwork-post-storage-memcached-1", 
                 "socialnetwork-post-storage-mongodb-1"]
@@ -32,10 +32,10 @@ def execute_remote_command(hostname, username, private_key_path, command):
         # execution
         stdin, stdout, stderr = ssh_client.exec_command(command)
 
-        # print output
-        print("Command output:")
-        for line in stdout:
-            print(line.strip())
+        # # print output
+        # print("Command output:")
+        # for line in stdout:
+        #     print(line.strip())
         
         if stderr.channel.recv_exit_status() != 0:
             print("Error:", stderr.read().decode())
