@@ -13,7 +13,7 @@ def run_command(command, output_file):
         process.stdout.close()
         process.stderr.close()
 
-def run_cmd():
+def run_cmd(gen_work_cmd, output_file):
     process1 = multiprocessing.Process(target=run_command, args=(gen_work_cmd,output_file))
     # process2 = multiprocessing.Process(target=run_command, args=(command2,))
 
@@ -33,5 +33,5 @@ if __name__ == "__main__":
     parser.add_argument("output_file", help="Remote server username")
     args = parser.parse_args()
     for i in range(3):
-        run_cmd()
+        run_cmd(args.gen_work_cmd, args.output_file)
     refresh()
