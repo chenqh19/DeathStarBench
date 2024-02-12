@@ -44,7 +44,7 @@ def execute_remote_command(hostname, username, private_key_path, command):
     finally:
         ssh_client.close()
 
-remote_hostname = "hp161.utah.cloudlab.us"
+remote_hostname = "hp197.utah.cloudlab.us"
 remote_username = "chenqh23"
 private_key_path = "/users/chenqh23/.ssh/id_rsa"
 
@@ -140,8 +140,6 @@ for part1 in range(core_llc[1]):
         print(part1, part2)
         llc_part = [part1, part2, core_llc[1]-part1-part2]
         setPart(core_part, llc_part)
-        with open(output_file, "a") as f:
-            f.write(str(llc_part) + "\n")
         remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file
         print(remote_gen_work_cmd)
         execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)
