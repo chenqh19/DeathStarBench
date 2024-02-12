@@ -32,7 +32,7 @@ if __name__ == "__main__":
     parser.add_argument("gen_work_cmd", help="Remote server hostname")
     parser.add_argument("output_file", help="Remote server username")
     args = parser.parse_args()
-    with open(output_file, "a") as f:
+    with open(args.output_file, "a") as f:
         f.write("------new_config------\n")
     for i in range(3):
         run_cmd(args.gen_work_cmd, args.output_file)
