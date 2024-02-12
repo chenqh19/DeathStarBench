@@ -103,20 +103,21 @@ def setPart(core_part, llc_part):
     llc_hex = to_hex(llc_part)
 
     core_str = "\""
-    llc_str = ""
+    llc_str = "\""
     cdp_str = ""
     set_core_cmds = []
 
     cnt_core = 0
     for i in range(len(llc_hex)):
         core_str = core_str + "llc:" + str(i) + "=" + str(cnt_core) + "-" + str(cnt_core+core_part[i]-1) + ";"
-        llc_str = llc_str + "\"llc:" + str(i) + "=" + str(llc_hex[i]) + ";\""
+        llc_str = llc_str + "llc:" + str(i) + "=" + str(llc_hex[i]) + ";"
         if i < len(processes):
             set_core_cmds.append("sudo taskset -cp " + str(cnt_core) + "-" + str(cnt_core+core_part[i]-1) + " " + processes[i])
         cnt_core += core_part[i]
     for i in range(len(llc_hex), max_part):
-        llc_str = llc_str + "\"llc:" + str(i) + "=" + str(hex(2**core_llc[1]-1)) + ";\""
+        llc_str = llc_str + "llc:" + str(i) + "=" + str(hex(2**core_llc[1]-1)) + ";"
     core_str = core_str + "\""
+    llc_str = llc_str + "\""
 
     core_cmd = "sudo pqos -a " + core_str
     llc_cmd = "sudo pqos -e " + llc_str
@@ -126,6 +127,7 @@ def setPart(core_part, llc_part):
     if do_part:
         subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        print(partition_cmd)
 
     for cmd in set_core_cmds:
         subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -135,8 +137,8 @@ def setPart(core_part, llc_part):
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
-for part1 in range(core_llc[1]):
-    for part2 in range(core_llc[1]-part1):
+for part1 in range(1, core_llc[1]):
+    for part2 in range(1, core_llc[1]-part1-1):
         print(part1, part2)
         llc_part = [part1, part2, core_llc[1]-part1-part2]
         setPart(core_part, llc_part)
