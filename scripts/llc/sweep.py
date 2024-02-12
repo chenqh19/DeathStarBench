@@ -142,6 +142,6 @@ for part1 in range(core_llc[1]):
         setPart(core_part, llc_part)
         with open(output_file, "a") as f:
             f.write(str(llc_part) + "\n")
-        remote_gen_work_cmd = "python DeathStarBench/scripts/llc/gen_work.py \"" + gen_work_cmd + "\" " + output_file
+        remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file
         print(remote_gen_work_cmd)
         execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)
