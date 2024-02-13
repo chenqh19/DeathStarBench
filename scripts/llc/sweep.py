@@ -10,15 +10,15 @@ output_file = "llc_sweep-"+workload+".txt"
 if workload == "utl":
     core_part = [5, 10, 5]
     gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 2000"
-    key_words = ["socialnetwork-user-timeline-service-1", "socialnetwork-post-storage-service-1"]
-    merged_ = ["socialnetwork-user-timeline-redis-1", "socialnetwork-user-timeline-mongodb-1", 
-                "socialnetwork-post-storage-memcached-1", "socialnetwork-post-storage-mongodb-1"]
+    key_words = ["user-timeline-service", "spost-storage-service"]
+    merged_ = ["user-timeline-redis", "user-timeline-mongodb", 
+                "post-storage-memcached", "post-storage-mongodb"]
 elif workload == "htl":
     core_part = [11, 1, 8]
     gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2500"
-    key_words = ["socialnetwork-home-timeline-service-1", "socialnetwork-post-storage-service-1"]
-    merged_ = ["socialnetwork-home-timeline-redis-1", "socialnetwork-post-storage-memcached-1", 
-                "socialnetwork-post-storage-mongodb-1"]
+    key_words = ["home-timeline-service", "post-storage-service"]
+    merged_ = ["home-timeline-redis", "post-storage-memcached", 
+                "post-storage-mongodb"]
 
 import paramiko
 
@@ -55,17 +55,20 @@ def setPart(core_part, llc_part):
     processes = []
     merged_procs = []
     # add nginx processes
-    get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-nginx-thrift-1"
+    get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep nginx)"
     process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     processes.append(process.stdout)
+    print(process.stdout)
     for k in range(len(key_words)):
-        get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} socialnetwork-" + str(key_words[k]) + "-service-1"
+        get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep " + str(key_words[k]) + ")"
         process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         processes.append(process.stdout)
+        print(process.stdout)
     for k in range(len(merged_)):
-        get_merged_proc_cmd = "sudo docker inspect -f {{.State.Pid}} " + str(merged_[k])
+        get_merged_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep " + str(merged_[k]) + ")"
         merged_proc = subprocess.run(get_merged_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         merged_procs.append(merged_proc.stdout)
+        print(merged_proc.stdout)
 
     # unset
     for process in processes+merged_procs:
