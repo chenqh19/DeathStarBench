@@ -159,7 +159,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: nginx-web-server
     image: yg397/openresty-thrift:xenial
     ports:
@@ -424,7 +424,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UserService"]
     hostname: user-service
     image: qihang-sn
