@@ -58,23 +58,18 @@ def setPart(core_part, llc_part):
     get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep nginx)"
     process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     processes.append(process.stdout)
-    print(process.stdout)
     for k in range(len(key_words)):
         get_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep " + str(key_words[k]) + ")"
         process = subprocess.run(get_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         processes.append(process.stdout)
-        print(process.stdout)
     for k in range(len(merged_)):
         get_merged_proc_cmd = "sudo docker inspect -f {{.State.Pid}} $(sudo docker ps --format \"{{.Names}}\" | grep " + str(merged_[k]) + ")"
         merged_proc = subprocess.run(get_merged_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         merged_procs.append(merged_proc.stdout)
-        print(merged_proc.stdout)
     sub_nginx_cmd = "sudo docker top $(sudo docker ps --format \"{{.Names}}\" | grep nginx)  | awk \'NR>1 {print $2}\'"
     process = subprocess.run(sub_nginx_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     pids = process.stdout
-    print(pids)
     pid_lines = pids.strip().split("\n")
-    print(pid_lines)
     for pid in pid_lines:
         merged_procs.append(pid+'\n')
 
