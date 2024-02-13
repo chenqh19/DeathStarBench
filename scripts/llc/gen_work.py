@@ -34,6 +34,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     with open(args.output_file, "a") as f:
         f.write("------new_config------\n")
-    for i in range(3):
+    for i in range(5):
         run_cmd(args.gen_work_cmd, args.output_file)
     refresh()

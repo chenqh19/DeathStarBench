@@ -3,19 +3,19 @@ import multiprocessing
 
 core_llc = [20, 20] # number of cores & LLC ways, respectively
 max_part = 16 # max number of LLC partitions
-do_part = True # whether to do partition
+do_part = False # whether to do partition
 workload = "htl"
 output_file = "llc_sweep-"+workload+".txt"
 
 if workload == "utl":
     core_part = [5, 10, 5]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 5 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 2000"
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 2000"
     key_words = ["user-timeline-service", "spost-storage-service"]
     merged_ = ["user-timeline-redis", "user-timeline-mongodb", 
                 "post-storage-memcached", "post-storage-mongodb"]
 elif workload == "htl":
-    core_part = [11, 1, 8]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2500"
+    core_part = [14, 1, 5]
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2500"
     key_words = ["home-timeline-service", "post-storage-service"]
     merged_ = ["home-timeline-redis", "post-storage-memcached", 
                 "post-storage-mongodb"]
@@ -69,6 +69,14 @@ def setPart(core_part, llc_part):
         merged_proc = subprocess.run(get_merged_proc_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         merged_procs.append(merged_proc.stdout)
         print(merged_proc.stdout)
+    sub_nginx_cmd = "sudo docker top $(sudo docker ps --format \"{{.Names}}\" | grep nginx)  | awk \'NR>1 {print $2}\'"
+    process = subprocess.run(sub_nginx_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    pids = process.stdout
+    print(pids)
+    pid_lines = pids.strip().split("\n")
+    print(pid_lines)
+    for pid in pid_lines:
+        merged_procs.append(pid+'\n')
 
     # unset
     for process in processes+merged_procs:
@@ -133,10 +141,12 @@ def setPart(core_part, llc_part):
         print(partition_cmd)
 
     for cmd in set_core_cmds:
+        print(cmd)
         subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     for merged_proc in merged_procs:
         merged_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(merged_proc)
+        print(merged_cmd)
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
