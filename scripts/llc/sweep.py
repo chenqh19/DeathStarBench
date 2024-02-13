@@ -133,15 +133,12 @@ def setPart(core_part, llc_part):
     if do_part:
         subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        print(partition_cmd)
 
     for cmd in set_core_cmds:
-        print(cmd)
         subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     for merged_proc in merged_procs:
         merged_cmd = "sudo taskset -cp 0-"+str(core_part[0]-1) + " " + str(merged_proc)
-        print(merged_cmd)
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
