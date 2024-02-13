@@ -143,7 +143,7 @@ def setPart(core_part, llc_part, do_part):
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
-setPart(core_part, [7. 7, 6], False)
+setPart(core_part, [7, 7, 6], False)
 remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file
 print(remote_gen_work_cmd)
 execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)
