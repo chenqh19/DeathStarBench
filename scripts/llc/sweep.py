@@ -3,7 +3,6 @@ import multiprocessing
 
 core_llc = [20, 20] # number of cores & LLC ways, respectively
 max_part = 16 # max number of LLC partitions
-do_part = False # whether to do partition
 workload = "htl"
 output_file = "llc_sweep-"+workload+".txt"
 
@@ -51,7 +50,7 @@ private_key_path = "/users/chenqh23/.ssh/id_rsa"
 command_to_execute = "echo \"hello\""
 
 
-def setPart(core_part, llc_part):
+def setPart(core_part, llc_part, do_part):
     processes = []
     merged_procs = []
     # add nginx processes
@@ -144,11 +143,15 @@ def setPart(core_part, llc_part):
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
+setPart(core_part, [7. 7, 6], False)
+remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file
+print(remote_gen_work_cmd)
+execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)
 for part1 in range(1, core_llc[1]):
     for part2 in range(1, core_llc[1]-part1-1):
         print(part1, part2)
         llc_part = [part1, part2, core_llc[1]-part1-part2]
-        setPart(core_part, llc_part)
+        setPart(core_part, llc_part, True)
         remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file
         print(remote_gen_work_cmd)
         execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)
