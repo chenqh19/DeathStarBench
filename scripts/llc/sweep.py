@@ -15,7 +15,7 @@ if workload == "utl":
                 "post-storage-memcached", "post-storage-mongodb"]
 elif workload == "htl":
     core_part = [14, 1, 5]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2500"
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2000"
     key_words = ["home-timeline-service", "post-storage-service"]
     merged_ = ["home-timeline-redis", "post-storage-memcached", 
                 "post-storage-mongodb"]
