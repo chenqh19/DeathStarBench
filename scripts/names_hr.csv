@@ -1,11 +1,10 @@
 name,belongs to
-__fget_light,
-__memset_avx2_erms,
-aeshashbody,
+__fget_light,network
+aeshashbody,network
 do_syscall_64,syscall
 encoding/,network
 entry_SYSCALL_64,syscall
-ep_send_events_proc,io
+ep_send_events_proc,network
 github.com/docker/docker/daemon/logger.(*Copier).copySrc,
 github.com/docker/docker/daemon/logger/jsonfilelog/jsonlog.ffjsonWriteJSONBytesAsString,
 github.com/hailocab/go-geoindex.(*PointsIndex).KNearest,
@@ -25,19 +24,18 @@ runtime.memmove,
 runtime.newobject,malloc
 runtime.pcvalue,
 runtime.scanobject,GC
-runtime.stealWork,network?
+runtime.stealWork,proc
 runtime.step,
 syscall_return_via_sysret,syscall
 time.nextStdChunk,
 time.Time.AppendFormat,
-try_to_wake_up,
-update_cfs_group,
+try_to_wake_up,kernel scheduler
+update_cfs_group,kernel scheduler
 < 0.10%,
 __vdso_clock_gettime,
 spin_lock,kernel lock
 ep_poll_callback,io
 ext4_do_update_inode,
-lj_str_new,
 mutex_lock,lock
 path/filepath.Clean,
 pipe_poll,
@@ -51,7 +49,6 @@ update_curr,
 < 0.08%,
 __nf_conntrack_find_get,network
 __update_load_avg,kernel scheduler
-aeProcessEvents,
 available_idle_cpu,kernel scheduler
 bytes.(*Buffer).WriteByte,
 bytes.(*Buffer).WriteString,
@@ -61,9 +58,7 @@ enqueue_entity,kernel scheduler
 enqueue_task_fair,kernel scheduler
 fmt.(*pp).doPrintf,
 github.com/docker/docker/pkg/ioutils.(*BytesPipe).Write,
-http_parser_execute,
 ipt_do_table,network
-lj_BC_TGETS,
 reweight_entity,
 runtime.adjustframe,malloc
 runtime.adjustpointers,malloc
@@ -80,13 +75,13 @@ sync.(*Pool).Get,
 time.appendInt,
 time.parse,
 < 0.05%,
-__calc_delta,
-__find_get_block,
-__wake_up_common,
-_raw_read_lock_irqsave,
+__calc_delta,kernel scheduler
+__find_get_block,kernel read
+__wake_up_common,kernel scheduler
+_raw_read_lock_irqsave,kernel lock
 common_file_perm,
 copy_user_enhanced_fast_string,
-dequeue_entity,
+dequeue_entity,kernel scheduler
 entry_SYSCALL_64_after_hwframe,
 fput_many,
 github.com/docker/docker/daemon/logger/jsonfilelog.(*JSONFileLogger).Log,
@@ -96,11 +91,11 @@ github.com/docker/docker/pkg/ioutils.(*BytesPipe).Read,
 github.com/rs/zerolog/internal/json.appendStringComplex,
 github.com/rs/zerolog/internal/json.Encoder.AppendString,
 golang.org/x/net/http2/hpack.AppendHuffmanString,
-google.golang.org/grpc/transport.(*http2Client).itemHandler,
-google.golang.org/grpc/transport.(*http2Client).NewStream,
-internal/poll.(*FD).Read,
+google.golang.org/grpc/transport.(*http2Client).itemHandler,network
+google.golang.org/grpc/transport.(*http2Client).NewStream,network
+internal/poll.(*FD).Read,network
 io.copyBuffer,
-ip_finish_output,
+ip_finish_output,network
 kmem_cache,
 memeqbody,
 mutex_unlock,lib lock
@@ -126,14 +121,14 @@ memset_erms,
 visit_groups_merge,
 native_write_msr,
 runtime.schedule,runtime schedule
-__netif_receive_skb_core,
-br_nf_pre_routing,
+__netif_receive_skb_core,network
+br_nf_pre_routing,network
 tcp,network
 task_sched,kernel schedule
 __schedule,kernel schedule
-br_handle_frame,
+br_handle_frame,network
 read_tsc,
-update_load_avg,
+update_load_avg,kernel scheduler
 fmt,gloang formatted io
 io.readatleast,
 runtime.retake,
