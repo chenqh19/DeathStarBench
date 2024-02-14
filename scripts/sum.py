@@ -34,13 +34,13 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
 
     # print sum
     print(f"File: {txt_filename}, Total Percentage: {format(total_percentage, '.2f')}%")
-    print("Each percentage:", each_percentage)
+    # print("Each percentage:", each_percentage)
 
 # parameters
 directory_path = './perf_files'
-txt_filenames = 'origspan-GC1k'
+txt_filenames = '2allremote'
 csv_filename = 'names_hr.csv'
-target_value = 'malloc'
+target_value = 'network'
 
 def process_hr_files_in_directory(directory_path, target_files, csv_filename, target_value):
     # 获取目录下所有文件名含有"<txt_filenames>-"的txt文件

@@ -1,0 +1,468 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles'
+# Event count (approx.): 1456439977
+#
+# Overhead  Command          Shared Object       Symbol                                                                                                                                                                                                                                                                                                                                                            
+# ........  ...............  ..................  ..................................................................................................................................................................................................................................................................................................................................................................
+#
+     2.42%  conn44           libc-2.27.so        [.] __nss_group_lookup
+     2.29%  conn56           mongod              [.] __wt_struct_unpackv
+     2.28%  conn56           mongod              [.] __wt_btcur_next
+     2.25%  conn44           mongod              [.] __wt_btcur_next
+     1.89%  conn56           libc-2.27.so        [.] __nss_group_lookup
+     1.78%  ftdc             mongod              [.] longest_match
+     1.76%  conn56           mongod              [.] mongo::WorkingSetMember::resetDocument
+     1.75%  conn44           mongod              [.] mongo::WorkingSetMember::resetDocument
+     1.60%  conn56           mongod              [.] __wt_cursor_get_keyv
+     1.56%  conn56           mongod              [.] __wt_cursor_get_valuev
+     1.54%  conn44           mongod              [.] mongo::BSONElement::compareElements
+     1.51%  conn44           mongod              [.] __wt_struct_unpackv
+     1.48%  conn56           mongod              [.] __curfile_next
+     1.36%  conn56           mongod              [.] mongo::PathMatchExpression::matches
+     1.35%  conn44           mongod              [.] mongo::BSONElementIterator::more
+     1.34%  conn56           mongod              [.] mongo::DocumentStorage::reset
+     1.29%  conn56           mongod              [.] mongo::BSONElementIterator::more
+     1.26%  conn56           mongod              [.] mongo::WiredTigerRecordStoreCursorBase::next
+     1.23%  conn56           mongod              [.] mongo::BSONObj::getField
+     1.23%  conn56           mongod              [.] __wt_txn_read
+     1.19%  conn44           mongod              [.] __wt_cursor_get_valuev
+     1.17%  conn44           mongod              [.] __curfile_next
+     1.17%  conn56           mongod              [.] mongo::CollectionScan::doWork
+     1.15%  conn44           mongod              [.] __wt_cursor_get_keyv
+     1.15%  conn44           mongod              [.] __txn_logrec_init
+     1.15%  conn56           mongod              [.] mongo::WorkingSet::allocate
+     1.03%  conn56           mongod              [.] mongo::WorkingSetMatchableDocument::allocateIterator
+     0.88%  conn44           mongod              [.] mongo::DocumentStorage::reset
+     0.88%  conn56           mongod              [.] __wt_value_return_buf
+     0.88%  ftdc             libc-2.27.so        [.] __nss_group_lookup
+     0.87%  conn44           mongod              [.] mongo::BSONObjIterator::next
+     0.86%  conn56           mongod              [.] mongo::BSONElement::numberDouble
+     0.85%  conn56           mongod              [.] mongo::ComparisonMatchExpression::matchesSingleElement
+     0.82%  conn44           mongod              [.] mongo::WiredTigerRecordStoreCursorBase::next
+     0.80%  conn44           mongod              [.] mongo::BSONObj::getField
+     0.78%  conn44           mongod              [.] __wt_txn_read
+     0.73%  conn56           mongod              [.] operator delete
+     0.72%  conn56           mongod              [.] __wt_cursor_get_key
+     0.71%  conn56           mongod              [.] mongo::WiredTigerRecordStoreStandardCursor::hasWrongPrefix
+     0.71%  conn56           mongod              [.] mongo::PlanStage::work
+     0.69%  conn56           mongod              [.] mongo::AndMatchExpression::matches
+     0.69%  conn44           mongod              [.] mongo::BSONElementIterator::subCursorHasMore
+     0.68%  ftdc             mongod              [.] mongo::FTDCCompressor::getCompressedSamples
+     0.67%  conn44           mongod              [.] mongo::(anonymous namespace)::compareElementStringValues
+     0.65%  conn44           mongod              [.] mongo::BSONElementIterator::BSONElementIterator
+     0.65%  conn44           mongod              [.] mongo::CollectionScan::doWork
+     0.64%  conn56           mongod              [.] mongo::canonicalizeBSONType
+     0.64%  conn44           mongod              [.] mongo::AndMatchExpression::matches
+     0.58%  conn44           [kernel.kallsyms]   [k] psi_task_change
+     0.56%  conn44           mongod              [.] mongo::ComparisonMatchExpression::matchesSingleElement
+     0.54%  conn56           mongod              [.] mongo::StringData::compare
+     0.53%  conn56           mongod              [.] mongo::ScopedTimer::~ScopedTimer
+     0.53%  conn44           mongod              [.] mongo::WorkingSetMember::clear
+     0.53%  conn56           mongod              [.] mongo::BSONElementIterator::~BSONElementIterator
+     0.53%  conn56           mongod              [.] mongo::BSONElement::computeSize
+     0.53%  conn44           mongod              [.] mongo::WiredTigerRecordStoreStandardCursor::hasWrongPrefix
+     0.53%  conn56           mongod              [.] mongo::getFieldDottedOrArray
+     0.52%  conn44           mongod              [.] operator delete
+     0.52%  conn44           mongod              [.] mongo::PlanYieldPolicy::shouldYieldOrInterrupt
+     0.52%  conn44           mongod              [.] __wt_cursor_get_key
+     0.52%  conn44           mongod              [.] mongo::CollectionScan::returnIfMatches
+     0.50%  JournalFlusher   [kernel.kallsyms]   [k] _cond_resched
+     0.45%  conn44           mongod              [.] mongo::StringData::compare
+     0.39%  conn56           mongod              [.] mongo::FailPoint::shouldFail<decltype(nullptr)>
+     0.38%  conn44           mongod              [.] mongo::WorkingSet::free
+     0.35%  conn44           mongod              [.] mongo::PathMatchExpression::matches
+     0.35%  conn56           mongod              [.] mongo::BSONElementIterator::BSONElementIterator
+     0.35%  conn56           mongod              [.] mongo::BSONElementIterator::next
+     0.35%  conn56           mongod              [.] mongo::WorkingSet::transitionToRecordIdAndObj
+     0.35%  conn44           mongod              [.] mongo::getFieldDottedOrArray
+     0.35%  conn56           mongod              [.] mongo::BSONElement::compareElements
+     0.35%  conn44           mongod              [.] mongo::WorkingSetMatchableDocument::allocateIterator
+     0.35%  conn44           mongod              [.] mongo::PlanStage::work
+     0.35%  conn56           mongod              [.] mongo::PlanYieldPolicy::shouldYieldOrInterrupt
+     0.35%  conn56           mongod              [.] mongo::BSONElementIterator::~BSONElementIterator
+     0.35%  conn44           mongod              [.] mongo::BackgroundThreadClockSource::now
+     0.35%  conn56           mongod              [.] mongo::BackgroundThreadClockSource::now
+     0.34%  conn44           mongod              [.] mongo::PlanExecutorImpl::_getNextImpl
+     0.34%  conn44           mongod              [.] __wt_value_return_buf
+     0.34%  conn56           mongod              [.] mongo::DocumentMetadataFields::operator=
+     0.33%  conn56           [kernel.kallsyms]   [k] __tcp_transmit_skb
+     0.33%  conn56           [kernel.kallsyms]   [k] aa_sk_perm
+     0.33%  conn56           mongod              [.] __wt_cursor_set_value
+     0.33%  conn56           mongod              [.] mongo::LatchAnalyzer::onAcquire
+     0.33%  conn56           mongod              [.] mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+     0.33%  conn56           mongod              [.] __wt_cursor_get_value
+     0.31%  conn44           mongod              [.] mongo::BSONElement::computeSize
+     0.31%  conn44           mongod              [.] mongo::ElapsedTracker::intervalHasElapsed
+     0.30%  JournalFlusher   [kernel.kallsyms]   [k] bio_alloc_bioset
+     0.30%  JournalFlusher   [kernel.kallsyms]   [k] visit_groups_merge
+     0.29%  WTCheck.tThread  [kernel.kallsyms]   [k] __fget_light
+     0.28%  conn56           mongod              [.] __wt_row_search
+     0.28%  ftdc             mongod              [.] mongo::FTDCBSONUtil::(anonymous namespace)::extractMetricsFromDocument
+     0.28%  conn44           mongod              [.] mongo::WorkingSet::allocate
+     0.26%  mongod           [kernel.kallsyms]   [k] migrate_task_rq_fair
+     0.25%  ftdc             [kernel.kallsyms]   [k] vsnprintf
+     0.25%  conn56           mongod              [.] mongo::BSONObjIterator::BSONObjIterator
+     0.24%  ftdc             mongod              [.] mongo::BSONElement::computeSize
+     0.24%  conn56           [kernel.kallsyms]   [k] get_l4proto
+     0.24%  conn44           mongod              [.] operator delete
+     0.23%  WTCheck.tThread  mongod              [.] snappy::internal::CompressFragment
+     0.22%  WTCheck.tThread  libc-2.27.so        [.] __nss_group_lookup
+     0.21%  conn56           mongod              [.] mongo::CollectionScan::returnIfMatches
+     0.20%  conn56           [kernel.kallsyms]   [k] veth_xmit
+     0.20%  JournalFlusher   [kernel.kallsyms]   [k] account_page_dirtied
+     0.20%  ftdc             libc-2.27.so        [.] _IO_default_xsputn
+     0.20%  conn44           mongod              [.] mongo::LockerImpl::getLockMode
+     0.19%  conn56           mongod              [.] operator new
+     0.19%  WTCheck.tThread  mongod              [.] __wt_rec_upd_select
+     0.18%  conn56           mongod              [.] mongo::LockerImpl::unlock
+     0.18%  conn44           mongod              [.] __wt_txn_read_upd_list_internal
+     0.18%  conn44           mongod              [.] mongo::FailPoint::shouldFail<decltype(nullptr)>
+     0.18%  conn56           mongod              [.] __wt_logop_row_put_pack
+     0.18%  conn56           [kernel.kallsyms]   [k] __netif_receive_skb_core
+     0.18%  conn44           mongod              [.] mongo::WiredTigerRecoveryUnit::getSession
+     0.18%  conn44           mongod              [.] mongo::ScopedTimer::ScopedTimer
+     0.18%  conn44           mongod              [.] mongo::OperationSessionInfoFromClient::parse
+     0.18%  conn56           mongod              [.] __txn_get_snapshot_int
+     0.18%  conn44           mongod              [.] mongo::Document::toBson
+     0.18%  conn44           mongod              [.] mongo::WorkingSetMember::hasObj
+     0.18%  conn56           mongod              [.] __config_next
+     0.18%  conn44           mongod              [.] mongo::BSONElementIterator::~BSONElementIterator
+     0.18%  conn56           mongod              [.] mongo::isModeCovered
+     0.18%  conn44           mongod              [.] mongo::canonicalizeBSONType
+     0.18%  conn56           mongod              [.] mongo::DbMessage::DbMessage
+     0.18%  conn56           mongod              [.] mongo::FieldRef::getPart
+     0.18%  ftdc             mongod              [.] std::vector<unsigned long, std::allocator<unsigned long> >::emplace_back<long long>
+     0.18%  conn44           mongod              [.] __config_getraw.constprop.1
+     0.18%  conn56           mongod              [.] mongo::BSONElementIterator::subCursorHasMore
+     0.17%  conn56           mongod              [.] mongo::WorkingSetMember::clear
+     0.17%  conn56           mongod              [.] mongo::Document::toBson
+     0.17%  conn56           [kernel.kallsyms]   [k] rw_copy_check_uvector
+     0.17%  conn56           mongod              [.] mongo::WorkingSetMember::hasObj
+     0.17%  conn44           mongod              [.] mongo::latch_detail::Mutex::_onQuickLock
+     0.17%  conn56           mongod              [.] absl::container_internal::raw_hash_set<absl::container_internal::NodeHashMapPolicy<mongo::NamespaceString, mongo::Collection*>, absl::hash_internal::Hash<mongo::NamespaceString>, std::equal_to<mongo::NamespaceString>, std::allocator<std::pair<mongo::NamespaceString const, mongo::Collection*> > >::find<mongo::NamespaceString>
+     0.17%  conn44           mongod              [.] mongo::DocumentMetadataFields::operator=
+     0.17%  ftdc             [kernel.kallsyms]   [k] find_next_bit
+     0.17%  conn56           [kernel.kallsyms]   [k] __nf_ct_refresh_acct
+     0.17%  conn56           [kernel.kallsyms]   [k] nf_hook_slow
+     0.17%  conn56           mongod              [.] __curfile_reopen
+     0.17%  conn56           mongod              [.] realloc
+     0.16%  conn56           [kernel.kallsyms]   [k] tcp_write_xmit
+     0.16%  conn56           mongod              [.] mongo::IndexCatalog::ReadyIndexesIterator::_advance
+     0.16%  conn56           mongod              [.] strlen@plt
+     0.16%  conn44           mongod              [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.15%  conn44           [kernel.kallsyms]   [k] copy_user_generic_unrolled
+     0.15%  conn44           [kernel.kallsyms]   [k] netdev_core_pick_tx
+     0.15%  conn44           mongod              [.] absl::container_internal::raw_hash_set<absl::container_internal::NodeHashSetPolicy<unsigned int>, absl::hash_internal::Hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int> >::prepare_insert
+     0.15%  conn44           mongod              [.] mongo::OperationShardingState::~OperationShardingState
+     0.15%  conn44           mongod              [.] mongo::ServiceEntryPointMongod::Hooks::waitForSpeculativeMajorityReadConcern
+     0.15%  ftdc             [kernel.kallsyms]   [k] ipt_do_table
+     0.15%  ftdc             libc-2.27.so        [.] __vsnprintf_chk
+     0.15%  ftdc             [kernel.kallsyms]   [k] seq_put_decimal_ull_width
+     0.14%  conn44           [kernel.kallsyms]   [k] veth_xmit
+     0.14%  conn44           mongod              [.] mongo::(anonymous namespace)::checkFailCollectionInsertsFailPoint
+     0.14%  conn44           [kernel.kallsyms]   [k] ipt_do_table
+     0.14%  ftdc             [kernel.kallsyms]   [k] format_decode
+     0.14%  conn56           mongod              [.] mongo::(anonymous namespace)::compareElementStringValues
+     0.14%  conn44           mongod              [.] mongo::(anonymous namespace)::CmdInsert::Invocation::~Invocation
+     0.14%  conn44           mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>
+     0.14%  ftdc             mongod              [.] __wt_hash_city64
+     0.13%  ftdc             mongod              [.] mongo::StringData::substr
+     0.13%  ftdc             libpthread-2.27.so  [.] pthread_mutex_trylock
+     0.13%  ftdc             mongod              [.] mongo::procparser::parseProcStat
+     0.13%  conn44           mongod              [.] mongo::LockManager::unlock
+     0.12%  ftdc             [kernel.kallsyms]   [k] get_acl
+     0.12%  conn44           mongod              [.] mongo::(anonymous namespace)::insertDocuments
+     0.12%  ftdc             mongod              [.] std::__find_if<char const*, __gnu_cxx::__ops::_Iter_pred<mongo::procparser::parseProcNetstat(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, mongo::BSONObjBuilder*)::{lambda(char)#2}> >
+     0.12%  JournalFlusher   [kernel.kallsyms]   [k] elv_rqhash_add
+     0.12%  JournalFlusher   mongod              [.] mongo::Client::getCurrent
+     0.12%  conn56           mongod              [.] mongo::PlanExecutorImpl::getOpCtx
+     0.12%  WTCheck.tThread  mongod              [.] __rec_row_leaf_insert
+     0.11%  conn44           mongod              [.] mongo::future_details::call<mongo::ServiceStateMachine::_sourceMessage(mongo::ServiceStateMachine::ThreadGuard)::{lambda(mongo::StatusWith<mongo::Message>)#2}&, mongo::StatusWith<mongo::Message> >
+     0.11%  conn44           mongod              [.] __wt_txn_modify
+     0.11%  conn44           mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace
+     0.11%  ftdc             mongod              [.] compress_block
+     0.11%  WTCheck.tThread  mongod              [.] __rec_cell_build_leaf_key
+     0.11%  ftdc             [kernel.kallsyms]   [k] ___d_drop
+     0.11%  ftdc             mongod              [.] __wt_stat_connection_desc
+     0.11%  ftdc             mongod              [.] __curstat_get_value
+     0.11%  ftdc             mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare
+     0.11%  conn44           mongod              [.] mongo::AuthorizationManagerImpl::logOp
+     0.11%  conn44           mongod              [.] __wt_struct_pack
+     0.11%  ftdc             mongod              [.] std::__find_if<char const*, __gnu_cxx::__ops::_Iter_pred<mongo::procparser::parseProcMemInfo(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, mongo::BSONObjBuilder*)::{lambda(char)#1}> >
+     0.10%  conn56           mongod              [.] mongo::userAllowedCreateNS
+     0.10%  ftdc             mongod              [.] boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<mongo::procparser::parseProcMemInfo(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, mongo::BSONObjBuilder*)::{lambda(char)#2}>, boost::iterator_range<char const*>, char const, char const>::invoke
+     0.10%  conn44           mongod              [.] mongo::ScopedTimer::~ScopedTimer
+     0.10%  conn44           [kernel.kallsyms]   [k] do_futex
+     0.10%  conn44           [kernel.kallsyms]   [k] enqueue_entity
+     0.10%  conn44           mongod              [.] __cursor_reset
+     0.10%  conn44           mongod              [.] __wt_cursor_set_valuev
+     0.10%  conn44           mongod              [.] mongo::OpObserver::ReservedTimes::ReservedTimes
+     0.10%  ftdc             [kernel.kallsyms]   [k] klist_next
+     0.10%  ftdc             mongod              [.] memcmp@plt
+     0.10%  conn56           mongod              [.] asio::detail::socket_ops::recv
+     0.10%  conn56           mongod              [.] mongo::WiredTigerRecordStore::cappedAndNeedDelete
+     0.10%  conn56           mongod              [.] std::_Rb_tree<mongo::KeyString::Value, mongo::KeyString::Value, std::_Identity<mongo::KeyString::Value>, std::less<mongo::KeyString::Value>, std::allocator<mongo::KeyString::Value> >::_M_erase
+     0.10%  ftdc             [kernel.kallsyms]   [k] rcu_segcblist_enqueue
+     0.10%  ftdc             [kernel.kallsyms]   [k] sum_vm_events
+     0.10%  conn44           [kernel.kallsyms]   [k] _raw_spin_lock
+     0.10%  conn44           [kernel.kallsyms]   [k] do_syscall_64
+     0.10%  conn44           [kernel.kallsyms]   [k] ip_finish_output
+     0.10%  conn44           mongod              [.] std::vector<mongo::BSONObj, std::allocator<mongo::BSONObj> >::~vector
+     0.10%  conn44           mongod              [.] mongo::logv2::LogManager::getGlobalSettings
+     0.10%  ftdc             [kernel.kallsyms]   [k] class_dev_iter_next
+     0.09%  ftdc             mongod              [.] mongo::WiredTigerKVEngine::appendGlobalStats
+     0.09%  conn56           [kernel.kallsyms]   [k] ep_poll_callback
+     0.09%  conn56           libpthread-2.27.so  [.] pthread_cond_destroy@@GLIBC_2.3.2
+     0.09%  conn56           mongod              [.] mongo::CommandHelpers::findCommand
+     0.09%  ftdc             mongod              [.] deflate_slow
+     0.09%  conn56           mongod              [.] __wt_readunlock
+     0.09%  conn44           [kernel.kallsyms]   [k] add_wait_queue
+     0.09%  conn56           [kernel.kallsyms]   [k] hash_conntrack_raw
+     0.09%  conn56           mongod              [.] __rec_destroy
+     0.09%  conn56           [kernel.kallsyms]   [k] bictcp_acked
+     0.09%  conn56           mongod              [.] __wt_log_write
+     0.09%  conn56           [kernel.kallsyms]   [k] enqueue_task_fair
+     0.08%  conn44           mongod              [.] mongo::KeyString::BuilderBase<mongo::StackBufBuilderBase<512ul> >::_appendEnd
+     0.08%  conn44           mongod              [.] mongo::WriteConcernOptions::extractWCFromCommand
+     0.08%  conn56           mongod              [.] mongo::DbMessage::nextJsObj
+     0.08%  conn44           mongod              [.] __wt_row_modify
+     0.08%  ftdc             [kernel.kallsyms]   [k] get_iowait_time.isra.0
+     0.08%  conn44           [kernel.kallsyms]   [k] sock_sendmsg
+     0.08%  conn44           mongod              [.] mongo::CurOp::~CurOp
+     0.07%  conn56           mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::MultikeyPathTracker>
+     0.07%  conn56           mongod              [.] mongo::IndexCatalogImpl::_indexKeys
+     0.07%  conn44           mongod              [.] __wt_btcur_search_near
+     0.07%  conn44           [kernel.kallsyms]   [k] _raw_spin_lock_irqsave
+     0.07%  conn44           mongod              [.] absl::container_internal::raw_hash_set<absl::container_internal::FlatHashMapPolicy<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int>, mongo::StringMapHasher, mongo::StringMapEq, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, int> > >::prepare_insert
+     0.07%  conn44           [kernel.kallsyms]   [k] ip_rcv
+     0.07%  conn44           mongod              [.] mongo::ServiceEntryPointMongod::Hooks::waitForReadConcern
+     0.07%  conn44           mongod              [.] __wt_page_in_func
+     0.07%  conn44           mongod              [.] mongo::mongoMalloc
+     0.07%  ftdc             [kernel.kallsyms]   [k] num_to_str
+     0.07%  conn44           mongod              [.] mongo::repl::MutableOplogEntry::setUuid
+     0.07%  conn44           [kernel.kallsyms]   [k] __netif_receive_skb_one_core
+     0.07%  conn44           mongod              [.] mongo::LockerImpl::_lockBegin
+     0.07%  conn44           [kernel.kallsyms]   [k] validate_xmit_xfrm
+     0.07%  conn44           mongod              [.] mongo::ServerWriteConcernMetrics::recordWriteConcernForInserts
+     0.07%  conn44           mongod              [.] mongo::logv2::LogComponentSettings::shouldLog
+     0.07%  conn44           mongod              [.] mongo::WiredTigerSession::closeAllCursors
+     0.07%  conn44           mongod              [.] std::_Rb_tree_insert_and_rebalance
+     0.07%  conn44           [kernel.kallsyms]   [k] __update_load_avg_se
+     0.06%  conn56           mongod              [.] mongo::logv2::LogComponentSettings::shouldLog
+     0.06%  conn56           mongod              [.] mongo::logv2::LogDomainGlobal::settings
+     0.06%  conn44           mongod              [.] mongo::WorkingSet::transitionToRecordIdAndObj
+     0.06%  conn44           [kernel.kallsyms]   [k] reweight_entity
+     0.06%  conn44           [kernel.kallsyms]   [k] __nf_conntrack_find_get
+     0.06%  conn44           mongod              [.] __errno_location@plt
+     0.06%  conn44           mongod              [.] malloc
+     0.06%  conn44           mongod              [.] mongo::(anonymous namespace)::insertBatchAndHandleErrors(mongo::OperationContext*, mongo::write_ops::Insert const&, std::vector<mongo::InsertStatement, std::allocator<mongo::InsertStatement> >&, mongo::(anonymous namespace)::LastOpFixer*, mongo::WriteResult*, bool)::{lambda()#4}::operator()
+     0.06%  conn44           mongod              [.] mongo::CommandHelpers::appendCommandWCStatus
+     0.06%  conn44           mongod              [.] mongo::OperationLatencyHistogram::_getBucket
+     0.06%  conn44           mongod              [.] mongo::ShardingState::enabled
+     0.06%  conn44           mongod              [.] strlen@plt
+     0.06%  conn44           [kernel.kallsyms]   [k] mlx5e_handle_rx_cqe
+     0.06%  conn56           [kernel.kallsyms]   [k] do_syscall_64
+     0.06%  conn44           mongod              [.] mongo::WiredTigerRecordStore::_changeNumRecords
+     0.06%  Backgro.kSource  [kernel.kallsyms]   [k] ctx_sched_in
+     0.06%  conn44           mongod              [.] absl::container_internal::raw_hash_set<absl::container_internal::NodeHashMapPolicy<unsigned int, mongo::Client*>, absl::hash_internal::Hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, mongo::Client*> > >::prepare_insert
+     0.06%  conn44           mongod              [.] mongo::(anonymous namespace)::runCommandImpl
+     0.06%  ftdc             mongod              [.] boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<mongo::procparser::parseProcStat(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, long, mongo::BSONObjBuilder*)::{lambda(char)#1}>, boost::iterator_range<char const*>, char const, char const>::invoke
+     0.06%  ftdc             [kernel.kallsyms]   [k] ksys_read
+     0.06%  conn56           [kernel.kallsyms]   [k] ipt_do_table
+     0.06%  conn44           mongod              [.] mongo::DbMessage::getns
+     0.06%  conn44           mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<std::unique_ptr<mongo::JsExecution, std::default_delete<mongo::JsExecution> > >
+     0.06%  conn44           mongod              [.] mongo::BSONObjBuilder::~BSONObjBuilder
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] _raw_spin_lock_irqsave
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] account_entity_dequeue
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] switch_fpu_return
+     0.06%  JournalFlusher   libc-2.27.so        [.] __nss_group_lookup
+     0.06%  JournalFlusher   libpthread-2.27.so  [.] pthread_cond_timedwait@@GLIBC_2.3.2
+     0.06%  conn44           mongod              [.] mongo::(anonymous namespace)::AuthzClientObserver::onCreateOperationContext
+     0.06%  conn44           mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::repl::OpTime>
+     0.06%  conn44           mongod              [.] mongo::ServiceEntryPointMongod::Hooks::attachCurOpErrInfo
+     0.06%  conn56           [kernel.kallsyms]   [k] tcp_rate_gen
+     0.06%  conn44           mongod              [.] __config_next
+     0.06%  conn44           mongod              [.] mongo::WiredTigerSession::getCachedCursor
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] blk_finish_plug
+     0.06%  JournalFlusher   [kernel.kallsyms]   [k] ext4_mark_iloc_dirty
+     0.06%  JournalFlusher   mongod              [.] __config_next
+     0.06%  JournalFlusher   mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<mongo::OpObserver::Times>
+     0.06%  conn44           [kernel.kallsyms]   [k] l4proto_manip_pkt
+     0.05%  conn44           [kernel.kallsyms]   [k] __tcp_transmit_skb
+     0.05%  conn44           [kernel.kallsyms]   [k] tcp_clean_rtx_queue
+     0.05%  ftdc             [kernel.kallsyms]   [k] inode_permission
+     0.05%  DeadlineMonitor  [kernel.kallsyms]   [k] do_syscall_64
+     0.05%  ftdc             mongod              [.] std::__find_if<__gnu_cxx::__normal_iterator<mongo::StringData const*, std::vector<mongo::StringData, std::allocator<mongo::StringData> > >, __gnu_cxx::__ops::_Iter_equals_val<mongo::StringData const> >
+     0.05%  JournalFlusher   [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.05%  ftdc             mongod              [.] std::_Rb_tree_increment
+     0.05%  Backgro.kSource  [kernel.kallsyms]   [k] psi_task_change
+     0.05%  conn44           mongod              [.] operator new
+     0.05%  conn44           mongod              [.] absl::container_internal::raw_hash_set<absl::container_internal::NodeHashMapPolicy<mongo::NamespaceString, mongo::Collection*>, absl::hash_internal::Hash<mongo::NamespaceString>, std::equal_to<mongo::NamespaceString>, std::allocator<std::pair<mongo::NamespaceString const, mongo::Collection*> > >::find<mongo::NamespaceString>
+     0.05%  JournalFlusher   mongod              [.] mongo::OperationContext::~OperationContext
+     0.05%  conn56           [kernel.kallsyms]   [k] schedule
+     0.05%  conn44           mongod              [.] mongo::CommandHelpers::extractOrAppendOk
+     0.05%  conn44           mongod              [.] mongo::transport::ServiceExecutorSynchronous::schedule
+     0.05%  ftdc             mongod              [.] mongo::NumberParser::operator()
+     0.05%  JournalFlusher   [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+     0.05%  conn44           [kernel.kallsyms]   [k] __ksize
+     0.05%  JournalFlusher   [kernel.kallsyms]   [k] ata_build_rw_tf
+     0.05%  JournalFlusher   mongod              [.] pwrite@plt
+     0.05%  conn44           mongod              [.] mongo::repl::ReplicationCoordinator::get
+     0.05%  conn44           mongod              [.] mongo::rpc::readRequestMetadata
+     0.05%  ftdc             mongod              [.] mongo::MetricTree::appendTo
+     0.04%  ftdc             libc-2.27.so        [.] _IO_sputbackc
+     0.04%  conn44           mongod              [.] mongo::LockManager::Partition::find
+     0.04%  conn44           mongod              [.] __wt_config_getones
+     0.04%  conn44           [kernel.kallsyms]   [k] flexible_sched_in
+     0.04%  conn44           mongod              [.] mongo::OperationContext::~OperationContext
+     0.04%  JournalFlusher   [kernel.kallsyms]   [k] __calc_delta
+     0.04%  mongod           libpthread-2.27.so  [.] __pthread_mutex_unlock_usercnt
+     0.04%  conn44           [kernel.kallsyms]   [k] ipv4_dst_check
+     0.04%  conn44           [kernel.kallsyms]   [k] apparmor_socket_recvmsg
+     0.04%  mongod           [kernel.kallsyms]   [k] futex_wait
+     0.04%  conn44           mongod              [.] absl::hash_internal::AbslHashValue<absl::hash_internal::CityHashState>
+     0.04%  JournalFlusher   mongod              [.] mongo::(anonymous namespace)::DiagnosticListener::onSlowLock
+     0.04%  conn44           mongod              [.] mongo::LatchAnalyzer::onRelease
+     0.04%  conn44           mongod              [.] __wt_value_return
+     0.04%  mongod           [kernel.kallsyms]   [k] visit_groups_merge
+     0.03%  conn44           mongod              [.] mongo::LockerImpl::unlock
+     0.03%  conn56           mongod              [.] mongo::CurOp::~CurOp
+     0.03%  ftdc             [kernel.kallsyms]   [k] do_syscall_64
+     0.03%  conn44           [kernel.kallsyms]   [k] tcp_v4_rcv
+     0.03%  conn44           [kernel.kallsyms]   [k] __fget_light
+     0.03%  conn44           mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<mongo::rpc::TrackingMetadata>
+     0.03%  conn44           [kernel.kallsyms]   [k] pick_next_task_fair
+     0.03%  JournalFlusher   mongod              [.] mongo::ReadWriteConcernProvenanceBase::ReadWriteConcernProvenanceBase
+     0.03%  conn44           mongod              [.] mongo::WiredTigerSessionCache::WiredTigerSessionDeleter::operator()
+     0.03%  JournalFlusher   [kernel.kallsyms]   [k] entry_SYSCALL_64
+     0.02%  conn44           [kernel.kallsyms]   [k] ip_send_check
+     0.02%  conn44           [kernel.kallsyms]   [k] nf_nat_ipv4_fn
+     0.02%  conn44           mongod              [.] __wt_scr_discard
+     0.02%  mongod           libc-2.27.so        [.] vfprintf
+     0.02%  ftdc             mongod              [.] mongo::FTDCCompressor::addSample
+     0.02%  ftdc             [kernel.kallsyms]   [k] diskstats_show
+     0.02%  conn44           [kernel.kallsyms]   [k] conntrack_mt
+     0.02%  conn44           mongod              [.] snappy::internal::CompressFragment
+     0.02%  conn44           [kernel.kallsyms]   [k] __dev_queue_xmit
+     0.02%  ftdc             [kernel.kallsyms]   [k] kmem_cache_alloc
+     0.02%  conn56           mongod              [.] __config_process_value
+     0.02%  conn44           mongod              [.] mongo::KeyString::decodeRecordIdAtEnd
+     0.02%  conn44           [kernel.kallsyms]   [k] update_blocked_averages
+     0.02%  conn56           mongod              [.] mongo::LockerImpl::getLockMode
+     0.02%  conn44           [kernel.kallsyms]   [k] simple_copy_to_iter
+     0.02%  conn44           mongod              [.] __session_begin_transaction
+     0.01%  conn56           mongod              [.] mongo::KeyPattern::isIdKeyPattern
+     0.01%  JournalFlusher   [kernel.kallsyms]   [k] blk_mq_dispatch_rq_list
+     0.01%  conn44           mongod              [.] __config_process_value
+     0.01%  ftdc             [kernel.kallsyms]   [k] icmpmsg_put
+     0.01%  ftdc             mongod              [.] mongo::intrusive_ptr_release
+     0.01%  conn56           mongod              [.] mongo::CollectionCatalog::getDatabaseProfileSettings
+     0.01%  conn56           libpthread-2.27.so  [.] pthread_mutex_trylock
+     0.01%  conn56           mongod              [.] mongo::getGlobalServiceContext
+     0.01%  conn44           mongod              [.] std::vector<std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> >, std::allocator<std::set<unsigned long, std::less<unsigned long>, std::allocator<unsigned long> > > >::_M_default_append
+     0.01%  ftdc             [kernel.kallsyms]   [k] memset_erms
+     0.01%  ftdc             mongod              [.] mongo::ServerStatusMetricField<mongo::Counter64>::appendAtLeaf
+     0.01%  JournalFlusher   mongod              [.] __wt_cond_signal
+     0.01%  conn56           [kernel.kallsyms]   [k] psi_task_change
+     0.01%  conn44           [kernel.kallsyms]   [k] nf_nat_manip_pkt
+     0.01%  mongod           [kernel.kallsyms]   [k] read_tsc
+     0.01%  conn44           mongod              [.] mongo::RecoveryUnit::RecoveryUnit
+     0.01%  conn44           mongod              [.] mongo::IDLParserErrorContext::parseNSCollectionRequired
+     0.01%  conn44           mongod              [.] __wt_btcur_reset
+     0.01%  conn44           mongod              [.] mongo::CommandHelpers::runCommandInvocation
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] deactivate_task
+     0.01%  conn56           [kernel.kallsyms]   [k] __fget_light
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] get_futex_value_locked
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] visit_groups_merge
+     0.01%  WTCheck.tThread  [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.01%  conn44           mongod              [.] mongo::CollectionImpl::checkValidation
+     0.01%  conn44           mongod              [.] mongo::transport::TransportLayerASIO::makeBaton
+     0.01%  conn44           [kernel.kallsyms]   [k] __run_timers.part.0
+     0.01%  conn56           mongod              [.] std::vector<mongo::OpMsg::DocumentSequence, std::allocator<mongo::OpMsg::DocumentSequence> >::_M_realloc_insert<mongo::OpMsg::DocumentSequence>
+     0.01%  ftdc             mongod              [.] mongo::procparser::parseProcNetstat
+     0.01%  ftdc             [kernel.kallsyms]   [k] snmp_fold_field
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] newidle_balance
+     0.01%  ftdc             [kernel.kallsyms]   [k] cpumask_next
+     0.01%  conn56           [kernel.kallsyms]   [k] swapgs_restore_regs_and_return_to_usermode
+     0.01%  Backgro.kSource  [kernel.kallsyms]   [k] ipt_do_table
+     0.01%  ftdc             [kernel.kallsyms]   [k] netdev_core_pick_tx
+     0.00%  ftdc             mongod              [.] mongo::repl::ReplExecutorSSM::appendAtLeaf
+     0.00%  ftdc             [kernel.kallsyms]   [k] ovl_inode_upper
+     0.00%  ftdc             [kernel.kallsyms]   [k] seq_vprintf
+     0.00%  conn56           [vdso]              [.] gettimeofday
+     0.00%  mongod           [kernel.kallsyms]   [k] __ext4fs_dirhash
+     0.00%  JournalFlusher   mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<mongo::rpc::ConfigServerMetadata>
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] perf_swevent_add
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] xas_load
+     0.00%  conn44           mongod              [.] mongo::(anonymous namespace)::receivedCommands(mongo::OperationContext*, mongo::Message const&, mongo::ServiceEntryPointCommon::Hooks const&)::{lambda()#1}::operator()
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%  ftdc             mongod              [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.00%  conn44           [kernel.kallsyms]   [k] sk_forced_mem_schedule
+     0.00%  conn56           mongod              [.] mongo::BSONObjIterator::next
+     0.00%  ftdc             [kernel.kallsyms]   [k] link_path_walk.part.0
+     0.00%  WTCheck.tThread  mongod              [.] __wt_buf_grow_worker
+     0.00%  ftdc             mongod              [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn
+     0.00%  ftdc             mongod              [.] mongo::(anonymous namespace)::MemBase::appendAtLeaf
+     0.00%  ftdc             mongod              [.] std::use_facet<std::ctype<char> >
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] rb_next
+     0.00%  JournalFlusher   mongod              [.] __log_slot_switch_internal
+     0.00%  conn44           mongod              [.] snappy::ByteArraySource::Available
+     0.00%  conn56           mongod              [.] mongo::OperationContextSession::get
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] __softirqentry_text_start
+     0.00%  JournalFlusher   mongod              [.] mongo::LockerImpl::~LockerImpl
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+     0.00%  conn44           mongod              [.] mongo::IndexCatalogImpl::prepareInsertDeleteOptions
+     0.00%  conn44           mongod              [.] mongo::QueryRequest::parseMaxTimeMS
+     0.00%  mongod           [kernel.kallsyms]   [k] __update_load_avg_cfs_rq
+     0.00%  mongod           [kernel.kallsyms]   [k] inode_permission
+     0.00%  mongod           [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] update_load_avg
+     0.00%  conn56           [kernel.kallsyms]   [k] check_cfs_rq_runtime
+     0.00%  JournalFlusher   mongod              [.] mongo::transport::TransportLayerManager::makeBaton
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] entry_SYSCALL_64
+     0.00%  conn44           mongod              [.] __wt_struct_size
+     0.00%  conn56           [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] native_sched_clock
+     0.00%  conn44           [kernel.kallsyms]   [k] update_dl_rq_load_avg
+     0.00%  JournalFlusher   mongod              [.] mongo::LatchAnalyzer::onRelease
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] update_blocked_averages
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] update_load_avg
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] native_write_msr
+     0.00%  conn44           [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  mongod           [kernel.kallsyms]   [k] native_write_msr
+     0.00%  conn56           [kernel.kallsyms]   [k] native_write_msr
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] __intel_pmu_enable_all.constprop.0
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] _raw_spin_lock
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] x86_pmu_enable
+     0.00%  conn44           [kernel.kallsyms]   [k] __intel_pmu_enable_all.constprop.0
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] intel_pmu_enable_all
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] perf_pmu_nop_void
+     0.00%  conn44           [kernel.kallsyms]   [k] __perf_event_task_sched_in
+     0.00%  WTCheck.tThread  [kernel.kallsyms]   [k] perf_pmu_disable.part.0
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] perf_pmu_enable.part.0
+     0.00%  conn44           [kernel.kallsyms]   [k] intel_pmu_enable_all
+     0.00%  WTCheck.tThread  [kernel.kallsyms]   [k] __intel_pmu_enable_all.constprop.0
+     0.00%  WTCheck.tThread  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  ftdc             [kernel.kallsyms]   [k] native_write_msr
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  FreeMon.ocessor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Periodi.kRunner  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  TTLMonitor       [kernel.kallsyms]   [k] native_write_msr
+     0.00%  abortEx.actions  [kernel.kallsyms]   [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
