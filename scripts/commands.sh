@@ -21,8 +21,8 @@ sudo docker swarm init --advertise-addr 10.0.1.1
 # kubernetes
 sudo kubeadm token create --print-join-command # on the host
 sudo docker login
-./hotelReservation/kubernetes/scripts/build-docker-images.sh
-sudo kubectl apply -Rf ./hotelReservation/kubernetes/
+./kubernetes/scripts/build-docker-images.sh
+sudo kubectl apply -Rf ./kubernetes/
 kubectl patch svc frontend -p '{"spec":{"externalIPs":["192.168.0.194"]}}'
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua http://192.168.0.194:5000 -R 3000
 kubectl delete --all deployments
