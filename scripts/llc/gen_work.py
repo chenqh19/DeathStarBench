@@ -31,9 +31,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Execute a command on a remote server via SSH")
     parser.add_argument("gen_work_cmd", help="Remote server hostname")
     parser.add_argument("output_file", help="Remote server username")
+    parser.add_argument("for_sn", help="Remote server hostname")
     args = parser.parse_args()
     with open(args.output_file, "a") as f:
         f.write("------new_config------\n")
+    print(args.gen_work_cmd)
     for i in range(5):
         run_cmd(args.gen_work_cmd, args.output_file)
-    refresh()
+    if args.for_sn:
+        refresh()
