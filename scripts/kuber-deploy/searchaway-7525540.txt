@@ -1,0 +1,102 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 86552280
+#
+# Overhead  Command          Shared Object       Symbol                                                                                                                                                                                                                                                                                                                                                                                              
+# ........  ...............  ..................  ....................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    15.75%  ftdc             libc-2.27.so        [.] __nss_group_lookup
+    13.68%  ftdc             mongod              [.] longest_match
+     7.02%  ftdc             mongod              [.] mongo::FTDCCompressor::getCompressedSamples
+     6.08%  DeadlineMonitor  [kernel.kallsyms]   [k] visit_groups_merge
+     3.40%  ftdc             mongod              [.] compress_block
+     2.77%  ftdc             mongod              [.] mongo::procparser::parseProcStat
+     2.75%  ftdc             mongod              [.] mongo::MetricTree::appendTo
+     2.74%  ftdc             [kernel.kallsyms]   [k] snmp_get_cpu_field
+     2.71%  ftdc             [kernel.kallsyms]   [k] inode_io_list_move_locked
+     2.25%  ftdc             mongod              [.] __wt_buf_grow_worker
+     2.09%  ftdc             mongod              [.] mongo::FTDCBSONUtil::(anonymous namespace)::extractMetricsFromDocument
+     1.97%  ftdc             [kernel.kallsyms]   [k] diskstats_show
+     1.70%  ftdc             mongod              [.] deflate_slow
+     1.69%  ftdc             mongod              [.] __wt_txn_get_pinned_timestamp
+     1.67%  ftdc             mongod              [.] __wt_stat_connection_aggregate
+     1.67%  ftdc             [kernel.kallsyms]   [k] disk_part_iter_next
+     1.61%  ftdc             libc-2.27.so        [.] sched_getaffinity
+     1.56%  ftdc             [kernel.kallsyms]   [k] kmem_cache_alloc_trace
+     1.53%  ftdc             [kernel.kallsyms]   [k] getrusage
+     1.53%  ftdc             mongod              [.] mongo::WiredTigerRecoveryUnit::doAbandonSnapshot
+     1.51%  ftdc             [kernel.kallsyms]   [k] proc_get_inode
+     1.49%  ftdc             mongod              [.] mongo::procparser::parseProcVMStat
+     1.44%  ftdc             mongod              [.] std::vector<unsigned long, std::allocator<unsigned long> >::emplace_back<long long>
+     1.31%  ftdc             [kernel.kallsyms]   [k] __radix_tree_lookup
+     1.31%  ftdc             mongod              [.] __wt_buf_fmt
+     1.21%  ftdc             mongod              [.] mongo::ServerStatusMetricField<mongo::Counter64>::appendAtLeaf
+     1.12%  ftdc             mongod              [.] __curstat_get_value
+     1.12%  ftdc             mongod              [.] mongo::UniqueOperationIdRegistry::acquireSlot
+     1.08%  ftdc             mongod              [.] mongo::procparser::parseProcDiskStats
+     1.06%  ftdc             [kernel.kallsyms]   [k] __d_lookup
+     1.03%  ftdc             mongod              [.] mongo::procparser::parseProcNetstat
+     1.00%  ftdc             mongod              [.] __gnu_cxx::__ops::_Iter_equals_val<mongo::StringData const>::operator()<__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >
+     0.93%  ftdc             mongod              [.] std::basic_ios<char, std::char_traits<char> >::_M_cache_locale
+     0.91%  ftdc             [kernel.kallsyms]   [k] futex_wait
+     0.84%  ftdc             [kernel.kallsyms]   [k] vsnprintf
+     0.79%  ftdc             [kernel.kallsyms]   [k] account_entity_dequeue
+     0.78%  mongod           [kernel.kallsyms]   [k] native_write_msr
+     0.44%  ftdc             mongod              [.] mongo::FTDCCompressor::addSample
+     0.43%  ftdc             mongod              [.] std::_Rb_tree_increment
+     0.32%  ftdc             [kernel.kallsyms]   [k] format_decode
+     0.32%  ftdc             [kernel.kallsyms]   [k] entry_SYSCALL_64
+     0.31%  TTLMonitor       mongod              [.] mongo::transport::TransportLayerASIO::BatonASIO::~BatonASIO
+     0.27%  ftdc             mongod              [.] mongo::CmdServerStatus::run
+     0.27%  ftdc             mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::constructAt<boost::optional<mongo::BSONArray> >
+     0.25%  ftdc             [kernel.kallsyms]   [k] inode_permission
+     0.24%  ftdc             [kernel.kallsyms]   [k] mod_timer
+     0.19%  ftdc             [kernel.kallsyms]   [k] seq_put_decimal_ull
+     0.18%  mongod           [kernel.kallsyms]   [k] visit_groups_merge
+     0.16%  DeadlineMonitor  [kernel.kallsyms]   [k] rb_next
+     0.10%  ftdc             [kernel.kallsyms]   [k] number
+     0.10%  ftdc             mongod              [.] std::__find_if<char const*, __gnu_cxx::__ops::_Iter_pred<mongo::procparser::parseProcNetstat(std::vector<mongo::StringData, std::allocator<mongo::StringData> > const&, mongo::StringData, mongo::BSONObjBuilder*)::{lambda(char)#2}> >
+     0.10%  ftdc             [kernel.kallsyms]   [k] string
+     0.10%  ftdc             [kernel.kallsyms]   [k] mark_mt
+     0.10%  mongod           [kernel.kallsyms]   [k] perf_event_update_userpage
+     0.10%  mongod           [kernel.kallsyms]   [k] select_task_rq_fair
+     0.10%  mongod           [vdso]              [.] __vdso_clock_gettime
+     0.10%  mongod           libpthread-2.27.so  [.] pthread_cond_timedwait@@GLIBC_2.3.2
+     0.10%  mongod           mongod              [.] __log_file_server
+     0.09%  mongod           [kernel.kallsyms]   [k] futex_wait_queue_me
+     0.09%  ftdc             mongod              [.] mongo::BSONElement::computeSize
+     0.08%  ftdc             [kernel.kallsyms]   [k] cpumask_next
+     0.08%  ftdc             mongod              [.] mongo::DecorationRegistry<mongo::OperationContext>::destroyAt<bool>
+     0.08%  ftdc             [kernel.kallsyms]   [k] kstat_irqs
+     0.08%  ftdc             mongod              [.] mongo::NumberParser::operator()
+     0.03%  mongod           [kernel.kallsyms]   [k] pick_next_task_fair
+     0.03%  TTLMonitor       libc-2.27.so        [.] __nss_group_lookup
+     0.02%  mongod           [kernel.kallsyms]   [k] irq_exit
+     0.02%  mongod           [kernel.kallsyms]   [k] do_syscall_64
+     0.02%  TTLMonitor       mongod              [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.00%  mongod           [kernel.kallsyms]   [k] lapic_next_deadline
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] read_tsc
+     0.00%  JournalFlusher   [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Backgro.kSource  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  FlowCon.fresher  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Timesta.Monitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  WTCheck.tThread  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  ftdc             [kernel.kallsyms]   [k] native_write_msr
+     0.00%  DeadlineMonitor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  clientcursormon  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  decreas.ressure  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  WTIdleS.Sweeper  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  conn2            [kernel.kallsyms]   [k] native_write_msr
+     0.00%  FreeMon.ocessor  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  Periodi.kRunner  [kernel.kallsyms]   [k] native_write_msr
+     0.00%  TTLMonitor       [kernel.kallsyms]   [k] native_write_msr
+     0.00%  abortEx.actions  [kernel.kallsyms]   [k] native_write_msr
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
