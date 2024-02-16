@@ -52,7 +52,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: home-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -218,7 +218,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["PostStorageService"]
     hostname: post-storage-service
     image: qihang-sn
@@ -439,7 +439,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -455,7 +455,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
