@@ -11,7 +11,7 @@ def find_second_smallest(numbers):
 def main():
     count = 0
     results = []
-    with open('../kuber-deploy/test_rps-searchaway.txt', 'r') as file:
+    with open('./llc_sweep-utl5-1.txt', 'r') as file:
         lines = file.readlines()
         for i in range(len(lines)):
             if "new_config" in lines[i]:
@@ -24,21 +24,22 @@ def main():
                         print(f"Not enough numbers at {count} to find the latency.")
                 count += 1
     print(results)
-    # final_array = np.zeros((17, 17))
-    # c = 0
-    # # no_part_result = results[0]
-    # # c = 1
-    # row_len = 17 # a bug: the third partition will never be 1
-    # while row_len > 0:
-    #     print(row_len, c)
-    #     for i in range(c, c+row_len):
-    #         final_array[17-row_len][i-c] = results[i]
-    #     c = c+row_len
-    #     row_len -= 1
-    # print(final_array)
-    # plt.imshow(final_array, cmap='viridis', interpolation='nearest', vmin=20, vmax=200)
-    # plt.colorbar()
-    # plt.savefig('heatmap.png')
+    arr_size = 6
+    final_array = np.zeros((arr_size, arr_size))
+    c = 0
+    # no_part_result = results[0]
+    # c = 1
+    row_len = arr_size 
+    while row_len > 0:
+        print(row_len, c)
+        for i in range(c, c+row_len):
+            final_array[i-c][row_len-1-(i-c)] = results[i]
+        c = c+row_len
+        row_len -= 1
+    print(final_array)
+    plt.imshow(final_array, cmap='viridis', interpolation='nearest', vmin=15, vmax=50)
+    plt.colorbar()
+    plt.savefig('heatmap.png')
 
 
 
