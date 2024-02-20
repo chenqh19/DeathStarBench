@@ -9,9 +9,9 @@ def set_range(low, high, interval):
     rpss.append(high)
     return rpss
 
-test_type = "ps" 
+test_type = "htl" 
 output_file = "../lat_files/"+test_type+"_rps.txt"
-rpss = set_range(1000, 2200, 100)
+rpss = set_range(1000, 1700, 100)
 for rps in rpss:
     if test_type == "hr":
         cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 20 -L -s ../../hotelReservation/wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua http://192.168.0.194:5000 -R " + str(rps)
