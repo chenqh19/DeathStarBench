@@ -60,7 +60,7 @@ services:
           cpus: '0.8'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: home-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -82,7 +82,7 @@ services:
           cpus: '0.8'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["HomeTimelineService"]
     hostname: home-timeline-service
     image: qihang-sn
@@ -185,7 +185,7 @@ services:
           cpus: '10.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: nginx-web-server
     image: yg397/openresty-thrift:xenial
     ports:
@@ -210,7 +210,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: post-storage-memcached
     image: memcached
     command:
@@ -230,7 +230,7 @@ services:
           cpus: '1.5'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: post-storage-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -253,7 +253,7 @@ services:
           cpus: '3.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["PostStorageService"]
     hostname: post-storage-service
     image: qihang-sn
