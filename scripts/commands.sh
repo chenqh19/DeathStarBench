@@ -27,3 +27,5 @@ kubectl patch svc frontend -p '{"spec":{"externalIPs":["192.168.0.194"]}}'
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua http://192.168.0.194:5000 -R 3000
 kubectl delete --all deployments
 crictl inspect --output go-template --template '{{.info.pid}}' <container-id>
+
+sudo docker exec -it <container-name> bash

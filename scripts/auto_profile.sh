@@ -74,10 +74,10 @@ while [ $count -lt $num_loops ]; do
     # ./profile.sh "$profile_name-$count-" "sudo perf record  -F 99 -g --call-graph fp" "-- sleep $profile_time" "-a" & wait
     
     # sudo perf stat -e cycles,instructions,cache-references,cache-misses,LLC-misses -a -- sleep $profile_time & wait
-    sudo perf stat -e cache-references,cache-misses -a -- sleep $profile_time
+    # sudo perf stat -e cache-references,cache-misses -a -- sleep $profile_time
     for pid in $all_pids; do
-        # ./profile.sh "$profile_name-${pidNameMap[$pid]}-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
-        sudo perf stat -e cache-references,cache-misses -p $pid -- sleep $profile_time
+        ./profile.sh "$profile_name-${pidNameMap[$pid]}-$count-" "sudo perf record -e cycles -F 999 -p" "-- sleep $profile_time" "$pid" & wait
+        # sudo perf stat -e cache-references,cache-misses -p $pid -- sleep $profile_time
         # sudo perf stat -e topdown-slots-retired,topdown-slots-issued,topdown-fetch-bubbles,topdown-recovery-bubbles -p $pid -- sleep $profile_time
     done
     # Increment the loop counter

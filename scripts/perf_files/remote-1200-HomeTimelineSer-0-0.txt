@@ -1,0 +1,1243 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 109K of event 'cycles'
+# Event count (approx.): 33137979689
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ...............  .....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+     7.77%  HomeTimelineSer  libc-2.23.so           [.] __nss_passwd_lookup
+     5.97%  HomeTimelineSer  libc-2.23.so           [.] _IO_str_seekoff
+     2.17%  HomeTimelineSer  [kernel.kallsyms]      [k] ipt_do_table
+     1.98%  HomeTimelineSer  libc-2.23.so           [.] malloc
+     1.49%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::write_virt
+     1.40%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readFieldBegin_virt
+     1.32%  HomeTimelineSer  [kernel.kallsyms]      [k] do_syscall_64
+     1.18%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::readAll_virt
+     1.14%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace
+     0.89%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeFieldBegin_virt
+     0.86%  HomeTimelineSer  HomeTimelineService    [.] social_network::Post::read
+     0.76%  HomeTimelineSer  [kernel.kallsyms]      [k] psi_task_change
+     0.69%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_hook_slow
+     0.68%  HomeTimelineSer  [kernel.kallsyms]      [k] copy_user_enhanced_fast_string
+     0.59%  HomeTimelineSer  libc-2.23.so           [.] free
+     0.57%  HomeTimelineSer  [kernel.kallsyms]      [k] __dev_queue_xmit
+     0.56%  HomeTimelineSer  [kernel.kallsyms]      [k] entry_SYSCALL_64
+     0.56%  HomeTimelineSer  [kernel.kallsyms]      [k] __fget_light
+     0.53%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_recvmsg
+     0.53%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_finish_output2
+     0.52%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock
+     0.50%  HomeTimelineSer  [kernel.kallsyms]      [k] __nf_conntrack_find_get
+     0.49%  HomeTimelineSer  [kernel.kallsyms]      [k] veth_xmit
+     0.48%  HomeTimelineSer  libc-2.23.so           [.] vfprintf
+     0.48%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_transmit_skb
+     0.47%  HomeTimelineSer  [kernel.kallsyms]      [k] syscall_return_via_sysret
+     0.46%  HomeTimelineSer  [kernel.kallsyms]      [k] br_handle_frame
+     0.46%  HomeTimelineSer  [kernel.kallsyms]      [k] fib_table_lookup
+     0.46%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_sq_xmit
+     0.44%  HomeTimelineSer  [kernel.kallsyms]      [k] __this_module+0x8000000422be
+     0.43%  HomeTimelineSer  libc-2.23.so           [.] __strtol_l
+     0.42%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readStringBody<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+     0.41%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_xmit_one
+     0.41%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate
+     0.40%  HomeTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_core
+     0.40%  HomeTimelineSer  libpthread-2.23.so     [.] __pthread_mutex_lock
+     0.40%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeString_virt
+     0.39%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_pre_routing
+     0.37%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_tcp_packet
+     0.37%  HomeTimelineSer  [kernel.kallsyms]      [k] visit_groups_merge
+     0.37%  HomeTimelineSer  [kernel.kallsyms]      [k] update_load_avg
+     0.37%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock_bh
+     0.37%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::fromStream
+     0.35%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_in
+     0.33%  HomeTimelineSer  [kernel.kallsyms]      [k] kmem_cache_free
+     0.33%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_write_xmit
+     0.33%  HomeTimelineSer  HomeTimelineService    [.] social_network::Post::write
+     0.33%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator new
+     0.33%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_sendmsg_locked
+     0.31%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_output
+     0.31%  HomeTimelineSer  [vdso]                 [.] __vdso_clock_gettime
+     0.31%  HomeTimelineSer  HomeTimelineService    [.] memcpy@plt
+     0.31%  HomeTimelineSer  [kernel.kallsyms]      [k] __kmalloc_node_track_caller
+     0.30%  HomeTimelineSer  [kernel.kallsyms]      [k] __seccomp_filter
+     0.30%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readString_virt
+     0.30%  HomeTimelineSer  [kernel.kallsyms]      [k] fdb_find_rcu
+     0.29%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_forward_ip
+     0.29%  HomeTimelineSer  [kernel.kallsyms]      [k] update_curr
+     0.28%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Span::FinishWithOptions
+     0.28%  HomeTimelineSer  libc-2.23.so           [.] calloc
+     0.28%  HomeTimelineSer  HomeTimelineService    [.] social_network::Post::~Post
+     0.28%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readI64_virt
+     0.27%  HomeTimelineSer  [kernel.kallsyms]      [k] native_queued_spin_lock_slowpath
+     0.27%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::consume_virt
+     0.26%  HomeTimelineSer  [kernel.kallsyms]      [k] update_sd_lb_stats
+     0.26%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create
+     0.26%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_in_window
+     0.26%  HomeTimelineSer  [kernel.kallsyms]      [k] update_cfs_group
+     0.26%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock_irqsave
+     0.26%  HomeTimelineSer  HomeTimelineService    [.] redisReaderGetReply
+     0.25%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::istream::get
+     0.24%  HomeTimelineSer  [kernel.kallsyms]      [k] do_sys_poll
+     0.23%  HomeTimelineSer  libpthread-2.23.so     [.] pthread_mutex_unlock
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_hook_thresh
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] validate_xmit_skb
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_sk_perm
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] kmem_cache_alloc_node
+     0.23%  HomeTimelineSer  HomeTimelineService    [.] social_network::HomeTimelineHandler::ReadHomeTimeline
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] read_tsc
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_out.part.0
+     0.23%  HomeTimelineSer  [kernel.kallsyms]      [k] cpuacct_charge
+     0.22%  HomeTimelineSer  [kernel.kallsyms]      [k] net_rx_action
+     0.22%  HomeTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_cfs_rq
+     0.22%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::startSpanInternal
+     0.22%  HomeTimelineSer  HomeTimelineService    [.] social_network::UserMention::read
+     0.22%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::read
+     0.22%  HomeTimelineSer  [kernel.kallsyms]      [k] update_blocked_averages
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_xmit
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_post_routing
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_features_check
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] hash_conntrack_raw
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] memcmp
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_xmit
+     0.21%  HomeTimelineSer  libstdc++.so.6.0.21    [.] __dynamic_cast
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_local_fn
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] __local_bh_enable_ip
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_inet_fn
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_local_reply4
+     0.21%  HomeTimelineSer  [kernel.kallsyms]      [k] memset_erms
+     0.20%  HomeTimelineSer  HomeTimelineService    [.] redisvFormatCommand
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] dev_hard_start_xmit
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rax
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_dst_check
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_datagram_iter
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] mod_timer
+     0.20%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_in.part.0
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] syscall_trace_enter
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] __ksize
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ct_get_tuple
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] process_backlog
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_segment
+     0.19%  HomeTimelineSer  HomeTimelineService    [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign(std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> > const&)::{lambda(std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, true> const*)#1}>
+     0.19%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeFieldStop_virt
+     0.19%  HomeTimelineSer  HomeTimelineService    [.] social_network::HomeTimelineServiceProcessor::process_ReadHomeTimeline
+     0.19%  HomeTimelineSer  [kernel.kallsyms]      [k] __virt_addr_valid
+     0.19%  HomeTimelineSer  HomeTimelineService    [.] social_network::Url::read
+     0.18%  HomeTimelineSer  libc-2.23.so           [.] __libc_realloc
+     0.18%  HomeTimelineSer  libpthread-2.23.so     [.] recv
+     0.18%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_poll
+     0.18%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_finish_output
+     0.18%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeFieldEnd_virt
+     0.18%  HomeTimelineSer  [kernel.kallsyms]      [k] br_handle_frame_finish
+     0.18%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readFrame
+     0.18%  HomeTimelineSer  [kernel.kallsyms]      [k] __alloc_skb
+     0.17%  HomeTimelineSer  [kernel.kallsyms]      [k] __check_object_size
+     0.17%  HomeTimelineSer  HomeTimelineService    [.] social_network::Media::read
+     0.17%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_mtu
+     0.17%  HomeTimelineSer  HomeTimelineService    [.] sdscatlen
+     0.17%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::TraceID::fromStream
+     0.17%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_defrag
+     0.17%  HomeTimelineSer  [kernel.kallsyms]      [k] __schedule
+     0.17%  HomeTimelineSer  HomeTimelineService    [.] social_network::Url::write
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_event_new_data_sent
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ct_seq_offset
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] switch_fpu_return
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] newidle_balance
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] __softirqentry_text_start
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] __cgroup_bpf_run_filter_skb
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_se
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] copy_user_generic_unrolled
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] netdev_core_pick_tx
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ct_deliver_cached_events
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_release_data
+     0.16%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::StartSpanWithOptions
+     0.16%  HomeTimelineSer  libjaegertracing.so.0  [.] opentracing::v2::Tracer::Global
+     0.16%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_queue_xmit
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeI64_virt
+     0.15%  HomeTimelineSer  [kernel.kallsyms]      [k] eth_type_trans
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readFieldEnd_virt
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::ConnectionPool::fetch
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] social_network::UserMention::write
+     0.15%  HomeTimelineSer  [kernel.kallsyms]      [k] br_forward
+     0.15%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_pre_routing_finish
+     0.15%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readSetBegin
+     0.14%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::analyzeReferences
+     0.14%  HomeTimelineSer  HomeTimelineService    [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_profile_af_perm
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] __sys_recvfrom
+     0.14%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::SafeConnection::~SafeConnection
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] __br_forward
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] netif_skb_features
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_dev_queue_xmit
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] __slab_free
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] kmem_cache_alloc
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] __secure_computing
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] try_to_wake_up
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] native_sched_clock
+     0.14%  HomeTimelineSer  libpthread-2.23.so     [.] __errno_location
+     0.14%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_output_key_hash_rcu
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] do_csum
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] enqueue_to_backlog
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_local
+     0.13%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator delete
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] dequeue_task_fair
+     0.13%  HomeTimelineSer  HomeTimelineService    [.] social_network::Creator::read
+     0.13%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::istream::sentry::sentry
+     0.13%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>::readMessageBegin
+     0.13%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeListBegin_virt
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_current_mss
+     0.13%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::ConnectionPool::_fetch
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_gso_segment
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_reply4
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] iptunnel_xmit
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] reweight_entity
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] get_l4proto
+     0.13%  HomeTimelineSer  [kernel.kallsyms]      [k] fput_many
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] entry_SYSCALL_64_after_hwframe
+     0.12%  HomeTimelineSer  HomeTimelineService    [.] std::vector<social_network::UserMention, std::allocator<social_network::UserMention> >::_M_default_append
+     0.12%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::locale
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_conntrack_udp_packet
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] conntrack_mt_v3
+     0.12%  HomeTimelineSer  HomeTimelineService    [.] std::vector<social_network::Media, std::allocator<social_network::Media> >::_M_default_append
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_idents_reserve
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_ext_add
+     0.12%  HomeTimelineSer  [kernel.kallsyms]      [k] __perf_event_task_sched_out
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] conntrack_mt
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] iptable_mangle_hook
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] __get_xps_queue_idx
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_confirm
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_input_slow
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] update_nohz_stats
+     0.11%  HomeTimelineSer  HomeTimelineService    [.] std::vector<social_network::Post, std::allocator<social_network::Post> >::_M_default_append
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_label_sk_perm.part.0
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] ktime_get
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] __perf_event_task_sched_in
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] __inet_lookup_established
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_page_frag_refill
+     0.11%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::flush
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] br_dev_queue_push_xmit
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rcv_established
+     0.11%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_finish_output
+     0.11%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap
+     0.10%  HomeTimelineSer  libpthread-2.23.so     [.] __pthread_disable_asynccancel
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_nat_xmit
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readStructBegin_virt
+     0.10%  HomeTimelineSer  libc-2.23.so           [.] poll
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::Redis::command<void (*)(sw::redis::Connection&, sw::redis::StringView const&, long long, long long, bool), sw::redis::StringView const&, long long&, long long&, bool>
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] native_write_msr
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] social_network::Media::write
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_rfree
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TFramedTransport, apache::thrift::transport::TBufferBase>::borrow_virt
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_build_skb
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] ksoftirqd_running
+     0.10%  HomeTimelineSer  libstdc++.so.6.0.21    [.] free@plt
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_emplace_back_aux<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] social_network::Creator::write
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_tx_cq
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageServiceClient::recv_ReadPosts
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] social_network::HomeTimelineServiceProcessor::dispatchCall
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] __sys_sendto
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_wait_data
+     0.10%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::swap
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_rcv_core.isra.0
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_push
+     0.10%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::server::TConnectedClient::run
+     0.10%  HomeTimelineSer  HomeTimelineService    [.] social_network::HomeTimelineService_ReadHomeTimeline_args::read
+     0.10%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_network_protocol
+     0.10%  HomeTimelineSer  libc-2.23.so           [.] clock_gettime
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] ctx_sched_out
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] __calc_delta
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] __lock_text_start
+     0.09%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::~locale
+     0.09%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageServiceClient::send_ReadPosts
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_in_get
+     0.09%  HomeTimelineSer  libstdc++.so.6.0.21    [.] __cxxabiv1::__vmi_class_type_info::__do_dyncast
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] dst_cache_per_cpu_get.isra.0
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] prepare_exit_to_usermode
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] pick_next_task_fair
+     0.09%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::chrono::_V2::steady_clock::now
+     0.09%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_update_userpage
+     0.09%  HomeTimelineSer  libpthread-2.23.so     [.] __pthread_enable_asynccancel
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] is_skb_forwardable
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] wait_woken
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_send_check
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] _copy_to_iter
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] import_single_range
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_comp_int
+     0.09%  HomeTimelineSer  HomeTimelineService    [.] std::vector<social_network::Url, std::allocator<social_network::Url> >::_M_default_append
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_stream_alloc_skb
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] br_fdb_update
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] netdev_pick_tx
+     0.09%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_release_cb
+     0.08%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] release_sock
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] schedule
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] do_softirq_own_stack
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] __vxlan_find_mac
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_local_out
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageService_ReadPosts_presult::read
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_stream_memory_free
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] memcg_kmem_put_cache
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] sdsMakeRoomFor
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readStructEnd_virt
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeMessageBegin_virt
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] __copy_skb_header
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_tunnel_xmit_skb
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_scrub_packet
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_out
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] load_balance
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_sabotage_in
+     0.08%  HomeTimelineSer  libc-2.23.so           [.] _IO_default_xsputn
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rcv_space_adjust
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] __sk_dst_check
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] memcpy_erms
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] ktime_get_with_offset
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] enqueue_task_fair
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_proto_data_get
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] kfree
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_rcv
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] deactivate_task
+     0.08%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::write
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_schedule_loss_probe
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] comment_mt
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_select_queue
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_recvmsg
+     0.08%  HomeTimelineSer  libpthread-2.23.so     [.] send
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_poll
+     0.08%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::write_partial
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_entries_start
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}::operator()
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] xfrm_lookup_with_ifid
+     0.08%  HomeTimelineSer  libstdc++.so.6.0.21    [.] __cxxabiv1::__si_class_type_info::__do_dyncast
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_swevent_add
+     0.08%  HomeTimelineSer  HomeTimelineService    [.] std::deque<sw::redis::Connection, std::allocator<sw::redis::Connection> >::_M_push_back_aux<sw::redis::Connection>
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_one_core
+     0.08%  HomeTimelineSer  [kernel.kallsyms]      [k] account_entity_dequeue
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_packet
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] rb_next
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] ep_poll_callback
+     0.07%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::reply::detail::to_array<std::back_insert_iterator<std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_clone
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_recv_timestamp
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] put_prev_entity
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_bridge_update_protocol
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] enqueue_timer
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] do_softirq.part.0
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] __usecs_to_jiffies
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_local_request4
+     0.07%  HomeTimelineSer  libc-2.23.so           [.] isupper
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_select_window
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_udp_tunnel_segment
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] __update_idle_core
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] br_validate_ipv4.isra.0
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] kfree_skbmem
+     0.07%  HomeTimelineSer  libc-2.23.so           [.] strchr
+     0.07%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeStructEnd_virt
+     0.07%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::Span::~Span
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] dequeue_entity
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_recvmsg
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] update_min_vruntime
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] iptable_filter_hook
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] brnf_get_logical_dev
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] enqueue_entity
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_release_head_state
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_vs_get_out_rt
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] br_forward_finish
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_forward_icmp
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] detach_if_pending
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_napi_poll
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_mac_gso_segment
+     0.07%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_send_check
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::ConnectionOptions::~ConnectionOptions
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] __xfrm_decode_session
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] bictcp_cwnd_event
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rearm_rto
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readI32_virt
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_local_out
+     0.06%  HomeTimelineSer  libc-2.23.so           [.] strtoull
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_entail
+     0.06%  HomeTimelineSer  libc-2.23.so           [.] __vsnprintf_chk
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] netif_rx_internal
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] ctx_sched_in
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] redisBufferWrite
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] __kfree_skb_flush
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::readAll<apache::thrift::transport::TBufferBase>
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::SpanContext::~SpanContext
+     0.06%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::isOpen
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] br_nf_forward_finish
+     0.06%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::_M_emplace_back_aux<jaegertracing::Reference>
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] ___slab_alloc
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_cleanup_rbuf
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] fib_validate_source
+     0.06%  HomeTimelineSer  libc-2.23.so           [.] strlen
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_in
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] opentracing::v2::SpanReference::Apply
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_wfree
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_rx_cq
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_gso_segment
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_small_queue_check.isra.0
+     0.06%  HomeTimelineSer  HomeTimelineService    [.] social_network::ClientPool<social_network::ThriftClient<social_network::PostStorageServiceClient> >::Pop
+     0.06%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >
+     0.06%  HomeTimelineSer  libc-2.23.so           [.] _IO_str_pbackfail
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] intel_pstate_update_util
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] get_nohz_timer_target
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] put_prev_task_fair
+     0.06%  HomeTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_sendmsg
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rbtree_insert
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::id::_M_id
+     0.05%  HomeTimelineSer  libc-2.23.so           [.] _IO_default_doallocate
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] malloc@plt
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] x86_pmu_disable
+     0.05%  HomeTimelineSer  libc-2.23.so           [.] strchrnul
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeListEnd_virt
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] fput
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeStructBegin_virt
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::_Rb_tree_insert_and_rebalance
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] __inet_dev_addr_type.isra.0
+     0.05%  HomeTimelineSer  libpthread-2.23.so     [.] pthread_cond_signal@@GLIBC_2.3.2
+     0.05%  HomeTimelineSer  libc-2.23.so           [.] strerror_l
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] opentracing::v2::Span::Finish
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] __x64_sys_recvfrom
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] finish_task_switch
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] redisNetRead
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] select_task_rq_fair
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_def_readable
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_label_next_confined
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] validate_xmit_xfrm
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] copyout
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] security_socket_recvmsg
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_ensure_writable
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ostream::_M_insert<unsigned long>
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_queue_xmit
+     0.05%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readSlow
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] social_network::ThriftClient<social_network::PostStorageServiceClient>::Connect
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::reply::parse
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_v4_send_check
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::transport::TTransport::flush
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_ipsec_feature_check
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_pad
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readListBegin_virt
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] br_allowed_ingress
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::operator==
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] fq_codel_dequeue
+     0.05%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] unix_poll
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp4_gso_segment
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] amd_clear_divider
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>
+     0.05%  HomeTimelineSer  libjaegertracing.so.0  [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] _cond_resched
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] schedule_timeout
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] redisReaderFeed
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_handle_rx_dim
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_sendmsg
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rate_check_app_limited
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] fpregs_assert_state_consistent
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] record_times
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_skb_from_cqe_linear
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] redisGetReply
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_set_csum
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] kmalloc_slab
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_rcv_finish_core.isra.0
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] lock_sock_nested
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::basic_istringstream
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_completion_event
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] redisBufferRead
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_erase
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__ostream_insert<char, std::char_traits<char> >
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] update_cfs_rq_h_load
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::SpanContext::SpanContext
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_rcv
+     0.05%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::ios_base
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] siphash_3u32
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_local_deliver
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] lock_timer_base
+     0.05%  HomeTimelineSer  libc-2.23.so           [.] pthread_setcanceltype
+     0.05%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::TDispatchProcessor::process
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_state_transition
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_recvmsg
+     0.05%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_ack
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] createStringObject
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_fill_iph_skb_off
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::ConnectionPool::release
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_confirm
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __wake_up_common
+     0.04%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_init
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_mstamp_refresh
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __fdget
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] native_apic_msr_eoi_write
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_update_skb_after_send
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tasklet_action_common.isra.0
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] rb_insert_color
+     0.04%  HomeTimelineSer  libpthread-2.23.so     [.] pthread_mutex_trylock
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] l4proto_manip_pkt
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] check_cfs_rq_runtime
+     0.04%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::chrono::_V2::system_clock::now
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] update_rq_clock
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_gro_receive
+     0.04%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::operator=
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_get_route
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_ack_snd_check
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_event_data_recv
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_xfrm_me_harder
+     0.04%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] social_network::HomeTimelineService_ReadHomeTimeline_result::write
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] nbp_switchdev_frame_mark
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_find_mac
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] dst_release
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_push
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_reset_timer
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __pollwait
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] add_wait_queue
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_clean_rtx_queue
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_copy_datagram_iter
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] pskb_expand_head
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __kmalloc_reserve.isra.0
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readListEnd_virt
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_me_harder
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] schedule_hrtimeout_range_clock
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_out
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_csum_hwoffload_help
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::inject
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_get_insert_unique_pos
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_read_lock_irqsave
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] check_stack_object
+     0.04%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] pick_next_task_idle
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_clone
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __cgroup_account_cputime
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] __dev_forward_skb
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageServiceClient::ReadPosts
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] std::_Function_handler<opentracing::v2::expected<void, std::error_code> (opentracing::v2::string_view, opentracing::v2::string_view), jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}>::_M_invoke
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace@plt
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::Redis::zrevrange<std::back_insert_iterator<std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] udp4_lib_lookup2
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] napi_schedule_prep
+     0.04%  HomeTimelineSer  libc-2.23.so           [.] cuserid
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] find_busiest_group
+     0.04%  HomeTimelineSer  HomeTimelineService    [.] sdscatvprintf
+     0.04%  HomeTimelineSer  [kernel.kallsyms]      [k] can_migrate_task
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] swapgs_restore_regs_and_return_to_usermode
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::_Rb_tree_increment
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_page_frag_refill
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_ext_put
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve
+     0.03%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::_M_range_insert<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > > >
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_ext_del
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_sendmsg
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] pick_next_entity
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] set_next_buddy
+     0.03%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::readAll<apache::thrift::transport::TSocket>
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] do_IRQ
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::condition_variable::notify_one
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] dma_direct_map_page
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::ctype<char> >
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::time_get<char, std::istreambuf_iterator<char, std::char_traits<char> > >::_M_extract_name
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] setup_pre_routing
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sch_direct_xmit
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_protocol_deliver_rcu
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_fill_param_proto
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] rb_first
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_ico_cq
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_ehashfn
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_streambuf<char, std::char_traits<char> >::uflow
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeI32_virt
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::_Impl::_Impl
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_get_local_port_range
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_out_get
+     0.03%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::read_virt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] calc_wheel_index
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] apic_ack_irq
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_early_demux
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sched_clock_cpu
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] udp4_ufo_fragment
+     0.03%  HomeTimelineSer  libpthread-2.23.so     [.] __pthread_once
+     0.03%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::Extract
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] handle_edge_irq
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] social_network::ClientPool<social_network::ThriftClient<social_network::PostStorageServiceClient> >::Keepalive
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __x64_sys_poll
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] passthru_features_check
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __qdisc_run
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_manip_pkt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] security_sock_rcv_skb
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] memcpy@plt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] dev_queue_xmit
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __nf_ct_refresh_acct
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] idle_cpu
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_fn
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] iptunnel_handle_offloads
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] br_allowed_egress
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] poll_schedule_timeout.constprop.0
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::istream::putback
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageService_ReadPosts_pargs::write
+     0.03%  HomeTimelineSer  libc-2.23.so           [.] _IO_setb
+     0.03%  HomeTimelineSer  libc-2.23.so           [.] __sprintf_chk
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ns_to_timespec64
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_free
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_dnat_handler
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_split
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::~vector
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] iov_iter_advance
+     0.03%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > >, jaegertracing::Tag*>
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] futex_wait_setup
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rcx
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_established_options
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] map_id_range_down
+     0.03%  HomeTimelineSer  libjaegertracing.so.0  [.] isupper@plt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_push_pending_frames
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] __x64_sys_sendto
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] freeReplyObject
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate@plt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_rcv_finish
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] createArrayObject
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_sync
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_fill_cb
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] notifier_call_chain
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] activate_task
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator delete
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] social_network::ServiceException::~ServiceException
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] simple_copy_to_iter
+     0.03%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::readAll_virt
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] rb_erase
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ipv4_conntrack_in
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_hashkey_param
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] sockfd_lookup_light
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] select_idle_sibling.part.0
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> >
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] social_network::TextMapWriter::Set
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] page_frag_free
+     0.03%  HomeTimelineSer  libc-2.23.so           [.] __bzero
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] event_sched_in.isra.0
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] validate_xmit_skb_list
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_pull_rcsum
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] update_rt_rq_load_avg
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] csum_partial
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] interrupt_entry
+     0.03%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::Connection::recv
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_tx_timestamp
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::clear
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] ksize
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rate_skb_sent
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_mtu_probe
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_release_all
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] mark_tg
+     0.03%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::exception::~exception
+     0.03%  HomeTimelineSer  [kernel.kallsyms]      [k] security_xfrm_decode_session
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] arch_perf_update_userpage
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] string2ll
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_options_write
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] encap_bypass_if_local
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] dev_gro_receive
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] intel_pmu_disable_all
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_pre_routing
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __sk_mem_raise_allocated
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_chrono_stop
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_gso_transport_seglen
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] clear_buddies
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] consume_skb
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] should_failslab
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::SpanContext::print<std::ostream>
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] poll_freewait
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::reserve
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ostream::sentry::sentry
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] available_idle_cpu
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_vxlan_lookup_port
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_gso_segment
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_all_qs
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] opentracing::v2::Tracer::StartSpan
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] free@plt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ip_checksum
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_manip_pkt
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::_M_cache_locale
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_build_rx_skb
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_ack_update_rtt.isra.0
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] dst_cache_get_ip4
+     0.02%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TVirtualTransport<apache::thrift::transport::TSocket, apache::thrift::transport::TTransportDefaults>::write_virt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_cq_tasklet_cb
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_rcv
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] apparmor_socket_sock_rcv_skb
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_chrono_start
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_inbound_md5_hash
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] profile_path_perm.part.0
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] std::istream::get@plt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] find_next_and_bit
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] raw_local_deliver
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_zerocopy_clone
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __raise_softirq_irqoff
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_update_conntrack
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] l3mdev_fib_table_rcu
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] dql_completed
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] moveToNextTask.isra.0
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __account_cfs_rq_runtime
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::~SpanContext@plt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] security_socket_sendmsg
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] ttwu_do_wakeup
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_chip_ack_parent
+     0.02%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::isOpen
+     0.02%  HomeTimelineSer  libc-2.23.so           [.] __ctype_b_loc
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::basic_ostringstream
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] sdsnewlen
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] native_read_msr
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_r14
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_spin_unlock_bh
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] copyin
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] get_futex_key
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.02%  HomeTimelineSer  libpthread-2.23.so     [.] __lll_unlock_wake
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_filter_trim_cap
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] jiffies_to_usecs
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_pull
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] operator new@plt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_send_ack.part.0
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >::pbackfail
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ct_invert_tuple
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] update_dl_rq_load_avg
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] apic_timer_interrupt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] napi_complete_done
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_irq_int_handler
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] handle_irq_event_percpu
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __x64_sys_futex
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_nat_ipv4_local_in
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] flexible_sched_in
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] migrate_task_rq_fair
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __enqueue_entity
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_check_perms
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::init
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::reply::to_array<std::back_insert_iterator<std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >
+     0.02%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_pbump
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] redisNetWrite
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] account_entity_enqueue
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] check_preempt_curr
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_gro_receive
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_in_get_proto
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_post_rx_wqes
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_exit
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] std::chrono::_V2::steady_clock::now@plt
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_csum_update
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] place_entity
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __udp4_lib_lookup
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] social_network::ThriftClient<social_network::PostStorageServiceClient>::~ThriftClient
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_input_rcu
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] _copy_from_iter_full
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_data_ready
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] std::_Vector_base<std::shared_ptr<jaegertracing::reporters::Reporter>, std::allocator<std::shared_ptr<jaegertracing::reporters::Reporter> > >::_M_allocate
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] kmem_cache_free_bulk
+     0.02%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::reserve@plt
+     0.02%  HomeTimelineSer  HomeTimelineService    [.] redisGetReplyFromReader
+     0.02%  HomeTimelineSer  [kernel.kallsyms]      [k] __sock_wfree
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __radix_tree_lookup
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::ConnectionPool::_need_reconnect
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rbx
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_headers_offset_update
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_v4_do_rcv
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] nbp_switchdev_allowed_egress
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __accumulate_pelt_segments
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] cpumask_next_and
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator delete@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_forced_mem_schedule
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] malloc@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __netif_receive_skb_list_core
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::~locale@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] select_idle_sibling
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] netif_receive_skb_list_internal
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_select_ident
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_put
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::exception::~exception@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_gro_receive
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] get_futex_key_refs.isra.0
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_r9
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] resched_curr
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] __redisAppendCommand
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_gso_validate_network_len
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::readAll<apache::thrift::transport::TSocket>@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_queue_rcv
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] udp4_gro_receive
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_proto_csum_replace4
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_newly_delivered
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] _copy_from_user
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ktime_get_seconds
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_poll_xdpsq_cq
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ovl_permission
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] do_futex
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] operator delete@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __intel_pmu_enable_all.constprop.0
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __udp4_lib_rcv
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::_Function_base::_Base_manager<jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract(opentracing::v2::TextMapReader const&) const::{lambda(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)#1}>::_M_manager
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __napi_schedule
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] operator new@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_checksum
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_ostringstream
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] set_next_task_idle
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] sched_clock
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] fib_select_path
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_cq_get
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::underflow
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_vs_find_vni
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_read_unlock_irqrestore
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readMessageBegin_virt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] set_next_entity
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] br_handle_vlan
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] cgroup_rstat_updated
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_parse_md5sig_option
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_free_head
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::~ios_base
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator new@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] invoke_rcu_core
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] remove_wait_queue
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::ctype<char> >@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_vs_conn_put_timer
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_check_space
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_sendmsg
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_may_run
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] memset@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __tasklet_schedule_common
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::writeEnd
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeMessageEnd_virt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] bictcp_acked
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_note_context_switch
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __hrtimer_run_queues
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] netif_rx
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::operator==<char>
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::clear@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_gro_receive
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] cpuacct_account_field
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] gro_cells_receive
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] redisAppendCommand
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readMapBegin_virt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] update_group_capacity
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] handle_irq_event
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] sdsfree
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] task_tick_fair
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::Tracer::Inject
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] group_sched_in
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] fast_mix
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::_M_emplace_back_aux<jaegertracing::Reference>@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_remote_request4
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] aa_apply_modes_to_perms
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] trigger_dyntick_cpu.isra.0
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_pmu_nop_void
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_clone_tx_timestamp
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __kfree_skb
+     0.01%  HomeTimelineSer  libc-2.23.so           [.] __vsprintf_chk
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] recv@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] get_futex_value_locked
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_local_deliver_finish
+     0.01%  HomeTimelineSer  libpthread-2.23.so     [.] __lll_lock_wait
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_list_rcv
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] operator delete@plt
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create@plt
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::swap@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::basic_streambuf<char, std::char_traits<char> >::uflow@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] futex_wake
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] set_task_cpu
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_sched_in
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] note_interrupt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] br_fdb_find_rcu
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_queue_rcv_one_skb
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_sublist_rcv
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] clock_gettime@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] redisvAppendCommand
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_leave_memory_pressure
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_zerocopy_put
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] check_preempt_wakeup
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] throttle_cfs_rq
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_call_callbacks
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] schedule_hrtimeout_range
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_dispose_callbacks
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] opentracing::v2::Tracer::Global@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ep_autoremove_wake_function
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > >, jaegertracing::Tag*>@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] sw::redis::cmd::zrevrange
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] pthread_mutex_lock@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_input_noref
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] handle_response
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeFieldEnd_virt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_out_get_proto
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_conn_put
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_send_ack
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __remove_hrtimer
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] prandom_u32
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::~vector@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] sdsrange
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_output_key_hash
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __sk_mem_schedule
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_sched_clock_irq
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_enter
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __hrtimer_next_event_base
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] find_exception
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __handle_irq_event_percpu
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_addr_type_dev_table
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] eth_gro_receive
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] sdsempty
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_unicast_rcv_skb.isra.0
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] INET_ECN_decapsulate
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] napi_gro_receive
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_send_mss
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] find_next_bit
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] nohz_balance_exit_idle
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __internal_add_timer
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] __errno_location@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] native_iret
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_update_time
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] build_skb
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_pmu_disable.part.0
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] neigh_resolve_output
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] lookup
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::chrono::_V2::steady_clock::now@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_irq_exit
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __fsnotify_inode_delete
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] detach_entity_cfs_rq
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::swap@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readMessageEnd_virt
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >@plt
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::_Rb_tree_insert_and_rebalance@plt
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::chrono::_V2::system_clock::now@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_validate_incoming
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] pthread_mutex_lock@plt
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __bitmap_subset
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::locale::id::_M_id@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_r13
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] propagate_entity_cfs_rq
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] memcpy
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::istream::sentry::sentry@plt
+     0.01%  HomeTimelineSer  libjaegertracing.so.0  [.] std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_send_delayed_ack
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] memcg_kmem_get_cache
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] rtnl_dump_all
+     0.01%  HomeTimelineSer  libc-2.23.so           [.] sched_setaffinity
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __wake_up_common_lock
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_irq_enter
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] dma_direct_unmap_page
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_page_release_dynamic
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::SpanContext::~SpanContext
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_cmd_comp_handler
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] memcpy@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_put
+     0.01%  HomeTimelineSer  HomeTimelineService    [.] std::condition_variable::notify_one@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_lookup_ifaddr_rcu
+     0.01%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TFramedTransport::readEnd
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] inode_init_always
+     0.01%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::ctype<char> >@plt
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] dma_direct_sync_single_for_cpu
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __hrtimer_get_next_event
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] l3mdev_master_ifindex_rcu
+     0.01%  HomeTimelineSer  [kernel.kallsyms]      [k] __build_skb
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rate_gen
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] bictcp_cong_avoid
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __build_skb_around
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] plist_add
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __intel_pmu_disable_all
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tasklet_action
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __update_load_avg_blocked_se
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::readMapEnd_virt
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] strlen@plt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_assign<std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<c
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] memmove@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_forward_finish
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_send_prepare
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] wakeup_preempt_entity.isra.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] cpus_share_cache
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::__ostream_insert<char, std::char_traits<char> >@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] clear_page_erms
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::_M_cache_locale@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] gro_find_receive_by_type
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] timerqueue_add
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rack_update_reo_wnd
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] add_interrupt_randomness
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] memcmp@plt
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtimer_active
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] futex_wait
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] pthread_mutex_unlock@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] calc_timer_values
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtimer_interrupt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtick_update
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_v4_early_demux
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] __dynamic_cast@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_grow_window.isra.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] xfrm_lookup
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] napi_consume_skb
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::ios_base@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] attach_entity_load_avg
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] opentracing::v2::expected<std::unique_ptr<opentracing::v2::SpanContext, std::default_delete<opentracing::v2::SpanContext> >, std::error_code>::~expected
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_ostringstream<char, std::char_traits<char>, std::allocator<char> >::basic_ostringstream@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_data_queue
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] pthread_mutex_unlock@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] mark_wake_futex
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] reschedule_interrupt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] trigger_load_balance
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_checksum
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5_eq_async_int
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] default_wake_function
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __bitmap_and
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] recv@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] raise_softirq
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::basic_ios<char, std::char_traits<char> >::init@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __slab_alloc
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __acct_update_integrals
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] exit_to_usermode_loop
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] netlink_release
+     0.00%  HomeTimelineSer  libresolv-2.23.so      [.] __res_queriesmatch
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp4_gro_receive
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rebalance_domains
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_queue_purge
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] pthread_cond_signal@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] make_kuid
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] account_system_index_time
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] irq_work_tick
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __kthread_should_park
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] __sprintf_chk@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] get_unique_tuple
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_fragment_tstamp
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] netlink_has_listeners
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] pthread_mutex_trylock@plt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::TraceID::fromStream@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip_make_skb
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_gro_complete
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_gro_receive
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] do_page_fault
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ret_from_intr
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __fput
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] minmax_running_min
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tick_sched_do_timer
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] common_interrupt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::istream::putback@plt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::extract@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __switch_to_xtra
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] eth_header
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_init@plt
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TBinaryProtocolT<apache::thrift::transport::TTransport, apache::thrift::protocol::TNetworkBigEndian>, apache::thrift::protocol::TProtocolDefaults>::writeMapBegin_virt
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] sdscat
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_route_output_flow
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inet6_dump_addr
+     0.00%  HomeTimelineSer  libpthread-2.23.so     [.] __recvfrom_nocancel
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] strncmp
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_lib_get_port
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __cgroup_bpf_run_filter_sock_ops
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __iptunnel_pull_header
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] put_cpu_partial
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] wake_up_process
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_try_coalesce
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] update_process_times
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ctnetlink_conntrack_event
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __d_instantiate
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtimer_run_queues
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::deque<social_network::ThriftClient<social_network::PostStorageServiceClient>*, std::allocator<social_network::ThriftClient<social_network::PostStorageServiceClient>*> >::_M_push_back_aux<social_network::ThriftClient<social_network::PostStorageServiceClient>* const&>
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] task_ctx_sched_out
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtimer_update_next_event
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] addrtype_mt_v1
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_r8
+     0.00%  HomeTimelineSer  libthrift.so.0.12.0    [.] send@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] dnotify_flush
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ipod_hook_fn
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_gro_complete
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __d_alloc
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] netlink_recvmsg
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hash_futex
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] atomic_notifier_call_chain
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] skb_defer_rx_timestamp
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_forward
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __note_gp_changes
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] strchr@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] blkcg_maybe_throttle_current
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_rate_skb_delivered
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> >::_M_range_insert<__gnu_cxx::__normal_iterator<jaegertracing::Tag const*, std::vector<jaegertracing::Tag, std::allocator<jaegertracing::Tag> > > >@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] note_gp_changes
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] lockref_get_not_zero
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] minmax_subwin_update
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ktime_get_update_offsets_now
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] find_vma
+     0.00%  HomeTimelineSer  libresolv-2.23.so      [.] ns_name_ntop
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::operator==@plt
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_dispose_callbacks@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] vmacache_find
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_rcv
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] profile_tick
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_rt_send_redirect
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] truncate_inode_pages_final
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] kick_ilb
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] walk_component
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_setup_caps
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_urg
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __sk_destruct
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __mod_memcg_state
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_task_tick
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __skb_checksum_complete
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __release_sock
+     0.00%  HomeTimelineSer  libnss_files-2.23.so   [.] _nss_files_getservbyport_r
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] prepend_path.isra.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_snat_handler
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ksys_read
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] kthread_is_per_cpu
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] mlx5e_handle_rx_cqe
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::unique_lock<std::mutex>::unlock
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_dump_ifaddr
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_snoop
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] _raw_spin_lock_irq
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] net_dim
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __run_timers.part.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_report_qs_rnp
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] mntput
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] jaegertracing::SpanContext::fromStream@plt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] memset@plt
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] strcmp
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] dput
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] __vsnprintf_chk@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] legitimize_path.isra.0
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] inet_pton
+     0.00%  HomeTimelineSer  libthrift.so.0.12.0    [.] apache::thrift::transport::TSocket::openConnection
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] memchr
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] legitimize_links
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] __errno_location@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __vfs_read
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] vxlan_gro_complete
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] eth_gro_complete
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] attach_task
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_recvmsg
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] gro_cell_poll
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] dump_command.isra.0
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] memcpy@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] x2apic_send_IPI
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] nf_ct_ext_add
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] walk_tg_tree_from
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] allocate_slab
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_send_active_reset
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::ostream::_M_insert<unsigned long>@plt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] retint_user
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] _IO_file_stat
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] __memcpy_chk@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __x64_sys_fcntl
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] sock_alloc
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] x86_pmu_enable
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] futex_wait_queue_me
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] social_network::PostStorageServiceClient::~PostStorageServiceClient
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_segcblist_ready_cbs
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inet_release
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_update_pacing_rate
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __tasklet_schedule
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] find_get_entry
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] dma_direct_sync_single_for_device
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] dentry_unlink_inode
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp4_lib_lookup_skb
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::vector<jaegertracing::Reference, std::allocator<jaegertracing::Reference> >::operator=
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __nla_reserve
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_pmu_nop_int
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] cyc2ns_read_begin
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] account_process_tick
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_idx_default
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] link_path_walk.part.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] gro_normal_list.part.0
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] inode_permission
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] memcpy
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_sendmsg
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::ios_base::_M_call_callbacks@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] udp_mt
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] timerqueue_del
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tg_nop
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_event_set_state.part.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] common_perm_cond
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] lock_hrtimer_base
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] netlink_create
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] do_tcp_setsockopt.isra.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] getname_flags
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __dentry_kill
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] estimation_timer
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] sk_alloc
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] napi_skb_free_stolen_head
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __d_lookup_rcu
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __ip4_datagram_connect
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] move_addr_to_user
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] alloc_file
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tick_program_event
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] operator delete[]
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] generic_permission
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] filename_lookup
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] run_local_timers
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] social_network::TextMapReader::ForeachKey
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip_vs_route_me_harder
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __switch_to_asm
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] task_work_run
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_log_itrace_start
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::propagation::Propagator<opentracing::v2::TextMapReader const&, opentracing::v2::TextMapWriter const&>::inject@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] account_user_time
+     0.00%  HomeTimelineSer  HomeTimelineService    [.] std::chrono::_V2::system_clock::now@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] gro_find_complete_by_type
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] wake_up_q
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] pagevec_lru_move_fn
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] security_inode_alloc
+     0.00%  HomeTimelineSer  libthrift.so.0.12.0    [.] operator delete[]@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ip4_datagram_release_cb
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] _IO_default_uflow
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] cp_new_stat
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __kmalloc
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] memset
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __nf_conntrack_confirm
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] poll_select_set_timeout
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] lapic_next_deadline
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::SpanContext::SpanContext@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] enqueue_hrtimer
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeFieldStop_virt
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] apache::thrift::protocol::TVirtualProtocol<apache::thrift::protocol::TCompactProtocolT<apache::thrift::transport::TTransport>, apache::thrift::protocol::TProtocolDefaults>::writeI32_virt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_segcblist_pend_cbs
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] woken_wake_function
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __init_rwsem
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __msecs_to_jiffies
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __x86_indirect_thunk_rdx
+     0.00%  HomeTimelineSer  libc-2.23.so           [.] _IO_link_in
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] netlink_deliver_tap
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] clockevents_program_event
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] timespec64_add_safe
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] cpumask_next
+     0.00%  HomeTimelineSer  libstdc++.so.6.0.21    [.] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::_M_pbump@plt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_cwnd_restart
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] std::basic_ios<char, std::char_traits<char> >::clear@plt
+     0.00%  HomeTimelineSer  libresolv-2.23.so      [.] __res_hnok
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] native_smp_send_reschedule
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __tcp_retransmit_skb
+     0.00%  HomeTimelineSer  libjaegertracing.so.0  [.] jaegertracing::UDPTransport::flush
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] ttwu_do_activate
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_accelerate_cbs
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] scheduler_tick
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] intel_pmu_enable_all
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] add_timer_on
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] tcp_write_timer_handler
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] call_timer_fn
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] rcu_core
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] perf_pmu_enable.part.0
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] hrtimer_forward
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] __next_timer_interrupt
+     0.00%  HomeTimelineSer  [kernel.kallsyms]      [k] run_posix_cpu_timers
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

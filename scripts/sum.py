@@ -38,8 +38,8 @@ def process_csv_and_txt(csv_filename, txt_filename, target_value):
 
 # parameters
 directory_path = './perf_files'
-txt_filenames = '2allremote'
-csv_filename = 'names_hr.csv'
+txt_filenames = 'remote-'
+csv_filename = 'names_sn.csv'
 target_value = 'network'
 
 def process_hr_files_in_directory(directory_path, target_files, csv_filename, target_value):

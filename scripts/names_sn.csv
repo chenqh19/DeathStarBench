@@ -1,0 +1,146 @@
+name,belongs to
+__do_dyncast,
+__dynamic_cast,
+__nf_conntrack_find_get,network
+__nss_passwd_lookup,c lib bug?
+__schedule,kernel scheduler
+_IO_str_seekoff,
+_raw_spin_lock,kernel lock
+<char,userspace
+all-in-one-linu,
+bson_utf8_validate,
+clear_page_erms,
+do_syscall_64,syscall
+entry_SYSCALL_64,syscall
+free,malloc
+jaegertracing,userspace
+malloc,malloc
+memcpy,
+native_queued_spin_lock_slowpath,kernel lock
+operator new,malloc
+osq_lock,kernel lock
+psi_task_change,kernel scheduler
+rehashtab,
+smp_call_function_many,
+switch_mm_irqs_off,kernel memory management
+syscall_return_via_sysret,syscall
+update_cfs_group,kernel scheduler
+update_curr,kernel scheduler
+update_load_avg,kernel scheduler
+wrk,
+zap_pte_range.isra.0,kernel memory management
+<0.10%,
+__nss_group_lookup,
+__pthread_mutex_lock,lib lock
+__seccomp_filter,syscall
+__strxfrm_l,string op
+__update_load_avg_cfs_rq,kernel scheduler
+__update_load_avg_se,kernel scheduler
+find_idlest_cpu,kernel scheduler
+ipt_do_table,network
+mongoc_server_description_handle_ismaster,
+rwsem_optimistic_spin,kernel lock
+rwsem_spin_on_owner,kernel lock
+select_task_rq_fair,kernel scheduler
+std::istream,
+strerror_l,
+switch_fpu_return,
+thrift,network
+<0.08%,
+__calc_delta,kernel scheduler
+__fget_light,
+__switch_to,kernel scheduler
+__vdso_clock_gettime,
+_raw_spin_lock_irqsave,kernel lock
+alloc_vmap_area,malloc
+copy_process,
+cpuacct_charge,kernel scheduler
+enqueue_entity,kernel scheduler
+enqueue_task_fair,kernel scheduler
+find_vma,
+futex_wake,kernel lock
+kmem_cache_free,kernel memory management
+memmove,
+memset_erms,
+native_sched_clock,
+native_write_msr,
+nf_conntrack_tcp_packet,network
+nf_hook_slow,network
+operator delete,malloc
+pick_next_task_fair,kernel scheduler
+pthread_create,
+pthread_mutex_unlock,lib lock
+reweight_entity,
+select_idle_sibling,kernel scheduler
+std::_Sp_counted_base,
+std::locale,
+strnlen,
+syscall_trace_enter,syscall
+tcp_in_window,network
+tcp_recvmsg,network
+try_to_wake_up,kernel scheduler
+veth_xmit,network
+<0.05%,
+__bzero,
+__cgroup_bpf_run_filter_skb,
+__clone,
+__config_next,
+__d_lookup,
+__dev_queue_xmit,
+__enqueue_entity,
+__free_tcb,
+__inet_lookup_established,
+__lock_text_start,
+__netif_receive_skb_core,
+__pthread_rwlock_rdlock,lib lock
+__switch_to_asm,
+__switch_to_xtra,
+__tcp_transmit_skb,network
+__wt_row_search,
+__x86_indirect_thunk_rax,
+_raw_spin_lock_bh,
+aa_label_sk_perm.part.0,
+account_entity_enqueue,
+activate_task,
+available_idle_cpu,
+br_handle_frame,
+br_nf_pre_routing,
+bson_iter_next,
+bson_iter_visit_all,
+call_function_interrupt,
+calloc,
+clear_buddies,
+dequeue_task_fair,kernel scheduler
+do_futex,kernel lock
+entry_SYSCALL_64_after_hwframe,
+fib_table_lookup,
+find_next_bit,
+futex_wait,kernel lock
+get_futex_key,kernel lock
+ip_finish_output2,
+kmem_cache_alloc_node,
+kmem_cache_free,
+memcg_kmem_get_cache,
+native_flush_tlb_one_user,
+nf_conntrack_in,
+nf_ct_seq_offset,
+number,
+page_counter_cancel,
+perf_iterate_sb,
+pick_next_entity,
+prepare_exit_to_usermode,
+read_tsc,
+rmqueue,
+set_next_entity,
+set_task_cpu,
+skb_release_data,
+swapgs_restore_regs_and_return_to_usermode,
+tcp_ack,network
+tcp_clean_rtx_queue,network
+tcp_in_window,network
+tcp_rcv_established,network
+tcp_sendmsg_locked,network
+tcp_write_xmit,network
+unmap_page_range,
+update_cfs_rq_h_load,
+update_min_vruntime,
