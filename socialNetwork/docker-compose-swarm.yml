@@ -22,10 +22,6 @@ services:
       restart_policy:
         condition: any
       replicas: 4
-      # placement:
-      #   constraints:
-      #     - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
-      #     - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - jaeger-collector
 
@@ -42,7 +38,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["ComposePostService"]
     hostname: compose-post-service
     image: qihang-sn
@@ -60,7 +56,7 @@ services:
           cpus: '0.8'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: home-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -82,7 +78,7 @@ services:
           cpus: '0.8'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["HomeTimelineService"]
     hostname: home-timeline-service
     image: qihang-sn
@@ -103,7 +99,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: media-frontend
     image: yg397/media-frontend:xenial
     ports:
@@ -122,7 +118,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: media-memcached
     image: memcached
     command:
@@ -141,7 +137,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: media-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -164,7 +160,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["MediaService"]
     hostname: media-service
     image: qihang-sn
@@ -185,7 +181,7 @@ services:
           cpus: '10.0'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-7.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: nginx-web-server
     image: yg397/openresty-thrift:xenial
     ports:
@@ -210,7 +206,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: post-storage-memcached
     image: memcached
     command:
@@ -230,7 +226,7 @@ services:
           cpus: '1.5'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: post-storage-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -253,7 +249,7 @@ services:
           cpus: '3.0'
       placement:
         constraints:
-          - node.hostname == node-3.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["PostStorageService"]
     hostname: post-storage-service
     image: qihang-sn
@@ -271,7 +267,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: social-graph-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -290,7 +286,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: social-graph-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -312,7 +308,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["SocialGraphService"]
     hostname: social-graph-service
     image: qihang-sn
@@ -333,7 +329,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["TextService"]
     hostname: text-service
     image: qihang-sn
@@ -354,7 +350,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UniqueIdService"]
     hostname: unique-id-service
     image: qihang-sn
@@ -372,7 +368,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: url-shorten-memcached
     image: memcached
     command:
@@ -391,7 +387,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: url-shorten-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -414,7 +410,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UrlShortenService"]
     hostname: url-shorten-service
     image: qihang-sn
@@ -432,7 +428,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-memcached
     image: memcached
     command:
@@ -454,7 +450,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UserMentionService"]
     hostname: user-mention-service
     image: qihang-sn
@@ -472,7 +468,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -495,7 +491,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UserService"]
     hostname: user-service
     image: qihang-sn
@@ -513,7 +509,7 @@ services:
           cpus: '1.5'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-mongodb
     image: mongo:4.4.6
     command: "mongod --nojournal --quiet --config /social-network-microservices/config/mongod.conf"
@@ -532,7 +528,7 @@ services:
           cpus: '1.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     hostname: user-timeline-redis
     image: redis
     command: "redis-server /social-network-microservices/config/redis.conf"
@@ -553,7 +549,7 @@ services:
           cpus: '4.0'
       placement:
         constraints:
-          - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
     command: ["UserTimelineService"]
     hostname: user-timeline-service
     image: qihang-sn
@@ -577,7 +573,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-6.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -592,7 +588,7 @@ services:
         condition: any
       placement:
         constraints:
-          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-6.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra-schema
 
@@ -604,7 +600,7 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-6.qihang-winter0.ragger-pg0.utah.cloudlab.us
     depends_on:
       - cassandra
 
@@ -614,7 +610,7 @@ services:
     deploy:
       placement:
         constraints:
-          - node.hostname == node-2.qihang-winter0.ragger-pg0.utah.cloudlab.us
+          - node.hostname == node-6.qihang-winter0.ragger-pg0.utah.cloudlab.us
 
 networks:
   default:
