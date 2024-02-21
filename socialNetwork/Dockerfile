@@ -11,6 +11,13 @@ RUN cd /tmp/redis-plus-plus\
 && make install
 
 COPY ./ /social-network-microservices
+
+RUN cd /social-network-microservices/thrift-src/ \
+    && ./bootstrap.sh \
+    && ./configure \
+    && make \
+    && make install
+
 RUN cd /social-network-microservices \
     && mkdir -p build \
     && cd build \
