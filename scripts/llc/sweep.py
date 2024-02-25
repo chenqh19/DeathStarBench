@@ -4,18 +4,19 @@ import multiprocessing
 core_llc = [20, 20] # number of cores & LLC ways, respectively
 max_part = 16 # max number of LLC partitions
 workload = "utl"
-output_file = "llc_sweep-"+workload+"5-1.txt"
+output_file = "llc_sweep-"+workload+"5-1-twitter.txt"
+do_part = True
 
 if workload == "utl":
-    core_part = [14, 1, 5]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 7000"
+    core_part = [13, 1, 5]
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 7500"
     key_words = ["post-storage-service", "user-timeline-service"]
     merged_ = ["user-timeline-redis", "user-timeline-mongodb", 
                 "post-storage-memcached", "post-storage-mongodb"]
 elif workload == "htl":
-    core_part = [16, 1, 3]
-    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2700"
-    key_words = ["home-timeline-service", "post-storage-service"]
+    core_part = [16, 3, 1]
+    gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-home-timeline.lua http://localhost:8080/wrk2-api/home-timeline/read -R 2400"
+    key_words = ["post-storage-service", "home-timeline-service"]
     merged_ = ["home-timeline-redis", "post-storage-memcached", 
                 "post-storage-mongodb"]
 
@@ -43,14 +44,14 @@ def execute_remote_command(hostname, username, private_key_path, command):
     finally:
         ssh_client.close()
 
-remote_hostname = "hp197.utah.cloudlab.us"
+remote_hostname = "hp168.utah.cloudlab.us"
 remote_username = "chenqh23"
 private_key_path = "/users/chenqh23/.ssh/id_rsa"
 
 command_to_execute = "echo \"hello\""
 
 
-def setPart(core_part, llc_part, do_part):
+def setPart(core_part, llc_part, do_part_):
     processes = []
     merged_procs = []
     # # add nginx processes
@@ -132,7 +133,7 @@ def setPart(core_part, llc_part, do_part):
 
     subprocess.run("sudo pqos -R l3cdp-off", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     partition_cmd = llc_cmd
-    if do_part:
+    if do_part_:
         subprocess.run(core_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         subprocess.run(partition_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
@@ -146,12 +147,12 @@ def setPart(core_part, llc_part, do_part):
         subprocess.run(merged_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 # start sweeping
-for part1 in range(12, core_llc[1]):
+for part1 in range(13, core_llc[1]):
     for part2 in range(1, core_llc[1]-part1-1):
         print(part1, part2)
         llc_part = [part1, part2, core_llc[1]-part1-part2]
         print(llc_part)
-        setPart(core_part, llc_part, True)
+        setPart(core_part, llc_part, do_part)
         remote_gen_work_cmd = "cd DeathStarBench/scripts/llc ; python gen_work.py \"" + gen_work_cmd + "\" " + output_file + " 1"
         print(remote_gen_work_cmd)
         execute_remote_command(remote_hostname, remote_username, private_key_path, remote_gen_work_cmd)

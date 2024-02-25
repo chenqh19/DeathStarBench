@@ -50,6 +50,7 @@ pip install pytz
 pip install gurobipy
 pip install gevent
 pip install scipy
+pip install paramiko
 
 cd ../..
 git clone --recurse-submodules https://github.com/chenqh19/microservices-demo.git
