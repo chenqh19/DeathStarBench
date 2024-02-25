@@ -677,6 +677,16 @@ uint32_t HomeTimelineService_WriteHomeTimeline_presult::read(::apache::thrift::p
 
 void HomeTimelineServiceClient::ReadHomeTimeline(std::vector<Post> & _return, const int64_t req_id, const int64_t user_id, const int32_t start, const int32_t stop, const std::map<std::string, std::string> & carrier)
 {
+  // get_rpc_timestamp
+  std::ofstream outputFile;
+  outputFile.open("ReadHTLA.txt", std::ios::app);
+  for (const auto& pair : carrier) {
+    auto now = std::chrono::high_resolution_clock::now();
+    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    outputFile << "ReadHTLA, " << pair.second << ", " << currentTime << std::endl;
+  }
+  outputFile.close();
+
   send_ReadHomeTimeline(req_id, user_id, start, stop, carrier);
   recv_ReadHomeTimeline(_return);
 }
@@ -843,13 +853,13 @@ void HomeTimelineServiceProcessor::process_ReadHomeTimeline(int32_t seqid, ::apa
 
   HomeTimelineService_ReadHomeTimeline_result result;
 
-  // output
+  // get_rpc_timestamp
   std::ofstream outputFile;
-  outputFile.open("output.txt", std::ios::app);
+  outputFile.open("ReadHTLB.txt", std::ios::app);
   for (const auto& pair : args.carrier) {
     auto now = std::chrono::high_resolution_clock::now();
     auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    outputFile << "ReadHTLRec, " << pair.second << ", " << currentTime << std::endl;
+    outputFile << "ReadHTLB, " << pair.second << ", " << currentTime << std::endl;
   }
   outputFile.close();
 

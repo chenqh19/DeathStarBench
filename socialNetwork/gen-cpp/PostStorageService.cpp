@@ -5,6 +5,9 @@
  *  @generated
  */
 #include "PostStorageService.h"
+#include <fstream>
+#include <iostream>
+#include <chrono>
 
 namespace social_network {
 
@@ -987,6 +990,16 @@ void PostStorageServiceClient::recv_ReadPost(Post& _return)
 
 void PostStorageServiceClient::ReadPosts(std::vector<Post> & _return, const int64_t req_id, const std::vector<int64_t> & post_ids, const std::map<std::string, std::string> & carrier)
 {
+  // get_rpc_timestamp
+  std::ofstream outputFile;
+  outputFile.open("ReadPostsA.txt", std::ios::app);
+  for (const auto& pair : carrier) {
+    auto now = std::chrono::high_resolution_clock::now();
+    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    outputFile << "ReadPostsA, " << pair.second << ", " << currentTime << std::endl;
+  }
+  outputFile.close();
+
   send_ReadPosts(req_id, post_ids, carrier);
   recv_ReadPosts(_return);
 }
@@ -1200,6 +1213,16 @@ void PostStorageServiceProcessor::process_ReadPosts(int32_t seqid, ::apache::thr
   if (this->eventHandler_.get() != NULL) {
     this->eventHandler_->postRead(ctx, "PostStorageService.ReadPosts", bytes);
   }
+
+  // get_rpc_timestamp
+  std::ofstream outputFile;
+  outputFile.open("ReadPostsB.txt", std::ios::app);
+  for (const auto& pair : args.carrier) {
+    auto now = std::chrono::high_resolution_clock::now();
+    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    outputFile << "ReadPostsB, " << pair.second << ", " << currentTime << std::endl;
+  }
+  outputFile.close();
 
   PostStorageService_ReadPosts_result result;
   try {
@@ -1420,6 +1443,16 @@ void PostStorageServiceConcurrentClient::recv_ReadPost(Post& _return, const int3
 
 void PostStorageServiceConcurrentClient::ReadPosts(std::vector<Post> & _return, const int64_t req_id, const std::vector<int64_t> & post_ids, const std::map<std::string, std::string> & carrier)
 {
+  // get_rpc_timestamp
+  std::ofstream outputFile;
+  outputFile.open("ReadPostsConnA.txt", std::ios::app);
+  for (const auto& pair : carrier) {
+    auto now = std::chrono::high_resolution_clock::now();
+    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    outputFile << "ReadPostsConnA, " << pair.second << ", " << currentTime << std::endl;
+  }
+  outputFile.close();
+
   int32_t seqid = send_ReadPosts(req_id, post_ids, carrier);
   recv_ReadPosts(_return, seqid);
 }
