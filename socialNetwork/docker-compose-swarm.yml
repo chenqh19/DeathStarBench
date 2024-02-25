@@ -33,9 +33,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -51,9 +51,15 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
+<<<<<<< HEAD
       resources:
         limits:
           cpus: '1.0'
+=======
+      # resources:
+      #   limits:
+      #     cpus: '0.8'
+>>>>>>> 49f5ee79cece180a2010f1531e8fb8864e7aea3c
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -73,9 +79,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '0.8'
+      # resources:
+      #   limits:
+      #     cpus: '0.8'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -94,9 +100,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -113,9 +119,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -132,9 +138,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -155,9 +161,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -176,9 +182,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '10.0'
+      # resources:
+      #   limits:
+      #     cpus: '10.0'
       placement:
         constraints:
           - node.hostname == node-7.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -201,9 +207,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy: # may remove
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -221,9 +227,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy: # may remove
-      resources:
-        limits:
-          cpus: '1.5'
+      # resources:
+      #   limits:
+      #     cpus: '1.5'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -244,9 +250,15 @@ services:
       replicas: 1
       restart_policy:
         condition: any
+<<<<<<< HEAD
       resources:
         limits:
           cpus: '4.0'
+=======
+      # resources:
+      #   limits:
+      #     cpus: '3.0'
+>>>>>>> 49f5ee79cece180a2010f1531e8fb8864e7aea3c
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -262,9 +274,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy: # may remove
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -281,9 +293,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy: # may remove
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -303,9 +315,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -324,9 +336,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -345,9 +357,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -363,9 +375,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy: # may remove
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -382,9 +394,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:  
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -405,9 +417,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -423,9 +435,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:  
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -445,9 +457,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -463,9 +475,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -486,9 +498,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -504,9 +516,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
-      resources:
-        limits:
-          cpus: '1.5'
+      # resources:
+      #   limits:
+      #     cpus: '1.5'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -523,9 +535,9 @@ services:
       - jaeger-agent
       - jaeger-query
     deploy:
-      resources:
-        limits:
-          cpus: '1.0'
+      # resources:
+      #   limits:
+      #     cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -544,9 +556,9 @@ services:
       replicas: 1
       restart_policy:
         condition: any
-      resources:
-        limits:
-          cpus: '4.0'
+      # resources:
+      #   limits:
+      #     cpus: '4.0'
       placement:
         constraints:
           - node.hostname == node-5.qihang-winter0.ragger-pg0.utah.cloudlab.us
