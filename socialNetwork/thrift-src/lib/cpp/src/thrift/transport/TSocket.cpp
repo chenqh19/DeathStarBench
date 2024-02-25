@@ -48,6 +48,9 @@
 #include <thrift/transport/TTransportException.h>
 #include <thrift/transport/PlatformSocket.h>
 
+#include <fstream>
+#include <iostream>
+
 #ifndef SOCKOPT_CAST_T
 #ifndef _WIN32
 #define SOCKOPT_CAST_T void
@@ -420,6 +423,10 @@ done:
 }
 
 void TSocket::open() {
+  std::ofstream outputFile;
+  outputFile.open("/test_log.txt", std::ios::app);
+  outputFile << "open" << std::endl;
+  outputFile.close();
   if (isOpen()) {
     return;
   }
