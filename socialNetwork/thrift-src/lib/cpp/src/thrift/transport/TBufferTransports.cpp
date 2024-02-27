@@ -239,7 +239,7 @@ bool TFramedTransport::readFrame() {
   outputFile.open("/logs/read_log.txt", std::ios::app);
   auto now = std::chrono::high_resolution_clock::now();
   auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-  outputFile << "Framed flush read! " << currentTime << " ";
+  outputFile << currentTime << ",time ";
   for (size_t i = 0; i < rBufSize_; ++i) {
       outputFile << rBuf_[i];
   }
@@ -302,7 +302,7 @@ void TFramedTransport::flush() {
     outputFile.open("/logs/write_log.txt", std::ios::app);
     auto now = std::chrono::high_resolution_clock::now();
     auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    outputFile << "Framed flush write! " << currentTime << " ";
+    outputFile << currentTime << ",time ";
     for (size_t i = 0; i < wBufSize_; ++i) {
         outputFile << wBuf_[i];
     }
