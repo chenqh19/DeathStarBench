@@ -25,7 +25,10 @@ RUN cd /social-network-microservices \
     && make -j$(nproc) \
     && make install
 
+# This is the real constructed container
 FROM ubuntu:16.04
+
+RUN mkdir /logs
 
 # Copy compiled C++ binaries and dependencies
 COPY --from=builder /usr/local/bin/* /usr/local/bin/

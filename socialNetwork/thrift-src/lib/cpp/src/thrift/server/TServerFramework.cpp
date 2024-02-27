@@ -22,6 +22,10 @@
 #include <stdint.h>
 #include <thrift/server/TServerFramework.h>
 
+#include <fstream>
+#include <iostream>
+#include <chrono>
+
 namespace apache {
 namespace thrift {
 namespace server {

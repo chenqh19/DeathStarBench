@@ -21,6 +21,9 @@
 #include <sstream>
 #include <iostream>
 
+#include <fstream>
+#include <chrono>
+
 #include <thrift/config.h>
 #include <thrift/transport/THttpServer.h>
 #include <thrift/transport/TSocket.h>
@@ -104,6 +107,14 @@ bool THttpServer::parseStatusLine(char* status) {
       << "Access-Control-Allow-Origin: *" << CRLF << "Access-Control-Allow-Methods: POST, OPTIONS"
       << CRLF << "Access-Control-Allow-Headers: Content-Type" << CRLF << CRLF;
     string header = h.str();
+
+    // // get_tcp_timestamp
+    // std::ofstream outputFile;
+    // outputFile.open("/logs/write_log.txt", std::ios::app);
+    // auto now = std::chrono::high_resolution_clock::now();
+    // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    // outputFile << "HTTPServer write! " << currentTime << "; Data:" << *buf << std::endl;
+    // outputFile.close();
 
     // Write the header, then the data, then flush
     transport_->write((const uint8_t*)header.c_str(), static_cast<uint32_t>(header.size()));

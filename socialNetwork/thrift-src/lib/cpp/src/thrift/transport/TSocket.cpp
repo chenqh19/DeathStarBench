@@ -50,6 +50,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <chrono>
 
 #ifndef SOCKOPT_CAST_T
 #ifndef _WIN32
@@ -424,9 +425,10 @@ done:
 
 void TSocket::open() {
   std::ofstream outputFile;
-  outputFile.open("/test_log.txt", std::ios::app);
+  outputFile.open("/logs/open_log.txt", std::ios::app);
   outputFile << "open" << std::endl;
   outputFile.close();
+
   if (isOpen()) {
     return;
   }
@@ -528,6 +530,14 @@ uint32_t TSocket::read(uint8_t* buf, uint32_t len) {
   if (socket_ == THRIFT_INVALID_SOCKET) {
     throw TTransportException(TTransportException::NOT_OPEN, "Called read on non-open socket");
   }
+
+  // // get_rpc_timestamp
+  // std::ofstream outputFile;
+  // outputFile.open("/logs/read_log.txt", std::ios::app);
+  // auto now = std::chrono::high_resolution_clock::now();
+  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  // outputFile << "Tsocket read: " << currentTime << std::endl;
+  // outputFile.close();
 
   int32_t retries = 0;
 
@@ -646,8 +656,17 @@ try_again:
   return got;
 }
 
+// each request will call it twice in htl
 void TSocket::write(const uint8_t* buf, uint32_t len) {
   uint32_t sent = 0;
+
+  // // get_rpc_timestamp
+  // std::ofstream outputFile;
+  // outputFile.open("/logs/write_log.txt", std::ios::app);
+  // auto now = std::chrono::high_resolution_clock::now();
+  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  // outputFile << "Tsocket write! " << currentTime << "; Data:" << *buf << std::endl;
+  // outputFile.close();
 
   while (sent < len) {
     uint32_t b = write_partial(buf + sent, len - sent);

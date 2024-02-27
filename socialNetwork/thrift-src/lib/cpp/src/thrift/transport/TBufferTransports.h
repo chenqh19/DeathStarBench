@@ -276,6 +276,9 @@ protected:
   uint32_t wBufSize_;
   boost::scoped_array<uint8_t> rBuf_;
   boost::scoped_array<uint8_t> wBuf_;
+
+public:
+  uint8_t get_wBuf_(int i) {return wBuf_[i];}
 };
 
 /**
@@ -415,6 +418,9 @@ protected:
   boost::scoped_array<uint8_t> wBuf_;
   uint32_t bufReclaimThresh_;
   uint32_t maxFrameSize_;
+
+public:
+  uint8_t get_wBuf_(int i) {return wBuf_[i];}
 };
 
 /**

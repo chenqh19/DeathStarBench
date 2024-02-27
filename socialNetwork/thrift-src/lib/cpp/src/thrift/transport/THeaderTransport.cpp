@@ -30,6 +30,10 @@
 #include <string.h>
 #include <zlib.h>
 
+#include <fstream>
+#include <iostream>
+#include <chrono>
+
 using std::map;
 using std::string;
 using std::vector;
@@ -537,6 +541,14 @@ void THeaderTransport::flush() {
   } else {
     throw TTransportException(TTransportException::BAD_ARGS, "Unknown client type");
   }
+
+  // // get_tcp_timestamp
+  // std::ofstream outputFile;
+  // outputFile.open("/logs/write_log.txt", std::ios::app);
+  // auto now = std::chrono::high_resolution_clock::now();
+  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  // outputFile << "Out write! " << currentTime << std::endl;
+  // outputFile.close();
 
   // Flush the underlying transport.
   outTransport_->flush();
