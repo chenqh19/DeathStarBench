@@ -419,6 +419,11 @@ protected:
   uint32_t bufReclaimThresh_;
   uint32_t maxFrameSize_;
 
+  char readioBuf[8096];
+  char writeioBuf[8096];
+  int read_place = 0;
+  int write_place = 0;
+
 public:
   uint8_t get_wBuf_(int i) {return wBuf_[i];}
 };

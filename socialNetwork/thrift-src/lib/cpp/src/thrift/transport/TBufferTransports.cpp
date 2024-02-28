@@ -25,6 +25,7 @@
 #include <fstream>
 #include <iostream>
 #include <chrono>
+#include <cstring>
 
 using std::string;
 
@@ -70,14 +71,6 @@ void TBufferedTransport::writeSlow(const uint8_t* buf, uint32_t len) {
   // We should only take the slow path if we can't accommodate the write
   // with the free space already in the buffer.
   assert(wBound_ - wBase_ < static_cast<ptrdiff_t>(len));
-
-  // // get_tcp_timestamp
-  // std::ofstream outputFile;
-  // outputFile.open("/logs/write_log.txt", std::ios::app);
-  // auto now = std::chrono::high_resolution_clock::now();
-  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-  // outputFile << "Slow write! " << currentTime << std::endl;
-  // outputFile.close();
 
   // Now here's the tricky question: should we copy data from buf into our
   // internal buffer and write it from there, or should we just write out
@@ -132,14 +125,6 @@ const uint8_t* TBufferedTransport::borrowSlow(uint8_t* buf, uint32_t* len) {
 void TBufferedTransport::flush() {
   // Write out any data waiting in the write buffer.
   uint32_t have_bytes = static_cast<uint32_t>(wBase_ - wBuf_.get());
-
-  // // get_tcp_timestamp
-  // std::ofstream outputFile;
-  // outputFile.open("/logs/write_log.txt", std::ios::app);
-  // auto now = std::chrono::high_resolution_clock::now();
-  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-  // outputFile << "Buffered flush write! " << currentTime << std::endl;
-  // outputFile.close();
 
   if (have_bytes > 0) {
     // Note that we reset wBase_ prior to the underlying write
@@ -235,17 +220,13 @@ bool TFramedTransport::readFrame() {
   setReadBuffer(rBuf_.get(), sz);
 
   // get_tcp_timestamp
-  std::ofstream outputFile;
-  outputFile.open("/logs/read_log.txt", std::ios::app);
+  std::ofstream outputFileRead;
   auto now = std::chrono::high_resolution_clock::now();
   auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-  outputFile << currentTime << ",time ";
-  for (size_t i = 0; i < rBufSize_; ++i) {
-      outputFile << rBuf_[i];
-  }
-  outputFile << std::endl;
-  outputFile.close();
-
+  outputFileRead.open("/logs/read_log.txt", std::ios::app);
+  outputFileRead << "\n" << currentTime << ",time ";
+  outputFileRead.write(reinterpret_cast<char*>(rBuf_.get()), rBufSize_);
+  outputFileRead.close();
   return true;
 }
 
@@ -298,16 +279,34 @@ void TFramedTransport::flush() {
     wBase_ = wBuf_.get() + sizeof(sz_nbo);
 
     // get_tcp_timestamp
-    std::ofstream outputFile;
-    outputFile.open("/logs/write_log.txt", std::ios::app);
+    // std::ofstream outputFileWrite;
+    // outputFileWrite.open("/logs/write_log.txt", std::ios::app);
+
     auto now = std::chrono::high_resolution_clock::now();
     auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    outputFile << currentTime << ",time ";
-    for (size_t i = 0; i < wBufSize_; ++i) {
-        outputFile << wBuf_[i];
+    std::string currentTimeString = std::to_string(currentTime);
+    currentTimeString += ',';
+    std::strcpy(writeioBuf+write_place, currentTimeString.c_str());
+    memcpy(writeioBuf+write_place+32, wBuf_.get(), wBufSize_);
+    write_place += (32+wBufSize_);
+    if (write_place+32+wBufSize_ >= 8096) {
+      write_place = 0;
+      std::ofstream outputFileWrite;
+      outputFileWrite.open("/logs/write_log.txt", std::ios::app);
+      int t = 0;
+      while (t+32+wBufSize_ < 8096) {
+        outputFileWrite << std::endl;
+        outputFileWrite.write(writeioBuf+t, 32);
+        outputFileWrite.write(writeioBuf+t+32, wBufSize_);
+        t += (32+wBufSize_);
+      }
+      outputFileWrite.close();
     }
-    outputFile << std::endl;
-    outputFile.close();
+    
+    
+    // outputFileWrite.write(reinterpret_cast<char*>(wBuf_.get()), wBufSize_);
+    // outputFileWrite << "\n" << currentTime << ",time ";
+    // outputFileWrite.close();
 
     // Write size and frame body.
     transport_->write(wBuf_.get(), static_cast<uint32_t>(sizeof(sz_nbo)) + sz_hbo);
