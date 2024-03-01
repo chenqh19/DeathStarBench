@@ -419,8 +419,8 @@ protected:
   uint32_t bufReclaimThresh_;
   uint32_t maxFrameSize_;
 
-  char readioBuf[8096];
-  char writeioBuf[8096];
+  char readioBuf[16384];
+  char writeioBuf[16384];
   int read_place = 0;
   int write_place = 0;
 

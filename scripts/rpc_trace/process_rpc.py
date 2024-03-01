@@ -110,17 +110,60 @@ def safe_int_conversion(value):
     except ValueError:
         return None
 
-# Process rpc files
-rpc_result = process_rpcs("ReadPostsA.txt", "ReadPostsB.txt")
-percent = get_percentile(rpc_result, 99)
-print("send time: ", rpc_result)
+def remove_consecutive_times(filename):
+    with open(filename, 'r+', errors='ignore') as file:
+        lines = file.readlines()
+        file.seek(0)
+        prev_line_contains_time = False
+        for line in lines:
+            if "time" in line:
+                if not prev_line_contains_time:
+                    file.write(line)
+                    prev_line_contains_time = True
+            else:
+                file.write(line)
+                prev_line_contains_time = False
+        file.truncate()
 
-rpc_result = process_rpcs("ReadPostsB.txt", "ReadPostsC.txt")
-percent = get_percentile(rpc_result, 99)
+def remove_lines_with_time(filename, num_to_remove):
+    lines = read_file(filename)
+
+    filtered_lines = []
+    skip = 0
+    for line in lines:
+        if "time" in line:
+            skip = num_to_remove
+        elif skip == 0:
+            filtered_lines.append(line)
+        else:
+            skip -= 1
+
+    with open(filename, 'w') as file:
+        file.writelines(filtered_lines)
+
+# filter problematic lines
+remove_consecutive_times("ReadPostsA.txt")
+remove_consecutive_times("ReadPostsB.txt")
+remove_consecutive_times("ReadPostsC.txt")
+remove_consecutive_times("ReadPostsD.txt")
+
+remove_lines_with_time("ReadPostsA.txt", 1)
+remove_lines_with_time("ReadPostsB.txt", 1)
+remove_lines_with_time("ReadPostsC.txt", 1)
+remove_lines_with_time("ReadPostsD.txt", 1)
+
+
+# Process rpc files
+rpc_result = process_rpcs("ReadPostsA.txt", "ReadPostsC.txt")
+# percent = get_percentile(rpc_result, 99)
 print("send time: ", rpc_result)
 
 rpc_result = process_rpcs("ReadPostsC.txt", "ReadPostsD.txt")
-percent = get_percentile(rpc_result, 99)
+# percent = get_percentile(rpc_result, 99)
+print("send time: ", rpc_result)
+
+rpc_result = process_rpcs("ReadPostsD.txt", "ReadPostsB.txt")
+# percent = get_percentile(rpc_result, 99)
 print("send time: ", rpc_result)
 
 # # Process tcp files

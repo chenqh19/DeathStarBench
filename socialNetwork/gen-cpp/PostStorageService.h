@@ -473,12 +473,20 @@ class PostStorageServiceClient : virtual public PostStorageServiceIf {
   apache::thrift::stdcxx::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
   ::apache::thrift::protocol::TProtocol* iprot_;
   ::apache::thrift::protocol::TProtocol* oprot_;
+  char ioBufA[16384];
+  char ioBufB[16384];
+  int placeA = 0;
+  int placeB = 0;
 };
 
 class PostStorageServiceProcessor : public ::apache::thrift::TDispatchProcessor {
  protected:
   ::apache::thrift::stdcxx::shared_ptr<PostStorageServiceIf> iface_;
   virtual bool dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext);
+  char ioBufC[16384];
+  char ioBufD[16384];
+  int placeC = 0;
+  int placeD = 0;
  private:
   typedef  void (PostStorageServiceProcessor::*ProcessFunction)(int32_t, ::apache::thrift::protocol::TProtocol*, ::apache::thrift::protocol::TProtocol*, void*);
   typedef std::map<std::string, ProcessFunction> ProcessMap;
