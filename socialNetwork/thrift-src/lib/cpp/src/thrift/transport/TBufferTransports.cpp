@@ -225,7 +225,7 @@ bool TFramedTransport::readFrame() {
   currentTimeString += ',';
   currentTimeString.insert(0, "\n");
   std::strcpy(readioBuf+read_place, currentTimeString.c_str());
-  memcpy(readioBuf+read_place+32, wBuf_.get(), rBufSize_);
+  memcpy(readioBuf+read_place+32, rBuf_.get(), rBufSize_);
   read_place += (32+rBufSize_);
   if (read_place+32+rBufSize_ >= 16384) {
     read_place = 0;
