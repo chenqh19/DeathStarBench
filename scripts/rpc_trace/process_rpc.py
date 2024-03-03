@@ -13,6 +13,12 @@ def get_percentile(lat_list, percent):
     index = int(len(lat_list)*percent/100)
     return lat_list[index]
 
+def get_distribution(lat_list):
+    percents = [50, 90, 99]
+    for p in percents:
+        print(p, "% tail latency", get_percentile(lat_list, p))
+
+
 def process_rpcs(file_a_path, file_b_path):
     """Process two files"""
     # Read the content of both files
@@ -25,16 +31,23 @@ def process_rpcs(file_a_path, file_b_path):
             break
         # Parse the content of each line
         parts_a = line_a.strip().split(',')
+        if len(parts_a) < 3:
+            lines_a.pop(i)
+            continue
         j = 0
         while j < len(lines_b):
             line_b = lines_b[j]
             parts_b = line_b.strip().split(',')
             # Check if the second item matches
+            if len(parts_b) < 3:
+                lines_b.pop(j)
+                continue
             if parts_a[1] == parts_b[1]:
                 # If it matches, subtract the third item of file b from the third item of file a
                 rpc_lat = int(parts_b[2]) - int(parts_a[2])
                 lats.append(rpc_lat)
                 lines_b.pop(j)  # Remove the matched line
+                break
             else:
                 j += 1  # Move to the next line
     # print(lats)
@@ -68,7 +81,7 @@ def process_tcps(file_a_path, file_b_path):
                     lats.append(diff)
                 lines_b.pop(j)
                 lines_b.pop(j-1)
-                continue
+                break
     lats.sort()
     return lats
 
@@ -152,28 +165,33 @@ remove_lines_with_time("ReadPostsB.txt", 1)
 remove_lines_with_time("ReadPostsC.txt", 1)
 remove_lines_with_time("ReadPostsD.txt", 1)
 
+remove_consecutive_times("htl-write_log.txt")
+remove_consecutive_times("ps-read_log.txt")
+
+remove_lines_with_time("htl-write_log.txt", 2)
+remove_lines_with_time("ps-read_log.txt", 2)
+
 # Process rpc files
 rpc_result = process_rpcs("ReadPostsA.txt", "ReadPostsC.txt")
-percent = get_percentile(rpc_result, 99)
-# print("send time: ", rpc_result)
-print("99% percent latency:", percent)
+get_distribution(rpc_result)
+
 
 rpc_result = process_rpcs("ReadPostsC.txt", "ReadPostsD.txt")
-percent = get_percentile(rpc_result, 99)
-# print("send time: ", rpc_result)
-print("99% percent latency:", percent)
+get_distribution(rpc_result)
+
 
 rpc_result = process_rpcs("ReadPostsD.txt", "ReadPostsB.txt")
-percent = get_percentile(rpc_result, 99)
-# print("send time: ", rpc_result)
-print("99% percent latency:", percent)
+get_distribution(rpc_result)
 
+
+'''
 # # Process tcp files
 tcp_result = process_tcps("htl-write_log.txt", "ps-read_log.txt")
 percent = get_percentile(tcp_result, 99)
 # print(tcp_result)
-print("99% percent latency:", percent)
+print("tail latency:", percent)
 
 # Process one rpc file and one tcp file
 # rt_result = process_rpc_tcp("ReadPostsA.txt", "htl-write_log.txt")
 # print(len(rt_result))
+'''
