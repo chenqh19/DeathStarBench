@@ -13,6 +13,9 @@ python3 scripts/init_social_graph.py --compose --graph=socfb-Reed98, ego-twitter
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/social-network/compose-post.lua http://localhost:8080/wrk2-api/post/compose -R 2000
 ../wrk2/wrk -D exp -t 100 -c 100 -d 30 -L -s ./wrk2/scripts/social-network/mixed-workload.lua http://localhost:8080 -R 2000
 
+# jaeger
+ssh -L 16686:127.0.0.1:16686 chenqh23@hp***.utah.cloudlab.us
+
 # swarm
 sudo docker swarm init --advertise-addr 10.0.1.1
 
