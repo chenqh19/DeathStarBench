@@ -1,12 +1,12 @@
-sudo docker cp socialnetwork-home-timeline-service-1:/social-network-microservices/ReadPostsA.txt ~/DeathStarBench/scripts/rpc_trace/
-sudo docker cp socialnetwork-home-timeline-service-1:/logs/write_log.txt ~/DeathStarBench/scripts/rpc_trace/htl-write_log.txt
-sudo docker cp socialnetwork-home-timeline-service-1:/social-network-microservices/ReadPostsB.txt ~/DeathStarBench/scripts/rpc_trace/
-sudo docker cp socialnetwork-home-timeline-service-1:/logs/read_log.txt ~/DeathStarBench/scripts/rpc_trace/htl-read_log.txt
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep home-timeline-service):/social-network-microservices/ReadPostsA.txt ~/DeathStarBench/scripts/rpc_trace/
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep home-timeline-service):/logs/write_log.txt ~/DeathStarBench/scripts/rpc_trace/htl-write_log.txt
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep home-timeline-service):/social-network-microservices/ReadPostsB.txt ~/DeathStarBench/scripts/rpc_trace/
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep home-timeline-service):/logs/read_log.txt ~/DeathStarBench/scripts/rpc_trace/htl-read_log.txt
 
-sudo docker cp socialnetwork-post-storage-service-1:/social-network-microservices/ReadPostsC.txt ~/DeathStarBench/scripts/rpc_trace/
-sudo docker cp socialnetwork-post-storage-service-1:/logs/read_log.txt ~/DeathStarBench/scripts/rpc_trace/ps-read_log.txt
-sudo docker cp socialnetwork-post-storage-service-1:/social-network-microservices/ReadPostsD.txt ~/DeathStarBench/scripts/rpc_trace/
-sudo docker cp socialnetwork-post-storage-service-1:/logs/write_log.txt ~/DeathStarBench/scripts/rpc_trace/ps-write_log.txt
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep post-storage-service):/social-network-microservices/ReadPostsC.txt ~/DeathStarBench/scripts/rpc_trace/
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep post-storage-service):/logs/read_log.txt ~/DeathStarBench/scripts/rpc_trace/ps-read_log.txt
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep post-storage-service):/social-network-microservices/ReadPostsD.txt ~/DeathStarBench/scripts/rpc_trace/
+sudo docker cp $(sudo docker ps --format "{{.Names}}" | grep post-storage-service):/logs/write_log.txt ~/DeathStarBench/scripts/rpc_trace/ps-write_log.txt
 
 sed -i 's/[^[:print:]\t]//g' ~/DeathStarBench/scripts/rpc_trace/*
 grep -E -a 'ReadPosts|uber-trace-id' ReadPostsA.txt > tmp.txt && mv tmp.txt ReadPostsA.txt
