@@ -8,7 +8,7 @@ output_file = "llc_sweep-"+workload+"5-1-twitter.txt"
 do_part = True
 
 if workload == "utl":
-    core_part = [13, 1, 5]
+    core_part = [13, 2, 5]
     gen_work_cmd = "../../wrk2/wrk -D exp -t 100 -c 100 -d 10 -L -s ../../socialNetwork/wrk2/scripts/social-network/read-user-timeline.lua http://localhost:8080/wrk2-api/user-timeline/read -R 7500"
     key_words = ["post-storage-service", "user-timeline-service"]
     merged_ = ["user-timeline-redis", "user-timeline-mongodb", 
