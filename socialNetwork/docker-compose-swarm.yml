@@ -79,7 +79,7 @@ services:
         condition: any
       resources:
         limits:
-          cpus: '0.8'
+          cpus: '1.0'
       placement:
         constraints:
           - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
@@ -250,7 +250,7 @@ services:
         condition: any
       resources:
         limits:
-          cpus: '4.0'
+          cpus: '2.0'
       placement:
         constraints:
           - node.hostname == node-1.qihang-winter0.ragger-pg0.utah.cloudlab.us
