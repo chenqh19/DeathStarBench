@@ -13,10 +13,12 @@ def get_percentile(lat_list, percent):
     index = int(len(lat_list)*percent/100)
     return lat_list[index]
 
-def get_distribution(lat_list):
-    percents = [50, 90, 99]
+def get_distribution(lat_list, name):
+    percents = [50, 90, 95, 99]
+    lats = [name]
     for p in percents:
-        print(p, "% tail latency", get_percentile(lat_list, p))
+        lats.append(get_percentile(lat_list, p))
+    print(','.join(map(str, lats)))
 
 
 def process_rpcs(file_a_path, file_b_path):
@@ -165,23 +167,23 @@ remove_lines_with_time("ReadPostsB.txt", 1)
 remove_lines_with_time("ReadPostsC.txt", 1)
 remove_lines_with_time("ReadPostsD.txt", 1)
 
-remove_consecutive_times("htl-write_log.txt")
-remove_consecutive_times("ps-read_log.txt")
+# remove_consecutive_times("htl-write_log.txt")
+# remove_consecutive_times("ps-read_log.txt")
 
-remove_lines_with_time("htl-write_log.txt", 2)
-remove_lines_with_time("ps-read_log.txt", 2)
+# remove_lines_with_time("htl-write_log.txt", 2)
+# remove_lines_with_time("ps-read_log.txt", 2)
 
 # Process rpc files
 rpc_result = process_rpcs("ReadPostsA.txt", "ReadPostsC.txt")
-get_distribution(rpc_result)
+get_distribution(rpc_result, "call")
 
 
 rpc_result = process_rpcs("ReadPostsC.txt", "ReadPostsD.txt")
-get_distribution(rpc_result)
+get_distribution(rpc_result, "process")
 
 
 rpc_result = process_rpcs("ReadPostsD.txt", "ReadPostsB.txt")
-get_distribution(rpc_result)
+get_distribution(rpc_result, "return")
 
 
 '''
