@@ -6,6 +6,7 @@
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/transport/TServerSocket.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 using namespace ::apache::thrift;
 using namespace ::apache::thrift::protocol;
@@ -37,7 +38,8 @@ int main(int argc, char **argv) {
   ::apache::thrift::stdcxx::shared_ptr<PlotServiceHandler> handler(new PlotServiceHandler());
   ::apache::thrift::stdcxx::shared_ptr<TProcessor> processor(new PlotServiceProcessor(handler));
   ::apache::thrift::stdcxx::shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
-  ::apache::thrift::stdcxx::shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
+  // ::apache::thrift::stdcxx::shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
+  ::apache::thrift::stdcxx::shared_ptr<TZlibTransportFactory> transportFactory(new TZlibTransportFactory());
   ::apache::thrift::stdcxx::shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
 
   TSimpleServer server(processor, serverTransport, transportFactory, protocolFactory);

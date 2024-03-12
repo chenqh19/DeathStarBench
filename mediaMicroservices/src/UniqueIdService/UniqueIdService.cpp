@@ -17,6 +17,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TServerSocket.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #include "../utils.h"
 #include "UniqueIdHandler.h"
@@ -24,6 +25,7 @@
 using apache::thrift::server::TThreadedServer;
 using apache::thrift::transport::TServerSocket;
 using apache::thrift::transport::TFramedTransportFactory;
+using apache::thrift::transport::TZlibTransportFactory;
 using apache::thrift::protocol::TBinaryProtocolFactory;
 using namespace media_service;
 
@@ -63,7 +65,7 @@ int main(int argc, char *argv[]) {
           std::make_shared<UniqueIdHandler>(
               &thread_lock, machine_id, &compose_client_pool)),
       std::make_shared<TServerSocket>("0.0.0.0", port),
-      std::make_shared<TFramedTransportFactory>(),
+      std::make_shared<TZlibTransportFactory>(),
       std::make_shared<TBinaryProtocolFactory>()
   );
 

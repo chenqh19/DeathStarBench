@@ -25,6 +25,7 @@
 #include <thrift/concurrency/ThreadManager.h>
 #include <thrift/server/TThreadPoolServer.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TServerSocket.h>
 
 namespace apache {

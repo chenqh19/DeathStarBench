@@ -34,6 +34,7 @@
 #include <thrift/transport/TPipeServer.h>
 #include <thrift/transport/TPipe.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TTransport.h>
 

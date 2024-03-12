@@ -24,6 +24,7 @@
 #include <thrift/protocol/TJSONProtocol.h>
 #include <thrift/stdcxx.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include "gen-cpp/DebugProtoTest_types.h"
 
 #define BOOST_TEST_MODULE JSONProtoTest

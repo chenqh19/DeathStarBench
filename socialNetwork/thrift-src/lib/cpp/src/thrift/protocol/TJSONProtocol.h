@@ -300,6 +300,7 @@ public:
 
 // TODO(dreiss): Move part of ThriftJSONString into a .cpp file and remove this.
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 namespace apache {
 namespace thrift {

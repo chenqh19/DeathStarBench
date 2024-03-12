@@ -8,3 +8,4 @@
 !/third_party/
 !/wrk2/
 !/thrift-src/
+!/social_network.thrift

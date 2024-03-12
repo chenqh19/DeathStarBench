@@ -21,6 +21,7 @@
 #include <algorithm>
 
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #include <fstream>
 #include <iostream>

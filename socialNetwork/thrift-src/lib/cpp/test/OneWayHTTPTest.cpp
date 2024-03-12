@@ -32,6 +32,7 @@
 #include <thrift/transport/TSocket.h>
 #include <thrift/stdcxx.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include "gen-cpp/OneWayService.h"
 
 BOOST_AUTO_TEST_SUITE(OneWayHTTPTest)

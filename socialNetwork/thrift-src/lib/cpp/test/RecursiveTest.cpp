@@ -25,6 +25,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/stdcxx.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #define BOOST_TEST_MODULE RecursiveTest
 #include <boost/test/unit_test.hpp>

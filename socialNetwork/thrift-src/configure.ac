@@ -978,6 +978,9 @@ if test "$have_cpp" = "yes" ; then
   echo "   Build TQTcpServer (Qt5) ... : $have_qt5"
   echo "   C++ compiler version ...... : $($CXX --version | head -1)"
 fi
+if test "x$have_zlib" != "xyes"; then
+    AC_MSG_ERROR([zlib library not found])
+fi
 if test "$have_cl" = "yes" ; then
   echo
   echo "Common Lisp Library:"

@@ -25,6 +25,7 @@
 #include <thrift/server/TServer.h>
 #include <thrift/transport/PlatformSocket.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TNonblockingServerTransport.h>
 #include <thrift/concurrency/ThreadManager.h>

@@ -12,13 +12,15 @@ RUN cd /tmp/redis-plus-plus\
 
 COPY ./ /social-network-microservices
 
-# RUN cd /social-network-microservices/thrift-src/ \
-#     && ./bootstrap.sh \
-#     && ./configure \
-#     && make \
-#     && make install
+RUN cd /social-network-microservices/thrift-src/ \
+    && apt-get install zlib1g-dev \
+    && ./bootstrap.sh \
+    && ./configure --with-zlib \
+    && make \
+    && make install
 
 RUN cd /social-network-microservices \
+    && thrift --gen cpp social_network.thrift \
     && mkdir -p build \
     && cd build \
     && cmake -DCMAKE_BUILD_TYPE=Debug .. \

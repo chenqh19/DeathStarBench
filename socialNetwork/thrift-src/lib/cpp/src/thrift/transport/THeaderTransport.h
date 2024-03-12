@@ -38,6 +38,7 @@
 
 #include <thrift/protocol/TProtocolTypes.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TTransport.h>
 #include <thrift/transport/TVirtualTransport.h>
 

@@ -21,6 +21,7 @@
 #include <iostream>
 
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TFDTransport.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/protocol/TDebugProtocol.h>

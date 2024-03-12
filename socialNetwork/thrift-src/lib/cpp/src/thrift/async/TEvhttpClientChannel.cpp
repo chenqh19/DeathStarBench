@@ -22,6 +22,7 @@
 #include <event2/buffer.h>
 #include <event2/buffer_compat.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/protocol/TProtocolException.h>
 
 #include <iostream>

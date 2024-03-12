@@ -22,6 +22,7 @@
 
 #include <thrift/stdcxx.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 namespace apache {
 namespace thrift {

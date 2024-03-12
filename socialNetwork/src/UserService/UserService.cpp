@@ -2,6 +2,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/server/TThreadedServer.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TServerSocket.h>
 
 #include "../utils.h"
@@ -13,6 +14,7 @@
 using apache::thrift::protocol::TBinaryProtocolFactory;
 using apache::thrift::server::TThreadedServer;
 using apache::thrift::transport::TFramedTransportFactory;
+using apache::thrift::transport::TZlibTransportFactory;
 using apache::thrift::transport::TServerSocket;
 using namespace social_network;
 
@@ -89,7 +91,7 @@ int main(int argc, char *argv[]) {
           &thread_lock, machine_id, secret, memcached_client_pool,
           mongodb_client_pool, &social_graph_client_pool)),
       server_socket,
-      std::make_shared<TFramedTransportFactory>(),
+      std::make_shared<TZlibTransportFactory>(),
       std::make_shared<TBinaryProtocolFactory>());
   LOG(info) << "Starting the user-service server ...";
   server.serve();

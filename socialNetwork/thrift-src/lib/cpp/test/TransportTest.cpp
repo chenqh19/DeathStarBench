@@ -36,6 +36,7 @@
 #include <boost/version.hpp>
 
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TFDTransport.h>
 #include <thrift/transport/TFileTransport.h>
 #include <thrift/transport/TZlibTransport.h>

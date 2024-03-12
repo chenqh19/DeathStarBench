@@ -2,6 +2,7 @@ include("../cmake/Findlibmemcached.cmake")
 include("../cmake/Findthrift.cmake")
 include("../cmake/FindLibevent.cmake")
 
+find_package(ZLIB REQUIRED)
 find_package(libmongoc-1.0 1.13 REQUIRED)
 find_package(nlohmann_json 3.5.0 REQUIRED)
 find_package(Threads)
@@ -34,8 +35,6 @@ endif()
 #add_library(tacopie STATIC IMPORTED)
 #set_target_properties(tacopie PROPERTIES IMPORTED_LOCATION
 #    /usr/local/lib/libtacopie.a)
-
-
 
 set(THRIFT_GEN_CPP_DIR ../../gen-cpp)
 

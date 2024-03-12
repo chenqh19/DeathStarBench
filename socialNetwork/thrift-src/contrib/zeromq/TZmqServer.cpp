@@ -19,6 +19,7 @@
 
 #include "TZmqServer.h"
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <boost/scoped_ptr.hpp>
 
 using apache::thrift::stdcxx::shared_ptr;

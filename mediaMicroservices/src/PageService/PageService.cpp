@@ -2,6 +2,7 @@
 #include <thrift/server/TThreadedServer.h>
 #include <thrift/transport/TServerSocket.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <signal.h>
 
 #include "../utils.h"
@@ -11,6 +12,7 @@ using json = nlohmann::json;
 using apache::thrift::server::TThreadedServer;
 using apache::thrift::transport::TServerSocket;
 using apache::thrift::transport::TFramedTransportFactory;
+using apache::thrift::transport::TZlibTransportFactory;
 using apache::thrift::protocol::TBinaryProtocolFactory;
 using namespace media_service;
 
@@ -59,7 +61,7 @@ int main(int argc, char *argv[]) {
               &cast_info_client_pool,
               &plot_client_pool)),
       std::make_shared<TServerSocket>("0.0.0.0", port),
-      std::make_shared<TFramedTransportFactory>(),
+      std::make_shared<TZlibTransportFactory>(),
       std::make_shared<TBinaryProtocolFactory>()
   );
   std::cout << "Starting the page-service server ..." << std::endl;

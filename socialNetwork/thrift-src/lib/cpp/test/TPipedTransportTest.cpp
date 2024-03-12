@@ -21,6 +21,7 @@
 #include <thrift/stdcxx.h>
 #include <thrift/transport/TTransportUtils.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #define BOOST_TEST_MODULE TPipedTransportTest
 #include <boost/test/unit_test.hpp>

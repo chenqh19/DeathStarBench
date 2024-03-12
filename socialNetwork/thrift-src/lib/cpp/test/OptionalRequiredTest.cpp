@@ -25,6 +25,7 @@
 #include <thrift/protocol/TDebugProtocol.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include "gen-cpp/OptionalRequiredTest_types.h"
 
 #define BOOST_TEST_MODULE OptionalRequiredTest

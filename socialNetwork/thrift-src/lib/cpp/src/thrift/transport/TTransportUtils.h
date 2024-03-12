@@ -27,6 +27,7 @@
 #include <thrift/transport/TTransport.h>
 // Include the buffered transports that used to be defined here.
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TFileTransport.h>
 
 namespace apache {

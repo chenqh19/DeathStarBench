@@ -23,6 +23,7 @@
 #include <QIODevice>
 
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/stdcxx.h>
 
 namespace apache {

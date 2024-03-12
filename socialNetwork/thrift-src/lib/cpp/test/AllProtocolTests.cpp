@@ -22,6 +22,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/protocol/TCompactProtocol.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 #define BOOST_TEST_MODULE AllProtocolTests
 #include <boost/test/unit_test.hpp>

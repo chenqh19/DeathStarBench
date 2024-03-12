@@ -45,6 +45,7 @@
 
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/transport/TZlibTransport.h>
+#include <thrift/transport/TZlibTransport.h>
 
 using namespace apache::thrift::transport;
 using apache::thrift::stdcxx::shared_ptr;

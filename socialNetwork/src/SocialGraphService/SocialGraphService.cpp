@@ -2,6 +2,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/server/TThreadedServer.h>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 #include <thrift/transport/TServerSocket.h>
 
 #include <boost/program_options.hpp>
@@ -16,6 +17,7 @@ using json = nlohmann::json;
 using apache::thrift::protocol::TBinaryProtocolFactory;
 using apache::thrift::server::TThreadedServer;
 using apache::thrift::transport::TFramedTransportFactory;
+using apache::thrift::transport::TZlibTransportFactory;
 using apache::thrift::transport::TServerSocket;
 using namespace social_network;
 
@@ -111,7 +113,7 @@ int main(int argc, char *argv[]) {
             std::make_shared<SocialGraphHandler>(mongodb_client_pool,
                                                  &redis_cluster_client_pool,
                                                  &user_client_pool)),
-        server_socket, std::make_shared<TFramedTransportFactory>(),
+        server_socket, std::make_shared<TZlibTransportFactory>(),
         std::make_shared<TBinaryProtocolFactory>());
     LOG(info) << "Starting the social-graph-service server with Redis Cluster support...";
     server.serve();
@@ -125,7 +127,7 @@ int main(int argc, char *argv[]) {
           std::make_shared<SocialGraphServiceProcessor>(
               std::make_shared<SocialGraphHandler>(
                   mongodb_client_pool, &redis_replica_client_pool, &redis_primary_client_pool, &user_client_pool)),
-          server_socket, std::make_shared<TFramedTransportFactory>(),
+          server_socket, std::make_shared<TZlibTransportFactory>(),
           std::make_shared<TBinaryProtocolFactory>());
       LOG(info) << "Starting the social-graph-service server with Redis replica support";
       server.serve();
@@ -138,7 +140,7 @@ int main(int argc, char *argv[]) {
         std::make_shared<SocialGraphServiceProcessor>(
             std::make_shared<SocialGraphHandler>(
                 mongodb_client_pool, &redis_client_pool, &user_client_pool)),
-        server_socket, std::make_shared<TFramedTransportFactory>(),
+        server_socket, std::make_shared<TZlibTransportFactory>(),
         std::make_shared<TBinaryProtocolFactory>());
     LOG(info) << "Starting the social-graph-service server ...";
     server.serve();

@@ -22,6 +22,7 @@
 
 #include <zmq.hpp>
 #include <thrift/transport/TBufferTransports.h>
+#include <thrift/transport/TZlibTransport.h>
 
 namespace apache { namespace thrift { namespace transport {
 
