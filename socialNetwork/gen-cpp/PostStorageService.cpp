@@ -9,6 +9,7 @@
 #include <iostream>
 #include <chrono>
 #include <cstring>
+#include <thread>
 
 namespace social_network {
 
@@ -1251,6 +1252,7 @@ void PostStorageServiceProcessor::process_ReadPosts(int32_t seqid, ::apache::thr
     this->eventHandler_->postRead(ctx, "PostStorageService.ReadPosts", bytes);
   }
 
+  std::this_thread::sleep_for(std::chrono::microseconds(10000));
   for (const auto& pair : args.carrier) {
     auto now = std::chrono::high_resolution_clock::now();
     auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
