@@ -26,6 +26,7 @@
 #include <iostream>
 #include <chrono>
 #include <cstring>
+#include <thread>
 
 using std::string;
 
@@ -219,25 +220,25 @@ bool TFramedTransport::readFrame() {
   transport_->readAll(rBuf_.get(), sz);
   setReadBuffer(rBuf_.get(), sz);
 
-  auto now = std::chrono::high_resolution_clock::now();
-  auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-  std::string currentTimeString = std::to_string(currentTime);
-  currentTimeString += ',';
-  currentTimeString.insert(0, "\n");
-  std::strcpy(readioBuf+read_place, currentTimeString.c_str());
-  memcpy(readioBuf+read_place+32, rBuf_.get(), rBufSize_);
-  read_place += (32+rBufSize_);
-  if (read_place+32+rBufSize_ >= 16384) {
-    read_place = 0;
-    std::ofstream outputFileRead;
-    outputFileRead.open("/logs/read_log.txt", std::ios::app);
-    int t = 0;
-    while (t+32+rBufSize_ < 16384) {
-      outputFileRead.write(readioBuf+t, 32+rBufSize_);
-      t += (32+rBufSize_);
-    }
-    outputFileRead.close();
-  }
+  // auto now = std::chrono::high_resolution_clock::now();
+  // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  // std::string currentTimeString = std::to_string(currentTime);
+  // currentTimeString += ',';
+  // currentTimeString.insert(0, "\n");
+  // std::strcpy(readioBuf+read_place, currentTimeString.c_str());
+  // memcpy(readioBuf+read_place+32, rBuf_.get(), rBufSize_);
+  // read_place += (32+rBufSize_);
+  // if (read_place+32+rBufSize_ >= 16384) {
+  //   read_place = 0;
+  //   std::ofstream outputFileRead;
+  //   outputFileRead.open("/logs/read_log.txt", std::ios::app);
+  //   int t = 0;
+  //   while (t+32+rBufSize_ < 16384) {
+  //     outputFileRead.write(readioBuf+t, 32+rBufSize_);
+  //     t += (32+rBufSize_);
+  //   }
+  //   outputFileRead.close();
+  // }
 
   return true;
 }
@@ -294,26 +295,26 @@ void TFramedTransport::flush() {
     // std::ofstream outputFileWrite;
     // outputFileWrite.open("/logs/write_log.txt", std::ios::app);
 
-    auto now = std::chrono::high_resolution_clock::now();
-    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    std::string currentTimeString = std::to_string(currentTime);
-    currentTimeString += ',';
-    currentTimeString.insert(0, "\n");
-    std::strcpy(writeioBuf+write_place, currentTimeString.c_str());
-    memcpy(writeioBuf+write_place+32, wBuf_.get(), wBufSize_);
-    write_place += (32+wBufSize_);
-    if (write_place+32+wBufSize_ >= 16384) {
-      write_place = 0;
-      std::ofstream outputFileWrite;
-      outputFileWrite << "time";
-      outputFileWrite.open("/logs/write_log.txt", std::ios::app);
-      int t = 0;
-      while (t+32+wBufSize_ < 16384) {
-        outputFileWrite.write(writeioBuf+t, 32+wBufSize_);
-        t += (32+wBufSize_);
-      }
-      outputFileWrite.close();
-    }
+    // auto now = std::chrono::high_resolution_clock::now();
+    // auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+    // std::string currentTimeString = std::to_string(currentTime);
+    // currentTimeString += ',';
+    // currentTimeString.insert(0, "\n");
+    // std::strcpy(writeioBuf+write_place, currentTimeString.c_str());
+    // memcpy(writeioBuf+write_place+32, wBuf_.get(), wBufSize_);
+    // write_place += (32+wBufSize_);
+    // if (write_place+32+wBufSize_ >= 16384) {
+    //   write_place = 0;
+    //   std::ofstream outputFileWrite;
+    //   outputFileWrite << "time";
+    //   outputFileWrite.open("/logs/write_log.txt", std::ios::app);
+    //   int t = 0;
+    //   while (t+32+wBufSize_ < 16384) {
+    //     outputFileWrite.write(writeioBuf+t, 32+wBufSize_);
+    //     t += (32+wBufSize_);
+    //   }
+    //   outputFileWrite.close();
+    // }
     
     
     // outputFileWrite.write(reinterpret_cast<char*>(wBuf_.get()), wBufSize_);
@@ -325,6 +326,7 @@ void TFramedTransport::flush() {
   }
 
   // Flush the underlying transport.
+  // std::this_thread::sleep_for(std::chrono::microseconds(10000)); // hack to add extra latency
   transport_->flush();
 
   // reclaim write buffer

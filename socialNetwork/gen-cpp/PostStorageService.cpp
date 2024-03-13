@@ -1252,29 +1252,28 @@ void PostStorageServiceProcessor::process_ReadPosts(int32_t seqid, ::apache::thr
     this->eventHandler_->postRead(ctx, "PostStorageService.ReadPosts", bytes);
   }
 
-  std::this_thread::sleep_for(std::chrono::microseconds(10000));
-  for (const auto& pair : args.carrier) {
-    auto now = std::chrono::high_resolution_clock::now();
-    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    std::string currentTimeString = std::to_string(currentTime);
-    currentTimeString.insert(0, ",");
-    std::string idString = pair.second;
-    std::string finalString = "\nReadPostsC,uber-trace-id"+idString+currentTimeString+",";
-    std::strcpy(ioBufC+placeC, finalString.c_str());
-    placeC += 128;
-  }
-  if (placeC+128 >= 16384) {
-    placeC = 0;
-    std::ofstream outputFileC;
-    outputFileC.open("ReadPostsC.txt", std::ios::app);
-    outputFileC << "\ntime";
-    int t = 0;
-    while (t+128 < 16384) {
-      outputFileC.write(ioBufC+t, 128);
-      t += 128;
-    }
-    outputFileC.close();
-  }
+  // for (const auto& pair : args.carrier) {
+  //   auto now = std::chrono::high_resolution_clock::now();
+  //   auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  //   std::string currentTimeString = std::to_string(currentTime);
+  //   currentTimeString.insert(0, ",");
+  //   std::string idString = pair.second;
+  //   std::string finalString = "\nReadPostsC,uber-trace-id"+idString+currentTimeString+",";
+  //   std::strcpy(ioBufC+placeC, finalString.c_str());
+  //   placeC += 128;
+  // }
+  // if (placeC+128 >= 16384) {
+  //   placeC = 0;
+  //   std::ofstream outputFileC;
+  //   outputFileC.open("ReadPostsC.txt", std::ios::app);
+  //   outputFileC << "\ntime";
+  //   int t = 0;
+  //   while (t+128 < 16384) {
+  //     outputFileC.write(ioBufC+t, 128);
+  //     t += 128;
+  //   }
+  //   outputFileC.close();
+  // }
 
   PostStorageService_ReadPosts_result result;
   try {
@@ -1297,28 +1296,28 @@ void PostStorageServiceProcessor::process_ReadPosts(int32_t seqid, ::apache::thr
     return;
   }
 
-  for (const auto& pair : args.carrier) {
-    auto now = std::chrono::high_resolution_clock::now();
-    auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
-    std::string currentTimeString = std::to_string(currentTime);
-    currentTimeString.insert(0, ",");
-    std::string idString = pair.second;
-    std::string finalString = "\nReadPostsD,uber-trace-id"+idString+currentTimeString+",";
-    std::strcpy(ioBufD+placeD, finalString.c_str());
-    placeD += 128;
-  }
-  if (placeD+128 >= 16384) {
-    placeD = 0;
-    std::ofstream outputFileD;
-    outputFileD.open("ReadPostsD.txt", std::ios::app);
-    outputFileD << "\ntime";
-    int t = 0;
-    while (t+128 < 16384) {
-      outputFileD.write(ioBufD+t, 128);
-      t += 128;
-    }
-    outputFileD.close();
-  }
+  // for (const auto& pair : args.carrier) {
+  //   auto now = std::chrono::high_resolution_clock::now();
+  //   auto currentTime = std::chrono::time_point_cast<std::chrono::microseconds>(now).time_since_epoch().count();
+  //   std::string currentTimeString = std::to_string(currentTime);
+  //   currentTimeString.insert(0, ",");
+  //   std::string idString = pair.second;
+  //   std::string finalString = "\nReadPostsD,uber-trace-id"+idString+currentTimeString+",";
+  //   std::strcpy(ioBufD+placeD, finalString.c_str());
+  //   placeD += 128;
+  // }
+  // if (placeD+128 >= 16384) {
+  //   placeD = 0;
+  //   std::ofstream outputFileD;
+  //   outputFileD.open("ReadPostsD.txt", std::ios::app);
+  //   outputFileD << "\ntime";
+  //   int t = 0;
+  //   while (t+128 < 16384) {
+  //     outputFileD.write(ioBufD+t, 128);
+  //     t += 128;
+  //   }
+  //   outputFileD.close();
+  // }
 
   if (this->eventHandler_.get() != NULL) {
     this->eventHandler_->preWrite(ctx, "PostStorageService.ReadPosts");
