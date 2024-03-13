@@ -18,7 +18,7 @@ def find_mid_avg(numbers):
 def main():
     count = 0
     results = []
-    with open('../lat_files/htl_rps-nginxalone.txt', 'r') as file:
+    with open('../lat_files/htl-nohack_rps.txt', 'r') as file:
         lines = file.readlines()
         for i in range(len(lines)):
             if "new_config" in lines[i]:
