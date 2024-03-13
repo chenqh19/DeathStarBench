@@ -10,7 +10,7 @@ def set_range(low, high, interval):
     return rpss
 
 test_type = "htl" 
-output_file = "../lat_files/"+test_type+"-front-notrace_rps.txt"
+output_file = "../lat_files/"+test_type+"-psremote-notrace_rps.txt"
 rpss = set_range(1400, 1900, 100)
 for rps in rpss:
     if test_type == "hr":
