@@ -326,7 +326,7 @@ void TFramedTransport::flush() {
   }
 
   // Flush the underlying transport.
-  std::this_thread::sleep_for(std::chrono::microseconds(10000)); // hack to add extra latency
+  // std::this_thread::sleep_for(std::chrono::microseconds(10000)); // hack to add extra latency
   transport_->flush();
 
   // reclaim write buffer
