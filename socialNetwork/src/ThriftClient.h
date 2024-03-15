@@ -65,9 +65,10 @@ ThriftClient<TThriftClient>::ThriftClient(
   _port = port;
   _socket = std::shared_ptr<TSocket>(new TSocket(addr, port));
   _socket->setKeepAlive(true);
-  _transport = std::shared_ptr<TTransport>(new TFramedTransport(_socket));
-  _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_transport));
-  _protocol = std::shared_ptr<TProtocol>(new TBinaryProtocol(_zlib_transport));
+  _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_socket));
+  _transport = std::shared_ptr<TTransport>(new TFramedTransport(_zlib_transport));
+  // _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_transport));
+  _protocol = std::shared_ptr<TProtocol>(new TBinaryProtocol(_transport));
   _client = new TThriftClient(_protocol);
   _connect_timestamp = 0;
   _keepalive_ms = 0;
@@ -102,9 +103,10 @@ ThriftClient<TThriftClient>::ThriftClient(
     _socket = std::shared_ptr<TSocket>(new TSocket(addr, port));
   }
   _socket->setKeepAlive(true);
-  _transport = std::shared_ptr<TTransport>(new TFramedTransport(_socket));
-  _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_transport));
-  _protocol = std::shared_ptr<TProtocol>(new TBinaryProtocol(_zlib_transport));
+  _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_socket));
+  _transport = std::shared_ptr<TTransport>(new TFramedTransport(_zlib_transport));
+  // _zlib_transport = std::shared_ptr<TZlibTransport>(new TZlibTransport(_transport));
+  _protocol = std::shared_ptr<TProtocol>(new TBinaryProtocol(_transport));
   _client = new TThriftClient(_protocol);
   _connect_timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
                            std::chrono::system_clock::now().time_since_epoch())
@@ -125,14 +127,14 @@ TThriftClient *ThriftClient<TThriftClient>::GetClient() const {
 
 template<class TThriftClient>
 bool ThriftClient<TThriftClient>::IsConnected() {
-  return _zlib_transport->isOpen();
+  return _transport->isOpen();
 }
 
 template<class TThriftClient>
 void ThriftClient<TThriftClient>::Connect() {
   if (!IsConnected()) {
     try {
-      _zlib_transport->open();
+      _transport->open();
     } catch (TException &tx) {
       throw tx;
     }
@@ -143,7 +145,7 @@ template<class TThriftClient>
 void ThriftClient<TThriftClient>::Disconnect() {
   if (IsConnected()) {
     try {
-      _zlib_transport->close();
+      _transport->close();
     } catch (TException &tx) {
       throw tx;
     }

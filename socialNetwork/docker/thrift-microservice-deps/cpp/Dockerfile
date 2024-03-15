@@ -13,7 +13,7 @@ ARG LIB_SIMPLEAMQPCLIENT_VERSION=2.4.0
 ARG LIB_HIREDIS_VERSION=1.0.0
 ARG LIB_REDIS_PLUS_PLUS_VERSION=1.2.3
 
-ARG BUILD_DEPS="ca-certificates g++ cmake wget git libmemcached-dev automake bison flex libboost-all-dev libevent-dev zlib libssl-dev libtool make pkg-config librabbitmq-dev python3-dev python3-pip python3-setuptools python3-wheel"
+ARG BUILD_DEPS="ca-certificates g++ cmake wget git libmemcached-dev automake bison flex libboost-all-dev libevent-dev zlib1g-dev libssl-dev libtool make pkg-config librabbitmq-dev python3-dev python3-pip python3-setuptools python3-wheel"
 
 RUN apt-get update \
   && apt-get install -y ${BUILD_DEPS} --no-install-recommends \
@@ -34,7 +34,8 @@ RUN apt-get update \
   && cd thrift-${LIB_THRIFT_VERSION} \
   && mkdir -p cmake-build \
   && cd cmake-build \
-  && cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=0 .. \
+  # && apt install zlib1g-dev \
+  && cmake -DCMAKE_BUILD_TYPE=Release -DWITH_ZLIB=ON -DBUILD_TESTING=0 .. \
   && make -j$(nproc) \
   && make install \
   && cd /tmp \

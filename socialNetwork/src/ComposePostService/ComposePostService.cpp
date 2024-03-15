@@ -3,6 +3,7 @@
 #include <thrift/server/TThreadedServer.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/transport/TZlibTransport.h>
+#include <thrift/transport/THeaderTransport.h>
 #include <thrift/transport/TServerSocket.h>
 
 #include "../utils.h"
@@ -13,6 +14,7 @@ using apache::thrift::protocol::TBinaryProtocolFactory;
 using apache::thrift::server::TThreadedServer;
 using apache::thrift::transport::TFramedTransportFactory;
 using apache::thrift::transport::TZlibTransportFactory;
+using apache::thrift::transport::THeaderTransportFactory;
 using apache::thrift::transport::TServerSocket;
 using namespace social_network;
 
@@ -107,7 +109,7 @@ int main(int argc, char *argv[]) {
               &user_client_pool, &unique_id_client_pool, &media_client_pool,
               &text_client_pool, &home_timeline_client_pool)),
       server_socket,
-      std::make_shared<TZlibTransportFactory>(),
+      std::make_shared<TFramedTransportFactory>(),
       std::make_shared<TBinaryProtocolFactory>());
   LOG(info) << "Starting the compose-post-service server ...";
   server.serve();
