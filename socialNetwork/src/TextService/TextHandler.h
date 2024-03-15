@@ -88,11 +88,7 @@ void TextHandler::ComposeText(
     std::vector<Url> _return_urls;
     auto url_client = url_client_wrapper->GetClient();
     try {
-      auto url_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "url_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
       url_client->ComposeUrls(_return_urls, req_id, urls, url_writer_text_map);
-      url_check_overhead_span->Finish();
     } catch (...) {
       LOG(error) << "Failed to upload urls to url-shorten-service";
       _url_client_pool->Remove(url_client_wrapper);
@@ -122,13 +118,9 @@ void TextHandler::ComposeText(
     std::vector<UserMention> _return_user_mentions;
     auto user_mention_client = user_mention_client_wrapper->GetClient();
     try {
-      auto mention_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "mention_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
       user_mention_client->ComposeUserMentions(_return_user_mentions, req_id,
                                                mention_usernames,
                                                user_mention_writer_text_map);
-      mention_check_overhead_span->Finish();
     } catch (...) {
       LOG(error) << "Failed to upload user_mentions to user-mention-service";
       _user_mention_client_pool->Remove(user_mention_client_wrapper);

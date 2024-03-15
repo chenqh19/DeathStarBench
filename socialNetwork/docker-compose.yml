@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   social-graph-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: social-graph-service
     #    ports:
     #      - 10000:9090
@@ -11,7 +11,6 @@ services:
       social-graph-mongodb:
         condition: service_started
     restart: always
-    # cpuset: 0-7
     entrypoint: SocialGraphService
     volumes:
       - ./config:/social-network-microservices/config
@@ -22,7 +21,6 @@ services:
     # ports:
     #   - 27018:27017
     restart: always
-    # cpuset: 0-7
 
   social-graph-redis:
     image: redis
@@ -30,7 +28,6 @@ services:
     # ports:
     #   - 6380:6379
     restart: always
-    # cpuset: 0-7
 
   home-timeline-redis:
     image: redis
@@ -38,15 +35,13 @@ services:
     # ports:
     #   - 6381:6379
     restart: always
-    # cpuset: 0-7
 
   compose-post-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: compose-post-service
     #    ports:
     #      - 10001:9090
     restart: always
-    # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -55,12 +50,11 @@ services:
       - ./config:/social-network-microservices/config
 
   post-storage-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: post-storage-service
     ports:
       - 10002:9090
     restart: always
-    # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -76,7 +70,6 @@ services:
     #    ports:
     #      - 11212:11211
     restart: always
-    # cpuset: 0-7
 
   post-storage-mongodb:
     image: mongo:4.4.6
@@ -84,15 +77,13 @@ services:
     #    ports:
     #      - 27019:27017
     restart: always
-    # cpuset: 0-7
 
   user-timeline-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: user-timeline-service
     #    ports:
     #      - 10003:9090
     restart: always
-    # # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -108,7 +99,6 @@ services:
     #    ports:
     #      - 6383:6379
     restart: always
-    # cpuset: 0-7
 
   user-timeline-mongodb:
     image: mongo:4.4.6
@@ -116,15 +106,13 @@ services:
     #    ports:
     #      - 27020:27017
     restart: always
-    # cpuset: 0-7
 
   url-shorten-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: url-shorten-service
     #    ports:
     #      - 10004:9090
     restart: always
-    # cpuset: 0-7
     entrypoint: UrlShortenService
     depends_on:
       jaeger-agent:
@@ -140,7 +128,6 @@ services:
     #    ports:
     #      - 11213:11211
     restart: always
-    # cpuset: 0-7
 
   url-shorten-mongodb:
     image: mongo:4.4.6
@@ -148,15 +135,13 @@ services:
     #    ports:
     #      - 27021:27017
     restart: always
-    # cpuset: 0-7
 
   user-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: user-service
     #    ports:
     #      - 10005:9090
     restart: always
-    # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -172,7 +157,6 @@ services:
     #    ports:
     #      - 11214:11211
     restart: always
-    # cpuset: 0-7
 
   user-mongodb:
     image: mongo:4.4.6
@@ -180,10 +164,9 @@ services:
     # ports:
     #   - 27023:27017
     restart: always
-    # cpuset: 0-7
 
   media-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: media-service
     #    ports:
     #      - 10006:9090
@@ -193,7 +176,6 @@ services:
       media-mongodb:
         condition: service_started
     restart: always
-    # cpuset: 0-7
     entrypoint: MediaService
     volumes:
       - ./config:/social-network-microservices/config
@@ -204,7 +186,6 @@ services:
     #    ports:
     #      - 11215:11211
     restart: always
-    # cpuset: 0-7
 
   media-mongodb:
     image: mongo:4.4.6
@@ -212,15 +193,13 @@ services:
     #    ports:
     #      - 27024:27017
     restart: always
-    # cpuset: 0-7
 
   text-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: text-service
     #    ports:
     #      - 10007:9090
     restart: always
-    # # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -229,12 +208,11 @@ services:
       - ./config:/social-network-microservices/config
 
   unique-id-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: unique-id-service
     #    ports:
     #      - 10008:9090
     restart: always
-    # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -243,7 +221,7 @@ services:
       - ./config:/social-network-microservices/config
 
   user-mention-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: user-mention-service
     #    ports:
     #      - 10009:9090
@@ -251,13 +229,12 @@ services:
       jaeger-agent:
         condition: service_started
     restart: always
-    # cpuset: 0-7
     entrypoint: UserMentionService
     volumes:
       - ./config:/social-network-microservices/config
 
   home-timeline-service:
-    image: qihang-sn
+    image: deathstarbench/social-network-microservices:latest
     hostname: home-timeline-service
     #    ports:
     #      - 10010:9090
@@ -265,7 +242,6 @@ services:
       jaeger-agent:
         condition: service_started
     restart: always
-    # cpuset: 0-7
     entrypoint: HomeTimelineService
     volumes:
       - ./config:/social-network-microservices/config
@@ -279,7 +255,6 @@ services:
       jaeger-agent:
         condition: service_started
     restart: always
-    # cpuset: 0-7
     volumes:
       - ./nginx-web-server/lua-scripts:/usr/local/openresty/nginx/lua-scripts
       - ./nginx-web-server/pages:/usr/local/openresty/nginx/pages
@@ -294,7 +269,6 @@ services:
     ports:
       - 8081:8080
     restart: always
-    # cpuset: 0-7
     depends_on:
       jaeger-agent:
         condition: service_started
@@ -313,6 +287,5 @@ services:
       #      - 14268:14268
       #      - 9411:9411
     restart: always
-    # cpuset: 0-7
     environment:
       - COLLECTOR_ZIPKIN_HTTP_PORT=9411

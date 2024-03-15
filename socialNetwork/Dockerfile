@@ -11,13 +11,6 @@ RUN cd /tmp/redis-plus-plus\
 && make install
 
 COPY ./ /social-network-microservices
-
-# RUN cd /social-network-microservices/thrift-src/ \
-#     && ./bootstrap.sh \
-#     && ./configure \
-#     && make \
-#     && make install
-
 RUN cd /social-network-microservices \
     && mkdir -p build \
     && cd build \
@@ -25,10 +18,7 @@ RUN cd /social-network-microservices \
     && make -j$(nproc) \
     && make install
 
-# This is the real constructed container
 FROM ubuntu:16.04
-
-RUN mkdir /logs
 
 # Copy compiled C++ binaries and dependencies
 COPY --from=builder /usr/local/bin/* /usr/local/bin/
@@ -42,6 +32,7 @@ RUN apt-get update && \
         libsasl2-2 \
         libmemcached11 \
         libmemcachedutil2 \
+        libevent-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /social-network-microservices

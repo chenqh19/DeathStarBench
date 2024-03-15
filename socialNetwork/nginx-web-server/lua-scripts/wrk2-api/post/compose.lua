@@ -38,13 +38,19 @@ function _M.ComposePost()
   local status, ret
 
   local client = GenericObjectPool:connection(
-      ComposePostServiceClient, "compose-post-service" .. k8s_suffix, 9090)
+      ComposePostServiceClient, "ath-8.ece.cornell.edu" .. k8s_suffix, 9090)
 
   local span = tracer:start_span("compose_post_client",
       { ["references"] = { { "child_of", parent_span_context } } })
   local carrier = {}
   tracer:text_map_inject(span:context(), carrier)
-
+  span:set_tag("username", post.username)
+  span:set_tag("user_id", post.user_id)
+  span:set_tag("text", post.text)
+  span:set_tag("post_type", post.post_type)
+  span:set_tag("media_ids", post.media_ids)
+  span:set_tag("media_types", post.media_types)
+  
   if (not _StrIsEmpty(post.media_ids) and not _StrIsEmpty(post.media_types)) then
     status, ret = pcall(client.ComposePost, client,
         req_id, post.username, tonumber(post.user_id), post.text,

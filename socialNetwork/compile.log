@@ -1,0 +1,147 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 234B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.23kB done
+#2 DONE 0.0s
+
+#3 [auth] library/ubuntu:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] yg397/thrift-microservice-deps:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/yg397/thrift-microservice-deps:xenial
+#5 ...
+
+#6 [internal] load metadata for docker.io/library/ubuntu:16.04
+#6 DONE 0.2s
+
+#5 [internal] load metadata for docker.io/yg397/thrift-microservice-deps:xenial
+#5 DONE 0.3s
+
+#7 [builder 1/4] FROM docker.io/yg397/thrift-microservice-deps:xenial@sha256:66d016da04e1d584e73cae8826a135610c9bcbd7f338d01e86680ffda9c5614f
+#7 DONE 0.0s
+
+#8 [stage-1 1/5] FROM docker.io/library/ubuntu:16.04@sha256:1f1a2d56de1d604801a9671f301190704c25d604a416f59e03c04f5c6ffee0d6
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 32.86kB 0.1s done
+#9 DONE 0.1s
+
+#10 [builder 2/4] RUN cd /tmp/redis-plus-plus&& sed -i '/Transaction transaction/i\\    ShardsPool* get_shards_pool(){\n        return &_pool;\n    }\n'    src/sw/redis++/redis_cluster.h && cmake -DREDIS_PLUS_PLUS_USE_TLS=ON . && make -j$(nproc) && make install
+#10 CACHED
+
+#11 [builder 3/4] COPY ./ /social-network-microservices
+#11 DONE 0.3s
+
+#12 [builder 4/4] RUN cd /social-network-microservices     && mkdir -p build     && cd build     && cmake -DCMAKE_BUILD_TYPE=Debug ..     && make -j$(nproc)     && make install
+#12 0.562 -- The C compiler identification is GNU 5.4.0
+#12 0.707 -- The CXX compiler identification is GNU 5.4.0
+#12 0.717 -- Check for working C compiler: /usr/bin/cc
+#12 0.883 -- Check for working C compiler: /usr/bin/cc -- works
+#12 0.885 -- Detecting C compiler ABI info
+#12 1.051 -- Detecting C compiler ABI info - done
+#12 1.068 -- Detecting C compile features
+#12 1.574 -- Detecting C compile features - done
+#12 1.581 -- Check for working CXX compiler: /usr/bin/c++
+#12 1.775 -- Check for working CXX compiler: /usr/bin/c++ -- works
+#12 1.777 -- Detecting CXX compiler ABI info
+#12 1.972 -- Detecting CXX compiler ABI info - done
+#12 1.989 -- Detecting CXX compile features
+#12 2.629 -- Detecting CXX compile features - done
+#12 2.639 -- Found LIBMEMCACHED: /usr/lib/x86_64-linux-gnu/libmemcached.so  
+#12 2.639 -- THRIFT_HOME: 
+#12 2.648 -- Thrift version: Thrift version 0.12.0
+#12 2.650 -- Found libevent: /usr/lib/x86_64-linux-gnu/libevent.so
+#12 2.657 -- Found nlohmann_json: /usr/local/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake (found suitable version "3.6.1", minimum required is "3.5.0") 
+#12 2.662 -- Looking for pthread.h
+#12 2.836 -- Looking for pthread.h - found
+#12 2.838 -- Looking for pthread_create
+#12 3.012 -- Looking for pthread_create - not found
+#12 3.013 -- Looking for pthread_create in pthreads
+#12 3.162 -- Looking for pthread_create in pthreads - not found
+#12 3.163 -- Looking for pthread_create in pthread
+#12 3.329 -- Looking for pthread_create in pthread - found
+#12 3.333 -- Found Threads: TRUE  
+#12 3.442 -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.0.2g") 
+#12 3.527 -- Boost version: 1.58.0
+#12 3.527 -- Found the following Boost libraries:
+#12 3.527 --   log
+#12 3.527 --   log_setup
+#12 3.527 --   program_options
+#12 3.527 --   date_time
+#12 3.527 --   system
+#12 3.527 --   filesystem
+#12 3.527 --   thread
+#12 3.527 --   regex
+#12 3.527 --   chrono
+#12 3.527 --   atomic
+#12 3.569 -- Configuring done
+#12 3.771 -- Generating done
+#12 3.781 -- Build files have been written to: /social-network-microservices/build
+#12 3.936 Scanning dependencies of target MediaService
+#12 3.938 Scanning dependencies of target UniqueIdService
+#12 3.944 Scanning dependencies of target TextService
+#12 3.967 Scanning dependencies of target UserMentionService
+#12 3.969 Scanning dependencies of target UrlShortenService
+#12 3.969 [  1%] Building CXX object src/MediaService/CMakeFiles/MediaService.dir/MediaService.cpp.o
+#12 3.969 [  3%] Building CXX object src/MediaService/CMakeFiles/MediaService.dir/__/__/gen-cpp/MediaService.cpp.o
+#12 3.970 [  5%] Building CXX object src/MediaService/CMakeFiles/MediaService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 3.970 Scanning dependencies of target PostStorageService
+#12 3.971 [  6%] Building CXX object src/UniqueIdService/CMakeFiles/UniqueIdService.dir/UniqueIdService.cpp.o
+#12 3.972 [  8%] Building CXX object src/UniqueIdService/CMakeFiles/UniqueIdService.dir/__/__/gen-cpp/UniqueIdService.cpp.o
+#12 3.973 [ 10%] Building CXX object src/UniqueIdService/CMakeFiles/UniqueIdService.dir/__/__/gen-cpp/ComposePostService.cpp.o
+#12 3.973 [ 11%] Building CXX object src/UniqueIdService/CMakeFiles/UniqueIdService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 3.980 [ 13%] Building CXX object src/TextService/CMakeFiles/TextService.dir/__/__/gen-cpp/TextService.cpp.o
+#12 3.982 [ 15%] Building CXX object src/TextService/CMakeFiles/TextService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 3.983 [ 16%] Building CXX object src/TextService/CMakeFiles/TextService.dir/TextService.cpp.o
+#12 3.984 [ 18%] Building CXX object src/TextService/CMakeFiles/TextService.dir/__/__/gen-cpp/UserMentionService.cpp.o
+#12 3.990 [ 20%] Building CXX object src/TextService/CMakeFiles/TextService.dir/__/__/gen-cpp/UrlShortenService.cpp.o
+#12 3.992 Scanning dependencies of target UserService
+#12 3.997 Scanning dependencies of target UserTimelineService
+#12 4.003 Scanning dependencies of target SocialGraphService
+#12 4.007 [ 22%] Building CXX object src/UserMentionService/CMakeFiles/UserMentionService.dir/UserMentionService.cpp.o
+#12 4.008 [ 23%] Building CXX object src/UserMentionService/CMakeFiles/UserMentionService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.011 [ 25%] Building CXX object src/PostStorageService/CMakeFiles/PostStorageService.dir/__/__/gen-cpp/PostStorageService.cpp.o
+#12 4.012 [ 27%] Building CXX object src/PostStorageService/CMakeFiles/PostStorageService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.012 [ 28%] Building CXX object src/PostStorageService/CMakeFiles/PostStorageService.dir/PostStorageService.cpp.o
+#12 4.016 [ 30%] Building CXX object src/UserMentionService/CMakeFiles/UserMentionService.dir/__/__/gen-cpp/UserMentionService.cpp.o
+#12 4.016 [ 32%] Building CXX object src/UrlShortenService/CMakeFiles/UrlShortenService.dir/UrlShortenService.cpp.o
+#12 4.017 Scanning dependencies of target ComposePostService
+#12 4.018 [ 33%] Building CXX object src/UrlShortenService/CMakeFiles/UrlShortenService.dir/__/__/gen-cpp/UrlShortenService.cpp.o
+#12 4.018 [ 35%] Building CXX object src/UrlShortenService/CMakeFiles/UrlShortenService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.044 [ 37%] Building CXX object src/UserTimelineService/CMakeFiles/UserTimelineService.dir/__/__/gen-cpp/UserTimelineService.cpp.o
+#12 4.045 [ 40%] Building CXX object src/UserTimelineService/CMakeFiles/UserTimelineService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.045 [ 40%] Building CXX object src/UserTimelineService/CMakeFiles/UserTimelineService.dir/__/__/gen-cpp/PostStorageService.cpp.o
+#12 4.045 Scanning dependencies of target HomeTimelineService
+#12 4.046 [ 42%] Building CXX object src/UserService/CMakeFiles/UserService.dir/__/__/gen-cpp/UserService.cpp.o
+#12 4.047 [ 44%] Building CXX object src/UserService/CMakeFiles/UserService.dir/__/__/gen-cpp/SocialGraphService.cpp.o
+#12 4.053 [ 45%] Building CXX object src/UserTimelineService/CMakeFiles/UserTimelineService.dir/UserTimelineService.cpp.o
+#12 4.054 [ 47%] Building CXX object src/UserService/CMakeFiles/UserService.dir/UserService.cpp.o
+#12 4.056 [ 49%] Building CXX object src/UserService/CMakeFiles/UserService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.063 [ 50%] Building CXX object src/SocialGraphService/CMakeFiles/SocialGraphService.dir/SocialGraphService.cpp.o
+#12 4.063 [ 52%] Building CXX object src/SocialGraphService/CMakeFiles/SocialGraphService.dir/__/__/gen-cpp/SocialGraphService.cpp.o
+#12 4.066 [ 54%] Building CXX object src/SocialGraphService/CMakeFiles/SocialGraphService.dir/__/__/gen-cpp/UserService.cpp.o
+#12 4.067 [ 55%] Building CXX object src/SocialGraphService/CMakeFiles/SocialGraphService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.084 [ 57%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/PostStorageService.cpp.o
+#12 4.087 [ 59%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/UniqueIdService.cpp.o
+#12 4.088 [ 61%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/UserTimelineService.cpp.o
+#12 4.089 [ 62%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/TextService.cpp.o
+#12 4.090 [ 64%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.092 [ 66%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/ComposePostService.cpp.o
+#12 4.095 [ 67%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/ComposePostService.cpp.o
+#12 4.096 [ 69%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/UserService.cpp.o
+#12 4.096 [ 71%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/MediaService.cpp.o
+#12 4.101 [ 72%] Building CXX object src/ComposePostService/CMakeFiles/ComposePostService.dir/__/__/gen-cpp/HomeTimelineService.cpp.o
+#12 4.116 [ 74%] Building CXX object src/HomeTimelineService/CMakeFiles/HomeTimelineService.dir/__/__/gen-cpp/social_network_types.cpp.o
+#12 4.118 [ 76%] Building CXX object src/HomeTimelineService/CMakeFiles/HomeTimelineService.dir/__/__/gen-cpp/SocialGraphService.cpp.o
+#12 4.120 [ 77%] Building CXX object src/HomeTimelineService/CMakeFiles/HomeTimelineService.dir/__/__/gen-cpp/HomeTimelineService.cpp.o
+#12 4.126 [ 79%] Building CXX object src/HomeTimelineService/CMakeFiles/HomeTimelineService.dir/__/__/gen-cpp/PostStorageService.cpp.o
+#12 4.127 [ 81%] Building CXX object src/HomeTimelineService/CMakeFiles/HomeTimelineService.dir/HomeTimelineService.cpp.o
+#12 CANCELED
+ERROR: failed to solve: Canceled: context canceled

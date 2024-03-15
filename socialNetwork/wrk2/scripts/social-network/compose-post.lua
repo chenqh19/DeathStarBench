@@ -33,10 +33,10 @@ request = function()
   local user_index = math.random(0, max_user_index - 1)
   local username = "username_" .. tostring(user_index)
   local user_id = tostring(user_index)
-  local text = stringRandom(256)
-  local num_user_mentions = math.random(0, 5)
-  local num_urls = math.random(0, 5)
-  local num_media = math.random(0, 4)
+  local text = stringRandom(math.random(0, 4096))
+  local num_user_mentions = math.random(0, 20)
+  local num_urls = math.random(0, 20)
+  local num_media = math.random(0, 20)
   local media_ids = '['
   local media_types = '['
 
@@ -65,7 +65,7 @@ request = function()
   media_types = media_types:sub(1, #media_types - 1) .. "]"
 
   local method = "POST"
-  local path = "http://localhost:8080/wrk2-api/post/compose"
+  local path = "http://ath-4:8080/wrk2-api/post/compose"
   local headers = {}
   local body
   headers["Content-Type"] = "application/x-www-form-urlencoded"
@@ -77,6 +77,6 @@ request = function()
     body   = "username=" .. username .. "&user_id=" .. user_id ..
         "&text=" .. text .. "&media_ids=" .. "&post_type=0"
   end
-
+  -- print(body)
   return wrk.format(method, path, headers, body)
 end

@@ -131,12 +131,8 @@ Creator ComposePostHandler::_ComposeCreaterHelper(
   auto user_client = user_client_wrapper->GetClient();
   Creator _return_creator;
   try {
-    auto creator_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "creator_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     user_client->ComposeCreatorWithUserId(_return_creator, req_id, user_id,
                                           username, writer_text_map);
-    creator_check_overhead_span->Finish();
   } catch (...) {
     LOG(error) << "Failed to send compose-creator to user-service";
     _user_service_client_pool->Remove(user_client_wrapper);
@@ -173,11 +169,7 @@ TextServiceReturn ComposePostHandler::_ComposeTextHelper(
   auto text_client = text_client_wrapper->GetClient();
   TextServiceReturn _return_text;
   try {
-    auto text_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "text_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     text_client->ComposeText(_return_text, req_id, text, writer_text_map);
-    text_check_overhead_span->Finish();
   } catch (...) {
     LOG(error) << "Failed to send compose-text to text-service";
     _text_service_client_pool->Remove(text_client_wrapper);
@@ -215,12 +207,8 @@ std::vector<Media> ComposePostHandler::_ComposeMediaHelper(
   auto media_client = media_client_wrapper->GetClient();
   std::vector<Media> _return_media;
   try {
-    auto media_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "media_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     media_client->ComposeMedia(_return_media, req_id, media_types, media_ids,
                                writer_text_map);
-    media_check_overhead_span->Finish();
   } catch (...) {
     LOG(error) << "Failed to send compose-media to media-service";
     _media_service_client_pool->Remove(media_client_wrapper);
@@ -256,12 +244,8 @@ int64_t ComposePostHandler::_ComposeUniqueIdHelper(
   auto unique_id_client = unique_id_client_wrapper->GetClient();
   int64_t _return_unique_id;
   try {
-    auto id_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "id_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     _return_unique_id =
         unique_id_client->ComposeUniqueId(req_id, post_type, writer_text_map);
-    id_check_overhead_span->Finish();
   } catch (...) {
     LOG(error) << "Failed to send compose-unique_id to unique_id-service";
     _unique_id_service_client_pool->Remove(unique_id_client_wrapper);
@@ -295,11 +279,7 @@ void ComposePostHandler::_UploadPostHelper(
   }
   auto post_storage_client = post_storage_client_wrapper->GetClient();
   try {
-    auto post_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "post_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     post_storage_client->StorePost(req_id, post, writer_text_map);
-    post_check_overhead_span->Finish();
   } catch (...) {
     _post_storage_client_pool->Remove(post_storage_client_wrapper);
     LOG(error) << "Failed to store post to post-storage-service";
@@ -332,12 +312,8 @@ void ComposePostHandler::_UploadUserTimelineHelper(
   }
   auto user_timeline_client = user_timeline_client_wrapper->GetClient();
   try {
-    auto utl_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "utl_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     user_timeline_client->WriteUserTimeline(req_id, post_id, user_id, timestamp,
                                             writer_text_map);
-    utl_check_overhead_span->Finish();
   } catch (...) {
     _user_timeline_client_pool->Remove(user_timeline_client_wrapper);
     throw;
@@ -370,12 +346,8 @@ void ComposePostHandler::_UploadHomeTimelineHelper(
   }
   auto home_timeline_client = home_timeline_client_wrapper->GetClient();
   try {
-    auto htl_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "htl_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     home_timeline_client->WriteHomeTimeline(req_id, post_id, user_id, timestamp,
                                             user_mentions_id, writer_text_map);
-    htl_check_overhead_span->Finish();
   } catch (...) {
     _home_timeline_client_pool->Remove(home_timeline_client_wrapper);
     LOG(error) << "Failed to write home timeline to home-timeline-service";

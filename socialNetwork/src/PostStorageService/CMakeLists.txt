@@ -9,6 +9,7 @@ target_include_directories(
     PostStorageService PRIVATE
     ${LIBMEMCACHED_INCLUDE_DIR}
     ${MONGOC_INCLUDE_DIRS}
+    ${LIBEVENT_INCLUDE_DIRS}
     /usr/local/include/jaegertracing
 )
 
@@ -16,6 +17,7 @@ target_link_libraries(
     PostStorageService
     ${MONGOC_LIBRARIES}
     ${LIBMEMCACHED_LIBRARIES}
+    ${LIBEVENT_LIBRARIES}
     nlohmann_json::nlohmann_json
     ${THRIFT_LIB}
     ${CMAKE_THREAD_LIBS_INIT}
@@ -24,5 +26,6 @@ target_link_libraries(
     Boost::log_setup
     jaegertracing
 )
+
 
 install(TARGETS PostStorageService DESTINATION ./)

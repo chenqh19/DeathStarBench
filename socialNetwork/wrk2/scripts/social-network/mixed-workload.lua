@@ -34,10 +34,7 @@ local function compose_post()
   local user_index = math.random(0, max_user_index - 1)
   local username = "username_" .. tostring(user_index)
   local user_id = tostring(user_index)
-  
-  -- change text length
   local text = stringRandom(256)
-  
   local num_user_mentions = math.random(0, 5)
   local num_urls = math.random(0, 5)
   local num_media = math.random(0, 4)

@@ -123,12 +123,8 @@ void HomeTimelineHandler::WriteHomeTimeline(
   auto social_graph_client = social_graph_client_wrapper->GetClient();
   std::vector<int64_t> followers_id;
   try {
-    auto graph_check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-              "graph_check_overhead_client",
-              {opentracing::ChildOf(&span->context())});
     social_graph_client->GetFollowers(followers_id, req_id, user_id,
                                       writer_text_map);
-    graph_check_overhead_span->Finish();
   } catch (...) {
     LOG(error) << "Failed to get followers from social-network-service";
     _social_graph_client_pool->Remove(social_graph_client_wrapper);
@@ -273,11 +269,7 @@ void HomeTimelineHandler::ReadHomeTimeline(
   }
   auto post_client = post_client_wrapper->GetClient();
   try {
-    auto check_overhead_span = opentracing::Tracer::Global()->StartSpan(
-        "check_overhead_client",
-        {opentracing::ChildOf(&span->context())});
     post_client->ReadPosts(_return, req_id, post_ids, writer_text_map);
-    check_overhead_span->Finish();
   } catch (...) {
     _post_client_pool->Remove(post_client_wrapper);
     LOG(error) << "Failed to read posts from post-storage-service";
