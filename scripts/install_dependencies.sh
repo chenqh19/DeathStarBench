@@ -34,7 +34,7 @@ sudo apt install linux-tools-common
 yes | sudo apt install linux-tools-5.4.0-164-generic
 
 cd ../socialNetwork
-sudo docker build -t qihang-sn .
+sudo docker build -t varun-sep .
 cd ../scripts
 
 cd ../hotelReservation
