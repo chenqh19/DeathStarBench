@@ -36,7 +36,7 @@ function _M.RegisterUser()
     ngx.exit(ngx.HTTP_BAD_REQUEST)
   end
 
-  local client = GenericObjectPool:connection(UserServiceClient, "ath-1.ece.cornell.edu" .. k8s_suffix, 9099)
+  local client = GenericObjectPool:connection(UserServiceClient, "user-service" .. k8s_suffix, 9099)
 
   local status, err = pcall(client.RegisterUserWithId, client, req_id, post.first_name,
       post.last_name, post.username, post.password, tonumber(post.user_id), carrier)
