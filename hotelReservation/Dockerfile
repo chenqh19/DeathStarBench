@@ -10,6 +10,7 @@ RUN go mod init
 RUN go mod vendor
 # use local modified github.com/hailocab/go-geoindex instead of upstream one
 COPY ./vendor/github.com/hailocab/go-geoindex /go/src/github.com/harlow/go-micro-services/vendor/github.com/hailocab/go-geoindex
+COPY ./vendor/levelgzip /go/src/github.com/harlow/go-micro-services/vendor/levelgzip
 COPY ./golang-plugin/malloc.go /usr/local/go/src/runtime/malloc.go
 COPY ./golang-plugin/sizeclasses.go /usr/local/go/src/runtime/sizeclasses.go
 RUN go install -ldflags="" ./cmd/...
