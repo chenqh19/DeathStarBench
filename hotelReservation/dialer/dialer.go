@@ -9,6 +9,8 @@ import (
 	consul "github.com/hashicorp/consul/api"
 	lb "github.com/olivere/grpc/lb/consul"
 	opentracing "github.com/opentracing/opentracing-go"
+	"levelgzip"
+	
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
 )
@@ -42,6 +44,10 @@ func Dial(name string, opts ...DialOption) (*grpc.ClientConn, error) {
 			Timeout:             120 * time.Second,
 			PermitWithoutStream: true,
 		}),
+		// add compression (globally)
+		grpc.WithDefaultCallOptions(
+			grpc.UseCompressor(levelgzip1.levelgzip1.Name),
+		),
 	}
 	if tlsopt := tls.GetDialOpt(); tlsopt != nil {
 		dialopts = append(dialopts, tlsopt)
