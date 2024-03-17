@@ -46,7 +46,7 @@ func Dial(name string, opts ...DialOption) (*grpc.ClientConn, error) {
 		}),
 		// add compression (globally)
 		grpc.WithDefaultCallOptions(
-			grpc.UseCompressor(levelgzip1.levelgzip1.Name),
+			grpc.UseCompressor(mygzip.Name),
 		),
 	}
 	if tlsopt := tls.GetDialOpt(); tlsopt != nil {
