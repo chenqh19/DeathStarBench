@@ -47,6 +47,7 @@ var unaryStreamDesc = &StreamDesc{ServerStreams: false, ClientStreams: false}
 func invoke(ctx context.Context, method string, req, reply interface{}, cc *ClientConn, opts ...CallOption) error {
 	// TODO: implement retries in clientStream and make this simply
 	// newClientStream, SendMsg, RecvMsg.
+	println("invoke!")
 	firstAttempt := true
 	for {
 		csInt, err := newClientStream(ctx, unaryStreamDesc, cc, method, opts...)
@@ -72,4 +73,5 @@ func invoke(ctx context.Context, method string, req, reply interface{}, cc *Clie
 		}
 		return nil
 	}
+	println("replied!")
 }
