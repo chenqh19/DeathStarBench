@@ -27,6 +27,7 @@ import (
 
 	"github.com/bradfitz/gomemcache/memcache"
 	// "strings"
+	_ "levelgzip"
 )
 
 const name = "srv-profile"

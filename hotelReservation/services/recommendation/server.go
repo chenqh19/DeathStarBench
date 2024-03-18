@@ -25,6 +25,7 @@ import (
 	// "os"
 	"time"
 	// "strings"
+	_ "levelgzip"
 )
 
 const name = "srv-recommendation"

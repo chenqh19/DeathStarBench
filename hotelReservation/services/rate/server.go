@@ -29,6 +29,7 @@ import (
 	"strings"
 
 	"github.com/bradfitz/gomemcache/memcache"
+	_ "levelgzip"
 )
 
 const name = "srv-rate"

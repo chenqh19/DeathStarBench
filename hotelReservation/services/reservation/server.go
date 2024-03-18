@@ -27,6 +27,7 @@ import (
 	"strings"
 	"strconv"
 	"sync"
+	_ "levelgzip"
 )
 
 const name = "srv-reservation"

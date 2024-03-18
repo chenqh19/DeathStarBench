@@ -20,6 +20,7 @@ import (
 	"github.com/harlow/go-micro-services/tls"
 	"github.com/harlow/go-micro-services/tracing"
 	"github.com/opentracing/opentracing-go"
+	_ "levelgzip"
 )
 
 // Server implements frontend service

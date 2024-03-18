@@ -20,7 +20,7 @@ package grpc
 
 import (
 	"golang.org/x/net/context"
-	"time"
+	// "time"
 )
 
 // Invoke sends the RPC request on the wire and returns after response is
@@ -52,6 +52,7 @@ func invoke(ctx context.Context, method string, req, reply interface{}, cc *Clie
 	for {
 		csInt, err := newClientStream(ctx, unaryStreamDesc, cc, method, opts...)
 		if err != nil {
+			println("replied1!")
 			return err
 		}
 		cs := csInt.(*clientStream)
@@ -61,6 +62,7 @@ func invoke(ctx context.Context, method string, req, reply interface{}, cc *Clie
 				firstAttempt = false
 				continue
 			}
+			println("replied2!")
 			return err
 		}
 		if err := cs.RecvMsg(reply); err != nil {
@@ -69,9 +71,10 @@ func invoke(ctx context.Context, method string, req, reply interface{}, cc *Clie
 				firstAttempt = false
 				continue
 			}
+			println("replied3!")
 			return err
 		}
+		println("replied4!")
 		return nil
 	}
-	println("replied!")
 }

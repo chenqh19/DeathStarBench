@@ -24,6 +24,7 @@ import (
 
 	// "os"
 	"time"
+	_ "levelgzip"
 )
 
 const name = "srv-user"
