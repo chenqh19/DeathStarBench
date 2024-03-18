@@ -21,6 +21,7 @@ func init() {
 	}
 	encoding.RegisterCompressor(c)
 	SetLevel(1);
+
 }
 
 type writer struct {
