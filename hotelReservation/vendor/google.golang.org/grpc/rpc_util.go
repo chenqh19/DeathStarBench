@@ -349,7 +349,7 @@ func (p *parser) recvMsg(maxReceiveMessageSize int) (pf payloadFormat, msg []byt
 	pos++
 	if pos == 10000 {
 		for _, element := range arr {
-			Println(element)
+			Print(element, " ")
 		}
 		arr = arr[:0]
 		pos = 0
