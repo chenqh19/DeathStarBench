@@ -20,7 +20,7 @@ func init() {
 		return &writer{Writer: gzip.NewWriter(ioutil.Discard), pool: &c.poolCompressor}
 	}
 	encoding.RegisterCompressor(c)
-	SetLevel(0);
+	SetLevel(9);
 
 }
 
