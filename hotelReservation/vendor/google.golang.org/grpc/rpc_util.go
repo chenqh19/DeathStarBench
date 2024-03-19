@@ -341,6 +341,7 @@ func (p *parser) recvMsg(maxReceiveMessageSize int) (pf payloadFormat, msg []byt
 
 	pf = payloadFormat(p.header[0])
 	length := binary.BigEndian.Uint32(p.header[1:])
+	println(length)
 
 	if length == 0 {
 		return pf, nil, nil
