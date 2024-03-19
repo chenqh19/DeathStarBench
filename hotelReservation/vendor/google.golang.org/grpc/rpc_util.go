@@ -320,6 +320,9 @@ type parser struct {
 	header [5]byte
 }
 
+var pos int = 0
+var arr []uint32
+
 // recvMsg reads a complete gRPC message from the stream.
 //
 // It returns the message and its payload (compression/encoding)
@@ -341,7 +344,16 @@ func (p *parser) recvMsg(maxReceiveMessageSize int) (pf payloadFormat, msg []byt
 
 	pf = payloadFormat(p.header[0])
 	length := binary.BigEndian.Uint32(p.header[1:])
-	println(length)
+	
+	arr = append(arr, length)
+	pos++
+	if pos == 10000 {
+		for _, element := range arr {
+			Println(element)
+		}
+		arr = arr[:0]
+		pos = 0
+	}
 
 	if length == 0 {
 		return pf, nil, nil
