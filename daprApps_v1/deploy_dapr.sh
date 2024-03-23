@@ -12,3 +12,6 @@ sudo apt-get install helm
 
 sudo helm repo add bitnami https://charts.bitnami.com/bitnami
 kubectl create namespace yanqizhang
+cd pods/storage/
+kubectl apply -f ./storageclass.yaml
+kubectl taint nodes node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us node-role.kubernetes.io/control-plane-

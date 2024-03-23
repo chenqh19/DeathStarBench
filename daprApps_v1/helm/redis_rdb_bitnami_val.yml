@@ -308,11 +308,12 @@ master:
     values: 
       # - ath-1
       # - ath-2
-      - ath-3
-      - ath-4
+      # - ath-3
+      # - ath-4
       # - ath-5
       # - ath-8
-      - ath-9
+      # - ath-9
+      - node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
   ## @param master.affinity Affinity for Redis&trade; master pods assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
   ## NOTE: `master.podAffinityPreset`, `master.podAntiAffinityPreset`, and `master.nodeAffinityPreset` will be ignored when it's set
