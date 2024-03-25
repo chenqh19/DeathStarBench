@@ -313,7 +313,7 @@ master:
       # - ath-5
       # - ath-8
       # - ath-9
-      - node-0.qihang-winter0.ragger-pg0.utah.cloudlab.us
+      - node-0.qihang-winter0.ragger-pg0.apt.emulab.net
   ## @param master.affinity Affinity for Redis&trade; master pods assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
   ## NOTE: `master.podAffinityPreset`, `master.podAntiAffinityPreset`, and `master.nodeAffinityPreset` will be ignored when it's set
@@ -458,7 +458,7 @@ master:
 replica:
   ## @param replica.replicaCount Number of Redis&trade; replicas to deploy
   ##
-  replicaCount: 2
+  replicaCount: 0
   ## @param replica.configuration Configuration for Redis&trade; replicas nodes
   ## ref: https://redis.io/topics/config
   ##
@@ -633,12 +633,13 @@ replica:
     ##
     values: 
       # - ath-1
-      - ath-2
-      - ath-3
-      - ath-4
-      - ath-5
-      - ath-8
-      - ath-9
+      # - ath-2
+      # - ath-3
+      # - ath-4
+      # - ath-5
+      # - ath-8
+      # - ath-9
+      - node-0.qihang-winter0.ragger-pg0.apt.emulab.net
   ## @param replica.affinity Affinity for Redis&trade; replicas pods assignment
   ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
   ## NOTE: `replica.podAffinityPreset`, `replica.podAntiAffinityPreset`, and `replica.nodeAffinityPreset` will be ignored when it's set
