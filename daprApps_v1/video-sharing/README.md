@@ -4,7 +4,7 @@
 - Video store
     Deploy redis as video store
     ```bash
-    helm install redis-video-store bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redisstore --wait
+    helm install redis-video-store bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redisstore --wait
     ```
 
     Deploy dapr component
@@ -15,7 +15,7 @@
 - Date store
     Deploy redis as date store
     ```bash
-    helm install redis-date bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redisdate --wait
+    helm install redis-date bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redisdate --wait
     ```
 
     Deploy dapr component
@@ -26,7 +26,7 @@
 - Rating store
     Deploy redis as rating store
     ```bash
-    helm install redis-rating bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi  --set replica.persistence.size=10Gi --set global.redis.password=redisrating --wait
+    helm install redis-rating bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi  --set replica.persistence.size=2Gi --set global.redis.password=redisrating --wait
     ```
 
     Deploy dapr component
@@ -37,7 +37,7 @@
 - Info store
     Deploy redis as post store
     ```bash
-    helm install redis-info bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redisinfo --wait
+    helm install redis-info bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redisinfo --wait
     ```
 
     Deploy dapr component
@@ -50,7 +50,7 @@
 - Video pubsub
     Deploy redis as pubsub
     ```bash
-    helm install redis-video-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redispubsub --wait
+    helm install redis-video-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redispubsub --wait
     ```
 
     Deploy dapr component

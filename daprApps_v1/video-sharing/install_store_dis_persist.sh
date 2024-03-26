@@ -3,7 +3,7 @@
 helm install redis-video-store bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.enabled=false --set replica.persistence.enabled=false --set global.redis.password=redisstore --wait
 kubectl -n yanqizhang apply -f video-frontend/config/video_store_redis.yaml
 # Thumbnail store
-helm install redis-thumb bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redisthumb --wait
+helm install redis-thumb bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redisthumb --wait
 kubectl -n yanqizhang apply -f video-frontend/config/thumbnail_store_redis.yaml
 # Date store
 helm install redis-date bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.enabled=false --set replica.persistence.enabled=false --set global.redis.password=redisdate --wait

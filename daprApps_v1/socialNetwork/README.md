@@ -72,7 +72,7 @@
 - Sentiment analysis pubsub
     Deploy redis as pubsub
     ```bash
-    helm install redis-senti-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redispubsub --wait
+    helm install redis-senti-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redispubsub --wait
     ```
 
     Deploy dapr component

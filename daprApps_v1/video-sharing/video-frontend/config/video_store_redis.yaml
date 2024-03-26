@@ -1,8 +1,8 @@
-# helm install redis-video bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.size=10Gi --set replica.persistence.size=10Gi --set global.redis.password=redisstore
+# helm install redis-video bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.size=2Gi --set replica.persistence.size=2Gi --set global.redis.password=redisstore
 # helm install redis-video bitnami/redis \
 # --set global.storageClass=local-storage \
-# --set master.persistence.size=10Gi \
-# --set replica.persistence.size=10Gi \
+# --set master.persistence.size=2Gi \
+# --set replica.persistence.size=2Gi \
 # --set global.redis.password=redisstore
 apiVersion: dapr.io/v1alpha1
 kind: Component

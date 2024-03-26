@@ -2,8 +2,8 @@
 # helm install redis-post bitnami/redis -n zyq-test --set global.storageClass=local-storage --set global.redis.password=redispost
 # helm install redis-post bitnami/redis -n zyq-test \
 # --set global.storageClass=local-storage \
-# --set master.persistence.size=10Gi \
-# --set replica.persistence.size=10Gi \
+# --set master.persistence.size=2Gi \
+# --set replica.persistence.size=2Gi \
 # --set global.redis.password=redispost
 apiVersion: dapr.io/v1alpha1
 kind: Component
