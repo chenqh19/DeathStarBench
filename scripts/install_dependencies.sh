@@ -41,9 +41,6 @@ cd ../hotelReservation
 sudo docker build -t qihang-hr .
 cd ../scripts
 
-sudo chmod +x kuber_install.sh
-# ./kuber_install.sh
-
 pip install aiohttp
 pip install prometheus-api-client
 pip install pytz

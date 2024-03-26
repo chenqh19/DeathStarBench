@@ -1,7 +1,7 @@
-# helm install redis-thumb bitnami/redis-cluster -n yanqizhang --set global.storageClass=local-storage --set persistence.size=20Gi --set global.redis.password=redisthumb --set cluster.nodes=6
+# helm install redis-thumb bitnami/redis-cluster -n yanqizhang --set global.storageClass=local-storage --set persistence.size=2Gi --set global.redis.password=redisthumb --set cluster.nodes=6
 # helm install redis-thumb bitnami/redis-cluster -n yanqizhang \
 # --set global.storageClass=local-storage \
-# --set persistence.size=20Gi \
+# --set persistence.size=2Gi \
 # --set global.redis.password=redisthumb
 # --set cluster.nodes=6
 apiVersion: dapr.io/v1alpha1

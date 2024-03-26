@@ -4,7 +4,7 @@
 - Image store
     Deploy redis as image store
     ```bash
-    helm install redis-img bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi --set replica.persistence.size=20Gi --set global.redis.password=redisstore --wait
+    helm install redis-img bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set global.redis.password=redisstore --wait
     ```
 
     Deploy dapr component
@@ -15,7 +15,7 @@
 - Post store
     Deploy redis as post store
     ```bash
-    helm install redis-post bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi --set replica.persistence.size=20Gi --set global.redis.password=redispost --wait
+    helm install redis-post bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set global.redis.password=redispost --wait
     ```
 
     Deploy dapr component
@@ -26,7 +26,7 @@
 - Social graph store
     Deploy redis as post store
     ```bash
-    helm install redis-socialgraph bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi  --set replica.persistence.size=20Gi --set global.redis.password=redissocialgraph --wait
+    helm install redis-socialgraph bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi  --set replica.persistence.size=2Gi --set global.redis.password=redissocialgraph --wait
     ```
 
     Deploy dapr component
@@ -37,7 +37,7 @@
 - Timeline store
     Deploy redis as post store
     ```bash
-    helm install redis-timeline bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi --set replica.persistence.size=20Gi --set global.redis.password=redistimeline --wait
+    helm install redis-timeline bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set global.redis.password=redistimeline --wait
     ```
 
     Deploy dapr component
@@ -50,7 +50,7 @@
 - Timeline pubsub
     Deploy redis as pubsub
     ```bash
-    helm install redis-tl-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi --set replica.persistence.size=20Gi --set global.redis.password=redispubsub --wait
+    helm install redis-tl-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set global.redis.password=redispubsub --wait
     ```
 
     Deploy dapr component
@@ -61,7 +61,7 @@
 - Object detect pubsub
     Deploy redis as pubsub
     ```bash
-    helm install redis-object-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=20Gi --set replica.persistence.size=20Gi --set global.redis.password=redispubsub --wait
+    helm install redis-object-pubsub bitnami/redis -n yanqizhang -f ../helm/redis_rdb_bitnami_val.yml --set global.storageClass=local-storage --set master.persistence.size=2Gi --set global.redis.password=redispubsub --wait
     ```
 
     Deploy dapr component

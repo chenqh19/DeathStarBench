@@ -14,7 +14,7 @@ kubectl -n yanqizhang apply -f user-rating/config/rating_store_redis.yaml
 # Info store
 # helm install redis-info bitnami/redis -n yanqizhang --set global.storageClass=local-storage --set master.persistence.enabled=false --set replica.persistence.enabled=false --set global.redis.password=redisinfo --wait
 # kubectl -n yanqizhang apply -f video-info/config/info_store_redis.yaml
-helm install redis-info bitnami/redis-cluster -n yanqizhang --set global.storageClass=local-storage --set persistence.size=20Gi --set global.redis.password=redisinfo --set cluster.nodes=6 --wait
+helm install redis-info bitnami/redis-cluster -n yanqizhang --set global.storageClass=local-storage --set persistence.size=2Gi --set global.redis.password=redisinfo --set cluster.nodes=6 --wait
 kubectl -n yanqizhang apply -f video-info/config/info_store_redis_cluster.yaml
 ##--- pubsub
 # Video pubsub
