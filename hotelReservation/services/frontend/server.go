@@ -21,7 +21,7 @@ import (
 	"github.com/harlow/go-micro-services/tls"
 	"github.com/harlow/go-micro-services/tracing"
 	"github.com/opentracing/opentracing-go"
-	"levelgzip"
+	_ "levelgzip"
 )
 
 // Server implements frontend service
@@ -291,7 +291,7 @@ func (s *Server) recommendHandler(w http.ResponseWriter, r *http.Request) {
 		HotelIds: recResp.HotelIds,
 		Locale:   locale,
 		},
-		grpc.UseCompressor(mygzip.Name),
+		// grpc.UseCompressor(mygzip.Name),
 	)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
