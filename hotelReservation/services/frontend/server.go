@@ -14,13 +14,14 @@ import (
 	"github.com/rs/zerolog/log"
 
 	"github.com/harlow/go-micro-services/dialer"
+	// "github.com/harlow/go-micro-services/dialer_compress"
 	"github.com/harlow/go-micro-services/registry"
 	profile "github.com/harlow/go-micro-services/services/profile/proto"
 	search "github.com/harlow/go-micro-services/services/search/proto"
 	"github.com/harlow/go-micro-services/tls"
 	"github.com/harlow/go-micro-services/tracing"
 	"github.com/opentracing/opentracing-go"
-	_ "levelgzip"
+	"levelgzip"
 )
 
 // Server implements frontend service
@@ -150,6 +151,17 @@ func (s *Server) getGprcConn(name string) (*grpc.ClientConn, error) {
 			dialer.WithBalancer(s.Registry.Client),
 		)
 	}
+	// if s.KnativeDns != "" {
+	// 	return dialer_compress.Dial(
+	// 		fmt.Sprintf("%s.%s", name, s.KnativeDns),
+	// 		dialer_compress.WithTracer(s.Tracer))
+	// } else {
+	// 	return dialer_compress.Dial(
+	// 		name,
+	// 		dialer_compress.WithTracer(s.Tracer),
+	// 		dialer_compress.WithBalancer(s.Registry.Client),
+	// 	)
+	// }
 }
 
 func (s *Server) searchHandler(w http.ResponseWriter, r *http.Request) {
@@ -223,7 +235,9 @@ func (s *Server) searchHandler(w http.ResponseWriter, r *http.Request) {
 	profileResp, err := s.profileClient.GetProfiles(ctx, &profile.Request{
 		HotelIds: reservationResp.HotelId,
 		Locale:   locale,
-	})
+		},
+		// grpc.UseCompressor(mygzip.Name),
+	)
 	if err != nil {
 		log.Error().Msg("SearchHandler GetProfiles failed")
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -276,7 +290,9 @@ func (s *Server) recommendHandler(w http.ResponseWriter, r *http.Request) {
 	profileResp, err := s.profileClient.GetProfiles(ctx, &profile.Request{
 		HotelIds: recResp.HotelIds,
 		Locale:   locale,
-	})
+		},
+		grpc.UseCompressor(mygzip.Name),
+	)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
