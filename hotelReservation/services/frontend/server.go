@@ -21,7 +21,7 @@ import (
 	"github.com/harlow/go-micro-services/tls"
 	"github.com/harlow/go-micro-services/tracing"
 	"github.com/opentracing/opentracing-go"
-	_ "levelgzip"
+	// "levelgzip"
 )
 
 // Server implements frontend service
@@ -198,7 +198,9 @@ func (s *Server) searchHandler(w http.ResponseWriter, r *http.Request) {
 		Lon:     lon,
 		InDate:  inDate,
 		OutDate: outDate,
-	})
+		},
+		// grpc.UseCompressor(mygzip.Name),
+	)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -221,7 +223,9 @@ func (s *Server) searchHandler(w http.ResponseWriter, r *http.Request) {
 		InDate:       inDate,
 		OutDate:      outDate,
 		RoomNumber:   1,
-	})
+		},
+		// grpc.UseCompressor(mygzip.Name),
+	)
 	if err != nil {
 		log.Error().Msg("SearchHandler CheckAvailability failed")
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -274,7 +278,9 @@ func (s *Server) recommendHandler(w http.ResponseWriter, r *http.Request) {
 		Require: require,
 		Lat:     float64(lat),
 		Lon:     float64(lon),
-	})
+		},
+		// grpc.UseCompressor(mygzip.Name),
+	)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
