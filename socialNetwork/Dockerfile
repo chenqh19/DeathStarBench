@@ -12,11 +12,11 @@ RUN cd /tmp/redis-plus-plus\
 
 COPY ./ /social-network-microservices
 
-# RUN cd /social-network-microservices/thrift-src/ \
-#     && ./bootstrap.sh \
-#     && ./configure \
-#     && make \
-#     && make install
+RUN cd /social-network-microservices/thrift-src/ \
+    && ./bootstrap.sh \
+    && ./configure \
+    && make \
+    && make install
 
 RUN cd /social-network-microservices \
     && mkdir -p build \
@@ -43,5 +43,7 @@ RUN apt-get update && \
         libmemcached11 \
         libmemcachedutil2 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y libevent-2.0-5
 
 WORKDIR /social-network-microservices
