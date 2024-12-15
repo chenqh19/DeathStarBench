@@ -31,7 +31,7 @@ sudo modprobe msr
 sudo pqos -s
 
 sudo apt install linux-tools-common
-yes | sudo apt install linux-tools-5.4.0-164-generic
+yes | sudo apt install linux-tools-5.4.0-196-generic
 
 cd ../socialNetwork
 sudo docker build -t qihang-sn .

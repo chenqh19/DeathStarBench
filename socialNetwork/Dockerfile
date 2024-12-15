@@ -42,8 +42,7 @@ RUN apt-get update && \
         libsasl2-2 \
         libmemcached11 \
         libmemcachedutil2 \
+        libevent-2.0-5 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y libevent-2.0-5
 
 WORKDIR /social-network-microservices
