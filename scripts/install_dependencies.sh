@@ -37,9 +37,9 @@ cd ../socialNetwork
 sudo docker build -t qihang-sn .
 cd ../scripts
 
-cd ../hotelReservation
-sudo docker build -t qihang-hr .
-cd ../scripts
+# cd ../hotelReservation
+# sudo docker build -t qihang-hr .
+# cd ../scripts
 
 sudo chmod +x kuber-deploy/kuber_install.sh
 # ./kuber_install.sh
