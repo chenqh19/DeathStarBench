@@ -47,6 +47,9 @@ local function _LoadTimeline(data)
 end
 
 function _M.ReadHomeTimeline()
+  local timestamp1 = os.clock()
+
+
   local bridge_tracer = require "opentracing_bridge_tracer"
   local ngx = ngx
   local GenericObjectPool = require "GenericObjectPool"
@@ -100,6 +103,13 @@ function _M.ReadHomeTimeline()
   end
   span:finish()
   ngx.exit(ngx.HTTP_OK)
+
+  local timestamp2 = os.clock()
+  local time_diff = (timestamp2 - timestamp1) * 1000
+  local file = io.open("/usr/local/openresty/nginx/lua-scripts/example.txt", "a")
+  file:write(string.format("%.2f\n", time_diff))
+  file:close()
+
 end
 
 return _M
